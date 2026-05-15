@@ -194,6 +194,18 @@
     border-radius: 999px; font-size: 11px; margin-left: 6px; font-weight: 600;
   }
 
+  /* 資料夾狀態列 */
+  .folder-status {
+    padding: 12px 14px; border-radius: 10px; margin-bottom: 12px;
+    font-size: 13px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .folder-status.fs-unset { background: #fef3c7; color: #78350f; border-left: 4px solid #f59e0b; }
+  .folder-status.fs-needs { background: #fee2e2; color: #7f1d1d; border-left: 4px solid #dc2626; }
+  .folder-status.fs-ready { background: #dcfce7; color: #15803d; border-left: 4px solid #16a34a; }
+  .folder-status.fs-unsupported { background: #fee2e2; color: #7f1d1d; border-left: 4px solid #dc2626; }
+  .folder-status .fs-msg { flex: 1; min-width: 0; }
+  .folder-status code { background: rgba(255,255,255,0.5); padding: 1px 6px; border-radius: 4px; font-size: 12px; }
+
   /* 題庫詳情清單 */
   .bd-section { margin-bottom: 22px; }
   .bd-section h4 { font-size: 14px; color: #374151; margin-bottom: 8px; }
@@ -436,14 +448,15 @@
   </div>
 
   <div id="banks-custom" style="margin-bottom:18px;">
-    <h4 style="font-size:14px;color:#374151;margin-bottom:10px;">自製題庫（共 <span id="custom-count">0</span> 個）</h4>
+    <h4 style="font-size:14px;color:#374151;margin-bottom:10px;">
+      自製題庫（共 <span id="custom-count">0</span> 個）
+    </h4>
+    <div id="folder-status" class="folder-status"></div>
+    <div id="custom-bank-actions" class="hidden" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+      <button class="secondary-btn" onclick="App.createBlankBank()">✍️ 新增空白題庫</button>
+      <button class="secondary-btn" onclick="App.refreshBanks()">🔄 重新整理</button>
+    </div>
     <div id="custom-bank-list"></div>
-  </div>
-
-  <div style="display:flex;gap:8px;flex-wrap:wrap;">
-    <button class="secondary-btn" onclick="App.exportData()">📤 匯出所有資料</button>
-    <button class="secondary-btn" onclick="document.getElementById('import-data-file').click()">📥 匯入資料</button>
-    <input type="file" id="import-data-file" accept=".json" class="hidden" onchange="App.importData(event)">
   </div>
 </div>
 
@@ -509,13 +522,22 @@ const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:8000' 
 const STORAGE_KEY = 'spanish_app_v1';
 const LEVEL_IDS = ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7'];
 const DEFAULT_LEVEL = 'L1';
+const IDB_NAME = 'spanish_app_idb';
+const IDB_STORE = 'handles';
+const IDB_KEY_DIR = 'dataDir';
+const BANKS_SUBDIR = 'banks';
+const PROGRESS_SUBDIR = 'progress';
+const FS_SUPPORTED = typeof window !== 'undefined' && 'showDirectoryPicker' in window;
 
 const App = (() => {
   // ─── 狀態 ───
   let levels = [];        // [{id, name, cefr, vocab[], grammar[], listening[]}, ...]
-  let customBanks = [];   // [{id, name, source, created, vocab: [], listening: []}]
+  let customBanks = [];   // 從本地資料夾 banks/*.md 載入
   let stats = { totalAnswered: 0, totalCorrect: 0, sessions: 0 };
   let activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
+  let dirHandle = null;       // FileSystemDirectoryHandle，存於 IndexedDB
+  let dirName = '';           // 資料夾顯示名稱（亦快取於 localStorage）
+  let folderState = 'unset';  // 'unset' | 'needs-permission' | 'ready' | 'unsupported'
   let currentQuiz = null;
   let currentMode = null;
   let currentDetailBank = null;    // 題庫詳情頁的目前 bank
@@ -525,21 +547,25 @@ const App = (() => {
   let browseFilter = 'all';
   let browseKeyHandler = null;
 
-  // ─── localStorage ───
+  // ─── localStorage (僅儲存 stats / activeBank / dirName / legacyCustomBanks) ───
   function loadState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const data = JSON.parse(raw);
-        customBanks = data.customBanks || [];
         stats = data.stats || stats;
+        dirName = data.dirName || '';
+        // 舊版用戶可能仍在 localStorage 有 customBanks，保留供 Phase 2 遷移
+        if (Array.isArray(data.customBanks)) {
+          window.__legacyCustomBanks = data.customBanks;
+        }
         activeBank = resolveActiveBank(data.activeBank);
       }
     } catch (e) { console.warn('讀取本地資料失敗', e); }
   }
   function saveState() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ customBanks, stats, activeBank }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ stats, activeBank, dirName }));
     } catch (e) { console.warn('儲存失敗', e); }
   }
 
@@ -554,6 +580,231 @@ const App = (() => {
       return { kind: 'custom', id: ab.id };
     }
     return { kind: 'builtin', id: DEFAULT_LEVEL };
+  }
+
+  // ─── IndexedDB（存 FileSystemDirectoryHandle）───
+  function idbOpen() {
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open(IDB_NAME, 1);
+      req.onupgradeneeded = () => req.result.createObjectStore(IDB_STORE);
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+  async function idbGet(key) {
+    const db = await idbOpen();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(IDB_STORE, 'readonly');
+      const req = tx.objectStore(IDB_STORE).get(key);
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+  async function idbSet(key, val) {
+    const db = await idbOpen();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(IDB_STORE, 'readwrite');
+      tx.objectStore(IDB_STORE).put(val, key);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+  }
+  async function idbDel(key) {
+    const db = await idbOpen();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(IDB_STORE, 'readwrite');
+      tx.objectStore(IDB_STORE).delete(key);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+  }
+
+  // ─── MD codec ───
+  // 格式：
+  // ---
+  // id: bank_xxx
+  // name: ...
+  // ---
+  // # Vocab
+  // - es | zh | ipa-或備註
+  // # Listening
+  // - es | zh | topic
+  function formatBankMd(bank) {
+    const fm = {
+      id: bank.id,
+      name: bank.name,
+      source: bank.source || '',
+      videoId: bank.videoId || '',
+      created: bank.created || new Date().toISOString(),
+    };
+    const lines = ['---'];
+    for (const [k, v] of Object.entries(fm)) {
+      if (v) lines.push(`${k}: ${String(v).replace(/\n/g, ' ')}`);
+    }
+    lines.push('---', '');
+    lines.push('# Vocab', '');
+    (bank.vocab || []).forEach(w => {
+      const meta = w.ipa || w.cat || '';
+      lines.push(`- ${w.es} | ${w.zh}${meta ? ' | ' + meta : ''}`);
+    });
+    lines.push('', '# Listening', '');
+    (bank.listening || []).forEach(s => {
+      const meta = s.topic || '';
+      lines.push(`- ${s.es} | ${s.zh}${meta ? ' | ' + meta : ''}`);
+    });
+    return lines.join('\n') + '\n';
+  }
+
+  function parseBankMd(text) {
+    const out = { id: '', name: '', source: '', videoId: '', created: '', vocab: [], listening: [] };
+    const fmMatch = text.match(/^---\n([\s\S]*?)\n---\n?/);
+    let body = text;
+    if (fmMatch) {
+      body = text.slice(fmMatch[0].length);
+      fmMatch[1].split('\n').forEach(line => {
+        const m = line.match(/^([\w-]+):\s*(.*)$/);
+        if (m) out[m[1]] = m[2].trim();
+      });
+    }
+    let section = null;
+    body.split('\n').forEach(raw => {
+      const line = raw.trim();
+      if (line.startsWith('#')) {
+        const h = line.replace(/^#+\s*/, '').toLowerCase();
+        if (h.startsWith('vocab')) section = 'vocab';
+        else if (h.startsWith('listening') || h.startsWith('phrase')) section = 'listening';
+        else section = null;
+        return;
+      }
+      if (!line.startsWith('-')) return;
+      const cells = line.replace(/^-\s*/, '').split('|').map(s => s.trim());
+      if (cells.length < 2) return;
+      if (section === 'vocab') {
+        out.vocab.push({ es: cells[0], zh: cells[1], ...(cells[2] ? { ipa: cells[2] } : {}) });
+      } else if (section === 'listening') {
+        out.listening.push({ id: 'l_' + Math.random().toString(36).slice(2, 8), es: cells[0], zh: cells[1], ...(cells[2] ? { topic: cells[2] } : {}) });
+      }
+    });
+    return out;
+  }
+
+  function safeFileName(name) {
+    return (name || 'bank').replace(/[^\w一-龥\-]+/g, '_').slice(0, 80) || 'bank';
+  }
+
+  // ─── FS Access：權限、讀寫資料夾 ───
+  async function ensureSubdir(name) {
+    if (!dirHandle) throw new Error('未設定資料夾');
+    return dirHandle.getDirectoryHandle(name, { create: true });
+  }
+
+  async function queryDirPermission() {
+    if (!dirHandle) return 'unset';
+    try {
+      const perm = await dirHandle.queryPermission({ mode: 'readwrite' });
+      if (perm === 'granted') return 'ready';
+      return 'needs-permission';
+    } catch { return 'needs-permission'; }
+  }
+
+  async function requestDirPermission() {
+    if (!dirHandle) return false;
+    try {
+      const perm = await dirHandle.requestPermission({ mode: 'readwrite' });
+      return perm === 'granted';
+    } catch { return false; }
+  }
+
+  async function pickFolder() {
+    if (!FS_SUPPORTED) { alert('您的瀏覽器不支援 File System Access API。請改用 Chrome / Edge / Opera。'); return false; }
+    try {
+      const handle = await window.showDirectoryPicker({ mode: 'readwrite' });
+      dirHandle = handle;
+      dirName = handle.name;
+      await idbSet(IDB_KEY_DIR, handle);
+      saveState();
+      folderState = 'ready';
+      return true;
+    } catch (e) {
+      if (e.name !== 'AbortError') console.warn('資料夾選擇失敗', e);
+      return false;
+    }
+  }
+
+  async function clearFolderSetting() {
+    if (!confirm('取消資料夾設定後，現有題庫檔案不會被刪除，但本介面看不到它們。確定？')) return;
+    dirHandle = null;
+    dirName = '';
+    customBanks = [];
+    folderState = 'unset';
+    await idbDel(IDB_KEY_DIR);
+    saveState();
+    renderBanks();
+    updateMenuForActiveBank();
+  }
+
+  async function loadCustomBanksFromFolder() {
+    customBanks = [];
+    if (!dirHandle || folderState !== 'ready') return;
+    try {
+      const banksDir = await ensureSubdir(BANKS_SUBDIR);
+      for await (const [name, fh] of banksDir.entries()) {
+        if (fh.kind !== 'file' || !name.toLowerCase().endsWith('.md')) continue;
+        try {
+          const file = await fh.getFile();
+          const text = await file.text();
+          const parsed = parseBankMd(text);
+          if (!parsed.id) parsed.id = 'bank_' + Math.random().toString(36).slice(2, 10);
+          if (!parsed.name) parsed.name = name.replace(/\.md$/i, '');
+          parsed.__file = name;
+          customBanks.push(parsed);
+        } catch (e) { console.warn('讀取題庫失敗', name, e); }
+      }
+      customBanks.sort((a, b) => (a.created || '').localeCompare(b.created || ''));
+    } catch (e) {
+      console.warn('列出 banks/ 失敗', e);
+    }
+  }
+
+  async function writeBankToFolder(bank) {
+    const banksDir = await ensureSubdir(BANKS_SUBDIR);
+    const filename = bank.__file || (safeFileName(bank.name) + '-' + bank.id + '.md');
+    bank.__file = filename;
+    const fh = await banksDir.getFileHandle(filename, { create: true });
+    const w = await fh.createWritable();
+    await w.write(formatBankMd(bank));
+    await w.close();
+  }
+
+  async function deleteBankFile(bank) {
+    if (!bank.__file) return;
+    try {
+      const banksDir = await ensureSubdir(BANKS_SUBDIR);
+      await banksDir.removeEntry(bank.__file);
+    } catch (e) { console.warn('刪除檔案失敗', e); }
+  }
+
+  async function migrateLegacyBanks() {
+    const legacy = window.__legacyCustomBanks;
+    if (!legacy || !legacy.length) return 0;
+    if (!confirm(`偵測到本機 localStorage 仍有 ${legacy.length} 個舊題庫，要遷移到本地資料夾並從 localStorage 移除嗎？`)) return 0;
+    for (const b of legacy) {
+      try {
+        b.__file = safeFileName(b.name) + '-' + (b.id || ('bank_' + Date.now())) + '.md';
+        await writeBankToFolder(b);
+      } catch (e) { console.warn('遷移失敗', b.name, e); }
+    }
+    window.__legacyCustomBanks = null;
+    // 將 localStorage 中的 customBanks 清除
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const data = JSON.parse(raw);
+        delete data.customBanks;
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      }
+    } catch {}
+    return legacy.length;
   }
 
   // ─── 從後端載入 7 階段題庫 ───
@@ -632,7 +883,14 @@ const App = (() => {
         </div>
       `;
     }).join('');
+    renderFolderStatus();
     $('custom-count').textContent = customBanks.length;
+    const actions = $('custom-bank-actions');
+    if (actions) actions.classList.toggle('hidden', folderState !== 'ready');
+    if (folderState !== 'ready') {
+      $('custom-bank-list').innerHTML = '';
+      return;
+    }
     if (customBanks.length === 0) {
       $('custom-bank-list').innerHTML = '<div style="color:#9ca3af;font-size:13px;padding:10px 0;">尚無自製題庫 — 從 YouTube 或文本匯入吧！</div>';
     } else {
@@ -656,6 +914,140 @@ const App = (() => {
         `;
       }).join('');
     }
+  }
+
+  // 產生一份帶說明與範例的空白題庫，寫入 banks/
+  async function createBlankBank() {
+    if (folderState !== 'ready') { alert('請先設定本地資料夾'); return; }
+    const name = prompt('題庫名稱：', '新題庫');
+    if (!name) return;
+    const trimmed = String(name).trim();
+    if (!trimmed) { alert('名稱不可空白'); return; }
+    const bank = {
+      id: 'bank_' + Date.now(),
+      name: trimmed,
+      source: '手動建立',
+      created: new Date().toISOString(),
+      vocab: [],
+      listening: [],
+    };
+    bank.__file = safeFileName(bank.name) + '-' + bank.id + '.md';
+    const md = makeTemplateMd(bank);
+    try {
+      const banksDir = await ensureSubdir(BANKS_SUBDIR);
+      const fh = await banksDir.getFileHandle(bank.__file, { create: true });
+      const w = await fh.createWritable();
+      await w.write(md);
+      await w.close();
+    } catch (e) { alert('寫入失敗：' + e.message); return; }
+    await loadCustomBanksFromFolder();
+    renderBanks();
+    alert(`已建立 banks/${bank.__file}\n\n請用文字編輯器（Obsidian / VSCode / Vim）打開該檔案，按範例格式新增詞彙與句子，存檔後回到本頁點「🔄 重新整理」即可。`);
+  }
+
+  // 模板：frontmatter + Vocab + Listening + 內嵌範例與格式說明
+  function makeTemplateMd(bank) {
+    return [
+      '---',
+      `id: ${bank.id}`,
+      `name: ${bank.name}`,
+      `source: ${bank.source}`,
+      `created: ${bank.created}`,
+      '---',
+      '',
+      '<!--',
+      '  使用說明：',
+      '  1. frontmatter（兩個 --- 之間）為題庫 metadata，建議只改 name。',
+      '  2. 章節以 # Vocab / # Listening 開頭。',
+      '  3. 每筆項目一行，以「- 」起始，欄位以 | 分隔。',
+      '     Vocab     ：- 西語單字 | 中文 | (可選) IPA 或類別',
+      '     Listening ：- 西語句子 | 中文翻譯 | (可選) 主題',
+      '  4. 以「>」開頭的引用行、HTML 註解、空行均會被忽略。',
+      '  5. 存檔後回到「題庫管理」按「🔄 重新整理」即可載入。',
+      '-->',
+      '',
+      '# Vocab',
+      '',
+      '> 格式：- 西語單字 | 中文意思 | (可選) IPA 或類別',
+      '',
+      '- hola | 你好 | ˈola',
+      '- gracias | 謝謝 | ˈɡɾasjas',
+      '- por favor | 請 | 客套語',
+      '',
+      '# Listening',
+      '',
+      '> 格式：- 西語句子 | 中文翻譯 | (可選) 主題',
+      '',
+      '- ¿Cómo estás? | 你好嗎？ | 問候',
+      '- Mucho gusto | 很高興認識你 | 問候',
+      '- Hasta luego | 再見 | 問候',
+      '',
+    ].join('\n');
+  }
+
+  // 重新掃描資料夾（外部編輯後使用）
+  async function refreshBanks() {
+    if (folderState !== 'ready') { renderBanks(); return; }
+    await loadCustomBanksFromFolder();
+    activeBank = resolveActiveBank(activeBank);
+    renderBanks();
+    updateMenuForActiveBank();
+  }
+
+  function renderFolderStatus() {
+    const el = $('folder-status');
+    if (!el) return;
+    el.className = 'folder-status';
+    if (!FS_SUPPORTED) {
+      el.classList.add('fs-unsupported');
+      el.innerHTML = `
+        <div class="fs-msg">⚠️ 你的瀏覽器不支援 File System Access API。
+        自製題庫功能僅在 <strong>Chrome / Edge / Opera</strong> 可用。</div>`;
+      return;
+    }
+    if (folderState === 'unset') {
+      el.classList.add('fs-unset');
+      el.innerHTML = `
+        <div class="fs-msg">尚未設定本地資料夾。自製題庫將存成 <code>.md</code> 檔，方便你跨裝置同步或編輯。</div>
+        <button class="icon-btn" onclick="App.pickFolder()">📁 選擇資料夾</button>`;
+      return;
+    }
+    if (folderState === 'needs-permission') {
+      el.classList.add('fs-needs');
+      el.innerHTML = `
+        <div class="fs-msg">資料夾 <code>${escapeHtml(dirName || '?')}</code> 需要重新授權才能讀寫。</div>
+        <button class="icon-btn" onclick="App.requestFolderPermission()">🔓 重新授權</button>
+        <button class="icon-btn" onclick="App.pickFolder()">變更</button>`;
+      return;
+    }
+    el.classList.add('fs-ready');
+    el.innerHTML = `
+      <div class="fs-msg">📁 資料夾：<code>${escapeHtml(dirName)}</code>　<span style="opacity:.7;">.md 檔在 <code>banks/</code> 子資料夾</span></div>
+      <button class="icon-btn" onclick="App.pickFolder()">變更</button>
+      <button class="icon-btn" onclick="App.clearFolderSetting()">取消設定</button>`;
+  }
+
+  // pickFolder / requestFolderPermission 包裝：完成後重新載入並 render
+  async function pickFolderAndLoad() {
+    const ok = await pickFolder();
+    if (!ok) return;
+    await loadCustomBanksFromFolder();
+    const migrated = await migrateLegacyBanks();
+    if (migrated > 0) { await loadCustomBanksFromFolder(); }
+    activeBank = resolveActiveBank(activeBank);
+    saveState();
+    renderBanks();
+    updateMenuForActiveBank();
+  }
+  async function requestFolderPermissionAndLoad() {
+    const ok = await requestDirPermission();
+    if (!ok) { alert('未取得權限'); return; }
+    folderState = 'ready';
+    await loadCustomBanksFromFolder();
+    activeBank = resolveActiveBank(activeBank);
+    saveState();
+    renderBanks();
+    updateMenuForActiveBank();
   }
 
   function openBankDetail(kind, id) {
@@ -765,7 +1157,7 @@ const App = (() => {
     updateMenuForActiveBank();
   }
 
-  function renameBank(id) {
+  async function renameBank(id) {
     const b = customBanks.find(x => x.id === id);
     if (!b) return;
     const next = prompt('新名稱：', b.name);
@@ -773,7 +1165,7 @@ const App = (() => {
     const trimmed = String(next).trim();
     if (!trimmed) { alert('名稱不可空白'); return; }
     b.name = trimmed;
-    saveState();
+    try { await writeBankToFolder(b); } catch (e) { alert('寫入檔案失敗：' + e.message); return; }
     renderBanks();
   }
 
@@ -904,9 +1296,12 @@ const App = (() => {
     }
   }
 
-  function deleteBank(id) {
-    if (!confirm('確定刪除這個題庫？')) return;
+  async function deleteBank(id) {
+    if (!confirm('確定刪除這個題庫？同時會刪除本地 .md 檔。')) return;
+    const target = customBanks.find(b => b.id === id);
+    if (!target) return;
     const wasActive = activeBank.kind === 'custom' && activeBank.id === id;
+    try { await deleteBankFile(target); } catch (e) { console.warn('刪檔失敗', e); }
     customBanks = customBanks.filter(b => b.id !== id);
     if (wasActive) activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
     saveState();
@@ -914,36 +1309,14 @@ const App = (() => {
     updateMenuForActiveBank();
   }
 
-  function exportData() {
-    const blob = new Blob([JSON.stringify({ customBanks, stats, activeBank }, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `spanish_quiz_data_${new Date().toISOString().slice(0, 10)}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
-  function importData(ev) {
-    const f = ev.target.files[0];
-    if (!f) return;
-    const reader = new FileReader();
-    reader.onload = e => {
-      try {
-        const data = JSON.parse(e.target.result);
-        if (data.customBanks) {
-          if (!confirm(`匯入 ${data.customBanks.length} 個題庫？這會覆蓋目前的自製題庫。`)) return;
-          customBanks = data.customBanks;
-          if (data.stats) stats = data.stats;
-          activeBank = resolveActiveBank(data.activeBank);
-          saveState();
-          renderBanks();
-          alert('匯入成功！');
-        }
-      } catch (err) { alert('檔案格式錯誤'); }
-    };
-    reader.readAsText(f);
-    ev.target.value = '';
+  // 把匯入流程拿到的 bank 寫入本地 banks/*.md（共用）
+  async function persistImportedBank(bank) {
+    if (folderState !== 'ready') {
+      throw new Error('尚未設定本地資料夾 — 請至「題庫管理」設定後再匯入');
+    }
+    bank.__file = safeFileName(bank.name) + '-' + bank.id + '.md';
+    await writeBankToFolder(bank);
+    customBanks.push(bank);
   }
 
   // ─── 開始測驗（先顯示設定）───
@@ -1236,9 +1609,8 @@ const App = (() => {
         vocab: data.vocab || [],
         listening: data.listening || [],
       };
-      customBanks.push(bank);
-      saveState();
-      showStatus(`✓ 成功！產生了 ${bank.vocab.length} 個單字、${bank.listening.length} 個句子。<br>題庫名稱：「${escapeHtml(bank.name)}」<br><br><button class="primary-btn" onclick="App.backToMenu()">回主選單開始練習</button>`, 'info');
+      await persistImportedBank(bank);
+      showStatus(`✓ 成功！產生了 ${bank.vocab.length} 個單字、${bank.listening.length} 個句子。<br>題庫名稱：「${escapeHtml(bank.name)}」<br>已寫入 <code>banks/${escapeHtml(bank.__file)}</code><br><br><button class="primary-btn" onclick="App.backToMenu()">回主選單開始練習</button>`, 'info');
       $('yt-url').value = '';
     } catch (e) {
       showStatus('❌ 失敗：' + e.message, 'error');
@@ -1263,9 +1635,8 @@ const App = (() => {
         vocab: data.vocab || [],
         listening: data.listening || [],
       };
-      customBanks.push(bank);
-      saveState();
-      showStatus(`✓ 成功！產生了 ${bank.vocab.length} 個單字、${bank.listening.length} 個句子。`, 'info');
+      await persistImportedBank(bank);
+      showStatus(`✓ 成功！產生了 ${bank.vocab.length} 個單字、${bank.listening.length} 個句子。已寫入 <code>banks/${escapeHtml(bank.__file)}</code>`, 'info');
     } catch (e) {
       showStatus('❌ 失敗：' + e.message, 'error');
     }
@@ -1292,9 +1663,8 @@ const App = (() => {
         vocab: data.vocab || [],
         listening: data.listening || [],
       };
-      customBanks.push(bank);
-      saveState();
-      showStatus(`✓ 成功！產生了 ${bank.vocab.length} 個單字、${bank.listening.length} 個句子。`, 'info');
+      await persistImportedBank(bank);
+      showStatus(`✓ 成功！產生了 ${bank.vocab.length} 個單字、${bank.listening.length} 個句子。已寫入 <code>banks/${escapeHtml(bank.__file)}</code>`, 'info');
       $('raw-text').value = '';
       $('text-title').value = '';
     } catch (e) {
@@ -1307,6 +1677,25 @@ const App = (() => {
     loadState();
     try {
       await loadBanks();
+      // FS Access：嘗試還原資料夾 handle 並讀題庫
+      if (!FS_SUPPORTED) {
+        folderState = 'unsupported';
+      } else {
+        try {
+          const stored = await idbGet(IDB_KEY_DIR);
+          if (stored) {
+            dirHandle = stored;
+            dirName = stored.name || dirName;
+            folderState = await queryDirPermission();
+            if (folderState === 'ready') await loadCustomBanksFromFolder();
+          } else {
+            folderState = 'unset';
+          }
+        } catch (e) {
+          console.warn('還原資料夾失敗', e);
+          folderState = 'unset';
+        }
+      }
       activeBank = resolveActiveBank(activeBank);
       renderStats();
       updateMenuForActiveBank();
@@ -1318,9 +1707,13 @@ const App = (() => {
   return {
     init, show, startQuiz, beginQuiz, backToMenu, next, retry,
     importYouTube, importSubtitle, importText, switchImportTab,
-    deleteBank, exportData, importData,
+    deleteBank,
     setActiveBank, renameBank, openBankDetail,
     openBrowse, browsePrev, browseNext, flipCard, speakCurrentCard, setBrowseFilter,
+    pickFolder: pickFolderAndLoad,
+    requestFolderPermission: requestFolderPermissionAndLoad,
+    clearFolderSetting,
+    createBlankBank, refreshBanks,
   };
 })();
 
