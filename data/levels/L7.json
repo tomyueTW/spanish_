@@ -1,0 +1,53 @@
+{
+  "id": "L7",
+  "name": "進階表達",
+  "cefr": "B2",
+  "vocab": [],
+  "grammar": [
+    {
+      "id": "g30",
+      "topic": "虛擬式入門",
+      "q": "Quiero que tú ___ feliz.",
+      "zh": "我希望你快樂",
+      "opts": [
+        "eres",
+        "seas",
+        "fuiste",
+        "serás"
+      ],
+      "a": 1,
+      "exp": "querer que + 虛擬式。ser 的虛擬式第二人稱：seas。表達期望、情感時用虛擬式。",
+      "level": "L7"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l072",
+      "es": "Llama a la ambulancia.",
+      "zh": "叫救護車。",
+      "topic": "緊急"
+    },
+    {
+      "id": "l073",
+      "es": "¡Socorro!",
+      "zh": "救命！",
+      "topic": "緊急"
+    },
+    {
+      "id": "l074",
+      "es": "¡Cuidado!",
+      "zh": "小心！",
+      "topic": "緊急"
+    }
+  ],
+  "gaps": {
+    "vocab": 150,
+    "grammar": 13,
+    "listening": 27
+  },
+  "targets": {
+    "vocab": 150,
+    "grammar": 14,
+    "listening": 30
+  }
+}

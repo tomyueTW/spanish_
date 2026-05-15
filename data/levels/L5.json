@@ -1,0 +1,591 @@
+{
+  "id": "L5",
+  "name": "意見與感受",
+  "cefr": "B1.1",
+  "vocab": [
+    {
+      "es": "grande",
+      "zh": "大的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "pequeño",
+      "zh": "小的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "alto",
+      "zh": "高的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "bajo",
+      "zh": "矮/低的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "largo",
+      "zh": "長的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "corto",
+      "zh": "短的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "ancho",
+      "zh": "寬的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "estrecho",
+      "zh": "窄的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "gordo",
+      "zh": "胖的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "delgado",
+      "zh": "瘦的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "joven",
+      "zh": "年輕的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "viejo",
+      "zh": "老的/舊的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "nuevo",
+      "zh": "新的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "bueno",
+      "zh": "好的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "malo",
+      "zh": "壞的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "mejor",
+      "zh": "更好的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "peor",
+      "zh": "更壞的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "bonito",
+      "zh": "漂亮的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "guapo",
+      "zh": "帥/美的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "feo",
+      "zh": "醜的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "fácil",
+      "zh": "簡單的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "difícil",
+      "zh": "困難的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "rápido",
+      "zh": "快的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "lento",
+      "zh": "慢的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "caro",
+      "zh": "貴的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "barato",
+      "zh": "便宜的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "rico",
+      "zh": "有錢的/好吃的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "pobre",
+      "zh": "窮的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "feliz",
+      "zh": "快樂的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "triste",
+      "zh": "難過的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "cansado",
+      "zh": "累的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "enfadado",
+      "zh": "生氣的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "tranquilo",
+      "zh": "平靜的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "nervioso",
+      "zh": "緊張的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "ocupado",
+      "zh": "忙的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "aburrido",
+      "zh": "無聊的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "interesante",
+      "zh": "有趣的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "importante",
+      "zh": "重要的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "famoso",
+      "zh": "有名的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "fuerte",
+      "zh": "強壯的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "débil",
+      "zh": "虛弱的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "limpio",
+      "zh": "乾淨的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "sucio",
+      "zh": "髒的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "caliente",
+      "zh": "熱的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "frío",
+      "zh": "冷的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "duro",
+      "zh": "硬的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "blando",
+      "zh": "軟的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "lleno",
+      "zh": "滿的/飽的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "vacío",
+      "zh": "空的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "abierto",
+      "zh": "開著的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "cerrado",
+      "zh": "關著的",
+      "ipa": "",
+      "cat": "形容詞"
+    },
+    {
+      "es": "qué",
+      "zh": "什麼",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "quién",
+      "zh": "誰",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "cuándo",
+      "zh": "何時",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "dónde",
+      "zh": "哪裡",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "cómo",
+      "zh": "如何",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "por qué",
+      "zh": "為什麼",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "cuánto",
+      "zh": "多少",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "cuál",
+      "zh": "哪一個",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "y",
+      "zh": "和",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "o",
+      "zh": "或",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "pero",
+      "zh": "但是",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "porque",
+      "zh": "因為",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "si",
+      "zh": "如果",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "sí",
+      "zh": "是",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "no",
+      "zh": "不",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "muy",
+      "zh": "很",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "mucho",
+      "zh": "很多",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "poco",
+      "zh": "少",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "también",
+      "zh": "也",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "tampoco",
+      "zh": "也不",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "ya",
+      "zh": "已經",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "todavía",
+      "zh": "還",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "aunque",
+      "zh": "雖然",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "entonces",
+      "zh": "那麼",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    },
+    {
+      "es": "luego",
+      "zh": "然後",
+      "ipa": "",
+      "cat": "疑問詞與連接詞"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g18",
+      "topic": "疑問詞",
+      "q": "¿___ es tu nombre?",
+      "zh": "你叫什麼名字？",
+      "opts": [
+        "Qué",
+        "Cuál",
+        "Quién",
+        "Dónde"
+      ],
+      "a": 1,
+      "exp": "問姓名用 ¿Cuál es tu nombre? 因為從可能選項中選擇。Qué 用於定義詢問。",
+      "level": "L5"
+    },
+    {
+      "id": "g19",
+      "topic": "疑問詞",
+      "q": "¿___ vives?",
+      "zh": "你住哪裡？",
+      "opts": [
+        "Qué",
+        "Cómo",
+        "Dónde",
+        "Cuándo"
+      ],
+      "a": 2,
+      "exp": "問地點用 dónde。",
+      "level": "L5"
+    },
+    {
+      "id": "g28",
+      "topic": "比較級",
+      "q": "Pedro es ___ alto ___ Juan.",
+      "zh": "Pedro 比 Juan 高",
+      "opts": [
+        "tan / como",
+        "más / que",
+        "menos / como",
+        "muy / que"
+      ],
+      "a": 1,
+      "exp": "「比較高」= más alto que。tan...como 是「一樣...」。",
+      "level": "L5"
+    },
+    {
+      "id": "g29",
+      "topic": "最高級",
+      "q": "Es ___ ciudad más bonita del país.",
+      "zh": "這是國內最漂亮的城市",
+      "opts": [
+        "el",
+        "la",
+        "los",
+        "las"
+      ],
+      "a": 1,
+      "exp": "ciudad 陰性 → la。最高級結構：el/la + (名詞) + más + 形容詞。",
+      "level": "L5"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l063",
+      "es": "Tengo frío.",
+      "zh": "我冷。",
+      "topic": "感受"
+    },
+    {
+      "id": "l064",
+      "es": "Tengo calor.",
+      "zh": "我熱。",
+      "topic": "感受"
+    },
+    {
+      "id": "l065",
+      "es": "Estoy muy cansado.",
+      "zh": "我很累。",
+      "topic": "感受"
+    },
+    {
+      "id": "l066",
+      "es": "Estoy contento.",
+      "zh": "我很開心。",
+      "topic": "感受"
+    },
+    {
+      "id": "l067",
+      "es": "Me siento mal.",
+      "zh": "我覺得不舒服。",
+      "topic": "感受"
+    },
+    {
+      "id": "l068",
+      "es": "Estoy enfermo.",
+      "zh": "我生病了。",
+      "topic": "感受"
+    },
+    {
+      "id": "l080",
+      "es": "Te quiero.",
+      "zh": "我愛你。",
+      "topic": "情感"
+    },
+    {
+      "id": "l081",
+      "es": "Te echo de menos.",
+      "zh": "我想你。",
+      "topic": "情感"
+    },
+    {
+      "id": "l082",
+      "es": "Eres muy amable.",
+      "zh": "你人真好。",
+      "topic": "情感"
+    }
+  ],
+  "gaps": {
+    "vocab": 74,
+    "grammar": 10,
+    "listening": 21
+  },
+  "targets": {
+    "vocab": 150,
+    "grammar": 14,
+    "listening": 30
+  }
+}

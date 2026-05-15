@@ -1,0 +1,828 @@
+{
+  "id": "L2",
+  "name": "日常生活",
+  "cefr": "A1.2",
+  "vocab": [
+    {
+      "es": "comida",
+      "zh": "食物",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "desayuno",
+      "zh": "早餐",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "almuerzo",
+      "zh": "午餐",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "cena",
+      "zh": "晚餐",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "agua",
+      "zh": "水",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "leche",
+      "zh": "牛奶",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "café",
+      "zh": "咖啡",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "té",
+      "zh": "茶",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "jugo",
+      "zh": "果汁",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "zumo",
+      "zh": "果汁（西班牙）",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "vino",
+      "zh": "葡萄酒",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "cerveza",
+      "zh": "啤酒",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "refresco",
+      "zh": "汽水",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "pan",
+      "zh": "麵包",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "arroz",
+      "zh": "米飯",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "pasta",
+      "zh": "義大利麵",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "carne",
+      "zh": "肉",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "pollo",
+      "zh": "雞肉",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "pescado",
+      "zh": "魚",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "huevo",
+      "zh": "蛋",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "queso",
+      "zh": "起司",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "mantequilla",
+      "zh": "奶油",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "azúcar",
+      "zh": "糖",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "sal",
+      "zh": "鹽",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "pimienta",
+      "zh": "胡椒",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "aceite",
+      "zh": "油",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "fruta",
+      "zh": "水果",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "manzana",
+      "zh": "蘋果",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "naranja",
+      "zh": "柳橙",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "plátano",
+      "zh": "香蕉",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "uva",
+      "zh": "葡萄",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "fresa",
+      "zh": "草莓",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "limón",
+      "zh": "檸檬",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "sandía",
+      "zh": "西瓜",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "verdura",
+      "zh": "蔬菜",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "tomate",
+      "zh": "番茄",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "papa",
+      "zh": "馬鈴薯（拉美）",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "patata",
+      "zh": "馬鈴薯（西班牙）",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "cebolla",
+      "zh": "洋蔥",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "ajo",
+      "zh": "蒜",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "lechuga",
+      "zh": "萵苣",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "zanahoria",
+      "zh": "胡蘿蔔",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "postre",
+      "zh": "甜點",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "helado",
+      "zh": "冰淇淋",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "chocolate",
+      "zh": "巧克力",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "galleta",
+      "zh": "餅乾",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "pastel",
+      "zh": "蛋糕",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "sopa",
+      "zh": "湯",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "ensalada",
+      "zh": "沙拉",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "hamburguesa",
+      "zh": "漢堡",
+      "ipa": "",
+      "cat": "食物與飲料"
+    },
+    {
+      "es": "cuerpo",
+      "zh": "身體",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "cabeza",
+      "zh": "頭",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "cara",
+      "zh": "臉",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "ojo",
+      "zh": "眼睛",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "nariz",
+      "zh": "鼻子",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "boca",
+      "zh": "嘴",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "oreja",
+      "zh": "耳朵",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "diente",
+      "zh": "牙齒",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "lengua",
+      "zh": "舌頭/語言",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "pelo",
+      "zh": "頭髮",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "cuello",
+      "zh": "脖子",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "hombro",
+      "zh": "肩膀",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "brazo",
+      "zh": "手臂",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "mano",
+      "zh": "手",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "dedo",
+      "zh": "手指",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "pecho",
+      "zh": "胸",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "espalda",
+      "zh": "背",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "estómago",
+      "zh": "胃",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "pierna",
+      "zh": "腿",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "rodilla",
+      "zh": "膝蓋",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "pie",
+      "zh": "腳",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "corazón",
+      "zh": "心臟",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "salud",
+      "zh": "健康",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "enfermo",
+      "zh": "生病的",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "dolor",
+      "zh": "疼痛",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "medicina",
+      "zh": "藥",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "médico",
+      "zh": "醫生",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "hospital",
+      "zh": "醫院",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "fiebre",
+      "zh": "發燒",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "gripe",
+      "zh": "感冒/流感",
+      "ipa": "",
+      "cat": "身體與健康"
+    },
+    {
+      "es": "ropa",
+      "zh": "衣服",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "camisa",
+      "zh": "襯衫",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "camiseta",
+      "zh": "T 恤",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "pantalón",
+      "zh": "褲子",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "falda",
+      "zh": "裙子",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "vestido",
+      "zh": "洋裝",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "chaqueta",
+      "zh": "外套",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "abrigo",
+      "zh": "大衣",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "zapatos",
+      "zh": "鞋子",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "calcetines",
+      "zh": "襪子",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "sombrero",
+      "zh": "帽子",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "gorra",
+      "zh": "鴨舌帽",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "gafas",
+      "zh": "眼鏡",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "bolso",
+      "zh": "包包",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "reloj",
+      "zh": "手錶",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "cinturón",
+      "zh": "皮帶",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "corbata",
+      "zh": "領帶",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "bufanda",
+      "zh": "圍巾",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "guantes",
+      "zh": "手套",
+      "ipa": "",
+      "cat": "衣物"
+    },
+    {
+      "es": "traje",
+      "zh": "西裝",
+      "ipa": "",
+      "cat": "衣物"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g03",
+      "topic": "estar 動詞",
+      "q": "¿Cómo ___ tú?",
+      "zh": "你好嗎？",
+      "opts": [
+        "soy",
+        "eres",
+        "estoy",
+        "estás"
+      ],
+      "a": 3,
+      "exp": "estar 第二人稱單數：tú estás。estar 表暫時狀態、位置。",
+      "level": "L2"
+    },
+    {
+      "id": "g10",
+      "topic": "-ar 規則動詞",
+      "q": "Yo ___ español todos los días.",
+      "zh": "我每天說西班牙語",
+      "opts": [
+        "habla",
+        "hablas",
+        "hablo",
+        "hablan"
+      ],
+      "a": 2,
+      "exp": "hablar 第一人稱：yo hablo。-ar 動詞變位：-o/-as/-a/-amos/-áis/-an。",
+      "level": "L2"
+    },
+    {
+      "id": "g11",
+      "topic": "-er 規則動詞",
+      "q": "Nosotros ___ pizza los viernes.",
+      "zh": "我們週五吃披薩",
+      "opts": [
+        "como",
+        "comes",
+        "come",
+        "comemos"
+      ],
+      "a": 3,
+      "exp": "comer 第一人稱複數：nosotros comemos。-er 動詞變位。",
+      "level": "L2"
+    },
+    {
+      "id": "g12",
+      "topic": "-ir 規則動詞",
+      "q": "Mi hermana ___ en Madrid.",
+      "zh": "我姊姊住在馬德里",
+      "opts": [
+        "vivo",
+        "vives",
+        "vive",
+        "viven"
+      ],
+      "a": 2,
+      "exp": "vivir 第三人稱單數：ella vive。-ir 動詞變位。",
+      "level": "L2"
+    },
+    {
+      "id": "g13",
+      "topic": "tener 動詞",
+      "q": "Yo ___ veinte años.",
+      "zh": "我 20 歲",
+      "opts": [
+        "soy",
+        "estoy",
+        "tengo",
+        "tiene"
+      ],
+      "a": 2,
+      "exp": "西班牙語表年齡用 tener（直譯：我擁有20年）。tengo 是 tener 第一人稱。",
+      "level": "L2"
+    },
+    {
+      "id": "g17",
+      "topic": "反身動詞",
+      "q": "Yo ___ Quentin.",
+      "zh": "我叫 Quentin",
+      "opts": [
+        "llamo",
+        "me llamo",
+        "te llamas",
+        "se llama"
+      ],
+      "a": 1,
+      "exp": "llamarse 是反身動詞，「叫做」。第一人稱：me llamo。",
+      "level": "L2"
+    },
+    {
+      "id": "g22",
+      "topic": "現在進行式",
+      "q": "Estoy ___ un libro.",
+      "zh": "我正在讀一本書",
+      "opts": [
+        "leer",
+        "leyendo",
+        "leído",
+        "leo"
+      ],
+      "a": 1,
+      "exp": "estar + gerundio 表進行式。leer → leyendo。",
+      "level": "L2"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l025",
+      "es": "Tengo hambre.",
+      "zh": "我餓了。",
+      "topic": "食物"
+    },
+    {
+      "id": "l026",
+      "es": "Tengo sed, quiero agua.",
+      "zh": "我口渴，我想要水。",
+      "topic": "食物"
+    },
+    {
+      "id": "l027",
+      "es": "¿Qué quieres comer?",
+      "zh": "你想吃什麼？",
+      "topic": "食物"
+    },
+    {
+      "id": "l028",
+      "es": "Me gusta mucho la comida española.",
+      "zh": "我很喜歡西班牙菜。",
+      "topic": "食物"
+    },
+    {
+      "id": "l029",
+      "es": "La cuenta, por favor.",
+      "zh": "請給我帳單。",
+      "topic": "食物"
+    },
+    {
+      "id": "l030",
+      "es": "Está muy rico.",
+      "zh": "很好吃。",
+      "topic": "食物"
+    },
+    {
+      "id": "l031",
+      "es": "Soy vegetariano.",
+      "zh": "我吃素。",
+      "topic": "食物"
+    },
+    {
+      "id": "l032",
+      "es": "¿Qué recomienda usted?",
+      "zh": "您推薦什麼？",
+      "topic": "食物"
+    },
+    {
+      "id": "l033",
+      "es": "Una mesa para dos, por favor.",
+      "zh": "兩個人的位子，謝謝。",
+      "topic": "食物"
+    },
+    {
+      "id": "l034",
+      "es": "Quiero un café con leche.",
+      "zh": "我要一杯拿鐵。",
+      "topic": "食物"
+    },
+    {
+      "id": "l069",
+      "es": "Me duele la cabeza.",
+      "zh": "我頭痛。",
+      "topic": "健康"
+    },
+    {
+      "id": "l070",
+      "es": "Necesito un médico.",
+      "zh": "我需要醫生。",
+      "topic": "健康"
+    },
+    {
+      "id": "l071",
+      "es": "¿Dónde está la farmacia?",
+      "zh": "藥局在哪？",
+      "topic": "健康"
+    },
+    {
+      "id": "l083",
+      "es": "¡Qué bonito!",
+      "zh": "好漂亮！",
+      "topic": "讚美"
+    },
+    {
+      "id": "l084",
+      "es": "¡Qué interesante!",
+      "zh": "好有趣！",
+      "topic": "讚美"
+    },
+    {
+      "id": "l099",
+      "es": "¡Feliz cumpleaños!",
+      "zh": "生日快樂！",
+      "topic": "祝賀"
+    },
+    {
+      "id": "l100",
+      "es": "¡Feliz Navidad!",
+      "zh": "聖誕快樂！",
+      "topic": "祝賀"
+    }
+  ],
+  "gaps": {
+    "vocab": 50,
+    "grammar": 7,
+    "listening": 13
+  },
+  "targets": {
+    "vocab": 150,
+    "grammar": 14,
+    "listening": 30
+  }
+}

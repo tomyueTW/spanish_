@@ -1,0 +1,870 @@
+{
+  "id": "L3",
+  "name": "食衣住行",
+  "cefr": "A2.1",
+  "vocab": [
+    {
+      "es": "color",
+      "zh": "顏色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "rojo",
+      "zh": "紅色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "azul",
+      "zh": "藍色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "verde",
+      "zh": "綠色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "amarillo",
+      "zh": "黃色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "blanco",
+      "zh": "白色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "negro",
+      "zh": "黑色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "gris",
+      "zh": "灰色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "rosa",
+      "zh": "粉紅色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "morado",
+      "zh": "紫色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "naranja",
+      "zh": "橘色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "marrón",
+      "zh": "棕色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "café",
+      "zh": "咖啡色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "dorado",
+      "zh": "金色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "plateado",
+      "zh": "銀色",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "claro",
+      "zh": "淺色的",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "oscuro",
+      "zh": "深色的",
+      "ipa": "",
+      "cat": "顏色"
+    },
+    {
+      "es": "tiempo",
+      "zh": "時間",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "hora",
+      "zh": "小時",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "minuto",
+      "zh": "分鐘",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "segundo",
+      "zh": "秒",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "día",
+      "zh": "日子/天",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "semana",
+      "zh": "星期",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "mes",
+      "zh": "月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "año",
+      "zh": "年",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "hoy",
+      "zh": "今天",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "ayer",
+      "zh": "昨天",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "mañana",
+      "zh": "明天/早上",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "ahora",
+      "zh": "現在",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "después",
+      "zh": "之後",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "antes",
+      "zh": "之前",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "siempre",
+      "zh": "總是",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "nunca",
+      "zh": "從不",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "a veces",
+      "zh": "有時",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "temprano",
+      "zh": "早",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "tarde",
+      "zh": "晚/下午",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "noche",
+      "zh": "夜晚",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "madrugada",
+      "zh": "凌晨",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "mediodía",
+      "zh": "中午",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "medianoche",
+      "zh": "午夜",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "lunes",
+      "zh": "星期一",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "martes",
+      "zh": "星期二",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "miércoles",
+      "zh": "星期三",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "jueves",
+      "zh": "星期四",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "viernes",
+      "zh": "星期五",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "sábado",
+      "zh": "星期六",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "domingo",
+      "zh": "星期日",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "enero",
+      "zh": "一月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "febrero",
+      "zh": "二月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "marzo",
+      "zh": "三月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "abril",
+      "zh": "四月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "mayo",
+      "zh": "五月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "junio",
+      "zh": "六月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "julio",
+      "zh": "七月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "agosto",
+      "zh": "八月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "septiembre",
+      "zh": "九月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "octubre",
+      "zh": "十月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "noviembre",
+      "zh": "十一月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "diciembre",
+      "zh": "十二月",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "fin de semana",
+      "zh": "週末",
+      "ipa": "",
+      "cat": "時間與日期"
+    },
+    {
+      "es": "casa",
+      "zh": "家/房子",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "piso",
+      "zh": "公寓/樓層",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "apartamento",
+      "zh": "公寓",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "habitación",
+      "zh": "房間",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "dormitorio",
+      "zh": "臥室",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "sala",
+      "zh": "客廳",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "cocina",
+      "zh": "廚房",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "baño",
+      "zh": "浴室",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "comedor",
+      "zh": "飯廳",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "balcón",
+      "zh": "陽台",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "jardín",
+      "zh": "花園",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "garaje",
+      "zh": "車庫",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "puerta",
+      "zh": "門",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "ventana",
+      "zh": "窗戶",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "pared",
+      "zh": "牆",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "techo",
+      "zh": "天花板/屋頂",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "suelo",
+      "zh": "地板",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "escalera",
+      "zh": "樓梯",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "mesa",
+      "zh": "桌子",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "silla",
+      "zh": "椅子",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "cama",
+      "zh": "床",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "sofá",
+      "zh": "沙發",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "lámpara",
+      "zh": "燈",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "espejo",
+      "zh": "鏡子",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "armario",
+      "zh": "衣櫥",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "nevera",
+      "zh": "冰箱",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "horno",
+      "zh": "烤箱",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "televisión",
+      "zh": "電視",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "teléfono",
+      "zh": "電話",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "ordenador",
+      "zh": "電腦（西班牙）",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "computadora",
+      "zh": "電腦（拉美）",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "llave",
+      "zh": "鑰匙",
+      "ipa": "",
+      "cat": "家與住所"
+    },
+    {
+      "es": "animal",
+      "zh": "動物",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "perro",
+      "zh": "狗",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "gato",
+      "zh": "貓",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "pájaro",
+      "zh": "鳥",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "pez",
+      "zh": "魚（活的）",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "caballo",
+      "zh": "馬",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "vaca",
+      "zh": "牛",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "cerdo",
+      "zh": "豬",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "oveja",
+      "zh": "羊",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "gallina",
+      "zh": "母雞",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "ratón",
+      "zh": "老鼠",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "conejo",
+      "zh": "兔子",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "elefante",
+      "zh": "大象",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "león",
+      "zh": "獅子",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "tigre",
+      "zh": "老虎",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "oso",
+      "zh": "熊",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "mono",
+      "zh": "猴子",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "serpiente",
+      "zh": "蛇",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "araña",
+      "zh": "蜘蛛",
+      "ipa": "",
+      "cat": "動物"
+    },
+    {
+      "es": "mariposa",
+      "zh": "蝴蝶",
+      "ipa": "",
+      "cat": "動物"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g08",
+      "topic": "形容詞性數配合",
+      "q": "Las flores son ___.",
+      "zh": "這些花很紅",
+      "opts": [
+        "rojo",
+        "roja",
+        "rojos",
+        "rojas"
+      ],
+      "a": 3,
+      "exp": "flores 陰性複數 → rojas。形容詞要與名詞配合。",
+      "level": "L3"
+    },
+    {
+      "id": "g09",
+      "topic": "形容詞性數配合",
+      "q": "Mis hermanos son ___.",
+      "zh": "我的兄弟們很高",
+      "opts": [
+        "alto",
+        "alta",
+        "altos",
+        "altas"
+      ],
+      "a": 2,
+      "exp": "hermanos 陽性複數 → altos。",
+      "level": "L3"
+    },
+    {
+      "id": "g14",
+      "topic": "ir + a + 不定式（近未來）",
+      "q": "Mañana ___ a estudiar.",
+      "zh": "明天我要去讀書",
+      "opts": [
+        "voy",
+        "vas",
+        "va",
+        "vamos"
+      ],
+      "a": 0,
+      "exp": "ir + a + infinitivo 表近未來。yo voy a estudiar = 我將要去讀書。",
+      "level": "L3"
+    },
+    {
+      "id": "g15",
+      "topic": "gustar 結構",
+      "q": "A mí me ___ el café.",
+      "zh": "我喜歡咖啡",
+      "opts": [
+        "gusto",
+        "gustas",
+        "gusta",
+        "gustan"
+      ],
+      "a": 2,
+      "exp": "gustar 結構：主詞是被喜歡的事物。咖啡（單數）→ gusta。「我」用 me（間接受詞）。",
+      "level": "L3"
+    },
+    {
+      "id": "g16",
+      "topic": "gustar 結構",
+      "q": "A ella le ___ los gatos.",
+      "zh": "她喜歡貓",
+      "opts": [
+        "gusto",
+        "gusta",
+        "gustan",
+        "gustamos"
+      ],
+      "a": 2,
+      "exp": "被喜歡的事物（gatos）是複數，所以動詞用 gustan。",
+      "level": "L3"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l035",
+      "es": "¿Cuánto cuesta?",
+      "zh": "多少錢？",
+      "topic": "購物"
+    },
+    {
+      "id": "l036",
+      "es": "Es muy caro.",
+      "zh": "很貴。",
+      "topic": "購物"
+    },
+    {
+      "id": "l037",
+      "es": "¿Tiene algo más barato?",
+      "zh": "有比較便宜的嗎？",
+      "topic": "購物"
+    },
+    {
+      "id": "l038",
+      "es": "Voy a pagar con tarjeta.",
+      "zh": "我要用信用卡付。",
+      "topic": "購物"
+    },
+    {
+      "id": "l039",
+      "es": "Sólo estoy mirando, gracias.",
+      "zh": "我只是看看，謝謝。",
+      "topic": "購物"
+    },
+    {
+      "id": "l040",
+      "es": "¿Puedo probarme esto?",
+      "zh": "我可以試穿這個嗎？",
+      "topic": "購物"
+    },
+    {
+      "id": "l041",
+      "es": "Me lo llevo.",
+      "zh": "我買這個。",
+      "topic": "購物"
+    },
+    {
+      "id": "l058",
+      "es": "¿Tienes una habitación libre?",
+      "zh": "你有空房嗎？",
+      "topic": "旅館"
+    },
+    {
+      "id": "l059",
+      "es": "Quiero una habitación doble.",
+      "zh": "我要一間雙人房。",
+      "topic": "旅館"
+    },
+    {
+      "id": "l060",
+      "es": "¿Cuánto cuesta por noche?",
+      "zh": "一晚多少錢？",
+      "topic": "旅館"
+    },
+    {
+      "id": "l061",
+      "es": "¿A qué hora es el desayuno?",
+      "zh": "早餐幾點？",
+      "topic": "旅館"
+    },
+    {
+      "id": "l062",
+      "es": "El wifi no funciona.",
+      "zh": "Wi-Fi 不能用。",
+      "topic": "旅館"
+    },
+    {
+      "id": "l075",
+      "es": "¿Qué tiempo hace hoy?",
+      "zh": "今天天氣如何？",
+      "topic": "天氣"
+    },
+    {
+      "id": "l076",
+      "es": "Hace sol.",
+      "zh": "出太陽。",
+      "topic": "天氣"
+    },
+    {
+      "id": "l077",
+      "es": "Está lloviendo.",
+      "zh": "正在下雨。",
+      "topic": "天氣"
+    },
+    {
+      "id": "l078",
+      "es": "Hace mucho frío hoy.",
+      "zh": "今天很冷。",
+      "topic": "天氣"
+    },
+    {
+      "id": "l079",
+      "es": "Mañana va a llover.",
+      "zh": "明天會下雨。",
+      "topic": "天氣"
+    }
+  ],
+  "gaps": {
+    "vocab": 38,
+    "grammar": 9,
+    "listening": 13
+  },
+  "targets": {
+    "vocab": 150,
+    "grammar": 14,
+    "listening": 30
+  }
+}

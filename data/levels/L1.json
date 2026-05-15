@@ -1,0 +1,885 @@
+{
+  "id": "L1",
+  "name": "問候與基礎自介",
+  "cefr": "A1.1",
+  "vocab": [
+    {
+      "es": "hola",
+      "zh": "你好",
+      "ipa": "ˈola",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "adiós",
+      "zh": "再見",
+      "ipa": "aˈðjos",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "buenos días",
+      "zh": "早安",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "buenas tardes",
+      "zh": "午安/下午好",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "buenas noches",
+      "zh": "晚安",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "gracias",
+      "zh": "謝謝",
+      "ipa": "ˈɡɾaθjas",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "de nada",
+      "zh": "不客氣",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "por favor",
+      "zh": "請",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "perdón",
+      "zh": "對不起/打擾一下",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "lo siento",
+      "zh": "我很抱歉",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "disculpe",
+      "zh": "不好意思（敬語）",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "bienvenido",
+      "zh": "歡迎",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "encantado",
+      "zh": "幸會（男）",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "encantada",
+      "zh": "幸會（女）",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "mucho gusto",
+      "zh": "很高興認識你",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "hasta luego",
+      "zh": "回頭見",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "hasta mañana",
+      "zh": "明天見",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "hasta pronto",
+      "zh": "很快見",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "nos vemos",
+      "zh": "再見/回見",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "chao",
+      "zh": "再見（口語）",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "salud",
+      "zh": "乾杯/保重",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "felicidades",
+      "zh": "恭喜",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "enhorabuena",
+      "zh": "恭喜",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "suerte",
+      "zh": "祝好運",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "ánimo",
+      "zh": "加油",
+      "ipa": "",
+      "cat": "問候與寒暄"
+    },
+    {
+      "es": "yo",
+      "zh": "我",
+      "ipa": "ʝo",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "tú",
+      "zh": "你",
+      "ipa": "tu",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "él",
+      "zh": "他",
+      "ipa": "el",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "ella",
+      "zh": "她",
+      "ipa": "ˈeʝa",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "usted",
+      "zh": "您",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "nosotros",
+      "zh": "我們",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "vosotros",
+      "zh": "你們",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "ellos",
+      "zh": "他們",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "ellas",
+      "zh": "她們",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "ustedes",
+      "zh": "您們",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "me",
+      "zh": "我（受詞）",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "te",
+      "zh": "你（受詞）",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "le",
+      "zh": "他/她（間接受詞）",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "nos",
+      "zh": "我們（受詞）",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "les",
+      "zh": "他們（間接受詞）",
+      "ipa": "",
+      "cat": "代名詞與人稱"
+    },
+    {
+      "es": "familia",
+      "zh": "家庭",
+      "ipa": "faˈmilja",
+      "cat": "家庭"
+    },
+    {
+      "es": "padre",
+      "zh": "父親",
+      "ipa": "ˈpaðɾe",
+      "cat": "家庭"
+    },
+    {
+      "es": "madre",
+      "zh": "母親",
+      "ipa": "ˈmaðɾe",
+      "cat": "家庭"
+    },
+    {
+      "es": "papá",
+      "zh": "爸爸",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "mamá",
+      "zh": "媽媽",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "hijo",
+      "zh": "兒子",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "hija",
+      "zh": "女兒",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "hermano",
+      "zh": "兄弟",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "hermana",
+      "zh": "姊妹",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "abuelo",
+      "zh": "祖父",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "abuela",
+      "zh": "祖母",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "tío",
+      "zh": "叔叔/伯父",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "tía",
+      "zh": "阿姨/姑姑",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "primo",
+      "zh": "表兄弟",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "prima",
+      "zh": "表姊妹",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "sobrino",
+      "zh": "姪子",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "sobrina",
+      "zh": "姪女",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "esposo",
+      "zh": "丈夫",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "esposa",
+      "zh": "妻子",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "marido",
+      "zh": "丈夫",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "novio",
+      "zh": "男朋友",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "novia",
+      "zh": "女朋友",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "amigo",
+      "zh": "朋友（男）",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "amiga",
+      "zh": "朋友（女）",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "niño",
+      "zh": "男孩/小孩",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "niña",
+      "zh": "女孩",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "bebé",
+      "zh": "嬰兒",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "hombre",
+      "zh": "男人",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "mujer",
+      "zh": "女人",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "persona",
+      "zh": "人",
+      "ipa": "",
+      "cat": "家庭"
+    },
+    {
+      "es": "cero",
+      "zh": "零",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "uno",
+      "zh": "一",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "dos",
+      "zh": "二",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "tres",
+      "zh": "三",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "cuatro",
+      "zh": "四",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "cinco",
+      "zh": "五",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "seis",
+      "zh": "六",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "siete",
+      "zh": "七",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "ocho",
+      "zh": "八",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "nueve",
+      "zh": "九",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "diez",
+      "zh": "十",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "once",
+      "zh": "十一",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "doce",
+      "zh": "十二",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "trece",
+      "zh": "十三",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "catorce",
+      "zh": "十四",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "quince",
+      "zh": "十五",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "veinte",
+      "zh": "二十",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "treinta",
+      "zh": "三十",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "cuarenta",
+      "zh": "四十",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "cincuenta",
+      "zh": "五十",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "sesenta",
+      "zh": "六十",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "setenta",
+      "zh": "七十",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "ochenta",
+      "zh": "八十",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "noventa",
+      "zh": "九十",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "cien",
+      "zh": "一百",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "mil",
+      "zh": "一千",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "millón",
+      "zh": "一百萬",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "primero",
+      "zh": "第一",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "segundo",
+      "zh": "第二",
+      "ipa": "",
+      "cat": "數字"
+    },
+    {
+      "es": "tercero",
+      "zh": "第三",
+      "ipa": "",
+      "cat": "數字"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g01",
+      "topic": "ser 動詞",
+      "q": "Yo ___ profesor.",
+      "zh": "我是老師",
+      "opts": [
+        "soy",
+        "eres",
+        "es",
+        "somos"
+      ],
+      "a": 0,
+      "exp": "ser 第一人稱單數：yo soy。ser 表身分、本質、職業。",
+      "level": "L1"
+    },
+    {
+      "id": "g02",
+      "topic": "ser 動詞",
+      "q": "Nosotros ___ amigos.",
+      "zh": "我們是朋友",
+      "opts": [
+        "soy",
+        "eres",
+        "somos",
+        "son"
+      ],
+      "a": 2,
+      "exp": "ser 第一人稱複數：nosotros somos。",
+      "level": "L1"
+    },
+    {
+      "id": "g04",
+      "topic": "ser vs estar",
+      "q": "La sopa ___ caliente.",
+      "zh": "湯是熱的（現在）",
+      "opts": [
+        "es",
+        "está",
+        "son",
+        "están"
+      ],
+      "a": 1,
+      "exp": "形容暫時狀態（現在這碗湯熱）用 estar。如果說 La sopa es caliente 會變成「湯（本質上）就是熱食」。",
+      "level": "L1"
+    },
+    {
+      "id": "g05",
+      "topic": "定冠詞",
+      "q": "___ libro está en la mesa.",
+      "zh": "這本書在桌上",
+      "opts": [
+        "El",
+        "La",
+        "Los",
+        "Las"
+      ],
+      "a": 0,
+      "exp": "libro 陽性單數 → el。",
+      "level": "L1"
+    },
+    {
+      "id": "g06",
+      "topic": "定冠詞",
+      "q": "___ casas son grandes.",
+      "zh": "這些房子很大",
+      "opts": [
+        "El",
+        "La",
+        "Los",
+        "Las"
+      ],
+      "a": 3,
+      "exp": "casas 陰性複數 → las。",
+      "level": "L1"
+    },
+    {
+      "id": "g07",
+      "topic": "不定冠詞",
+      "q": "Tengo ___ perro.",
+      "zh": "我有一隻狗",
+      "opts": [
+        "un",
+        "una",
+        "unos",
+        "unas"
+      ],
+      "a": 0,
+      "exp": "perro 陽性單數 → un。",
+      "level": "L1"
+    },
+    {
+      "id": "g20",
+      "topic": "所有格形容詞",
+      "q": "Es ___ libro. (我的)",
+      "zh": "這是我的書",
+      "opts": [
+        "mi",
+        "tu",
+        "su",
+        "nuestro"
+      ],
+      "a": 0,
+      "exp": "我的 = mi（單數）/ mis（複數）。",
+      "level": "L1"
+    },
+    {
+      "id": "g21",
+      "topic": "所有格形容詞",
+      "q": "Son ___ amigos. (我們的)",
+      "zh": "他們是我們的朋友",
+      "opts": [
+        "mis",
+        "tus",
+        "sus",
+        "nuestros"
+      ],
+      "a": 3,
+      "exp": "我們的 + 陽性複數名詞 = nuestros。",
+      "level": "L1"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l001",
+      "es": "Hola, ¿cómo estás?",
+      "zh": "你好，你好嗎？",
+      "topic": "問候"
+    },
+    {
+      "id": "l002",
+      "es": "Me llamo Carlos. ¿Y tú?",
+      "zh": "我叫 Carlos，你呢？",
+      "topic": "問候"
+    },
+    {
+      "id": "l003",
+      "es": "Mucho gusto en conocerte.",
+      "zh": "很高興認識你。",
+      "topic": "問候"
+    },
+    {
+      "id": "l004",
+      "es": "¿De dónde eres?",
+      "zh": "你從哪裡來？",
+      "topic": "問候"
+    },
+    {
+      "id": "l005",
+      "es": "Soy de Taiwán.",
+      "zh": "我來自台灣。",
+      "topic": "問候"
+    },
+    {
+      "id": "l006",
+      "es": "Buenos días, ¿qué tal?",
+      "zh": "早安，最近如何？",
+      "topic": "問候"
+    },
+    {
+      "id": "l007",
+      "es": "Hasta luego, nos vemos mañana.",
+      "zh": "回頭見，明天見。",
+      "topic": "問候"
+    },
+    {
+      "id": "l008",
+      "es": "Que tengas un buen día.",
+      "zh": "祝你有美好的一天。",
+      "topic": "問候"
+    },
+    {
+      "id": "l017",
+      "es": "¿Qué hora es?",
+      "zh": "現在幾點？",
+      "topic": "時間"
+    },
+    {
+      "id": "l018",
+      "es": "Son las tres de la tarde.",
+      "zh": "下午三點。",
+      "topic": "時間"
+    },
+    {
+      "id": "l019",
+      "es": "Es la una en punto.",
+      "zh": "一點整。",
+      "topic": "時間"
+    },
+    {
+      "id": "l020",
+      "es": "¿Qué día es hoy?",
+      "zh": "今天星期幾？",
+      "topic": "時間"
+    },
+    {
+      "id": "l021",
+      "es": "Hoy es lunes.",
+      "zh": "今天是星期一。",
+      "topic": "時間"
+    },
+    {
+      "id": "l022",
+      "es": "Mañana voy al trabajo.",
+      "zh": "明天我要去上班。",
+      "topic": "時間"
+    },
+    {
+      "id": "l023",
+      "es": "El fin de semana descanso.",
+      "zh": "週末我休息。",
+      "topic": "時間"
+    },
+    {
+      "id": "l024",
+      "es": "Te veo a las ocho.",
+      "zh": "八點見。",
+      "topic": "時間"
+    },
+    {
+      "id": "l091",
+      "es": "Voy a la escuela.",
+      "zh": "我去學校。",
+      "topic": "日常"
+    },
+    {
+      "id": "l092",
+      "es": "Trabajo en una oficina.",
+      "zh": "我在辦公室工作。",
+      "topic": "日常"
+    },
+    {
+      "id": "l093",
+      "es": "Estudio español.",
+      "zh": "我學西班牙語。",
+      "topic": "日常"
+    },
+    {
+      "id": "l094",
+      "es": "Vivo en Taipei.",
+      "zh": "我住在台北。",
+      "topic": "日常"
+    },
+    {
+      "id": "l095",
+      "es": "Tengo dos hermanos.",
+      "zh": "我有兩個兄弟。",
+      "topic": "日常"
+    },
+    {
+      "id": "l096",
+      "es": "Mi color favorito es el azul.",
+      "zh": "我最喜歡的顏色是藍色。",
+      "topic": "日常"
+    },
+    {
+      "id": "l097",
+      "es": "¿Tienes hijos?",
+      "zh": "你有小孩嗎？",
+      "topic": "日常"
+    },
+    {
+      "id": "l098",
+      "es": "Voy a casa.",
+      "zh": "我要回家。",
+      "topic": "日常"
+    }
+  ],
+  "gaps": {
+    "vocab": 50,
+    "grammar": 6,
+    "listening": 6
+  },
+  "targets": {
+    "vocab": 150,
+    "grammar": 14,
+    "listening": 30
+  }
+}

@@ -1,0 +1,795 @@
+{
+  "id": "L4",
+  "name": "交通出行",
+  "cefr": "A2.2",
+  "vocab": [
+    {
+      "es": "coche",
+      "zh": "汽車（西班牙）",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "carro",
+      "zh": "汽車（拉美）",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "autobús",
+      "zh": "公車",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "tren",
+      "zh": "火車",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "avión",
+      "zh": "飛機",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "barco",
+      "zh": "船",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "bicicleta",
+      "zh": "腳踏車",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "motocicleta",
+      "zh": "摩托車",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "taxi",
+      "zh": "計程車",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "metro",
+      "zh": "捷運/地鐵",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "estación",
+      "zh": "車站",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "aeropuerto",
+      "zh": "機場",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "puerto",
+      "zh": "港口",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "parada",
+      "zh": "站牌",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "billete",
+      "zh": "票（西班牙）",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "boleto",
+      "zh": "票（拉美）",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "maleta",
+      "zh": "行李箱",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "pasaporte",
+      "zh": "護照",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "viaje",
+      "zh": "旅行",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "vacaciones",
+      "zh": "假期",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "hotel",
+      "zh": "飯店",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "habitación",
+      "zh": "房間",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "calle",
+      "zh": "街道",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "avenida",
+      "zh": "大道",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "plaza",
+      "zh": "廣場",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "puente",
+      "zh": "橋",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "carretera",
+      "zh": "公路",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "mapa",
+      "zh": "地圖",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "playa",
+      "zh": "海灘",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "montaña",
+      "zh": "山",
+      "ipa": "",
+      "cat": "交通與旅行"
+    },
+    {
+      "es": "ciudad",
+      "zh": "城市",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "pueblo",
+      "zh": "小鎮",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "país",
+      "zh": "國家",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "mundo",
+      "zh": "世界",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "lugar",
+      "zh": "地方",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "escuela",
+      "zh": "學校",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "universidad",
+      "zh": "大學",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "oficina",
+      "zh": "辦公室",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "tienda",
+      "zh": "商店",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "supermercado",
+      "zh": "超市",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "mercado",
+      "zh": "市場",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "restaurante",
+      "zh": "餐廳",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "cafetería",
+      "zh": "咖啡廳",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "bar",
+      "zh": "酒吧",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "banco",
+      "zh": "銀行/長椅",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "iglesia",
+      "zh": "教堂",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "museo",
+      "zh": "博物館",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "biblioteca",
+      "zh": "圖書館",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "parque",
+      "zh": "公園",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "cine",
+      "zh": "電影院",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "teatro",
+      "zh": "劇院",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "farmacia",
+      "zh": "藥局",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "panadería",
+      "zh": "麵包店",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "gimnasio",
+      "zh": "健身房",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "iglesia",
+      "zh": "教堂",
+      "ipa": "",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "trabajo",
+      "zh": "工作",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "profesión",
+      "zh": "職業",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "profesor",
+      "zh": "老師（男）",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "profesora",
+      "zh": "老師（女）",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "estudiante",
+      "zh": "學生",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "médico",
+      "zh": "醫生",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "enfermero",
+      "zh": "護理師",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "abogado",
+      "zh": "律師",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "ingeniero",
+      "zh": "工程師",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "arquitecto",
+      "zh": "建築師",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "cocinero",
+      "zh": "廚師",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "camarero",
+      "zh": "服務生",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "policía",
+      "zh": "警察",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "bombero",
+      "zh": "消防員",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "artista",
+      "zh": "藝術家",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "actor",
+      "zh": "演員",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "cantante",
+      "zh": "歌手",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "escritor",
+      "zh": "作家",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "periodista",
+      "zh": "記者",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "conductor",
+      "zh": "司機",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "vendedor",
+      "zh": "業務員",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "secretario",
+      "zh": "秘書",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "jefe",
+      "zh": "老闆/主管",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "empresario",
+      "zh": "企業家",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "trabajador",
+      "zh": "工人/員工",
+      "ipa": "",
+      "cat": "職業"
+    },
+    {
+      "es": "tiempo",
+      "zh": "天氣/時間",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "clima",
+      "zh": "氣候",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "sol",
+      "zh": "太陽",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "luna",
+      "zh": "月亮",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "estrella",
+      "zh": "星星",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "cielo",
+      "zh": "天空",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "nube",
+      "zh": "雲",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "lluvia",
+      "zh": "雨",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "nieve",
+      "zh": "雪",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "viento",
+      "zh": "風",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "tormenta",
+      "zh": "暴風雨",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "calor",
+      "zh": "熱",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "frío",
+      "zh": "冷",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "primavera",
+      "zh": "春天",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "verano",
+      "zh": "夏天",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "otoño",
+      "zh": "秋天",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "invierno",
+      "zh": "冬天",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "árbol",
+      "zh": "樹",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "flor",
+      "zh": "花",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "hoja",
+      "zh": "葉子",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "río",
+      "zh": "河",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "lago",
+      "zh": "湖",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "mar",
+      "zh": "海",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "isla",
+      "zh": "島",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "bosque",
+      "zh": "森林",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "tierra",
+      "zh": "土地/地球",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "fuego",
+      "zh": "火",
+      "ipa": "",
+      "cat": "天氣與自然"
+    },
+    {
+      "es": "naturaleza",
+      "zh": "自然",
+      "ipa": "",
+      "cat": "天氣與自然"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g23",
+      "topic": "簡單過去式 (pretérito)",
+      "q": "Ayer ___ a la playa.",
+      "zh": "我昨天去了海灘",
+      "opts": [
+        "voy",
+        "iba",
+        "fui",
+        "iré"
+      ],
+      "a": 2,
+      "exp": "ir 簡單過去式第一人稱：fui。表示完成的過去動作。",
+      "level": "L4"
+    },
+    {
+      "id": "g24",
+      "topic": "未完成過去式 (imperfecto)",
+      "q": "Cuando era niño, ___ mucho.",
+      "zh": "我小時候常玩",
+      "opts": [
+        "jugué",
+        "jugaba",
+        "juego",
+        "jugaré"
+      ],
+      "a": 1,
+      "exp": "imperfecto 表過去習慣或反覆動作。jugar → jugaba（yo）。",
+      "level": "L4"
+    }
+  ],
+  "listening": [
+    {
+      "id": "l042",
+      "es": "¿Dónde está el baño?",
+      "zh": "洗手間在哪？",
+      "topic": "問路"
+    },
+    {
+      "id": "l043",
+      "es": "¿Cómo llego al centro?",
+      "zh": "怎麼去市中心？",
+      "topic": "問路"
+    },
+    {
+      "id": "l044",
+      "es": "Está cerca de aquí.",
+      "zh": "離這裡很近。",
+      "topic": "問路"
+    },
+    {
+      "id": "l045",
+      "es": "Está lejos.",
+      "zh": "很遠。",
+      "topic": "問路"
+    },
+    {
+      "id": "l046",
+      "es": "Sigue todo recto.",
+      "zh": "一直往前走。",
+      "topic": "問路"
+    },
+    {
+      "id": "l047",
+      "es": "Gira a la derecha.",
+      "zh": "向右轉。",
+      "topic": "問路"
+    },
+    {
+      "id": "l048",
+      "es": "Gira a la izquierda.",
+      "zh": "向左轉。",
+      "topic": "問路"
+    },
+    {
+      "id": "l049",
+      "es": "Estoy perdido.",
+      "zh": "我迷路了。",
+      "topic": "問路"
+    },
+    {
+      "id": "l050",
+      "es": "¿Hay un cajero por aquí?",
+      "zh": "這附近有提款機嗎？",
+      "topic": "問路"
+    },
+    {
+      "id": "l051",
+      "es": "Voy a tomar el metro.",
+      "zh": "我要搭捷運。",
+      "topic": "交通"
+    },
+    {
+      "id": "l052",
+      "es": "¿A qué hora sale el tren?",
+      "zh": "火車幾點開？",
+      "topic": "交通"
+    },
+    {
+      "id": "l053",
+      "es": "Necesito un taxi.",
+      "zh": "我需要一輛計程車。",
+      "topic": "交通"
+    },
+    {
+      "id": "l054",
+      "es": "Llévame al aeropuerto, por favor.",
+      "zh": "請載我去機場。",
+      "topic": "交通"
+    },
+    {
+      "id": "l055",
+      "es": "El vuelo está retrasado.",
+      "zh": "班機延誤了。",
+      "topic": "交通"
+    },
+    {
+      "id": "l056",
+      "es": "¿Cuánto tarda en llegar?",
+      "zh": "到那要多久？",
+      "topic": "交通"
+    },
+    {
+      "id": "l057",
+      "es": "Tengo dos maletas.",
+      "zh": "我有兩個行李箱。",
+      "topic": "交通"
+    }
+  ],
+  "gaps": {
+    "vocab": 42,
+    "grammar": 12,
+    "listening": 14
+  },
+  "targets": {
+    "vocab": 150,
+    "grammar": 14,
+    "listening": 30
+  }
+}

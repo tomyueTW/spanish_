@@ -507,14 +507,15 @@
 // ─────────── 全域設定 ───────────
 const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:8000' : '';
 const STORAGE_KEY = 'spanish_app_v1';
-const BUILTIN_ID = 'builtin';
+const LEVEL_IDS = ['L1', 'L2', 'L3', 'L4', 'L5', 'L6', 'L7'];
+const DEFAULT_LEVEL = 'L1';
 
 const App = (() => {
   // ─── 狀態 ───
-  let banks = { vocab: null, grammar: null, listening: null };
+  let levels = [];        // [{id, name, cefr, vocab[], grammar[], listening[]}, ...]
   let customBanks = [];   // [{id, name, source, created, vocab: [], listening: []}]
   let stats = { totalAnswered: 0, totalCorrect: 0, sessions: 0 };
-  let activeBank = { kind: 'builtin', id: BUILTIN_ID };
+  let activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
   let currentQuiz = null;
   let currentMode = null;
   let currentDetailBank = null;    // 題庫詳情頁的目前 bank
@@ -542,21 +543,26 @@ const App = (() => {
     } catch (e) { console.warn('儲存失敗', e); }
   }
 
-  // 驗證 activeBank：缺失或引用不存在的 custom id 一律退回內建
+  // 驗證 activeBank：缺失或引用不存在的 id 一律退回 DEFAULT_LEVEL
   function resolveActiveBank(ab) {
-    if (!ab || ab.kind === 'builtin') return { kind: 'builtin', id: BUILTIN_ID };
+    if (!ab) return { kind: 'builtin', id: DEFAULT_LEVEL };
+    if (ab.kind === 'builtin') {
+      const id = LEVEL_IDS.includes(ab.id) ? ab.id : DEFAULT_LEVEL;
+      return { kind: 'builtin', id };
+    }
     if (ab.kind === 'custom' && customBanks.some(b => b.id === ab.id)) {
       return { kind: 'custom', id: ab.id };
     }
-    return { kind: 'builtin', id: BUILTIN_ID };
+    return { kind: 'builtin', id: DEFAULT_LEVEL };
   }
 
-  // ─── 從後端載入內建題庫 ───
+  // ─── 從後端載入 7 階段題庫 ───
   async function loadBanks() {
     try {
       const r = await fetch(API_BASE + '/api/banks');
       if (!r.ok) throw new Error('後端回應錯誤');
-      banks = await r.json();
+      const data = await r.json();
+      levels = data.levels || [];
     } catch (e) {
       alert('無法連線到後端伺服器，請確認後端已啟動 (python main.py)\n錯誤: ' + e.message);
       throw e;
@@ -566,25 +572,8 @@ const App = (() => {
   // ─── 工具函式 ───
   const $ = id => document.getElementById(id);
   const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
-  const flatVocab = () => {
-    const out = [];
-    if (banks.vocab) {
-      for (const [cat, words] of Object.entries(banks.vocab.categories)) {
-        words.forEach(w => out.push({ ...w, cat: w.cat || cat, source: 'default' }));
-      }
-    }
-    return out;
-  };
-  const customVocab = () => {
-    const out = [];
-    customBanks.forEach(b => (b.vocab || []).forEach(w => out.push({ ...w, source: 'custom', bankId: b.id, bankName: b.name })));
-    return out;
-  };
-  const customListen = () => {
-    const out = [];
-    customBanks.forEach(b => (b.listening || []).forEach(s => out.push({ ...s, source: 'custom', bankId: b.id, bankName: b.name })));
-    return out;
-  };
+  const getLevelById = (id) => levels.find(l => l.id === id);
+  const levelDisplayName = (lv) => `${lv.id} · ${lv.cefr} ${lv.name}`;
 
   // ─── 語音 ───
   function speak(text) {
@@ -622,25 +611,27 @@ const App = (() => {
 
   // ─── 題庫管理 ───
   function renderBanks() {
-    const v = banks.vocab ? sum(banks.vocab.categories) : 0;
-    const g = banks.grammar ? banks.grammar.items.length : 0;
-    const l = banks.listening ? banks.listening.items.length : 0;
     const isActiveBuiltin = isBuiltinActive();
-    const builtinActions = `
-      ${isActiveBuiltin
-        ? `<span class="active-pill">使用中</span>`
-        : `<button class="icon-btn" onclick="App.setActiveBank('builtin','${BUILTIN_ID}')">設為使用中</button>`}
-      <button class="icon-btn" onclick="App.openBankDetail('builtin','${BUILTIN_ID}')">查看內容</button>
-    `;
-    $('default-bank-list').innerHTML = `
-      <div class="bank-card">
-        <div>
-          <div class="bank-name">🇪🇸 內建題庫</div>
-          <div class="bank-meta">${v} 單字 · ${g} 文法 · ${l} 聽力</div>
+    $('default-bank-list').innerHTML = levels.map(lv => {
+      const isActive = isActiveBuiltin && activeBank.id === lv.id;
+      const v = (lv.vocab || []).length;
+      const g = (lv.grammar || []).length;
+      const l = (lv.listening || []).length;
+      return `
+        <div class="bank-card">
+          <div>
+            <div class="bank-name">${escapeHtml(lv.id)} <span style="color:#6b7280;font-weight:400;font-size:12px;">· ${escapeHtml(lv.cefr)}</span> ${escapeHtml(lv.name)}</div>
+            <div class="bank-meta">${v} 單字 · ${g} 文法 · ${l} 句型</div>
+          </div>
+          <div class="bank-actions">
+            ${isActive
+              ? `<span class="active-pill">使用中</span>`
+              : `<button class="icon-btn" onclick="App.setActiveBank('builtin','${lv.id}')">設為使用中</button>`}
+            <button class="icon-btn" onclick="App.openBankDetail('builtin','${lv.id}')">查看內容</button>
+          </div>
         </div>
-        <div class="bank-actions">${builtinActions}</div>
-      </div>
-    `;
+      `;
+    }).join('');
     $('custom-count').textContent = customBanks.length;
     if (customBanks.length === 0) {
       $('custom-bank-list').innerHTML = '<div style="color:#9ca3af;font-size:13px;padding:10px 0;">尚無自製題庫 — 從 YouTube 或文本匯入吧！</div>';
@@ -675,14 +666,16 @@ const App = (() => {
 
   function renderBankDetail() {
     if (!currentDetailBank) return;
-    let bank, name, vocabItems, listenItems, grammarItems;
+    let name, vocabItems, listenItems, grammarItems;
     if (currentDetailBank.kind === 'builtin') {
-      name = '🇪🇸 內建題庫';
-      vocabItems = flatVocab();
-      listenItems = banks.listening ? banks.listening.items : [];
-      grammarItems = banks.grammar ? banks.grammar.items : [];
+      const lv = getLevelById(currentDetailBank.id);
+      if (!lv) { show('bank'); return; }
+      name = levelDisplayName(lv);
+      vocabItems = lv.vocab || [];
+      listenItems = lv.listening || [];
+      grammarItems = lv.grammar || [];
     } else {
-      bank = customBanks.find(b => b.id === currentDetailBank.id);
+      const bank = customBanks.find(b => b.id === currentDetailBank.id);
       if (!bank) { show('bank'); return; }
       name = bank.name;
       vocabItems = bank.vocab || [];
@@ -728,9 +721,6 @@ const App = (() => {
       $('bd-grammar-section').classList.add('hidden');
     }
   }
-  function sum(catObj) {
-    return Object.values(catObj).reduce((s, arr) => s + arr.length, 0);
-  }
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
@@ -740,18 +730,20 @@ const App = (() => {
 
   function getActiveBank() {
     if (isBuiltinActive()) {
+      const lv = getLevelById(activeBank.id) || levels[0];
+      if (!lv) return { kind: 'builtin', id: DEFAULT_LEVEL, name: '（題庫載入中）', vocab: [], listening: [], grammar: [] };
       return {
         kind: 'builtin',
-        id: BUILTIN_ID,
-        name: '內建題庫',
-        vocab: flatVocab(),
-        listening: banks.listening ? banks.listening.items.map(s => ({ ...s, source: 'default' })) : [],
-        grammar: banks.grammar ? banks.grammar.items.slice() : [],
+        id: lv.id,
+        name: levelDisplayName(lv),
+        vocab: (lv.vocab || []).map(w => ({ ...w, source: 'default' })),
+        listening: (lv.listening || []).map(s => ({ ...s, source: 'default' })),
+        grammar: (lv.grammar || []).slice(),
       };
     }
     const b = customBanks.find(x => x.id === activeBank.id);
     if (!b) {
-      activeBank = { kind: 'builtin', id: BUILTIN_ID };
+      activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
       return getActiveBank();
     }
     return {
@@ -765,7 +757,9 @@ const App = (() => {
   }
 
   function setActiveBank(kind, id) {
-    activeBank = (kind === 'builtin') ? { kind: 'builtin', id: BUILTIN_ID } : { kind: 'custom', id };
+    activeBank = (kind === 'builtin')
+      ? { kind: 'builtin', id: (LEVEL_IDS.includes(id) ? id : DEFAULT_LEVEL) }
+      : { kind: 'custom', id };
     saveState();
     renderBanks();
     updateMenuForActiveBank();
@@ -786,12 +780,13 @@ const App = (() => {
   function updateMenuForActiveBank() {
     const grammarBtn = document.querySelector('.m-grammar');
     if (!grammarBtn) return;
-    if (isBuiltinActive()) {
+    const hasGrammar = (getActiveBank().grammar || []).length > 0;
+    if (hasGrammar) {
       grammarBtn.classList.remove('is-disabled');
       grammarBtn.title = '';
     } else {
       grammarBtn.classList.add('is-disabled');
-      grammarBtn.title = '自製題庫不含文法題';
+      grammarBtn.title = '目前題庫不含文法題';
     }
   }
 
@@ -913,7 +908,7 @@ const App = (() => {
     if (!confirm('確定刪除這個題庫？')) return;
     const wasActive = activeBank.kind === 'custom' && activeBank.id === id;
     customBanks = customBanks.filter(b => b.id !== id);
-    if (wasActive) activeBank = { kind: 'builtin', id: BUILTIN_ID };
+    if (wasActive) activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
     saveState();
     renderBanks();
     updateMenuForActiveBank();
@@ -953,8 +948,8 @@ const App = (() => {
 
   // ─── 開始測驗（先顯示設定）───
   function startQuiz(mode) {
-    if (mode === 'grammar' && !isBuiltinActive()) {
-      alert('目前使用中的是自製題庫，未含文法題。請先在「題庫管理」切換到內建題庫。');
+    if (mode === 'grammar' && (getActiveBank().grammar || []).length === 0) {
+      alert('目前題庫不含文法題，請至「題庫管理」切換到含文法的階段（L1~L7）。');
       return;
     }
     currentMode = mode;
@@ -1042,12 +1037,12 @@ const App = (() => {
     };
   }
 
-  function makeGrammarQ() {
-    if (!banks.grammar) return null;
-    const item = shuffle(banks.grammar.items)[0];
+  function makeGrammarQ(grammarPool) {
+    if (!grammarPool || grammarPool.length === 0) return null;
+    const item = shuffle(grammarPool)[0];
     return {
       type: 'grammar',
-      promptLabel: `<div class="topic-tag">${item.topic}</div>${item.q} <span style="color:#6b7280;font-size:14px;">(${item.zh})</span>`,
+      promptLabel: `<div class="topic-tag">${escapeHtml(item.topic || '')}</div>${item.q} <span style="color:#6b7280;font-size:14px;">(${escapeHtml(item.zh || '')})</span>`,
       options: item.opts,
       answer: item.a,
       explanation: item.exp,
@@ -1059,20 +1054,21 @@ const App = (() => {
     const bank = getActiveBank();
     const vocabPool = bank.vocab || [];
     const sentencePool = bank.listening || [];
-    const hasGrammar = (bank.grammar || []).length > 0;
+    const grammarPool = bank.grammar || [];
+    const hasGrammar = grammarPool.length > 0;
 
     const qs = [];
     for (let i = 0; i < n; i++) {
       let q = null;
       if (mode === 'vocab') q = makeVocabQ(vocabPool);
       else if (mode === 'listen') q = makeListenQ(vocabPool, sentencePool);
-      else if (mode === 'grammar') q = makeGrammarQ();
+      else if (mode === 'grammar') q = makeGrammarQ(grammarPool);
       else if (mode === 'mixed') {
         const r = Math.random();
         if (hasGrammar) {
           if (r < 0.34) q = makeVocabQ(vocabPool);
           else if (r < 0.67) q = makeListenQ(vocabPool, sentencePool);
-          else q = makeGrammarQ();
+          else q = makeGrammarQ(grammarPool);
         } else {
           if (r < 0.5) q = makeVocabQ(vocabPool);
           else q = makeListenQ(vocabPool, sentencePool);

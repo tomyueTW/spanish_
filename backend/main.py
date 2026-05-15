@@ -38,24 +38,21 @@ app.add_middleware(
 )
 
 # ─────────── 載入題庫 ───────────
-def load_json(filename: str) -> dict:
-    with open(DATA_DIR / filename, encoding="utf-8") as f:
+def load_json(path: Path) -> dict:
+    with open(path, encoding="utf-8") as f:
         return json.load(f)
 
-VOCAB_DB = load_json("vocab_500.json")
-GRAMMAR_DB = load_json("grammar_30.json")
-LISTENING_DB = load_json("listening_100.json")
+
+LEVELS_DIR = DATA_DIR / "levels"
+LEVEL_IDS = ["L1", "L2", "L3", "L4", "L5", "L6", "L7"]
+LEVELS = [load_json(LEVELS_DIR / f"{lid}.json") for lid in LEVEL_IDS]
 
 
 # ─────────── API 路由 ───────────
 @app.get("/api/banks")
 def get_banks():
-    """回傳所有基本題庫"""
-    return {
-        "vocab": VOCAB_DB,
-        "grammar": GRAMMAR_DB,
-        "listening": LISTENING_DB,
-    }
+    """回傳 7 階段基本題庫"""
+    return {"levels": LEVELS}
 
 
 @app.get("/api/health")
@@ -63,9 +60,22 @@ def health():
     return {
         "status": "ok",
         "has_api_key": bool(ANTHROPIC_API_KEY),
-        "vocab_count": sum(len(w) for w in VOCAB_DB["categories"].values()),
-        "grammar_count": len(GRAMMAR_DB["items"]),
-        "listening_count": len(LISTENING_DB["items"]),
+        "levels": [
+            {
+                "id": lv["id"],
+                "name": lv["name"],
+                "cefr": lv["cefr"],
+                "vocab": len(lv.get("vocab", [])),
+                "grammar": len(lv.get("grammar", [])),
+                "listening": len(lv.get("listening", [])),
+            }
+            for lv in LEVELS
+        ],
+        "totals": {
+            "vocab": sum(len(lv.get("vocab", [])) for lv in LEVELS),
+            "grammar": sum(len(lv.get("grammar", [])) for lv in LEVELS),
+            "listening": sum(len(lv.get("listening", [])) for lv in LEVELS),
+        },
     }
 
 
