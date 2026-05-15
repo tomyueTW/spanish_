@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西班牙語學習工具 · Aprende Español</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+    background: linear-gradient(135deg, #fef3c7 0%, #fee2e2 100%);
+    min-height: 100vh;
+    color: #1f2937;
+    padding: 20px 16px;
+    line-height: 1.5;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  }
+  h1, h2, h3 { color: #b91c1c; }
+  h1 { font-size: 26px; text-align: center; }
+  .subtitle { text-align: center; color: #6b7280; font-size: 14px; margin: 6px 0 24px; }
+  .flag { font-size: 44px; text-align: center; margin-bottom: 4px; }
+  .hidden { display: none !important; }
+
+  /* 按鈕通用 */
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.15s, border-color 0.15s, background 0.15s;
+  }
+  button:active { transform: scale(0.98); }
+
+  .mode-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    text-align: left;
+    font-size: 15px;
+    border: 2px solid;
+    background: white;
+  }
+  .mode-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+  .mode-btn .t { font-weight: 600; font-size: 16px; margin-bottom: 4px; }
+  .mode-btn .d { color: #6b7280; font-size: 13px; }
+  .m-vocab { background: #fef2f2; border-color: #fecaca; }   .m-vocab .t { color: #b91c1c; }
+  .m-listen { background: #fff7ed; border-color: #fed7aa; }  .m-listen .t { color: #c2410c; }
+  .m-grammar { background: #fffbeb; border-color: #fde68a; } .m-grammar .t { color: #b45309; }
+  .m-mixed { background: #f0fdf4; border-color: #bbf7d0; }   .m-mixed .t { color: #15803d; }
+  .m-import { background: #eff6ff; border-color: #bfdbfe; }  .m-import .t { color: #1d4ed8; }
+  .m-bank { background: #faf5ff; border-color: #ddd6fe; }    .m-bank .t { color: #6d28d9; }
+  .m-browse { background: #ecfeff; border-color: #a5f3fc; }  .m-browse .t { color: #0e7490; }
+  .mode-btn.is-disabled { opacity: 0.5; cursor: not-allowed; }
+  .mode-btn.is-disabled:hover { transform: none; box-shadow: none; }
+
+  .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .back-btn {
+    background: none; border: none; color: #6b7280; font-size: 14px; padding: 6px 10px;
+    border-radius: 8px;
+  }
+  .back-btn:hover { background: #f3f4f6; }
+  .progress { font-size: 14px; color: #6b7280; }
+  .score-bar { height: 8px; background: #e5e7eb; border-radius: 4px; margin-bottom: 22px; overflow: hidden; }
+  .score-fill { height: 100%; background: linear-gradient(90deg, #ef4444, #f59e0b); transition: width 0.4s; }
+
+  .type-badge {
+    display: inline-block; padding: 5px 12px; background: #f3f4f6;
+    border-radius: 999px; font-size: 12px; color: #6b7280; margin-bottom: 14px;
+  }
+  .source-badge {
+    display: inline-block; padding: 4px 10px; background: #dbeafe; color: #1e40af;
+    border-radius: 999px; font-size: 11px; margin-left: 6px;
+  }
+
+  .q-card { padding: 22px; border-radius: 14px; margin-bottom: 18px; }
+  .q-vocab { background: #fef2f2; text-align: center; }
+  .q-listen { background: #fff7ed; text-align: center; }
+  .q-grammar { background: #fffbeb; font-size: 18px; line-height: 1.7; }
+  .q-prompt-zh { font-size: 28px; font-weight: 600; color: #b91c1c; }
+  .q-prompt-hint { font-size: 13px; color: #6b7280; margin-bottom: 6px; }
+  .play-btn {
+    font-size: 48px; background: none; border: none; padding: 10px;
+  }
+  .play-btn:hover { transform: scale(1.1); }
+  .topic-tag { font-size: 12px; color: #92400e; background: #fef3c7; padding: 3px 8px; border-radius: 6px; display: inline-block; margin-bottom: 8px; }
+
+  .opt-btn {
+    display: flex; justify-content: space-between; align-items: center;
+    width: 100%; padding: 14px 18px; margin-bottom: 10px;
+    background: white; border: 2px solid #e5e7eb;
+    border-radius: 12px; font-size: 16px; text-align: left;
+  }
+  .opt-btn:hover:not(:disabled) { border-color: #b91c1c; background: #fef9f9; }
+  .opt-btn:disabled { cursor: default; }
+  .opt-correct { background: #dcfce7 !important; border-color: #16a34a !important; }
+  .opt-wrong { background: #fee2e2 !important; border-color: #dc2626 !important; }
+  .opt-faded { opacity: 0.45; }
+  .speak-icon {
+    font-size: 18px; padding: 4px 10px; border-radius: 6px;
+  }
+  .speak-icon:hover { background: #f3f4f6; }
+
+  .feedback { padding: 14px 16px; border-radius: 10px; margin-top: 14px; }
+  .fb-correct { background: #dcfce7; color: #15803d; }
+  .fb-wrong { background: #fee2e2; color: #b91c1c; }
+  .fb-title { font-weight: 600; margin-bottom: 4px; }
+  .fb-exp { color: #374151; font-size: 14px; }
+
+  .primary-btn {
+    padding: 14px 24px; border: none; border-radius: 12px;
+    background: #b91c1c; color: white; font-size: 15px; font-weight: 600;
+  }
+  .primary-btn:hover { background: #991b1b; }
+  .secondary-btn {
+    padding: 12px 22px; border: none; border-radius: 12px;
+    background: #e5e7eb; color: #374151; font-size: 15px; font-weight: 500;
+  }
+  .secondary-btn:hover { background: #d1d5db; }
+  .full-btn { width: 100%; margin-top: 18px; }
+
+  /* 結果頁 */
+  .result-emoji { font-size: 72px; margin-bottom: 12px; }
+  .result-title { margin: 0 0 8px; font-size: 28px; }
+  .result-score { font-size: 20px; color: #374151; margin-bottom: 8px; }
+  .result-comment { color: #6b7280; margin-bottom: 26px; }
+  .wrong-item {
+    padding: 12px 14px; background: #f9fafb;
+    border-left: 4px solid #ef4444; border-radius: 6px;
+    margin-bottom: 10px; font-size: 14px;
+  }
+  .wrong-q { color: #6b7280; }
+  .wrong-a { margin-top: 4px; color: #1f2937; }
+  .wrong-title { font-weight: 600; margin: 16px 0 12px; color: #374151; }
+  .center { text-align: center; }
+
+  /* 表單 */
+  input[type="text"], input[type="url"], textarea, select {
+    width: 100%; padding: 12px 14px; border: 2px solid #e5e7eb;
+    border-radius: 10px; font-size: 15px; font-family: inherit;
+    margin-bottom: 12px;
+  }
+  input:focus, textarea:focus { outline: none; border-color: #b91c1c; }
+  label { display: block; font-size: 14px; color: #374151; margin-bottom: 6px; font-weight: 500; }
+
+  /* 匯入畫面 */
+  .import-tab-row { display: flex; gap: 8px; margin-bottom: 18px; border-bottom: 2px solid #e5e7eb; }
+  .import-tab {
+    background: none; border: none; padding: 10px 14px;
+    font-size: 14px; color: #6b7280; border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+  }
+  .import-tab.active { color: #b91c1c; border-bottom-color: #b91c1c; font-weight: 600; }
+  .import-pane { display: none; }
+  .import-pane.active { display: block; }
+
+  .info-box {
+    padding: 12px 14px; background: #eff6ff; border-left: 4px solid #3b82f6;
+    border-radius: 6px; font-size: 13px; color: #1e3a8a; margin-bottom: 14px;
+  }
+  .warn-box {
+    padding: 12px 14px; background: #fef3c7; border-left: 4px solid #f59e0b;
+    border-radius: 6px; font-size: 13px; color: #78350f; margin-bottom: 14px;
+  }
+  .error-box {
+    padding: 12px 14px; background: #fee2e2; border-left: 4px solid #dc2626;
+    border-radius: 6px; font-size: 13px; color: #7f1d1d; margin-bottom: 14px;
+  }
+
+  /* 題庫管理 */
+  .bank-card {
+    padding: 14px 16px; background: #fafafa; border: 1px solid #e5e7eb;
+    border-radius: 10px; margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .bank-name { font-weight: 600; }
+  .bank-meta { font-size: 13px; color: #6b7280; margin-top: 2px; }
+  .bank-actions { display: flex; gap: 6px; }
+  .icon-btn {
+    background: none; border: 1px solid #e5e7eb; border-radius: 6px;
+    padding: 6px 10px; font-size: 13px; color: #374151;
+  }
+  .icon-btn:hover { background: #f3f4f6; }
+  .icon-btn.danger { color: #dc2626; }
+  .icon-btn.danger:hover { background: #fee2e2; }
+  .active-pill {
+    display: inline-block; padding: 3px 10px; background: #dcfce7; color: #15803d;
+    border-radius: 999px; font-size: 11px; margin-left: 6px; font-weight: 600;
+  }
+
+  /* 題庫詳情清單 */
+  .bd-section { margin-bottom: 22px; }
+  .bd-section h4 { font-size: 14px; color: #374151; margin-bottom: 8px; }
+  .bd-list { border: 1px solid #f3f4f6; border-radius: 8px; overflow: hidden; }
+  .bd-item {
+    padding: 8px 12px; border-bottom: 1px solid #f3f4f6; font-size: 14px;
+    color: #1f2937; display: flex; gap: 10px; align-items: flex-start;
+  }
+  .bd-item:last-child { border-bottom: none; }
+  .bd-item .es { color: #b91c1c; font-weight: 500; min-width: 0; flex: 1; }
+  .bd-item .zh { color: #374151; min-width: 0; flex: 1; }
+  .bd-item .meta { color: #9ca3af; font-size: 12px; }
+  .bd-empty { color: #9ca3af; font-size: 13px; padding: 10px 0; }
+
+  /* Flashcard 瀏覽模式 */
+  .browse-header { display: flex; gap: 8px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .browse-pill {
+    display: inline-block; padding: 4px 10px; background: #ecfeff; color: #0e7490;
+    border-radius: 999px; font-size: 12px; font-weight: 600;
+  }
+  .filter-row { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+  .filter-btn {
+    padding: 6px 12px; border-radius: 999px; border: 1px solid #e5e7eb;
+    background: #fff; font-size: 13px; color: #374151;
+  }
+  .filter-btn:hover:not(:disabled) { background: #f3f4f6; }
+  .filter-btn.active { background: #b91c1c; color: #fff; border-color: #b91c1c; }
+  .filter-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .flashcard {
+    min-height: 240px; padding: 30px; border-radius: 18px;
+    background: #fef9c3; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+    margin-bottom: 16px; text-align: center;
+    user-select: none;
+  }
+  .flashcard:hover { background: #fef08a; }
+  .fc-front, .fc-back { width: 100%; }
+  .fc-front .es { font-size: 36px; font-weight: 700; color: #b91c1c; word-break: break-word; }
+  .fc-front .grammar-q { font-size: 22px; line-height: 1.6; color: #b45309; }
+  .fc-back .zh { font-size: 26px; color: #1f2937; word-break: break-word; }
+  .fc-back .exp { font-size: 15px; color: #374151; line-height: 1.6; }
+  .fc-ipa { color: #6b7280; font-size: 16px; margin-top: 8px; }
+  .fc-topic { display: inline-block; padding: 3px 10px; background: rgba(255,255,255,0.6); color: #92400e; border-radius: 999px; font-size: 11px; margin-bottom: 12px; }
+  .fc-hint { font-size: 12px; color: #6b7280; margin-top: 14px; }
+  .browse-controls { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+  .browse-controls button { padding: 10px 16px; border-radius: 10px; border: 1px solid #e5e7eb; background: #fff; font-size: 14px; color: #374151; }
+  .browse-controls button:hover:not(:disabled) { background: #f3f4f6; }
+  .browse-controls button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .browse-empty {
+    padding: 40px 20px; text-align: center; color: #9ca3af;
+    background: #f9fafb; border-radius: 12px; margin-bottom: 16px;
+  }
+
+  /* 載入動畫 */
+  .spinner {
+    display: inline-block; width: 20px; height: 20px;
+    border: 3px solid #fee2e2; border-top-color: #dc2626;
+    border-radius: 50%; animation: spin 0.8s linear infinite;
+    vertical-align: middle; margin-right: 8px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* 統計 */
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    margin: 16px 0;
+  }
+  .stat-card {
+    background: #fafafa; padding: 14px; border-radius: 10px; text-align: center;
+  }
+  .stat-num { font-size: 22px; font-weight: 700; color: #b91c1c; }
+  .stat-label { font-size: 12px; color: #6b7280; margin-top: 2px; }
+
+  /* 設定 */
+  .settings-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid #f3f4f6;
+  }
+  .settings-row:last-child { border-bottom: none; }
+  .num-select {
+    width: 80px; padding: 6px 10px; border: 1px solid #e5e7eb; border-radius: 6px;
+    font-family: inherit;
+  }
+
+  @media (max-width: 480px) {
+    .container { padding: 20px 16px; }
+    .q-prompt-zh { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ───────── 主選單 ───────── -->
+<div id="menu">
+  <div class="flag">🇪🇸</div>
+  <h1>西班牙語學習工具</h1>
+  <div class="subtitle">Aprende Español · 初級到中級</div>
+
+  <div id="stats-summary" class="stats-grid"></div>
+
+  <button class="mode-btn m-vocab" onclick="App.startQuiz('vocab')">
+    <div class="t">📚 單字測驗</div>
+    <div class="d">中文 → 西班牙語選擇題（含發音）</div>
+  </button>
+  <button class="mode-btn m-listen" onclick="App.startQuiz('listen')">
+    <div class="t">👂 聽力測驗</div>
+    <div class="d">聽發音 → 選正確的中文意思</div>
+  </button>
+  <button class="mode-btn m-grammar" onclick="App.startQuiz('grammar')">
+    <div class="t">📝 句型文法</div>
+    <div class="d">動詞變位、冠詞、形容詞配合等</div>
+  </button>
+  <button class="mode-btn m-mixed" onclick="App.startQuiz('mixed')">
+    <div class="t">🎯 綜合挑戰</div>
+    <div class="d">三種題型隨機混合</div>
+  </button>
+  <button class="mode-btn m-import" onclick="App.show('import')">
+    <div class="t">🎬 從 YouTube 匯入</div>
+    <div class="d">貼連結 → AI 自動產生題目</div>
+  </button>
+  <button class="mode-btn m-browse" id="btn-browse" onclick="App.openBrowse()">
+    <div class="t">🃏 瀏覽學習</div>
+    <div class="d">以閃卡逐張複習目前題庫（非測驗）</div>
+  </button>
+  <button class="mode-btn m-bank" onclick="App.show('bank')">
+    <div class="t">📦 題庫管理</div>
+    <div class="d">查看擴充題庫、匯出/匯入進度</div>
+  </button>
+</div>
+
+<!-- ───────── 測驗畫面 ───────── -->
+<div id="quiz" class="hidden">
+  <div class="top-bar">
+    <button class="back-btn" onclick="App.backToMenu()">← 返回</button>
+    <div class="progress" id="progress"></div>
+  </div>
+  <div class="score-bar"><div class="score-fill" id="score-fill" style="width:0%"></div></div>
+  <div id="question-area"></div>
+  <div id="feedback"></div>
+  <button class="primary-btn full-btn hidden" id="next-btn" onclick="App.next()">下一題 →</button>
+</div>
+
+<!-- ───────── 結果畫面 ───────── -->
+<div id="result" class="hidden center">
+  <div class="result-emoji" id="result-emoji"></div>
+  <h2 class="result-title" id="result-title"></h2>
+  <div class="result-score" id="result-score"></div>
+  <div class="result-comment" id="result-comment"></div>
+  <div id="wrong-list" style="text-align:left;"></div>
+  <button class="primary-btn" onclick="App.retry()">再來一輪</button>
+  <button class="secondary-btn" onclick="App.backToMenu()" style="margin-left:8px;">回主選單</button>
+</div>
+
+<!-- ───────── 設定（選題前）───────── -->
+<div id="settings" class="hidden">
+  <div class="top-bar">
+    <button class="back-btn" onclick="App.backToMenu()">← 返回</button>
+    <h3 id="settings-title" style="margin:0;font-size:18px;"></h3>
+    <div></div>
+  </div>
+  <div class="settings-row">
+    <span>題目數量</span>
+    <select class="num-select" id="num-questions">
+      <option value="5">5 題</option>
+      <option value="10" selected>10 題</option>
+      <option value="15">15 題</option>
+      <option value="20">20 題</option>
+    </select>
+  </div>
+  <div class="settings-row">
+    <span>目前題庫</span>
+    <span id="settings-active-bank" style="color:#374151;font-weight:600;">—</span>
+  </div>
+  <button class="primary-btn full-btn" onclick="App.beginQuiz()">開始測驗</button>
+</div>
+
+<!-- ───────── 匯入畫面 ───────── -->
+<div id="import" class="hidden">
+  <div class="top-bar">
+    <button class="back-btn" onclick="App.backToMenu()">← 返回</button>
+    <h3 style="margin:0;font-size:18px;">擴充題庫</h3>
+    <div></div>
+  </div>
+  <div class="import-tab-row">
+    <button class="import-tab active" data-tab="youtube" onclick="App.switchImportTab('youtube')">🎬 YouTube</button>
+    <button class="import-tab" data-tab="subtitle" onclick="App.switchImportTab('subtitle')">📄 字幕檔</button>
+    <button class="import-tab" data-tab="text" onclick="App.switchImportTab('text')">✍️ 貼文本</button>
+  </div>
+
+  <div id="import-pane-youtube" class="import-pane active">
+    <div class="info-box">貼上一個西班牙語 YouTube 連結，後端會自動抓字幕並用 AI 產生單字題和聽力題。</div>
+    <label>YouTube 連結</label>
+    <input type="url" id="yt-url" placeholder="https://www.youtube.com/watch?v=...">
+    <label>單字題數量</label>
+    <select id="yt-num-vocab" style="margin-bottom:12px;">
+      <option value="5">5 題</option>
+      <option value="8" selected>8 題</option>
+      <option value="12">12 題</option>
+      <option value="20">20 題</option>
+    </select>
+    <label>聽力句數量</label>
+    <select id="yt-num-listen" style="margin-bottom:12px;">
+      <option value="3">3 句</option>
+      <option value="5" selected>5 句</option>
+      <option value="10">10 句</option>
+    </select>
+    <button class="primary-btn full-btn" onclick="App.importYouTube()">抓取並產生題目</button>
+  </div>
+
+  <div id="import-pane-subtitle" class="import-pane">
+    <div class="info-box">上傳 SRT 或 VTT 字幕檔（西班牙語），AI 會自動產生題目。</div>
+    <input type="file" id="subtitle-file" accept=".srt,.vtt,.txt" style="margin-bottom:12px;">
+    <button class="primary-btn full-btn" onclick="App.importSubtitle()">產生題目</button>
+  </div>
+
+  <div id="import-pane-text" class="import-pane">
+    <div class="info-box">直接貼上西班牙語文本（歌詞、文章、對話），AI 會幫你萃取單字和句子。</div>
+    <label>西班牙語文本</label>
+    <textarea id="raw-text" rows="8" placeholder="Hola, ¿cómo estás? Me llamo..." style="margin-bottom:12px;"></textarea>
+    <label>題庫名稱</label>
+    <input type="text" id="text-title" placeholder="例如：朋友的對話" style="margin-bottom:12px;">
+    <button class="primary-btn full-btn" onclick="App.importText()">產生題目</button>
+  </div>
+
+  <div id="import-status" style="margin-top:16px;"></div>
+</div>
+
+<!-- ───────── 題庫管理 ───────── -->
+<div id="bank" class="hidden">
+  <div class="top-bar">
+    <button class="back-btn" onclick="App.backToMenu()">← 返回</button>
+    <h3 style="margin:0;font-size:18px;">題庫管理</h3>
+    <div></div>
+  </div>
+
+  <div id="banks-default" style="margin-bottom:18px;">
+    <h4 style="font-size:14px;color:#374151;margin-bottom:10px;">內建題庫</h4>
+    <div id="default-bank-list"></div>
+  </div>
+
+  <div id="banks-custom" style="margin-bottom:18px;">
+    <h4 style="font-size:14px;color:#374151;margin-bottom:10px;">自製題庫（共 <span id="custom-count">0</span> 個）</h4>
+    <div id="custom-bank-list"></div>
+  </div>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <button class="secondary-btn" onclick="App.exportData()">📤 匯出所有資料</button>
+    <button class="secondary-btn" onclick="document.getElementById('import-data-file').click()">📥 匯入資料</button>
+    <input type="file" id="import-data-file" accept=".json" class="hidden" onchange="App.importData(event)">
+  </div>
+</div>
+
+<!-- ───────── 題庫詳情（查看內容）───────── -->
+<div id="bank-detail" class="hidden">
+  <div class="top-bar">
+    <button class="back-btn" onclick="App.show('bank')">← 返回</button>
+    <h3 id="bank-detail-title" style="margin:0;font-size:18px;">題庫內容</h3>
+    <div></div>
+  </div>
+  <div id="bd-vocab-section" class="bd-section">
+    <h4>📚 單字 <span id="bd-vocab-count" style="color:#9ca3af;font-weight:400;"></span></h4>
+    <div id="bd-vocab-list" class="bd-list"></div>
+  </div>
+  <div id="bd-listen-section" class="bd-section">
+    <h4>👂 聽力句 <span id="bd-listen-count" style="color:#9ca3af;font-weight:400;"></span></h4>
+    <div id="bd-listen-list" class="bd-list"></div>
+  </div>
+  <div id="bd-grammar-section" class="bd-section">
+    <h4>📝 文法 <span id="bd-grammar-count" style="color:#9ca3af;font-weight:400;"></span></h4>
+    <div id="bd-grammar-list" class="bd-list"></div>
+  </div>
+</div>
+
+<!-- ───────── Flashcard 瀏覽學習 ───────── -->
+<div id="browse" class="hidden">
+  <div class="top-bar">
+    <button class="back-btn" onclick="App.backToMenu()">← 返回</button>
+    <h3 style="margin:0;font-size:18px;">🃏 瀏覽學習</h3>
+    <div></div>
+  </div>
+  <div class="browse-header">
+    <span class="browse-pill" id="browse-bank-pill">—</span>
+    <span class="progress" id="browse-progress">0 / 0</span>
+  </div>
+  <div class="filter-row">
+    <button class="filter-btn active" data-filter="all" onclick="App.setBrowseFilter('all')">全部</button>
+    <button class="filter-btn" data-filter="vocab" onclick="App.setBrowseFilter('vocab')">📚 單字</button>
+    <button class="filter-btn" data-filter="listen" onclick="App.setBrowseFilter('listen')">👂 聽力</button>
+    <button class="filter-btn" data-filter="grammar" onclick="App.setBrowseFilter('grammar')">📝 文法</button>
+  </div>
+  <div id="flashcard-wrap">
+    <div class="flashcard" id="flashcard" onclick="App.flipCard()">
+      <div class="fc-front" id="fc-front"></div>
+      <div class="fc-back hidden" id="fc-back"></div>
+      <div class="fc-hint" id="fc-hint">點擊卡片翻面 · 空白鍵亦可</div>
+    </div>
+    <div id="browse-empty" class="browse-empty hidden">本類別在目前題庫中沒有項目</div>
+  </div>
+  <div class="browse-controls">
+    <button id="browse-prev" onclick="App.browsePrev()">← 上一張</button>
+    <button id="browse-speak" onclick="App.speakCurrentCard()">🔊 朗讀</button>
+    <button id="browse-flip" onclick="App.flipCard()">翻面</button>
+    <button id="browse-next" onclick="App.browseNext()">下一張 →</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+// ─────────── 全域設定 ───────────
+const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:8000' : '';
+const STORAGE_KEY = 'spanish_app_v1';
+const BUILTIN_ID = 'builtin';
+
+const App = (() => {
+  // ─── 狀態 ───
+  let banks = { vocab: null, grammar: null, listening: null };
+  let customBanks = [];   // [{id, name, source, created, vocab: [], listening: []}]
+  let stats = { totalAnswered: 0, totalCorrect: 0, sessions: 0 };
+  let activeBank = { kind: 'builtin', id: BUILTIN_ID };
+  let currentQuiz = null;
+  let currentMode = null;
+  let currentDetailBank = null;    // 題庫詳情頁的目前 bank
+  let browseAllCards = [];         // 所有卡片（未過濾）
+  let browseCards = [];            // 過濾後可瀏覽的卡片
+  let browseIdx = 0;
+  let browseFilter = 'all';
+  let browseKeyHandler = null;
+
+  // ─── localStorage ───
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const data = JSON.parse(raw);
+        customBanks = data.customBanks || [];
+        stats = data.stats || stats;
+        activeBank = resolveActiveBank(data.activeBank);
+      }
+    } catch (e) { console.warn('讀取本地資料失敗', e); }
+  }
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ customBanks, stats, activeBank }));
+    } catch (e) { console.warn('儲存失敗', e); }
+  }
+
+  // 驗證 activeBank：缺失或引用不存在的 custom id 一律退回內建
+  function resolveActiveBank(ab) {
+    if (!ab || ab.kind === 'builtin') return { kind: 'builtin', id: BUILTIN_ID };
+    if (ab.kind === 'custom' && customBanks.some(b => b.id === ab.id)) {
+      return { kind: 'custom', id: ab.id };
+    }
+    return { kind: 'builtin', id: BUILTIN_ID };
+  }
+
+  // ─── 從後端載入內建題庫 ───
+  async function loadBanks() {
+    try {
+      const r = await fetch(API_BASE + '/api/banks');
+      if (!r.ok) throw new Error('後端回應錯誤');
+      banks = await r.json();
+    } catch (e) {
+      alert('無法連線到後端伺服器，請確認後端已啟動 (python main.py)\n錯誤: ' + e.message);
+      throw e;
+    }
+  }
+
+  // ─── 工具函式 ───
+  const $ = id => document.getElementById(id);
+  const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
+  const flatVocab = () => {
+    const out = [];
+    if (banks.vocab) {
+      for (const [cat, words] of Object.entries(banks.vocab.categories)) {
+        words.forEach(w => out.push({ ...w, cat: w.cat || cat, source: 'default' }));
+      }
+    }
+    return out;
+  };
+  const customVocab = () => {
+    const out = [];
+    customBanks.forEach(b => (b.vocab || []).forEach(w => out.push({ ...w, source: 'custom', bankId: b.id, bankName: b.name })));
+    return out;
+  };
+  const customListen = () => {
+    const out = [];
+    customBanks.forEach(b => (b.listening || []).forEach(s => out.push({ ...s, source: 'custom', bankId: b.id, bankName: b.name })));
+    return out;
+  };
+
+  // ─── 語音 ───
+  function speak(text) {
+    if (!window.speechSynthesis) { alert('您的瀏覽器不支援語音朗讀'); return; }
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'es-ES';
+    u.rate = 0.85;
+    window.speechSynthesis.speak(u);
+  }
+
+  // ─── 切換畫面 ───
+  const PAGES = ['menu', 'quiz', 'result', 'settings', 'import', 'bank', 'bank-detail', 'browse'];
+  function show(name) {
+    PAGES.forEach(p => $(p).classList.add('hidden'));
+    $(name).classList.remove('hidden');
+    window.speechSynthesis && window.speechSynthesis.cancel();
+    if (name !== 'browse') unbindBrowseKeys();
+    if (name === 'menu') { renderStats(); updateMenuForActiveBank(); }
+    if (name === 'bank') renderBanks();
+    if (name === 'settings') {
+      const ab = getActiveBank();
+      $('settings-active-bank').textContent = ab.name;
+    }
+  }
+
+  function renderStats() {
+    const acc = stats.totalAnswered ? Math.round(stats.totalCorrect / stats.totalAnswered * 100) : 0;
+    $('stats-summary').innerHTML = `
+      <div class="stat-card"><div class="stat-num">${stats.sessions}</div><div class="stat-label">完成的測驗</div></div>
+      <div class="stat-card"><div class="stat-num">${stats.totalAnswered}</div><div class="stat-label">總答題數</div></div>
+      <div class="stat-card"><div class="stat-num">${acc}%</div><div class="stat-label">正確率</div></div>
+    `;
+  }
+
+  // ─── 題庫管理 ───
+  function renderBanks() {
+    const v = banks.vocab ? sum(banks.vocab.categories) : 0;
+    const g = banks.grammar ? banks.grammar.items.length : 0;
+    const l = banks.listening ? banks.listening.items.length : 0;
+    const isActiveBuiltin = isBuiltinActive();
+    const builtinActions = `
+      ${isActiveBuiltin
+        ? `<span class="active-pill">使用中</span>`
+        : `<button class="icon-btn" onclick="App.setActiveBank('builtin','${BUILTIN_ID}')">設為使用中</button>`}
+      <button class="icon-btn" onclick="App.openBankDetail('builtin','${BUILTIN_ID}')">查看內容</button>
+    `;
+    $('default-bank-list').innerHTML = `
+      <div class="bank-card">
+        <div>
+          <div class="bank-name">🇪🇸 內建題庫</div>
+          <div class="bank-meta">${v} 單字 · ${g} 文法 · ${l} 聽力</div>
+        </div>
+        <div class="bank-actions">${builtinActions}</div>
+      </div>
+    `;
+    $('custom-count').textContent = customBanks.length;
+    if (customBanks.length === 0) {
+      $('custom-bank-list').innerHTML = '<div style="color:#9ca3af;font-size:13px;padding:10px 0;">尚無自製題庫 — 從 YouTube 或文本匯入吧！</div>';
+    } else {
+      $('custom-bank-list').innerHTML = customBanks.map(b => {
+        const isActive = !isActiveBuiltin && activeBank.id === b.id;
+        return `
+        <div class="bank-card">
+          <div>
+            <div class="bank-name">${escapeHtml(b.name)}</div>
+            <div class="bank-meta">${(b.vocab || []).length} 單字 · ${(b.listening || []).length} 句子 · ${escapeHtml(b.source || '自製')}</div>
+          </div>
+          <div class="bank-actions">
+            ${isActive
+              ? `<span class="active-pill">使用中</span>`
+              : `<button class="icon-btn" onclick="App.setActiveBank('custom','${b.id}')">設為使用中</button>`}
+            <button class="icon-btn" onclick="App.openBankDetail('custom','${b.id}')">查看內容</button>
+            <button class="icon-btn" onclick="App.renameBank('${b.id}')">重命名</button>
+            <button class="icon-btn danger" onclick="App.deleteBank('${b.id}')">刪除</button>
+          </div>
+        </div>
+        `;
+      }).join('');
+    }
+  }
+
+  function openBankDetail(kind, id) {
+    currentDetailBank = { kind, id };
+    renderBankDetail();
+    show('bank-detail');
+  }
+
+  function renderBankDetail() {
+    if (!currentDetailBank) return;
+    let bank, name, vocabItems, listenItems, grammarItems;
+    if (currentDetailBank.kind === 'builtin') {
+      name = '🇪🇸 內建題庫';
+      vocabItems = flatVocab();
+      listenItems = banks.listening ? banks.listening.items : [];
+      grammarItems = banks.grammar ? banks.grammar.items : [];
+    } else {
+      bank = customBanks.find(b => b.id === currentDetailBank.id);
+      if (!bank) { show('bank'); return; }
+      name = bank.name;
+      vocabItems = bank.vocab || [];
+      listenItems = bank.listening || [];
+      grammarItems = [];
+    }
+    $('bank-detail-title').textContent = name;
+
+    $('bd-vocab-count').textContent = vocabItems.length ? `(${vocabItems.length})` : '';
+    $('bd-vocab-list').innerHTML = vocabItems.length
+      ? vocabItems.map(w => `
+        <div class="bd-item">
+          <span class="es">${escapeHtml(w.es)}</span>
+          <span class="zh">${escapeHtml(w.zh)}</span>
+          ${w.ipa ? `<span class="meta">[${escapeHtml(w.ipa)}]</span>` : ''}
+          ${w.cat ? `<span class="meta">${escapeHtml(w.cat)}</span>` : ''}
+        </div>`).join('')
+      : '<div class="bd-empty">（無單字）</div>';
+
+    $('bd-listen-count').textContent = listenItems.length ? `(${listenItems.length})` : '';
+    $('bd-listen-list').innerHTML = listenItems.length
+      ? listenItems.map(s => `
+        <div class="bd-item">
+          <span class="es">${escapeHtml(s.es)}</span>
+          <span class="zh">${escapeHtml(s.zh)}</span>
+          ${s.topic ? `<span class="meta">${escapeHtml(s.topic)}</span>` : ''}
+        </div>`).join('')
+      : '<div class="bd-empty">（無聽力句）</div>';
+
+    if (grammarItems.length) {
+      $('bd-grammar-section').classList.remove('hidden');
+      $('bd-grammar-count').textContent = `(${grammarItems.length})`;
+      $('bd-grammar-list').innerHTML = grammarItems.map(it => {
+        const filled = String(it.q || '').replace(/_+/, it.opts[it.a]);
+        return `
+        <div class="bd-item" style="flex-direction:column;align-items:stretch;gap:4px;">
+          <div><span class="es">${escapeHtml(filled)}</span> ${it.topic ? `<span class="meta">${escapeHtml(it.topic)}</span>` : ''}</div>
+          <div class="zh" style="font-size:13px;">${escapeHtml(it.zh || '')}</div>
+          ${it.exp ? `<div class="meta" style="font-size:12px;">${escapeHtml(it.exp)}</div>` : ''}
+        </div>`;
+      }).join('');
+    } else {
+      $('bd-grammar-section').classList.add('hidden');
+    }
+  }
+  function sum(catObj) {
+    return Object.values(catObj).reduce((s, arr) => s + arr.length, 0);
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  // ─── 使用中題庫 ───
+  function isBuiltinActive() { return activeBank.kind === 'builtin'; }
+
+  function getActiveBank() {
+    if (isBuiltinActive()) {
+      return {
+        kind: 'builtin',
+        id: BUILTIN_ID,
+        name: '內建題庫',
+        vocab: flatVocab(),
+        listening: banks.listening ? banks.listening.items.map(s => ({ ...s, source: 'default' })) : [],
+        grammar: banks.grammar ? banks.grammar.items.slice() : [],
+      };
+    }
+    const b = customBanks.find(x => x.id === activeBank.id);
+    if (!b) {
+      activeBank = { kind: 'builtin', id: BUILTIN_ID };
+      return getActiveBank();
+    }
+    return {
+      kind: 'custom',
+      id: b.id,
+      name: b.name,
+      vocab: (b.vocab || []).map(w => ({ ...w, source: 'custom', bankId: b.id, bankName: b.name })),
+      listening: (b.listening || []).map(s => ({ ...s, source: 'custom', bankId: b.id, bankName: b.name })),
+      grammar: [],
+    };
+  }
+
+  function setActiveBank(kind, id) {
+    activeBank = (kind === 'builtin') ? { kind: 'builtin', id: BUILTIN_ID } : { kind: 'custom', id };
+    saveState();
+    renderBanks();
+    updateMenuForActiveBank();
+  }
+
+  function renameBank(id) {
+    const b = customBanks.find(x => x.id === id);
+    if (!b) return;
+    const next = prompt('新名稱：', b.name);
+    if (next === null) return;
+    const trimmed = String(next).trim();
+    if (!trimmed) { alert('名稱不可空白'); return; }
+    b.name = trimmed;
+    saveState();
+    renderBanks();
+  }
+
+  function updateMenuForActiveBank() {
+    const grammarBtn = document.querySelector('.m-grammar');
+    if (!grammarBtn) return;
+    if (isBuiltinActive()) {
+      grammarBtn.classList.remove('is-disabled');
+      grammarBtn.title = '';
+    } else {
+      grammarBtn.classList.add('is-disabled');
+      grammarBtn.title = '自製題庫不含文法題';
+    }
+  }
+
+  // ─── Flashcard 瀏覽學習模式 ───
+  function buildBrowseCards() {
+    const bank = getActiveBank();
+    const cards = [];
+    (bank.vocab || []).forEach(w => cards.push({ kind: 'vocab', es: w.es, zh: w.zh, ipa: w.ipa, cat: w.cat }));
+    (bank.listening || []).forEach(s => cards.push({ kind: 'listen', es: s.es, zh: s.zh, topic: s.topic }));
+    (bank.grammar || []).forEach(it => {
+      const filled = String(it.q || '').replace(/_+/, it.opts[it.a]);
+      cards.push({ kind: 'grammar', es: filled, zh: it.zh, exp: it.exp, topic: it.topic });
+    });
+    return cards;
+  }
+
+  function openBrowse() {
+    browseAllCards = buildBrowseCards();
+    browseFilter = 'all';
+    browseIdx = 0;
+    applyBrowseFilter();
+    // filter 按鈕 active 狀態
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === 'all'));
+    // 文法 filter 在自製題庫時 disable
+    const grammarFilterBtn = document.querySelector('.filter-btn[data-filter="grammar"]');
+    if (grammarFilterBtn) grammarFilterBtn.disabled = !isBuiltinActive();
+    // bank pill
+    const bank = getActiveBank();
+    $('browse-bank-pill').textContent = bank.name;
+    show('browse');
+    bindBrowseKeys();
+    renderBrowse();
+  }
+
+  function applyBrowseFilter() {
+    if (browseFilter === 'all') browseCards = browseAllCards.slice();
+    else browseCards = browseAllCards.filter(c => c.kind === browseFilter);
+    if (browseIdx >= browseCards.length) browseIdx = 0;
+  }
+
+  function setBrowseFilter(kind) {
+    browseFilter = kind;
+    browseIdx = 0;
+    applyBrowseFilter();
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b.dataset.filter === kind));
+    renderBrowse();
+  }
+
+  function renderBrowse() {
+    const total = browseCards.length;
+    if (total === 0) {
+      $('flashcard').classList.add('hidden');
+      $('browse-empty').classList.remove('hidden');
+      $('browse-progress').textContent = '0 / 0';
+      ['browse-prev', 'browse-next', 'browse-flip', 'browse-speak'].forEach(id => $(id).disabled = true);
+      return;
+    }
+    $('flashcard').classList.remove('hidden');
+    $('browse-empty').classList.add('hidden');
+    $('browse-progress').textContent = `${browseIdx + 1} / ${total}`;
+    $('browse-prev').disabled = browseIdx <= 0;
+    $('browse-next').disabled = browseIdx >= total - 1;
+    $('browse-flip').disabled = false;
+
+    const card = browseCards[browseIdx];
+    let frontHtml, backHtml, canSpeak = true;
+    if (card.kind === 'vocab') {
+      frontHtml = `<div class="es">${escapeHtml(card.es)}</div>${card.cat ? `<div class="fc-topic" style="margin-top:14px;">${escapeHtml(card.cat)}</div>` : ''}`;
+      backHtml = `<div class="zh">${escapeHtml(card.zh)}</div>${card.ipa ? `<div class="fc-ipa">[${escapeHtml(card.ipa)}]</div>` : ''}`;
+    } else if (card.kind === 'listen') {
+      frontHtml = `${card.topic ? `<div class="fc-topic">${escapeHtml(card.topic)}</div>` : ''}<div class="es">${escapeHtml(card.es)}</div>`;
+      backHtml = `<div class="zh">${escapeHtml(card.zh)}</div>`;
+    } else {
+      frontHtml = `${card.topic ? `<div class="fc-topic">${escapeHtml(card.topic)}</div>` : ''}<div class="grammar-q">${escapeHtml(card.es)}</div>${card.zh ? `<div class="fc-ipa" style="margin-top:10px;">${escapeHtml(card.zh)}</div>` : ''}`;
+      backHtml = `<div class="exp">${escapeHtml(card.exp || '（無解釋）')}</div>`;
+    }
+    $('fc-front').innerHTML = frontHtml;
+    $('fc-back').innerHTML = backHtml;
+    $('fc-front').classList.remove('hidden');
+    $('fc-back').classList.add('hidden');
+    $('browse-speak').disabled = !canSpeak;
+  }
+
+  function flipCard() {
+    if (browseCards.length === 0) return;
+    $('fc-front').classList.toggle('hidden');
+    $('fc-back').classList.toggle('hidden');
+  }
+
+  function browsePrev() {
+    if (browseIdx > 0) { browseIdx--; renderBrowse(); }
+  }
+  function browseNext() {
+    if (browseIdx < browseCards.length - 1) { browseIdx++; renderBrowse(); }
+  }
+  function speakCurrentCard() {
+    if (browseCards.length === 0) return;
+    speak(browseCards[browseIdx].es);
+  }
+
+  function bindBrowseKeys() {
+    unbindBrowseKeys();
+    browseKeyHandler = (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowLeft') { e.preventDefault(); browsePrev(); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); browseNext(); }
+      else if (e.key === ' ') { e.preventDefault(); flipCard(); }
+    };
+    document.addEventListener('keydown', browseKeyHandler);
+  }
+  function unbindBrowseKeys() {
+    if (browseKeyHandler) {
+      document.removeEventListener('keydown', browseKeyHandler);
+      browseKeyHandler = null;
+    }
+  }
+
+  function deleteBank(id) {
+    if (!confirm('確定刪除這個題庫？')) return;
+    const wasActive = activeBank.kind === 'custom' && activeBank.id === id;
+    customBanks = customBanks.filter(b => b.id !== id);
+    if (wasActive) activeBank = { kind: 'builtin', id: BUILTIN_ID };
+    saveState();
+    renderBanks();
+    updateMenuForActiveBank();
+  }
+
+  function exportData() {
+    const blob = new Blob([JSON.stringify({ customBanks, stats, activeBank }, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `spanish_quiz_data_${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function importData(ev) {
+    const f = ev.target.files[0];
+    if (!f) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      try {
+        const data = JSON.parse(e.target.result);
+        if (data.customBanks) {
+          if (!confirm(`匯入 ${data.customBanks.length} 個題庫？這會覆蓋目前的自製題庫。`)) return;
+          customBanks = data.customBanks;
+          if (data.stats) stats = data.stats;
+          activeBank = resolveActiveBank(data.activeBank);
+          saveState();
+          renderBanks();
+          alert('匯入成功！');
+        }
+      } catch (err) { alert('檔案格式錯誤'); }
+    };
+    reader.readAsText(f);
+    ev.target.value = '';
+  }
+
+  // ─── 開始測驗（先顯示設定）───
+  function startQuiz(mode) {
+    if (mode === 'grammar' && !isBuiltinActive()) {
+      alert('目前使用中的是自製題庫，未含文法題。請先在「題庫管理」切換到內建題庫。');
+      return;
+    }
+    currentMode = mode;
+    const titleMap = {
+      vocab: '📚 單字測驗', listen: '👂 聽力測驗',
+      grammar: '📝 句型文法', mixed: '🎯 綜合挑戰'
+    };
+    $('settings-title').textContent = titleMap[mode];
+    show('settings');
+  }
+
+  function beginQuiz() {
+    const n = parseInt($('num-questions').value);
+    const questions = generateQuestions(currentMode, n);
+    if (questions.length === 0) {
+      alert('目前題庫沒有可用的題目，請切換題庫或先匯入內容');
+      return;
+    }
+    currentQuiz = { mode: currentMode, questions, current: 0, score: 0, wrong: [], answered: false };
+    show('quiz');
+    renderQ();
+  }
+
+  // ─── 出題 ───
+  function makeVocabQ(pool) {
+    if (pool.length < 4) return null;
+    const shuf = shuffle(pool);
+    const correct = shuf[0];
+    const distractors = shuf.slice(1, 4);
+    const opts = shuffle([correct, ...distractors]);
+    return {
+      type: 'vocab',
+      prompt: correct.zh,
+      promptLabel: `「${correct.zh}」的西班牙語是？`,
+      options: opts.map(o => o.es),
+      answer: opts.findIndex(o => o.es === correct.es),
+      explanation: `<strong>${correct.es}</strong> = ${correct.zh}${correct.cat ? '（' + correct.cat + '）' : ''}`,
+      speakText: correct.es,
+      source: correct.source,
+      sourceName: correct.bankName,
+    };
+  }
+
+  function makeListenQ(vocabPool, sentencePool) {
+    // 70% 用句子，30% 用單字（依比例調整）
+    const useSentence = sentencePool.length > 0 && Math.random() < 0.7;
+    if (useSentence) {
+      const shuf = shuffle(sentencePool);
+      const correct = shuf[0];
+      // 干擾項從其他句子的中文翻譯找
+      const others = shuf.slice(1).filter(s => s.zh !== correct.zh).slice(0, 3);
+      if (others.length < 3) return makeListenQFromVocab(vocabPool);
+      const opts = shuffle([correct, ...others]);
+      return {
+        type: 'listen',
+        prompt: correct.es,
+        promptLabel: '聽聽看，這句話的意思是？',
+        options: opts.map(o => o.zh),
+        answer: opts.findIndex(o => o.zh === correct.zh),
+        explanation: `<strong>${correct.es}</strong><br>${correct.zh}${correct.topic ? '（' + correct.topic + '）' : ''}`,
+        speakText: correct.es,
+        source: correct.source,
+        sourceName: correct.bankName,
+        topic: correct.topic,
+      };
+    }
+    return makeListenQFromVocab(vocabPool);
+  }
+
+  function makeListenQFromVocab(pool) {
+    if (pool.length < 4) return null;
+    const shuf = shuffle(pool);
+    const correct = shuf[0];
+    const distractors = shuf.slice(1, 4);
+    const opts = shuffle([correct, ...distractors]);
+    return {
+      type: 'listen',
+      prompt: correct.es,
+      promptLabel: '聽聽看，這個西班牙語的意思是？',
+      options: opts.map(o => o.zh),
+      answer: opts.findIndex(o => o.zh === correct.zh),
+      explanation: `<strong>${correct.es}</strong> = ${correct.zh}`,
+      speakText: correct.es,
+      source: correct.source,
+    };
+  }
+
+  function makeGrammarQ() {
+    if (!banks.grammar) return null;
+    const item = shuffle(banks.grammar.items)[0];
+    return {
+      type: 'grammar',
+      promptLabel: `<div class="topic-tag">${item.topic}</div>${item.q} <span style="color:#6b7280;font-size:14px;">(${item.zh})</span>`,
+      options: item.opts,
+      answer: item.a,
+      explanation: item.exp,
+      source: 'default',
+    };
+  }
+
+  function generateQuestions(mode, n) {
+    const bank = getActiveBank();
+    const vocabPool = bank.vocab || [];
+    const sentencePool = bank.listening || [];
+    const hasGrammar = (bank.grammar || []).length > 0;
+
+    const qs = [];
+    for (let i = 0; i < n; i++) {
+      let q = null;
+      if (mode === 'vocab') q = makeVocabQ(vocabPool);
+      else if (mode === 'listen') q = makeListenQ(vocabPool, sentencePool);
+      else if (mode === 'grammar') q = makeGrammarQ();
+      else if (mode === 'mixed') {
+        const r = Math.random();
+        if (hasGrammar) {
+          if (r < 0.34) q = makeVocabQ(vocabPool);
+          else if (r < 0.67) q = makeListenQ(vocabPool, sentencePool);
+          else q = makeGrammarQ();
+        } else {
+          if (r < 0.5) q = makeVocabQ(vocabPool);
+          else q = makeListenQ(vocabPool, sentencePool);
+        }
+      }
+      if (q) qs.push(q);
+    }
+    return qs;
+  }
+
+  // ─── 渲染題目 ───
+  function renderQ() {
+    currentQuiz.answered = false;
+    const q = currentQuiz.questions[currentQuiz.current];
+    const total = currentQuiz.questions.length;
+    $('progress').textContent = `第 ${currentQuiz.current + 1} / ${total} 題 · 答對 ${currentQuiz.score}`;
+    $('score-fill').style.width = `${(currentQuiz.current / total) * 100}%`;
+    $('feedback').innerHTML = '';
+    $('next-btn').classList.add('hidden');
+
+    const badge = { vocab: '📚 單字', listen: '👂 聽力', grammar: '📝 文法' }[q.type];
+    const srcBadge = q.source === 'custom' ? `<span class="source-badge">📦 ${escapeHtml(q.sourceName || '自製')}</span>` : '';
+    let html = `<div class="type-badge">${badge}</div>${srcBadge}`;
+
+    if (q.type === 'listen') {
+      html += `<div class="q-card q-listen">
+        <button class="play-btn" id="play-btn" title="播放">🔊</button>
+        <div style="font-size:13px;color:#6b7280;margin-top:4px;">點擊播放（可重複聽）</div>
+        <div style="font-size:15px;color:#374151;margin-top:14px;">${q.promptLabel}</div>
+      </div>`;
+    } else if (q.type === 'vocab') {
+      html += `<div class="q-card q-vocab">
+        <div class="q-prompt-hint">請選出對應的西班牙語</div>
+        <div class="q-prompt-zh">${escapeHtml(q.prompt)}</div>
+      </div>`;
+    } else {
+      html += `<div class="q-card q-grammar">${q.promptLabel}</div>`;
+    }
+
+    html += '<div>';
+    q.options.forEach((opt, i) => {
+      const showSpeak = q.type === 'vocab';
+      html += `<button class="opt-btn" data-i="${i}">
+        <span>${escapeHtml(opt)}</span>
+        ${showSpeak ? `<span class="speak-icon" data-text="${escapeHtml(opt)}" title="聽發音">🔊</span>` : ''}
+      </button>`;
+    });
+    html += '</div>';
+    $('question-area').innerHTML = html;
+
+    document.querySelectorAll('.opt-btn').forEach(b => {
+      b.onclick = () => answer(parseInt(b.dataset.i));
+    });
+    document.querySelectorAll('.speak-icon').forEach(s => {
+      s.onclick = e => { e.stopPropagation(); speak(s.dataset.text); };
+    });
+    if (q.type === 'listen') {
+      $('play-btn').onclick = () => speak(q.speakText);
+      setTimeout(() => speak(q.speakText), 500);
+    }
+  }
+
+  function answer(idx) {
+    if (currentQuiz.answered) return;
+    currentQuiz.answered = true;
+    const q = currentQuiz.questions[currentQuiz.current];
+    const correct = idx === q.answer;
+    if (correct) currentQuiz.score++;
+    else currentQuiz.wrong.push({ ...q, chosen: q.options[idx] });
+
+    document.querySelectorAll('.opt-btn').forEach((b, i) => {
+      b.disabled = true;
+      if (i === q.answer) b.classList.add('opt-correct');
+      else if (i === idx) b.classList.add('opt-wrong');
+      else b.classList.add('opt-faded');
+    });
+
+    $('feedback').innerHTML = `<div class="feedback ${correct ? 'fb-correct' : 'fb-wrong'}">
+      <div class="fb-title">${correct ? '✓ 正確！¡Correcto!' : '✗ 答錯了 ¡Incorrecto!'}</div>
+      <div class="fb-exp">${q.explanation}</div>
+    </div>`;
+
+    $('next-btn').classList.remove('hidden');
+    $('next-btn').textContent = currentQuiz.current === currentQuiz.questions.length - 1 ? '查看結果 →' : '下一題 →';
+  }
+
+  function next() {
+    currentQuiz.current++;
+    if (currentQuiz.current >= currentQuiz.questions.length) showResult();
+    else renderQ();
+  }
+
+  function showResult() {
+    stats.totalAnswered += currentQuiz.questions.length;
+    stats.totalCorrect += currentQuiz.score;
+    stats.sessions++;
+    saveState();
+
+    show('result');
+    const pct = Math.round((currentQuiz.score / currentQuiz.questions.length) * 100);
+    let emoji, title, comment;
+    if (pct === 100) { emoji = '🏆'; title = '¡Perfecto!'; comment = '滿分！你的西班牙語超棒！'; }
+    else if (pct >= 80) { emoji = '🎉'; title = '¡Excelente!'; comment = '太厲害了，繼續保持！'; }
+    else if (pct >= 60) { emoji = '👍'; title = '¡Muy bien!'; comment = '不錯喔，多練習會更穩！'; }
+    else if (pct >= 40) { emoji = '💪'; title = '¡Sigue así!'; comment = '繼續加油，多複習就會進步！'; }
+    else { emoji = '📖'; title = 'A practicar'; comment = '別氣餒，學語言就是要不斷練習！'; }
+
+    $('result-emoji').textContent = emoji;
+    $('result-title').textContent = title;
+    $('result-score').innerHTML = `<strong>${currentQuiz.score} / ${currentQuiz.questions.length}</strong> 題正確（${pct}%）`;
+    $('result-comment').textContent = comment;
+
+    if (currentQuiz.wrong.length > 0) {
+      let wh = '<div class="wrong-title">📝 錯題複習</div>';
+      currentQuiz.wrong.forEach(w => {
+        const qText = w.type === 'vocab' ? `「${w.prompt}」的西班牙語是？`
+                    : w.type === 'listen' ? `聽到的「${w.prompt}」意思是？`
+                    : w.promptLabel.replace(/<[^>]+>/g, '');
+        wh += `<div class="wrong-item">
+          <div class="wrong-q">${qText}</div>
+          <div class="wrong-a">✓ ${w.explanation}</div>
+        </div>`;
+      });
+      $('wrong-list').innerHTML = wh;
+    } else $('wrong-list').innerHTML = '';
+  }
+
+  function retry() { beginQuiz(); }
+  function backToMenu() { show('menu'); }
+
+  // ─── 匯入功能 ───
+  function switchImportTab(name) {
+    document.querySelectorAll('.import-tab').forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+    document.querySelectorAll('.import-pane').forEach(p => p.classList.toggle('active', p.id === `import-pane-${name}`));
+  }
+
+  function showStatus(msg, type = 'info') {
+    const cls = type === 'error' ? 'error-box' : type === 'warn' ? 'warn-box' : 'info-box';
+    $('import-status').innerHTML = `<div class="${cls}">${msg}</div>`;
+  }
+  function showLoading(msg) {
+    $('import-status').innerHTML = `<div class="info-box"><span class="spinner"></span>${msg}</div>`;
+  }
+
+  async function importYouTube() {
+    const url = $('yt-url').value.trim();
+    if (!url) { alert('請貼上 YouTube 連結'); return; }
+    const nv = parseInt($('yt-num-vocab').value);
+    const nl = parseInt($('yt-num-listen').value);
+    showLoading('抓取字幕中… 這可能需要 20-60 秒');
+    try {
+      const r = await fetch(API_BASE + '/api/youtube/quiz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url, num_vocab: nv, num_listening: nl }),
+      });
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.detail || '產生失敗');
+      const bank = {
+        id: 'bank_' + Date.now(),
+        name: data.video.title || 'YouTube 題庫',
+        source: 'YouTube',
+        videoId: data.video.video_id,
+        created: new Date().toISOString(),
+        vocab: data.vocab || [],
+        listening: data.listening || [],
+      };
+      customBanks.push(bank);
+      saveState();
+      showStatus(`✓ 成功！產生了 ${bank.vocab.length} 個單字、${bank.listening.length} 個句子。<br>題庫名稱：「${escapeHtml(bank.name)}」<br><br><button class="primary-btn" onclick="App.backToMenu()">回主選單開始練習</button>`, 'info');
+      $('yt-url').value = '';
+    } catch (e) {
+      showStatus('❌ 失敗：' + e.message, 'error');
+    }
+  }
+
+  async function importSubtitle() {
+    const file = $('subtitle-file').files[0];
+    if (!file) { alert('請選擇字幕檔'); return; }
+    showLoading('解析字幕並產生題目中…');
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      const r = await fetch(API_BASE + '/api/upload/subtitle', { method: 'POST', body: fd });
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.detail || '產生失敗');
+      const bank = {
+        id: 'bank_' + Date.now(),
+        name: file.name.replace(/\.(srt|vtt|txt)$/i, ''),
+        source: '字幕檔',
+        created: new Date().toISOString(),
+        vocab: data.vocab || [],
+        listening: data.listening || [],
+      };
+      customBanks.push(bank);
+      saveState();
+      showStatus(`✓ 成功！產生了 ${bank.vocab.length} 個單字、${bank.listening.length} 個句子。`, 'info');
+    } catch (e) {
+      showStatus('❌ 失敗：' + e.message, 'error');
+    }
+  }
+
+  async function importText() {
+    const text = $('raw-text').value.trim();
+    const title = $('text-title').value.trim() || '自製題庫';
+    if (!text) { alert('請貼上西班牙語文本'); return; }
+    showLoading('AI 產生題目中…');
+    try {
+      const r = await fetch(API_BASE + '/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text, title, num_vocab: 8, num_listening: 5 }),
+      });
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.detail || '產生失敗');
+      const bank = {
+        id: 'bank_' + Date.now(),
+        name: title,
+        source: '文本',
+        created: new Date().toISOString(),
+        vocab: data.vocab || [],
+        listening: data.listening || [],
+      };
+      customBanks.push(bank);
+      saveState();
+      showStatus(`✓ 成功！產生了 ${bank.vocab.length} 個單字、${bank.listening.length} 個句子。`, 'info');
+      $('raw-text').value = '';
+      $('text-title').value = '';
+    } catch (e) {
+      showStatus('❌ 失敗：' + e.message, 'error');
+    }
+  }
+
+  // ─── 初始化 ───
+  async function init() {
+    loadState();
+    try {
+      await loadBanks();
+      activeBank = resolveActiveBank(activeBank);
+      renderStats();
+      updateMenuForActiveBank();
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  return {
+    init, show, startQuiz, beginQuiz, backToMenu, next, retry,
+    importYouTube, importSubtitle, importText, switchImportTab,
+    deleteBank, exportData, importData,
+    setActiveBank, renameBank, openBankDetail,
+    openBrowse, browsePrev, browseNext, flipCard, speakCurrentCard, setBrowseFilter,
+  };
+})();
+
+window.addEventListener('DOMContentLoaded', App.init);
+</script>
+</body>
+</html>

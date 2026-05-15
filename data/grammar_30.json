@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "total": 30,
+    "description": "30 個常見西班牙語句型文法題（初級到中級）"
+  },
+  "items": [
+    {
+      "id": "g01",
+      "topic": "ser 動詞",
+      "q": "Yo ___ profesor.",
+      "zh": "我是老師",
+      "opts": ["soy", "eres", "es", "somos"],
+      "a": 0,
+      "exp": "ser 第一人稱單數：yo soy。ser 表身分、本質、職業。"
+    },
+    {
+      "id": "g02",
+      "topic": "ser 動詞",
+      "q": "Nosotros ___ amigos.",
+      "zh": "我們是朋友",
+      "opts": ["soy", "eres", "somos", "son"],
+      "a": 2,
+      "exp": "ser 第一人稱複數：nosotros somos。"
+    },
+    {
+      "id": "g03",
+      "topic": "estar 動詞",
+      "q": "¿Cómo ___ tú?",
+      "zh": "你好嗎？",
+      "opts": ["soy", "eres", "estoy", "estás"],
+      "a": 3,
+      "exp": "estar 第二人稱單數：tú estás。estar 表暫時狀態、位置。"
+    },
+    {
+      "id": "g04",
+      "topic": "ser vs estar",
+      "q": "La sopa ___ caliente.",
+      "zh": "湯是熱的（現在）",
+      "opts": ["es", "está", "son", "están"],
+      "a": 1,
+      "exp": "形容暫時狀態（現在這碗湯熱）用 estar。如果說 La sopa es caliente 會變成「湯（本質上）就是熱食」。"
+    },
+    {
+      "id": "g05",
+      "topic": "定冠詞",
+      "q": "___ libro está en la mesa.",
+      "zh": "這本書在桌上",
+      "opts": ["El", "La", "Los", "Las"],
+      "a": 0,
+      "exp": "libro 陽性單數 → el。"
+    },
+    {
+      "id": "g06",
+      "topic": "定冠詞",
+      "q": "___ casas son grandes.",
+      "zh": "這些房子很大",
+      "opts": ["El", "La", "Los", "Las"],
+      "a": 3,
+      "exp": "casas 陰性複數 → las。"
+    },
+    {
+      "id": "g07",
+      "topic": "不定冠詞",
+      "q": "Tengo ___ perro.",
+      "zh": "我有一隻狗",
+      "opts": ["un", "una", "unos", "unas"],
+      "a": 0,
+      "exp": "perro 陽性單數 → un。"
+    },
+    {
+      "id": "g08",
+      "topic": "形容詞性數配合",
+      "q": "Las flores son ___.",
+      "zh": "這些花很紅",
+      "opts": ["rojo", "roja", "rojos", "rojas"],
+      "a": 3,
+      "exp": "flores 陰性複數 → rojas。形容詞要與名詞配合。"
+    },
+    {
+      "id": "g09",
+      "topic": "形容詞性數配合",
+      "q": "Mis hermanos son ___.",
+      "zh": "我的兄弟們很高",
+      "opts": ["alto", "alta", "altos", "altas"],
+      "a": 2,
+      "exp": "hermanos 陽性複數 → altos。"
+    },
+    {
+      "id": "g10",
+      "topic": "-ar 規則動詞",
+      "q": "Yo ___ español todos los días.",
+      "zh": "我每天說西班牙語",
+      "opts": ["habla", "hablas", "hablo", "hablan"],
+      "a": 2,
+      "exp": "hablar 第一人稱：yo hablo。-ar 動詞變位：-o/-as/-a/-amos/-áis/-an。"
+    },
+    {
+      "id": "g11",
+      "topic": "-er 規則動詞",
+      "q": "Nosotros ___ pizza los viernes.",
+      "zh": "我們週五吃披薩",
+      "opts": ["como", "comes", "come", "comemos"],
+      "a": 3,
+      "exp": "comer 第一人稱複數：nosotros comemos。-er 動詞變位。"
+    },
+    {
+      "id": "g12",
+      "topic": "-ir 規則動詞",
+      "q": "Mi hermana ___ en Madrid.",
+      "zh": "我姊姊住在馬德里",
+      "opts": ["vivo", "vives", "vive", "viven"],
+      "a": 2,
+      "exp": "vivir 第三人稱單數：ella vive。-ir 動詞變位。"
+    },
+    {
+      "id": "g13",
+      "topic": "tener 動詞",
+      "q": "Yo ___ veinte años.",
+      "zh": "我 20 歲",
+      "opts": ["soy", "estoy", "tengo", "tiene"],
+      "a": 2,
+      "exp": "西班牙語表年齡用 tener（直譯：我擁有20年）。tengo 是 tener 第一人稱。"
+    },
+    {
+      "id": "g14",
+      "topic": "ir + a + 不定式（近未來）",
+      "q": "Mañana ___ a estudiar.",
+      "zh": "明天我要去讀書",
+      "opts": ["voy", "vas", "va", "vamos"],
+      "a": 0,
+      "exp": "ir + a + infinitivo 表近未來。yo voy a estudiar = 我將要去讀書。"
+    },
+    {
+      "id": "g15",
+      "topic": "gustar 結構",
+      "q": "A mí me ___ el café.",
+      "zh": "我喜歡咖啡",
+      "opts": ["gusto", "gustas", "gusta", "gustan"],
+      "a": 2,
+      "exp": "gustar 結構：主詞是被喜歡的事物。咖啡（單數）→ gusta。「我」用 me（間接受詞）。"
+    },
+    {
+      "id": "g16",
+      "topic": "gustar 結構",
+      "q": "A ella le ___ los gatos.",
+      "zh": "她喜歡貓",
+      "opts": ["gusto", "gusta", "gustan", "gustamos"],
+      "a": 2,
+      "exp": "被喜歡的事物（gatos）是複數，所以動詞用 gustan。"
+    },
+    {
+      "id": "g17",
+      "topic": "反身動詞",
+      "q": "Yo ___ Quentin.",
+      "zh": "我叫 Quentin",
+      "opts": ["llamo", "me llamo", "te llamas", "se llama"],
+      "a": 1,
+      "exp": "llamarse 是反身動詞，「叫做」。第一人稱：me llamo。"
+    },
+    {
+      "id": "g18",
+      "topic": "疑問詞",
+      "q": "¿___ es tu nombre?",
+      "zh": "你叫什麼名字？",
+      "opts": ["Qué", "Cuál", "Quién", "Dónde"], 
+      "a": 1,
+      "exp": "問姓名用 ¿Cuál es tu nombre? 因為從可能選項中選擇。Qué 用於定義詢問。"
+    },
+    {
+      "id": "g19",
+      "topic": "疑問詞",
+      "q": "¿___ vives?",
+      "zh": "你住哪裡？",
+      "opts": ["Qué", "Cómo", "Dónde", "Cuándo"],
+      "a": 2,
+      "exp": "問地點用 dónde。"
+    },
+    {
+      "id": "g20",
+      "topic": "所有格形容詞",
+      "q": "Es ___ libro. (我的)",
+      "zh": "這是我的書",
+      "opts": ["mi", "tu", "su", "nuestro"],
+      "a": 0,
+      "exp": "我的 = mi（單數）/ mis（複數）。"
+    },
+    {
+      "id": "g21",
+      "topic": "所有格形容詞",
+      "q": "Son ___ amigos. (我們的)",
+      "zh": "他們是我們的朋友",
+      "opts": ["mis", "tus", "sus", "nuestros"],
+      "a": 3,
+      "exp": "我們的 + 陽性複數名詞 = nuestros。"
+    },
+    {
+      "id": "g22",
+      "topic": "現在進行式",
+      "q": "Estoy ___ un libro.",
+      "zh": "我正在讀一本書",
+      "opts": ["leer", "leyendo", "leído", "leo"],
+      "a": 1,
+      "exp": "estar + gerundio 表進行式。leer → leyendo。"
+    },
+    {
+      "id": "g23",
+      "topic": "簡單過去式 (pretérito)",
+      "q": "Ayer ___ a la playa.",
+      "zh": "我昨天去了海灘",
+      "opts": ["voy", "iba", "fui", "iré"],
+      "a": 2,
+      "exp": "ir 簡單過去式第一人稱：fui。表示完成的過去動作。"
+    },
+    {
+      "id": "g24",
+      "topic": "未完成過去式 (imperfecto)",
+      "q": "Cuando era niño, ___ mucho.",
+      "zh": "我小時候常玩",
+      "opts": ["jugué", "jugaba", "juego", "jugaré"],
+      "a": 1,
+      "exp": "imperfecto 表過去習慣或反覆動作。jugar → jugaba（yo）。"
+    },
+    {
+      "id": "g25",
+      "topic": "現在完成式",
+      "q": "Hoy ___ comido paella.",
+      "zh": "今天我吃過西班牙海鮮飯",
+      "opts": ["he", "has", "ha", "hemos"],
+      "a": 0,
+      "exp": "現在完成式：haber 現在式 + 過去分詞。yo he comido。"
+    },
+    {
+      "id": "g26",
+      "topic": "未來式",
+      "q": "Mañana ___ a Madrid.",
+      "zh": "明天我會去馬德里",
+      "opts": ["viajé", "viajaba", "viajo", "viajaré"],
+      "a": 3,
+      "exp": "簡單未來式：viajar → viajaré。也可用 ir + a + inf：voy a viajar。"
+    },
+    {
+      "id": "g27",
+      "topic": "命令式（tú 肯定）",
+      "q": "¡___ la puerta, por favor! (abrir)",
+      "zh": "請開門！",
+      "opts": ["Abre", "Abras", "Abrir", "Abrió"],
+      "a": 0,
+      "exp": "tú 的肯定命令式同第三人稱單數現在式：abre。"
+    },
+    {
+      "id": "g28",
+      "topic": "比較級",
+      "q": "Pedro es ___ alto ___ Juan.",
+      "zh": "Pedro 比 Juan 高",
+      "opts": ["tan / como", "más / que", "menos / como", "muy / que"],
+      "a": 1,
+      "exp": "「比較高」= más alto que。tan...como 是「一樣...」。"
+    },
+    {
+      "id": "g29",
+      "topic": "最高級",
+      "q": "Es ___ ciudad más bonita del país.",
+      "zh": "這是國內最漂亮的城市",
+      "opts": ["el", "la", "los", "las"],
+      "a": 1,
+      "exp": "ciudad 陰性 → la。最高級結構：el/la + (名詞) + más + 形容詞。"
+    },
+    {
+      "id": "g30",
+      "topic": "虛擬式入門",
+      "q": "Quiero que tú ___ feliz.",
+      "zh": "我希望你快樂",
+      "opts": ["eres", "seas", "fuiste", "serás"],
+      "a": 1,
+      "exp": "querer que + 虛擬式。ser 的虛擬式第二人稱：seas。表達期望、情感時用虛擬式。"
+    }
+  ]
+}
