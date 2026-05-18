@@ -602,6 +602,306 @@
       "zh": "第三",
       "ipa": "",
       "cat": "數字"
+    },
+    {
+      "es": "España",
+      "zh": "西班牙",
+      "ipa": "esˈpaɲa",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "español",
+      "zh": "西班牙語；西班牙人（陽）",
+      "ipa": "espaˈɲol",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "española",
+      "zh": "西班牙人（陰）",
+      "ipa": "espaˈɲola",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "México",
+      "zh": "墨西哥",
+      "ipa": "ˈmexiko",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "mexicano",
+      "zh": "墨西哥人",
+      "ipa": "mexiˈkano",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "China",
+      "zh": "中國",
+      "ipa": "ˈtʃina",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "chino",
+      "zh": "中國人；中文",
+      "ipa": "ˈtʃino",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "Taiwán",
+      "zh": "台灣",
+      "ipa": "taiˈwan",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "taiwanés",
+      "zh": "台灣人",
+      "ipa": "taiwaˈnes",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "Estados Unidos",
+      "zh": "美國",
+      "ipa": "esˈtaðos uˈniðos",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "inglés",
+      "zh": "英語；英國人",
+      "ipa": "inˈɡles",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "francés",
+      "zh": "法語；法國人",
+      "ipa": "franˈθes",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "país",
+      "zh": "國家",
+      "ipa": "paˈis",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "nacionalidad",
+      "zh": "國籍",
+      "ipa": "naθjonaliˈðað",
+      "cat": "國家與國籍"
+    },
+    {
+      "es": "idioma",
+      "zh": "語言",
+      "ipa": "iˈðjoma",
+      "cat": "語言與學習"
+    },
+    {
+      "es": "lengua",
+      "zh": "語言；舌頭",
+      "ipa": "ˈleŋɡwa",
+      "cat": "語言與學習"
+    },
+    {
+      "es": "palabra",
+      "zh": "字；詞",
+      "ipa": "paˈlaβɾa",
+      "cat": "語言與學習"
+    },
+    {
+      "es": "profesor",
+      "zh": "老師（陽）",
+      "ipa": "profeˈsor",
+      "cat": "職業"
+    },
+    {
+      "es": "profesora",
+      "zh": "老師（陰）",
+      "ipa": "profeˈsora",
+      "cat": "職業"
+    },
+    {
+      "es": "estudiante",
+      "zh": "學生",
+      "ipa": "estuˈðjante",
+      "cat": "職業"
+    },
+    {
+      "es": "médico",
+      "zh": "醫生",
+      "ipa": "ˈmeðiko",
+      "cat": "職業"
+    },
+    {
+      "es": "enfermero",
+      "zh": "護理師",
+      "ipa": "emferˈmeɾo",
+      "cat": "職業"
+    },
+    {
+      "es": "ingeniero",
+      "zh": "工程師",
+      "ipa": "inxeˈnjeɾo",
+      "cat": "職業"
+    },
+    {
+      "es": "abogado",
+      "zh": "律師",
+      "ipa": "aβoˈɣaðo",
+      "cat": "職業"
+    },
+    {
+      "es": "cocinero",
+      "zh": "廚師",
+      "ipa": "koθiˈneɾo",
+      "cat": "職業"
+    },
+    {
+      "es": "camarero",
+      "zh": "服務生",
+      "ipa": "kamaˈɾeɾo",
+      "cat": "職業"
+    },
+    {
+      "es": "policía",
+      "zh": "警察",
+      "ipa": "poliˈθia",
+      "cat": "職業"
+    },
+    {
+      "es": "trabajo",
+      "zh": "工作",
+      "ipa": "tɾaˈβaxo",
+      "cat": "職業"
+    },
+    {
+      "es": "hablar",
+      "zh": "說話",
+      "ipa": "aˈβlaɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "estudiar",
+      "zh": "學習；念書",
+      "ipa": "estuˈðjaɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "trabajar",
+      "zh": "工作",
+      "ipa": "tɾaβaˈxaɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "vivir",
+      "zh": "居住；生活",
+      "ipa": "biˈβiɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "llamar",
+      "zh": "叫；打電話",
+      "ipa": "ʎaˈmaɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "aprender",
+      "zh": "學會",
+      "ipa": "apɾenˈdeɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "comprender",
+      "zh": "理解",
+      "ipa": "kompɾenˈdeɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "escribir",
+      "zh": "寫",
+      "ipa": "eskɾiˈβiɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "leer",
+      "zh": "閱讀",
+      "ipa": "leˈeɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "preguntar",
+      "zh": "問",
+      "ipa": "pɾeɣunˈtaɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "contestar",
+      "zh": "回答",
+      "ipa": "kontesˈtaɾ",
+      "cat": "動詞"
+    },
+    {
+      "es": "qué",
+      "zh": "什麼",
+      "ipa": "ke",
+      "cat": "疑問詞"
+    },
+    {
+      "es": "quién",
+      "zh": "誰",
+      "ipa": "kjen",
+      "cat": "疑問詞"
+    },
+    {
+      "es": "dónde",
+      "zh": "哪裡",
+      "ipa": "ˈdonde",
+      "cat": "疑問詞"
+    },
+    {
+      "es": "cómo",
+      "zh": "如何；怎麼",
+      "ipa": "ˈkomo",
+      "cat": "疑問詞"
+    },
+    {
+      "es": "cuándo",
+      "zh": "何時",
+      "ipa": "ˈkwando",
+      "cat": "疑問詞"
+    },
+    {
+      "es": "cuánto",
+      "zh": "多少",
+      "ipa": "ˈkwanto",
+      "cat": "疑問詞"
+    },
+    {
+      "es": "por qué",
+      "zh": "為什麼",
+      "ipa": "poɾ ˈke",
+      "cat": "疑問詞"
+    },
+    {
+      "es": "sí",
+      "zh": "是的",
+      "ipa": "si",
+      "cat": "基本用語"
+    },
+    {
+      "es": "no",
+      "zh": "不；沒有",
+      "ipa": "no",
+      "cat": "基本用語"
+    },
+    {
+      "es": "también",
+      "zh": "也",
+      "ipa": "tamˈbjen",
+      "cat": "基本用語"
+    },
+    {
+      "es": "muy",
+      "zh": "很；非常",
+      "ipa": "mwi",
+      "cat": "基本用語"
     }
   ],
   "grammar": [
@@ -723,6 +1023,96 @@
       ],
       "a": 3,
       "exp": "我們的 + 陽性複數名詞 = nuestros。",
+      "level": "L1"
+    },
+    {
+      "id": "gx_L1_01",
+      "topic": "主格代名詞",
+      "q": "___ somos estudiantes.",
+      "zh": "我們是學生。",
+      "opts": [
+        "Nosotros",
+        "Yo",
+        "Tú",
+        "Él"
+      ],
+      "a": 0,
+      "exp": "動詞 somos 為 ser 第一人稱複數，對應主格代名詞 nosotros（我們）。",
+      "level": "L1"
+    },
+    {
+      "id": "gx_L1_02",
+      "topic": "ser vs estar",
+      "q": "Yo ___ cansado hoy.",
+      "zh": "我今天很累。",
+      "opts": [
+        "estoy",
+        "soy",
+        "es",
+        "está"
+      ],
+      "a": 0,
+      "exp": "estar 表暫時狀態或心情（累）；第一人稱單數為 estoy。",
+      "level": "L1"
+    },
+    {
+      "id": "gx_L1_03",
+      "topic": "規則動詞現在式 -ar",
+      "q": "Ella ___ español muy bien.",
+      "zh": "她西班牙語說得很好。",
+      "opts": [
+        "habla",
+        "hablo",
+        "hablas",
+        "hablan"
+      ],
+      "a": 0,
+      "exp": "-ar 規則動詞 hablar，第三人稱單數去 -ar 加 -a：habla。",
+      "level": "L1"
+    },
+    {
+      "id": "gx_L1_04",
+      "topic": "規則動詞現在式 -er",
+      "q": "Nosotros ___ paella los domingos.",
+      "zh": "我們週日吃海鮮飯。",
+      "opts": [
+        "comemos",
+        "come",
+        "como",
+        "comen"
+      ],
+      "a": 0,
+      "exp": "-er 規則動詞 comer，第一人稱複數字尾為 -emos：comemos。",
+      "level": "L1"
+    },
+    {
+      "id": "gx_L1_05",
+      "topic": "規則動詞現在式 -ir",
+      "q": "Yo ___ en Taipei.",
+      "zh": "我住在台北。",
+      "opts": [
+        "vivo",
+        "vives",
+        "vive",
+        "viven"
+      ],
+      "a": 0,
+      "exp": "-ir 規則動詞 vivir，第一人稱單數字尾為 -o：vivo。",
+      "level": "L1"
+    },
+    {
+      "id": "gx_L1_06",
+      "topic": "ser 表來源",
+      "q": "Tú ___ de México, ¿verdad?",
+      "zh": "你來自墨西哥，對吧？",
+      "opts": [
+        "eres",
+        "soy",
+        "es",
+        "son"
+      ],
+      "a": 0,
+      "exp": "表國籍／來源用 ser de；ser 第二人稱單數為 eres。",
       "level": "L1"
     }
   ],
@@ -870,12 +1260,48 @@
       "es": "Voy a casa.",
       "zh": "我要回家。",
       "topic": "日常"
+    },
+    {
+      "id": "lx_L1_001",
+      "es": "¿Cómo te llamas?",
+      "zh": "你叫什麼名字？",
+      "topic": "自我介紹"
+    },
+    {
+      "id": "lx_L1_002",
+      "es": "Encantado de conocerte.",
+      "zh": "很高興認識你。",
+      "topic": "問候"
+    },
+    {
+      "id": "lx_L1_003",
+      "es": "¿Cuántos años tienes?",
+      "zh": "你幾歲？",
+      "topic": "自我介紹"
+    },
+    {
+      "id": "lx_L1_004",
+      "es": "Tengo veinte años.",
+      "zh": "我二十歲。",
+      "topic": "自我介紹"
+    },
+    {
+      "id": "lx_L1_005",
+      "es": "¿Hablas inglés?",
+      "zh": "你會說英語嗎？",
+      "topic": "語言"
+    },
+    {
+      "id": "lx_L1_006",
+      "es": "Soy estudiante de español.",
+      "zh": "我是西班牙語學生。",
+      "topic": "自我介紹"
     }
   ],
   "gaps": {
-    "vocab": 50,
-    "grammar": 6,
-    "listening": 6
+    "vocab": 0,
+    "grammar": 0,
+    "listening": 0
   },
   "targets": {
     "vocab": 150,

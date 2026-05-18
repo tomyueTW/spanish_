@@ -454,12 +454,6 @@
       "cat": "常用動詞"
     },
     {
-      "es": "trabajar",
-      "zh": "工作",
-      "ipa": "",
-      "cat": "常用動詞"
-    },
-    {
       "es": "descansar",
       "zh": "休息",
       "ipa": "",
@@ -486,12 +480,6 @@
     {
       "es": "llamarse",
       "zh": "名叫",
-      "ipa": "",
-      "cat": "常用動詞"
-    },
-    {
-      "es": "conocer",
-      "zh": "認識",
       "ipa": "",
       "cat": "常用動詞"
     },
@@ -818,6 +806,102 @@
       "zh": "圖像",
       "ipa": "",
       "cat": "其他常用名詞"
+    },
+    {
+      "es": "futuro",
+      "zh": "未來",
+      "ipa": "fuˈtuɾo",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "plan",
+      "zh": "計畫",
+      "ipa": "plan",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "proyecto",
+      "zh": "專案；計畫",
+      "ipa": "pɾoˈʝekto",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "objetivo",
+      "zh": "目標",
+      "ipa": "oβxeˈtiβo",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "meta",
+      "zh": "目標；終點",
+      "ipa": "ˈmeta",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "sueño",
+      "zh": "夢想；睡意",
+      "ipa": "ˈsweɲo",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "cita",
+      "zh": "約會；預約",
+      "ipa": "ˈθita",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "reunión",
+      "zh": "會議",
+      "ipa": "reuˈnjon",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "carrera",
+      "zh": "職業生涯；大學科系",
+      "ipa": "kaˈrera",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "ahorrar",
+      "zh": "儲蓄",
+      "ipa": "aoˈraɾ",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "planear",
+      "zh": "規劃",
+      "ipa": "planeˈaɾ",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "lograr",
+      "zh": "達成",
+      "ipa": "loˈɣɾaɾ",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "intentar",
+      "zh": "嘗試",
+      "ipa": "intenˈtaɾ",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "conseguir",
+      "zh": "取得；達成",
+      "ipa": "konseˈɣiɾ",
+      "cat": "計畫與未來"
+    },
+    {
+      "es": "agradecer",
+      "zh": "感謝",
+      "ipa": "aɣɾaðeˈθeɾ",
+      "cat": "常用動詞"
+    },
+    {
+      "es": "descubrir",
+      "zh": "發現",
+      "ipa": "deskuˈβɾiɾ",
+      "cat": "常用動詞"
     }
   ],
   "grammar": [
@@ -864,6 +948,171 @@
       ],
       "a": 0,
       "exp": "tú 的肯定命令式同第三人稱單數現在式：abre。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_01",
+      "topic": "未來式（規則）",
+      "q": "El año que viene yo ___ en otra ciudad.",
+      "zh": "明年我會住在另一座城市。",
+      "opts": [
+        "viviré",
+        "vivo",
+        "vivía",
+        "viví"
+      ],
+      "a": 0,
+      "exp": "規則未來式為原形加字尾；vivir 第一人稱單數為 viviré。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_02",
+      "topic": "未來式 tener（不規則）",
+      "q": "Mañana nosotros ___ una reunión importante.",
+      "zh": "明天我們會有一場重要的會議。",
+      "opts": [
+        "tendremos",
+        "tenemos",
+        "teníamos",
+        "tuvimos"
+      ],
+      "a": 0,
+      "exp": "tener 未來式詞幹不規則為 tendr-；第一人稱複數為 tendremos。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_03",
+      "topic": "未來式 hacer（不規則）",
+      "q": "¿Qué ___ tú después de graduarte?",
+      "zh": "你畢業後會做什麼？",
+      "opts": [
+        "harás",
+        "haces",
+        "hacías",
+        "hiciste"
+      ],
+      "a": 0,
+      "exp": "hacer 未來式詞幹不規則為 har-；第二人稱單數為 harás。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_04",
+      "topic": "未來式 poder（不規則）",
+      "q": "Creo que ___ terminar el proyecto a tiempo.",
+      "zh": "我想我能準時完成這個專案。",
+      "opts": [
+        "podré",
+        "puedo",
+        "podía",
+        "pude"
+      ],
+      "a": 0,
+      "exp": "poder 未來式詞幹不規則為 podr-；第一人稱單數為 podré。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_05",
+      "topic": "現在完成式",
+      "q": "Esta semana yo ___ trabajado mucho.",
+      "zh": "這週我工作很多。",
+      "opts": [
+        "he",
+        "ha",
+        "has",
+        "hemos"
+      ],
+      "a": 0,
+      "exp": "現在完成式為 haber + 過去分詞；haber 第一人稱單數為 he。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_06",
+      "topic": "現在完成式",
+      "q": "Ellos ya ___ visto esa película.",
+      "zh": "他們已經看過那部電影了。",
+      "opts": [
+        "han",
+        "ha",
+        "hemos",
+        "habéis"
+      ],
+      "a": 0,
+      "exp": "現在完成式 haber 第三人稱複數為 han，搭配過去分詞 visto。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_07",
+      "topic": "現在完成式（不規則分詞）",
+      "q": "¿Has ___ la tarea de hoy?",
+      "zh": "你做完今天的作業了嗎？",
+      "opts": [
+        "hecho",
+        "hacido",
+        "hacer",
+        "haciendo"
+      ],
+      "a": 0,
+      "exp": "hacer 的過去分詞為不規則形 hecho。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_08",
+      "topic": "命令式（tú 肯定）",
+      "q": "¡___ aquí un momento, por favor! (venir)",
+      "zh": "請過來這裡一下！",
+      "opts": [
+        "Ven",
+        "Viene",
+        "Vienes",
+        "Venir"
+      ],
+      "a": 0,
+      "exp": "venir 的 tú 肯定命令式為不規則形 ven。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_09",
+      "topic": "命令式（tú 否定）",
+      "q": "No ___ tarde a la reunión. (llegar)",
+      "zh": "開會別遲到。",
+      "opts": [
+        "llegues",
+        "llegas",
+        "llega",
+        "llegar"
+      ],
+      "a": 0,
+      "exp": "否定命令式用現在虛擬式；llegar → no llegues。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_10",
+      "topic": "命令式（usted）",
+      "q": "___ todo recto por aquí, por favor. (seguir)",
+      "zh": "請沿這邊一直走。",
+      "opts": [
+        "Siga",
+        "Sigue",
+        "Sigues",
+        "Seguir"
+      ],
+      "a": 0,
+      "exp": "usted 命令式用虛擬式第三人稱；seguir → siga。",
+      "level": "L6"
+    },
+    {
+      "id": "gx_L6_11",
+      "topic": "命令式（usted）",
+      "q": "___ la página doce, por favor. (abrir)",
+      "zh": "請翻到第十二頁。",
+      "opts": [
+        "Abra",
+        "Abre",
+        "Abrir",
+        "Abres"
+      ],
+      "a": 0,
+      "exp": "usted 命令式用虛擬式第三人稱；abrir → abra。",
       "level": "L6"
     }
   ],
@@ -951,12 +1200,108 @@
       "es": "¿Qué te parece?",
       "zh": "你覺得呢？",
       "topic": "意見"
+    },
+    {
+      "id": "lx_L6_001",
+      "es": "¿Qué planes tienes para el fin de semana?",
+      "zh": "你週末有什麼計畫？",
+      "topic": "計畫"
+    },
+    {
+      "id": "lx_L6_002",
+      "es": "El próximo año voy a estudiar en el extranjero.",
+      "zh": "明年我要去國外念書。",
+      "topic": "計畫"
+    },
+    {
+      "id": "lx_L6_003",
+      "es": "He decidido cambiar de trabajo.",
+      "zh": "我已經決定要換工作。",
+      "topic": "計畫"
+    },
+    {
+      "id": "lx_L6_004",
+      "es": "Mañana tengo una reunión muy importante.",
+      "zh": "我明天有一場很重要的會議。",
+      "topic": "計畫"
+    },
+    {
+      "id": "lx_L6_005",
+      "es": "¿Has terminado el informe ya?",
+      "zh": "你已經完成報告了嗎？",
+      "topic": "工作進度"
+    },
+    {
+      "id": "lx_L6_006",
+      "es": "Todavía no he tenido tiempo de hacerlo.",
+      "zh": "我還沒有時間做那件事。",
+      "topic": "工作進度"
+    },
+    {
+      "id": "lx_L6_007",
+      "es": "Espero poder viajar por Europa el verano que viene.",
+      "zh": "我希望明年夏天能去歐洲旅行。",
+      "topic": "計畫"
+    },
+    {
+      "id": "lx_L6_008",
+      "es": "Cuando termine la carrera, buscaré trabajo.",
+      "zh": "等我念完大學，我會找工作。",
+      "topic": "計畫"
+    },
+    {
+      "id": "lx_L6_009",
+      "es": "¿Te gustaría venir a la fiesta el sábado?",
+      "zh": "你星期六想來派對嗎？",
+      "topic": "邀約"
+    },
+    {
+      "id": "lx_L6_010",
+      "es": "Tengo que ahorrar dinero para mis vacaciones.",
+      "zh": "我得為我的假期存錢。",
+      "topic": "計畫"
+    },
+    {
+      "id": "lx_L6_011",
+      "es": "Vamos a mudarnos a Madrid en septiembre.",
+      "zh": "我們九月要搬到馬德里。",
+      "topic": "計畫"
+    },
+    {
+      "id": "lx_L6_012",
+      "es": "¿A qué hora quedamos mañana?",
+      "zh": "我們明天約幾點？",
+      "topic": "約定"
+    },
+    {
+      "id": "lx_L6_013",
+      "es": "Nunca he estado en España, pero quiero ir.",
+      "zh": "我從沒去過西班牙，但我想去。",
+      "topic": "經驗"
+    },
+    {
+      "id": "lx_L6_014",
+      "es": "Voy a empezar a hacer ejercicio la semana que viene.",
+      "zh": "我下週要開始運動。",
+      "topic": "計畫"
+    },
+    {
+      "id": "lx_L6_015",
+      "es": "Hemos reservado una mesa para las nueve.",
+      "zh": "我們已經訂了九點的位子。",
+      "topic": "約定"
+    },
+    {
+      "id": "lx_L6_016",
+      "es": "Algún día me gustaría escribir un libro.",
+      "zh": "總有一天我想寫一本書。",
+      "topic": "夢想"
     }
   ],
   "gaps": {
-    "vocab": 14,
-    "grammar": 11,
-    "listening": 16
+    "vocab": 0,
+    "grammar": 0,
+    "listening": 0
   },
   "targets": {
     "vocab": 150,

@@ -2,7 +2,908 @@
   "id": "L7",
   "name": "進階表達",
   "cefr": "B2",
-  "vocab": [],
+  "vocab": [
+    {
+      "es": "sin embargo",
+      "zh": "然而",
+      "ipa": "sin emˈbaɾɣo",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "no obstante",
+      "zh": "儘管如此",
+      "ipa": "no oβsˈtante",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "por lo tanto",
+      "zh": "因此",
+      "ipa": "poɾ lo ˈtanto",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "en cambio",
+      "zh": "相反地",
+      "ipa": "en ˈkambjo",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "además",
+      "zh": "此外",
+      "ipa": "aðeˈmas",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "asimismo",
+      "zh": "同樣地",
+      "ipa": "asiˈmizmo",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "por consiguiente",
+      "zh": "因而",
+      "ipa": "poɾ konsiˈɣjente",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "a pesar de",
+      "zh": "儘管",
+      "ipa": "a peˈsaɾ ðe",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "aun así",
+      "zh": "即便如此",
+      "ipa": "aun aˈsi",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "en resumen",
+      "zh": "總而言之",
+      "ipa": "en reˈsumen",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "por un lado",
+      "zh": "一方面",
+      "ipa": "poɾ un ˈlaðo",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "por otro lado",
+      "zh": "另一方面",
+      "ipa": "poɾ ˈotɾo ˈlaðo",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "es decir",
+      "zh": "也就是說",
+      "ipa": "ez ðeˈθiɾ",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "de hecho",
+      "zh": "事實上",
+      "ipa": "de ˈetʃo",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "en cuanto a",
+      "zh": "至於",
+      "ipa": "en ˈkwanto a",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "mientras tanto",
+      "zh": "與此同時",
+      "ipa": "ˈmjentɾas ˈtanto",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "a fin de",
+      "zh": "為了",
+      "ipa": "a fin de",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "dado que",
+      "zh": "鑑於",
+      "ipa": "ˈðaðo ke",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "siempre que",
+      "zh": "只要",
+      "ipa": "ˈsjempɾe ke",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "en definitiva",
+      "zh": "總之",
+      "ipa": "en definiˈtiβa",
+      "cat": "連接與論述"
+    },
+    {
+      "es": "libertad",
+      "zh": "自由",
+      "ipa": "liβeɾˈtað",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "justicia",
+      "zh": "正義",
+      "ipa": "xusˈtiθja",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "igualdad",
+      "zh": "平等",
+      "ipa": "iɣwalˈdað",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "derecho",
+      "zh": "權利",
+      "ipa": "deˈɾetʃo",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "deber",
+      "zh": "義務；責任",
+      "ipa": "deˈβeɾ",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "valor",
+      "zh": "價值；勇氣",
+      "ipa": "baˈloɾ",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "respeto",
+      "zh": "尊重",
+      "ipa": "resˈpeto",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "confianza",
+      "zh": "信任",
+      "ipa": "komˈfjanθa",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "responsabilidad",
+      "zh": "責任",
+      "ipa": "responsaβiliˈðað",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "consecuencia",
+      "zh": "後果",
+      "ipa": "konseˈkwenθja",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "ventaja",
+      "zh": "優點",
+      "ipa": "benˈtaxa",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "desventaja",
+      "zh": "缺點",
+      "ipa": "dezβenˈtaxa",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "propósito",
+      "zh": "目的",
+      "ipa": "pɾoˈposito",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "esfuerzo",
+      "zh": "努力",
+      "ipa": "esˈfweɾθo",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "éxito",
+      "zh": "成功",
+      "ipa": "ˈeksito",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "fracaso",
+      "zh": "失敗",
+      "ipa": "fɾaˈkaso",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "desafío",
+      "zh": "挑戰",
+      "ipa": "desaˈfio",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "oportunidad",
+      "zh": "機會",
+      "ipa": "opoɾtuniˈðað",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "realidad",
+      "zh": "現實",
+      "ipa": "realiˈðað",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "conciencia",
+      "zh": "意識；良知",
+      "ipa": "konˈθjenθja",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "punto de vista",
+      "zh": "觀點",
+      "ipa": "ˈpunto ðe ˈβista",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "enfoque",
+      "zh": "取向；著眼點",
+      "ipa": "emˈfoke",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "tendencia",
+      "zh": "趨勢",
+      "ipa": "tenˈdenθja",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "impacto",
+      "zh": "影響；衝擊",
+      "ipa": "imˈpakto",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "equilibrio",
+      "zh": "平衡",
+      "ipa": "ekiˈliβɾjo",
+      "cat": "抽象概念"
+    },
+    {
+      "es": "suponer",
+      "zh": "假設；意味著",
+      "ipa": "supoˈneɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "plantear",
+      "zh": "提出（問題）",
+      "ipa": "planteˈaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "desarrollar",
+      "zh": "發展",
+      "ipa": "desaroˈʎaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "lograr",
+      "zh": "設法達成",
+      "ipa": "loˈɣɾaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "fomentar",
+      "zh": "促進",
+      "ipa": "fomenˈtaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "promover",
+      "zh": "推動",
+      "ipa": "pɾomoˈβeɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "fortalecer",
+      "zh": "強化",
+      "ipa": "foɾtaleˈθeɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "perjudicar",
+      "zh": "損害",
+      "ipa": "peɾxuðiˈkaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "afectar",
+      "zh": "影響",
+      "ipa": "afekˈtaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "influir",
+      "zh": "影響",
+      "ipa": "imˈflwiɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "destacar",
+      "zh": "強調；突出",
+      "ipa": "destaˈkaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "señalar",
+      "zh": "指出",
+      "ipa": "seɲaˈlaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "sostener",
+      "zh": "主張；支撐",
+      "ipa": "sosteˈneɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "cuestionar",
+      "zh": "質疑",
+      "ipa": "kwestjoˈnaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "asumir",
+      "zh": "承擔；假定",
+      "ipa": "asuˈmiɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "enfrentar",
+      "zh": "面對",
+      "ipa": "emfɾenˈtaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "resolver",
+      "zh": "解決",
+      "ipa": "resolˈβeɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "evitar",
+      "zh": "避免",
+      "ipa": "eβiˈtaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "impedir",
+      "zh": "阻止",
+      "ipa": "impeˈðiɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "permitir",
+      "zh": "允許",
+      "ipa": "peɾmiˈtiɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "exigir",
+      "zh": "要求",
+      "ipa": "eksiˈxiɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "proponer",
+      "zh": "提議",
+      "ipa": "pɾopoˈneɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "rechazar",
+      "zh": "拒絕",
+      "ipa": "retʃaˈθaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "aceptar",
+      "zh": "接受",
+      "ipa": "aθepˈtaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "negar",
+      "zh": "否認",
+      "ipa": "neˈɣaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "admitir",
+      "zh": "承認",
+      "ipa": "aðmiˈtiɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "justificar",
+      "zh": "辯解；證明合理",
+      "ipa": "xustifiˈkaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "demostrar",
+      "zh": "證明",
+      "ipa": "demosˈtɾaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "concluir",
+      "zh": "得出結論",
+      "ipa": "konˈklwiɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "reflexionar",
+      "zh": "反思",
+      "ipa": "refleksjoˈnaɾ",
+      "cat": "進階動詞"
+    },
+    {
+      "es": "sociedad",
+      "zh": "社會",
+      "ipa": "soθjeˈðað",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "gobierno",
+      "zh": "政府",
+      "ipa": "ɡoˈβjeɾno",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "política",
+      "zh": "政治；政策",
+      "ipa": "poˈlitika",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "economía",
+      "zh": "經濟",
+      "ipa": "ekonoˈmia",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "crisis",
+      "zh": "危機",
+      "ipa": "ˈkɾisis",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "desempleo",
+      "zh": "失業",
+      "ipa": "desemˈpleo",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "pobreza",
+      "zh": "貧窮",
+      "ipa": "poˈβɾeθa",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "desigualdad",
+      "zh": "不平等",
+      "ipa": "desiɣwalˈdað",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "población",
+      "zh": "人口",
+      "ipa": "poβlaˈθjon",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "inmigración",
+      "zh": "移民",
+      "ipa": "immiɣɾaˈθjon",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "ciudadano",
+      "zh": "公民",
+      "ipa": "θjuðaˈðano",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "ley",
+      "zh": "法律",
+      "ipa": "lei",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "delito",
+      "zh": "罪行",
+      "ipa": "deˈlito",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "seguridad",
+      "zh": "安全",
+      "ipa": "seɣuɾiˈðað",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "educación",
+      "zh": "教育",
+      "ipa": "eðukaˈθjon",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "sanidad",
+      "zh": "醫療衛生",
+      "ipa": "saniˈðað",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "medios de comunicación",
+      "zh": "媒體",
+      "ipa": "ˈmeðjos ðe komunikaˈθjon",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "opinión pública",
+      "zh": "輿論",
+      "ipa": "opiˈnjon ˈpuβlika",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "manifestación",
+      "zh": "示威",
+      "ipa": "manifestaˈθjon",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "desarrollo",
+      "zh": "發展",
+      "ipa": "desaˈroʎo",
+      "cat": "社會與時事"
+    },
+    {
+      "es": "empresa",
+      "zh": "公司",
+      "ipa": "emˈpɾesa",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "empleo",
+      "zh": "就業；工作",
+      "ipa": "emˈpleo",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "contrato",
+      "zh": "合約",
+      "ipa": "konˈtɾato",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "sueldo",
+      "zh": "薪水",
+      "ipa": "ˈsweldo",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "salario",
+      "zh": "薪資",
+      "ipa": "saˈlaɾjo",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "jefe",
+      "zh": "上司",
+      "ipa": "ˈxefe",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "empleado",
+      "zh": "員工",
+      "ipa": "empleˈaðo",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "entrevista",
+      "zh": "面試；訪談",
+      "ipa": "entɾeˈβista",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "currículum",
+      "zh": "履歷",
+      "ipa": "kuˈrikulum",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "ascenso",
+      "zh": "升遷",
+      "ipa": "asˈθenso",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "despido",
+      "zh": "解僱",
+      "ipa": "desˈpiðo",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "horario laboral",
+      "zh": "工時",
+      "ipa": "oˈɾaɾjo laβoˈɾal",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "teletrabajo",
+      "zh": "遠距工作",
+      "ipa": "teletɾaˈβaxo",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "plazo",
+      "zh": "期限",
+      "ipa": "ˈplaθo",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "rendimiento",
+      "zh": "績效",
+      "ipa": "rendiˈmjento",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "negocio",
+      "zh": "生意",
+      "ipa": "neˈɣoθjo",
+      "cat": "工作與職場"
+    },
+    {
+      "es": "medio ambiente",
+      "zh": "環境",
+      "ipa": "ˈmeðjo amˈbjente",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "contaminación",
+      "zh": "污染",
+      "ipa": "kontaminaˈθjon",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "cambio climático",
+      "zh": "氣候變遷",
+      "ipa": "ˈkambjo kliˈmatiko",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "calentamiento global",
+      "zh": "全球暖化",
+      "ipa": "kalentaˈmjento ɣloˈβal",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "reciclaje",
+      "zh": "回收",
+      "ipa": "reθiˈklaxe",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "energía renovable",
+      "zh": "再生能源",
+      "ipa": "eneɾˈxia renoˈβaβle",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "recurso",
+      "zh": "資源",
+      "ipa": "reˈkuɾso",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "tecnología",
+      "zh": "科技",
+      "ipa": "teknoloˈxia",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "inteligencia artificial",
+      "zh": "人工智慧",
+      "ipa": "inteliˈxenθja aɾtifiˈθjal",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "red social",
+      "zh": "社群網路",
+      "ipa": "red soˈθjal",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "dispositivo",
+      "zh": "裝置",
+      "ipa": "dispoziˈtiβo",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "pantalla",
+      "zh": "螢幕",
+      "ipa": "panˈtaʎa",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "dato",
+      "zh": "資料",
+      "ipa": "ˈðato",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "usuario",
+      "zh": "使用者",
+      "ipa": "uˈswaɾjo",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "avance",
+      "zh": "進展",
+      "ipa": "aˈβanθe",
+      "cat": "環境與科技"
+    },
+    {
+      "es": "imprescindible",
+      "zh": "不可或缺的",
+      "ipa": "impɾesθinˈdiβle",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "eficaz",
+      "zh": "有效的",
+      "ipa": "efiˈkaθ",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "eficiente",
+      "zh": "有效率的",
+      "ipa": "efiˈθjente",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "adecuado",
+      "zh": "適當的",
+      "ipa": "aðeˈkwaðo",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "polémico",
+      "zh": "有爭議的",
+      "ipa": "poˈlemiko",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "evidente",
+      "zh": "顯而易見的",
+      "ipa": "eβiˈðente",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "complejo",
+      "zh": "複雜的",
+      "ipa": "komˈplexo",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "notable",
+      "zh": "顯著的",
+      "ipa": "noˈtaβle",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "fiable",
+      "zh": "可靠的",
+      "ipa": "ˈfjaβle",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "sostenible",
+      "zh": "永續的",
+      "ipa": "sosteˈniβle",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "inevitable",
+      "zh": "不可避免的",
+      "ipa": "ineβiˈtaβle",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "razonable",
+      "zh": "合理的",
+      "ipa": "raθoˈnaβle",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "profundo",
+      "zh": "深刻的",
+      "ipa": "pɾoˈfundo",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "ambiguo",
+      "zh": "模糊的；歧義的",
+      "ipa": "amˈbiɣwo",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "fundamental",
+      "zh": "根本的",
+      "ipa": "fundamenˈtal",
+      "cat": "進階形容詞"
+    },
+    {
+      "es": "tener en cuenta",
+      "zh": "考慮到",
+      "ipa": "teˈneɾ en ˈkwenta",
+      "cat": "慣用表達"
+    },
+    {
+      "es": "darse cuenta",
+      "zh": "意識到",
+      "ipa": "ˈdaɾse ˈkwenta",
+      "cat": "慣用表達"
+    },
+    {
+      "es": "llevar a cabo",
+      "zh": "實行；完成",
+      "ipa": "ʎeˈβaɾ a ˈkaβo",
+      "cat": "慣用表達"
+    },
+    {
+      "es": "hacer hincapié",
+      "zh": "強調",
+      "ipa": "aˈθeɾ inkaˈpje",
+      "cat": "慣用表達"
+    },
+    {
+      "es": "poner en marcha",
+      "zh": "啟動；推行",
+      "ipa": "poˈneɾ en ˈmaɾtʃa",
+      "cat": "慣用表達"
+    },
+    {
+      "es": "estar a favor de",
+      "zh": "贊成",
+      "ipa": "esˈtaɾ a faˈβoɾ ðe",
+      "cat": "慣用表達"
+    },
+    {
+      "es": "estar en contra de",
+      "zh": "反對",
+      "ipa": "esˈtaɾ en ˈkontɾa ðe",
+      "cat": "慣用表達"
+    },
+    {
+      "es": "valer la pena",
+      "zh": "值得",
+      "ipa": "baˈleɾ la ˈpena",
+      "cat": "慣用表達"
+    },
+    {
+      "es": "dejar de",
+      "zh": "停止（做某事）",
+      "ipa": "deˈxaɾ ðe",
+      "cat": "慣用表達"
+    }
+  ],
   "grammar": [
     {
       "id": "g30",
@@ -17,6 +918,201 @@
       ],
       "a": 1,
       "exp": "querer que + 虛擬式。ser 的虛擬式第二人稱：seas。表達期望、情感時用虛擬式。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_01",
+      "topic": "現在虛擬式（願望）",
+      "q": "Espero que ellos ___ pronto.",
+      "zh": "我希望他們快點到。",
+      "opts": [
+        "lleguen",
+        "llegan",
+        "llegaron",
+        "llegarán"
+      ],
+      "a": 0,
+      "exp": "esperar que 表願望，後接虛擬式；llegar 第三人稱複數現在虛擬式為 lleguen。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_02",
+      "topic": "現在虛擬式（情感）",
+      "q": "Me alegro de que tú ___ aquí.",
+      "zh": "我很高興你在這裡。",
+      "opts": [
+        "estés",
+        "estás",
+        "estabas",
+        "estarás"
+      ],
+      "a": 0,
+      "exp": "alegrarse de que 表情感，後接虛擬式；estar 第二人稱單數虛擬式為 estés。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_03",
+      "topic": "現在虛擬式（懷疑）",
+      "q": "No creo que ___ una buena idea.",
+      "zh": "我不認為這是個好主意。",
+      "opts": [
+        "sea",
+        "es",
+        "era",
+        "será"
+      ],
+      "a": 0,
+      "exp": "no creer que 表懷疑／否定，後接虛擬式；ser 第三人稱單數虛擬式為 sea。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_04",
+      "topic": "現在虛擬式（para que）",
+      "q": "Te lo explico para que lo ___ mejor.",
+      "zh": "我跟你解釋，好讓你更明白。",
+      "opts": [
+        "entiendas",
+        "entiendes",
+        "entendías",
+        "entenderás"
+      ],
+      "a": 0,
+      "exp": "para que 引導目的從句，必接虛擬式；entender 第二人稱單數虛擬式為 entiendas。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_05",
+      "topic": "現在虛擬式（不確定先行詞）",
+      "q": "Busco a alguien que ___ francés con fluidez.",
+      "zh": "我在找一個能流利說法語的人。",
+      "opts": [
+        "hable",
+        "habla",
+        "hablaba",
+        "hablará"
+      ],
+      "a": 0,
+      "exp": "先行詞不確定或不存在時，關係子句用虛擬式；hablar → hable。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_06",
+      "topic": "過去虛擬式（ojalá）",
+      "q": "Ojalá ___ más tiempo ayer para terminarlo.",
+      "zh": "真希望我昨天有更多時間完成它。",
+      "opts": [
+        "hubiera tenido",
+        "tuve",
+        "tenía",
+        "tendré"
+      ],
+      "a": 0,
+      "exp": "ojalá 表與過去事實相反的願望，用過去完成虛擬式 hubiera tenido。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_07",
+      "topic": "過去虛擬式（si 條件句）",
+      "q": "Si yo ___ rico, viajaría por todo el mundo.",
+      "zh": "如果我有錢，我會環遊世界。",
+      "opts": [
+        "fuera",
+        "soy",
+        "era",
+        "seré"
+      ],
+      "a": 0,
+      "exp": "與現在事實相反的條件句：si + 過去虛擬式（fuera）＋ 條件式。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_08",
+      "topic": "條件式（假設）",
+      "q": "Yo en tu lugar ___ con un abogado.",
+      "zh": "如果我是你，我會找律師談。",
+      "opts": [
+        "hablaría",
+        "hablo",
+        "hablé",
+        "hablaba"
+      ],
+      "a": 0,
+      "exp": "假設情境下的建議用條件式；hablar 條件式第一人稱單數為 hablaría。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_09",
+      "topic": "條件式（委婉請求）",
+      "q": "¿___ ayudarme con esto, por favor?",
+      "zh": "您可以幫我處理這個嗎？",
+      "opts": [
+        "Podría",
+        "Puedo",
+        "Pude",
+        "Podré"
+      ],
+      "a": 0,
+      "exp": "委婉請求常用條件式 podría，比 puedo 更客氣。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_10",
+      "topic": "por / para（目的）",
+      "q": "Estudio mucho ___ aprobar el examen.",
+      "zh": "我很用功為了通過考試。",
+      "opts": [
+        "para",
+        "por",
+        "de",
+        "en"
+      ],
+      "a": 0,
+      "exp": "表目的、目標用 para（para + 原形動詞）。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_11",
+      "topic": "por / para（原因）",
+      "q": "Te doy las gracias ___ tu ayuda.",
+      "zh": "謝謝你的幫忙。",
+      "opts": [
+        "por",
+        "para",
+        "de",
+        "con"
+      ],
+      "a": 0,
+      "exp": "表原因／緣由用 por（gracias por…）。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_12",
+      "topic": "讓步從句（aunque + 虛擬）",
+      "q": "Iré a la fiesta aunque ___ muy cansado.",
+      "zh": "即使我很累，我還是會去派對。",
+      "opts": [
+        "esté",
+        "estoy",
+        "estaba",
+        "estaré"
+      ],
+      "a": 0,
+      "exp": "aunque 表讓步且結果不確定時，後接虛擬式 esté。",
+      "level": "L7"
+    },
+    {
+      "id": "gx_L7_13",
+      "topic": "時間從句（cuando + 未來）",
+      "q": "Cuando ___ a casa, te llamaré.",
+      "zh": "我到家的時候會打電話給你。",
+      "opts": [
+        "llegue",
+        "llego",
+        "llegué",
+        "llegaré"
+      ],
+      "a": 0,
+      "exp": "cuando 指未來時間時，從句用虛擬式 llegue，主句用未來式。",
       "level": "L7"
     }
   ],
@@ -38,12 +1134,174 @@
       "es": "¡Cuidado!",
       "zh": "小心！",
       "topic": "緊急"
+    },
+    {
+      "id": "lx_L7_001",
+      "es": "Aunque no estoy de acuerdo, respeto tu opinión.",
+      "zh": "雖然我不同意，但我尊重你的意見。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_002",
+      "es": "Habría que analizar el problema con más calma.",
+      "zh": "應該更冷靜地分析這個問題。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_003",
+      "es": "Lo que quiero decir es que debemos actuar ya.",
+      "zh": "我想說的是，我們得馬上行動。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_004",
+      "es": "Si tuviera más tiempo, aprendería otro idioma.",
+      "zh": "如果我有更多時間，我會再學一種語言。",
+      "topic": "假設"
+    },
+    {
+      "id": "lx_L7_005",
+      "es": "Es importante que todos participemos en la decisión.",
+      "zh": "我們所有人都參與這個決定很重要。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_006",
+      "es": "No creo que sea tan sencillo como parece.",
+      "zh": "我不認為這像看起來那麼簡單。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_007",
+      "es": "Por un lado es caro, pero por otro es muy útil.",
+      "zh": "一方面它很貴，但另一方面它非常有用。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_008",
+      "es": "Me gustaría que me explicaras tu punto de vista.",
+      "zh": "我希望你能向我解釋你的觀點。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_009",
+      "es": "Cuanto más lo pienso, menos lo entiendo.",
+      "zh": "我越想就越不明白。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_010",
+      "es": "Deberíamos tener en cuenta las consecuencias.",
+      "zh": "我們應該考慮到後果。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_011",
+      "es": "A pesar de las dificultades, conseguimos terminarlo.",
+      "zh": "儘管有困難，我們還是設法完成了。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_012",
+      "es": "Ojalá hubiera estudiado más cuando era joven.",
+      "zh": "真希望我年輕時多讀點書。",
+      "topic": "假設"
+    },
+    {
+      "id": "lx_L7_013",
+      "es": "Sería conveniente posponer la reunión.",
+      "zh": "把會議延期會比較妥當。",
+      "topic": "工作"
+    },
+    {
+      "id": "lx_L7_014",
+      "es": "Lo más probable es que llueva esta tarde.",
+      "zh": "今天下午很可能會下雨。",
+      "topic": "推測"
+    },
+    {
+      "id": "lx_L7_015",
+      "es": "Te agradecería que me respondieras cuanto antes.",
+      "zh": "如果你能盡快回覆我，我會很感激。",
+      "topic": "請求"
+    },
+    {
+      "id": "lx_L7_016",
+      "es": "El problema es más complejo de lo que parece.",
+      "zh": "這個問題比看起來更複雜。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_017",
+      "es": "No me cabe la menor duda de que tienes razón.",
+      "zh": "我毫不懷疑你是對的。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_018",
+      "es": "Por mucho que lo intente, no consigo entenderlo.",
+      "zh": "不管我多努力嘗試，就是無法理解。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_019",
+      "es": "Habría preferido que me lo hubieras dicho antes.",
+      "zh": "我寧願你早點告訴我。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_020",
+      "es": "Conviene que leas el contrato antes de firmarlo.",
+      "zh": "你最好在簽約前先看合約。",
+      "topic": "工作"
+    },
+    {
+      "id": "lx_L7_021",
+      "es": "Es una lástima que no puedas venir con nosotros.",
+      "zh": "你不能和我們一起來真可惜。",
+      "topic": "感受"
+    },
+    {
+      "id": "lx_L7_022",
+      "es": "Siempre y cuando te esfuerces, lo lograrás.",
+      "zh": "只要你努力，你就會成功。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_023",
+      "es": "Me temo que no podré asistir a la conferencia.",
+      "zh": "恐怕我無法出席那場研討會。",
+      "topic": "工作"
+    },
+    {
+      "id": "lx_L7_024",
+      "es": "Tarde o temprano tendremos que tomar una decisión.",
+      "zh": "我們遲早得做出決定。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_025",
+      "es": "Vale la pena dedicarle más tiempo a este proyecto.",
+      "zh": "在這個專案上多花時間是值得的。",
+      "topic": "工作"
+    },
+    {
+      "id": "lx_L7_026",
+      "es": "Por más que insistas, no voy a cambiar de idea.",
+      "zh": "不管你怎麼堅持，我都不會改變主意。",
+      "topic": "論述"
+    },
+    {
+      "id": "lx_L7_027",
+      "es": "Lo que me preocupa es el impacto a largo plazo.",
+      "zh": "我擔心的是長期的影響。",
+      "topic": "論述"
     }
   ],
   "gaps": {
-    "vocab": 150,
-    "grammar": 13,
-    "listening": 27
+    "vocab": 0,
+    "grammar": 0,
+    "listening": 0
   },
   "targets": {
     "vocab": 150,

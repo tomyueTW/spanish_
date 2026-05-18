@@ -674,6 +674,234 @@
       "zh": "蝴蝶",
       "ipa": "",
       "cat": "動物"
+    },
+    {
+      "es": "tienda",
+      "zh": "商店",
+      "ipa": "ˈtjenda",
+      "cat": "購物"
+    },
+    {
+      "es": "mercado",
+      "zh": "市場",
+      "ipa": "meɾˈkaðo",
+      "cat": "購物"
+    },
+    {
+      "es": "supermercado",
+      "zh": "超級市場",
+      "ipa": "supeɾmeɾˈkaðo",
+      "cat": "購物"
+    },
+    {
+      "es": "centro comercial",
+      "zh": "購物中心",
+      "ipa": "ˈθentɾo komeɾˈθjal",
+      "cat": "購物"
+    },
+    {
+      "es": "precio",
+      "zh": "價格",
+      "ipa": "ˈpɾeθjo",
+      "cat": "購物"
+    },
+    {
+      "es": "dinero",
+      "zh": "錢",
+      "ipa": "diˈneɾo",
+      "cat": "購物"
+    },
+    {
+      "es": "caro",
+      "zh": "貴的",
+      "ipa": "ˈkaɾo",
+      "cat": "購物"
+    },
+    {
+      "es": "barato",
+      "zh": "便宜的",
+      "ipa": "baˈɾato",
+      "cat": "購物"
+    },
+    {
+      "es": "tarjeta",
+      "zh": "卡片；信用卡",
+      "ipa": "taɾˈxeta",
+      "cat": "購物"
+    },
+    {
+      "es": "efectivo",
+      "zh": "現金",
+      "ipa": "efekˈtiβo",
+      "cat": "購物"
+    },
+    {
+      "es": "rebaja",
+      "zh": "折扣；特價",
+      "ipa": "reˈβaxa",
+      "cat": "購物"
+    },
+    {
+      "es": "talla",
+      "zh": "尺寸（衣物）",
+      "ipa": "ˈtaʎa",
+      "cat": "購物"
+    },
+    {
+      "es": "número",
+      "zh": "號碼；鞋碼",
+      "ipa": "ˈnumeɾo",
+      "cat": "購物"
+    },
+    {
+      "es": "comprar",
+      "zh": "買",
+      "ipa": "komˈpɾaɾ",
+      "cat": "購物"
+    },
+    {
+      "es": "vender",
+      "zh": "賣",
+      "ipa": "benˈdeɾ",
+      "cat": "購物"
+    },
+    {
+      "es": "pagar",
+      "zh": "付款",
+      "ipa": "paˈɣaɾ",
+      "cat": "購物"
+    },
+    {
+      "es": "costar",
+      "zh": "花費",
+      "ipa": "kosˈtaɾ",
+      "cat": "購物"
+    },
+    {
+      "es": "grande",
+      "zh": "大的",
+      "ipa": "ˈɡɾande",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "pequeño",
+      "zh": "小的",
+      "ipa": "peˈkeɲo",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "nuevo",
+      "zh": "新的",
+      "ipa": "ˈnweβo",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "viejo",
+      "zh": "舊的；老的",
+      "ipa": "ˈbjexo",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "bonito",
+      "zh": "漂亮的",
+      "ipa": "boˈnito",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "feo",
+      "zh": "醜的",
+      "ipa": "ˈfeo",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "largo",
+      "zh": "長的",
+      "ipa": "ˈlaɾɣo",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "corto",
+      "zh": "短的",
+      "ipa": "ˈkoɾto",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "limpio",
+      "zh": "乾淨的",
+      "ipa": "ˈlimpjo",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "sucio",
+      "zh": "髒的",
+      "ipa": "ˈsuθjo",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "cómodo",
+      "zh": "舒適的",
+      "ipa": "ˈkomoðo",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "difícil",
+      "zh": "困難的",
+      "ipa": "diˈfiθil",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "fácil",
+      "zh": "容易的",
+      "ipa": "ˈfaθil",
+      "cat": "描述形容詞"
+    },
+    {
+      "es": "calle",
+      "zh": "街道",
+      "ipa": "ˈkaʎe",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "ciudad",
+      "zh": "城市",
+      "ipa": "θjuˈðað",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "pueblo",
+      "zh": "村莊；小鎮",
+      "ipa": "ˈpweβlo",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "plaza",
+      "zh": "廣場",
+      "ipa": "ˈplaθa",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "parque",
+      "zh": "公園",
+      "ipa": "ˈpaɾke",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "banco",
+      "zh": "銀行；長椅",
+      "ipa": "ˈbaŋko",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "farmacia",
+      "zh": "藥局",
+      "ipa": "faɾˈmaθja",
+      "cat": "城市與場所"
+    },
+    {
+      "es": "restaurante",
+      "zh": "餐廳",
+      "ipa": "restauˈɾante",
+      "cat": "城市與場所"
     }
   ],
   "grammar": [
@@ -750,6 +978,141 @@
       ],
       "a": 2,
       "exp": "被喜歡的事物（gatos）是複數，所以動詞用 gustan。",
+      "level": "L3"
+    },
+    {
+      "id": "gx_L3_01",
+      "topic": "形容詞性數配合",
+      "q": "La casa es muy ___.",
+      "zh": "這房子很漂亮。",
+      "opts": [
+        "bonita",
+        "bonito",
+        "bonitos",
+        "bonitas"
+      ],
+      "a": 0,
+      "exp": "casa 為陰性單數，形容詞須配合為陰性單數 bonita。",
+      "level": "L3"
+    },
+    {
+      "id": "gx_L3_02",
+      "topic": "形容詞性數配合",
+      "q": "Los zapatos son ___.",
+      "zh": "這雙鞋是新的。",
+      "opts": [
+        "nuevos",
+        "nuevo",
+        "nueva",
+        "nuevas"
+      ],
+      "a": 0,
+      "exp": "zapatos 為陽性複數，形容詞配合為 nuevos。",
+      "level": "L3"
+    },
+    {
+      "id": "gx_L3_03",
+      "topic": "gustar 結構",
+      "q": "A nosotros nos ___ viajar.",
+      "zh": "我們喜歡旅行。",
+      "opts": [
+        "gusta",
+        "gustan",
+        "gustamos",
+        "gustas"
+      ],
+      "a": 0,
+      "exp": "gustar 主詞為單一動作 viajar，動詞用單數 gusta；間接受詞用 nos。",
+      "level": "L3"
+    },
+    {
+      "id": "gx_L3_04",
+      "topic": "gustar 結構",
+      "q": "A ellos les ___ las películas españolas.",
+      "zh": "他們喜歡西班牙電影。",
+      "opts": [
+        "gustan",
+        "gusta",
+        "gustas",
+        "gustamos"
+      ],
+      "a": 0,
+      "exp": "主詞為複數 las películas，動詞用 gustan；間接受詞 les。",
+      "level": "L3"
+    },
+    {
+      "id": "gx_L3_05",
+      "topic": "encantar 結構",
+      "q": "A mí me ___ esta ciudad.",
+      "zh": "我超愛這座城市。",
+      "opts": [
+        "encanta",
+        "encantan",
+        "encanto",
+        "encantas"
+      ],
+      "a": 0,
+      "exp": "encantar 用法同 gustar；單數主詞 ciudad 用 encanta。",
+      "level": "L3"
+    },
+    {
+      "id": "gx_L3_06",
+      "topic": "所有格形容詞",
+      "q": "___ casa es muy grande. (你的)",
+      "zh": "你的房子很大。",
+      "opts": [
+        "Tu",
+        "Tus",
+        "Mi",
+        "Su"
+      ],
+      "a": 0,
+      "exp": "casa 為單數，第二人稱所有格單數為 tu（無重音符號）。",
+      "level": "L3"
+    },
+    {
+      "id": "gx_L3_07",
+      "topic": "所有格形容詞",
+      "q": "Estos son ___ libros. (他們的)",
+      "zh": "這些是他們的書。",
+      "opts": [
+        "sus",
+        "su",
+        "tus",
+        "nuestros"
+      ],
+      "a": 0,
+      "exp": "libros 為複數，第三人稱所有格配合複數為 sus。",
+      "level": "L3"
+    },
+    {
+      "id": "gx_L3_08",
+      "topic": "ir + a + 不定式（近未來）",
+      "q": "Esta noche nosotros ___ a salir.",
+      "zh": "今晚我們要出去。",
+      "opts": [
+        "vamos",
+        "va",
+        "voy",
+        "van"
+      ],
+      "a": 0,
+      "exp": "近未來為 ir + a + 原形；主詞 nosotros 用 vamos。",
+      "level": "L3"
+    },
+    {
+      "id": "gx_L3_09",
+      "topic": "ir + a + 不定式（近未來）",
+      "q": "¿Qué ___ a hacer tú este fin de semana?",
+      "zh": "你這個週末打算做什麼？",
+      "opts": [
+        "vas",
+        "va",
+        "voy",
+        "van"
+      ],
+      "a": 0,
+      "exp": "近未來 ir + a + 原形；主詞 tú 用 vas。",
       "level": "L3"
     }
   ],
@@ -855,12 +1218,90 @@
       "es": "Mañana va a llover.",
       "zh": "明天會下雨。",
       "topic": "天氣"
+    },
+    {
+      "id": "lx_L3_001",
+      "es": "¿Dónde está el probador?",
+      "zh": "試衣間在哪裡？",
+      "topic": "購物"
+    },
+    {
+      "id": "lx_L3_002",
+      "es": "¿Tienen esta camisa en otra talla?",
+      "zh": "這件襯衫有別的尺寸嗎？",
+      "topic": "購物"
+    },
+    {
+      "id": "lx_L3_003",
+      "es": "Me gusta mucho este vestido.",
+      "zh": "我很喜歡這件洋裝。",
+      "topic": "購物"
+    },
+    {
+      "id": "lx_L3_004",
+      "es": "¿Puedo pagar en efectivo?",
+      "zh": "我可以付現金嗎？",
+      "topic": "購物"
+    },
+    {
+      "id": "lx_L3_005",
+      "es": "Estoy buscando un regalo para mi madre.",
+      "zh": "我在找送我媽媽的禮物。",
+      "topic": "購物"
+    },
+    {
+      "id": "lx_L3_006",
+      "es": "El apartamento tiene dos dormitorios.",
+      "zh": "這間公寓有兩間臥室。",
+      "topic": "住所"
+    },
+    {
+      "id": "lx_L3_007",
+      "es": "La cocina es pequeña pero cómoda.",
+      "zh": "廚房雖小但很舒適。",
+      "topic": "住所"
+    },
+    {
+      "id": "lx_L3_008",
+      "es": "¿Hay un supermercado cerca de aquí?",
+      "zh": "這附近有超市嗎？",
+      "topic": "方位"
+    },
+    {
+      "id": "lx_L3_009",
+      "es": "Voy a comprar fruta en el mercado.",
+      "zh": "我要去市場買水果。",
+      "topic": "購物"
+    },
+    {
+      "id": "lx_L3_010",
+      "es": "El restaurante está al lado del banco.",
+      "zh": "餐廳在銀行旁邊。",
+      "topic": "方位"
+    },
+    {
+      "id": "lx_L3_011",
+      "es": "Esta chaqueta es demasiado cara para mí.",
+      "zh": "這件外套對我來說太貴了。",
+      "topic": "購物"
+    },
+    {
+      "id": "lx_L3_012",
+      "es": "Me gusta vivir en una ciudad tranquila.",
+      "zh": "我喜歡住在安靜的城市。",
+      "topic": "住所"
+    },
+    {
+      "id": "lx_L3_013",
+      "es": "¿Cómo puedo ir al centro de la ciudad?",
+      "zh": "我要怎麼去市中心？",
+      "topic": "方位"
     }
   ],
   "gaps": {
-    "vocab": 38,
-    "grammar": 9,
-    "listening": 13
+    "vocab": 0,
+    "grammar": 0,
+    "listening": 0
   },
   "targets": {
     "vocab": 150,

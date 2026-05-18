@@ -328,12 +328,6 @@
       "cat": "城市與場所"
     },
     {
-      "es": "iglesia",
-      "zh": "教堂",
-      "ipa": "",
-      "cat": "城市與場所"
-    },
-    {
       "es": "trabajo",
       "zh": "工作",
       "ipa": "",
@@ -650,6 +644,264 @@
       "zh": "自然",
       "ipa": "",
       "cat": "天氣與自然"
+    },
+    {
+      "es": "viajar",
+      "zh": "旅行",
+      "ipa": "bjaˈxaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "volar",
+      "zh": "飛",
+      "ipa": "boˈlaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "conducir",
+      "zh": "開車",
+      "ipa": "konduˈθiɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "caminar",
+      "zh": "走路",
+      "ipa": "kamiˈnaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "andar",
+      "zh": "行走",
+      "ipa": "anˈdaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "correr",
+      "zh": "跑",
+      "ipa": "koˈreɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "llegar",
+      "zh": "抵達",
+      "ipa": "ʎeˈɣaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "partir",
+      "zh": "出發",
+      "ipa": "paɾˈtiɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "regresar",
+      "zh": "返回",
+      "ipa": "reɣɾeˈsaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "esperar",
+      "zh": "等待",
+      "ipa": "espeˈɾaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "reservar",
+      "zh": "預訂",
+      "ipa": "reseɾˈβaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "visitar",
+      "zh": "參觀；拜訪",
+      "ipa": "bisiˈtaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "perder",
+      "zh": "錯過；遺失",
+      "ipa": "peɾˈðeɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "parar",
+      "zh": "停",
+      "ipa": "paˈɾaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "cruzar",
+      "zh": "穿越",
+      "ipa": "kɾuˈθaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "seguir",
+      "zh": "繼續；跟隨",
+      "ipa": "seˈɣiɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "doblar",
+      "zh": "轉彎",
+      "ipa": "doˈβlaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "subir",
+      "zh": "上（車）；上升",
+      "ipa": "suˈβiɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "bajar",
+      "zh": "下（車）；下降",
+      "ipa": "baˈxaɾ",
+      "cat": "旅行動作"
+    },
+    {
+      "es": "equipaje",
+      "zh": "行李",
+      "ipa": "ekiˈpaxe",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "mochila",
+      "zh": "背包",
+      "ipa": "moˈtʃila",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "asiento",
+      "zh": "座位",
+      "ipa": "aˈsjento",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "ventanilla",
+      "zh": "窗口；靠窗座位",
+      "ipa": "bentaˈniʎa",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "vuelo",
+      "zh": "航班",
+      "ipa": "ˈbwelo",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "retraso",
+      "zh": "延誤",
+      "ipa": "reˈtɾaso",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "horario",
+      "zh": "時刻表",
+      "ipa": "oˈɾaɾjo",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "destino",
+      "zh": "目的地",
+      "ipa": "desˈtino",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "frontera",
+      "zh": "邊境",
+      "ipa": "fɾonˈteɾa",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "aduana",
+      "zh": "海關",
+      "ipa": "aˈðwana",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "turista",
+      "zh": "遊客",
+      "ipa": "tuˈɾista",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "guía",
+      "zh": "導遊；指南",
+      "ipa": "ˈɡia",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "ruta",
+      "zh": "路線",
+      "ipa": "ˈruta",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "gasolina",
+      "zh": "汽油",
+      "ipa": "ɣasoˈlina",
+      "cat": "旅行用品"
+    },
+    {
+      "es": "norte",
+      "zh": "北",
+      "ipa": "ˈnoɾte",
+      "cat": "方向"
+    },
+    {
+      "es": "sur",
+      "zh": "南",
+      "ipa": "suɾ",
+      "cat": "方向"
+    },
+    {
+      "es": "este",
+      "zh": "東",
+      "ipa": "ˈeste",
+      "cat": "方向"
+    },
+    {
+      "es": "oeste",
+      "zh": "西",
+      "ipa": "oˈeste",
+      "cat": "方向"
+    },
+    {
+      "es": "recto",
+      "zh": "直",
+      "ipa": "ˈrekto",
+      "cat": "方向"
+    },
+    {
+      "es": "esquina",
+      "zh": "街角",
+      "ipa": "esˈkina",
+      "cat": "方向"
+    },
+    {
+      "es": "semáforo",
+      "zh": "紅綠燈",
+      "ipa": "seˈmafoɾo",
+      "cat": "方向"
+    },
+    {
+      "es": "cruce",
+      "zh": "十字路口",
+      "ipa": "ˈkɾuθe",
+      "cat": "方向"
+    },
+    {
+      "es": "enfrente de",
+      "zh": "在……對面",
+      "ipa": "emˈfɾente ðe",
+      "cat": "方向"
+    },
+    {
+      "es": "catedral",
+      "zh": "大教堂",
+      "ipa": "kateˈðɾal",
+      "cat": "城市與場所"
     }
   ],
   "grammar": [
@@ -681,6 +933,186 @@
       ],
       "a": 1,
       "exp": "imperfecto 表過去習慣或反覆動作。jugar → jugaba（yo）。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_01",
+      "topic": "簡單過去式 -ar 規則",
+      "q": "Ayer yo ___ con mi madre por teléfono.",
+      "zh": "我昨天和我媽媽講電話。",
+      "opts": [
+        "hablé",
+        "hablo",
+        "hablaba",
+        "hablaré"
+      ],
+      "a": 0,
+      "exp": "-ar 規則動詞 hablar 簡單過去式第一人稱單數為 hablé。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_02",
+      "topic": "簡單過去式 -er 規則",
+      "q": "Ella ___ toda la pizza anoche.",
+      "zh": "她昨晚把整個披薩吃光了。",
+      "opts": [
+        "comió",
+        "come",
+        "comía",
+        "comerá"
+      ],
+      "a": 0,
+      "exp": "-er 規則動詞 comer 簡單過去式第三人稱單數為 comió。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_03",
+      "topic": "簡單過去式 -ir 規則",
+      "q": "El verano pasado nosotros ___ en Sevilla.",
+      "zh": "去年夏天我們住在塞維亞。",
+      "opts": [
+        "vivimos",
+        "vivíamos",
+        "viviremos",
+        "vivamos"
+      ],
+      "a": 0,
+      "exp": "-ir 規則動詞 vivir 簡單過去式第一人稱複數為 vivimos（與現在式同形，靠語境判斷）。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_04",
+      "topic": "簡單過去式 ir/ser",
+      "q": "El año pasado yo ___ a España.",
+      "zh": "去年我去了西班牙。",
+      "opts": [
+        "fui",
+        "iba",
+        "voy",
+        "iré"
+      ],
+      "a": 0,
+      "exp": "ir 與 ser 簡單過去式同形；第一人稱單數為 fui。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_05",
+      "topic": "簡單過去式 estar",
+      "q": "Ayer ellos ___ en el aeropuerto todo el día.",
+      "zh": "他們昨天一整天都在機場。",
+      "opts": [
+        "estuvieron",
+        "estaban",
+        "están",
+        "estarán"
+      ],
+      "a": 0,
+      "exp": "estar 不規則簡單過去式，第三人稱複數為 estuvieron。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_06",
+      "topic": "簡單過去式 tener",
+      "q": "La semana pasada yo ___ un pequeño accidente.",
+      "zh": "上週我發生了一場小意外。",
+      "opts": [
+        "tuve",
+        "tenía",
+        "tengo",
+        "tendré"
+      ],
+      "a": 0,
+      "exp": "tener 不規則簡單過去式，第一人稱單數為 tuve。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_07",
+      "topic": "簡單過去式 hacer",
+      "q": "¿Qué ___ tú el fin de semana pasado?",
+      "zh": "你上個週末做了什麼？",
+      "opts": [
+        "hiciste",
+        "hacías",
+        "haces",
+        "harás"
+      ],
+      "a": 0,
+      "exp": "hacer 不規則簡單過去式，第二人稱單數為 hiciste。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_08",
+      "topic": "簡單過去式 poder",
+      "q": "No ___ llegar a tiempo ayer.",
+      "zh": "我昨天沒能準時到。",
+      "opts": [
+        "pude",
+        "podía",
+        "puedo",
+        "podré"
+      ],
+      "a": 0,
+      "exp": "poder 不規則簡單過去式，第一人稱單數為 pude。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_09",
+      "topic": "簡單過去式 decir",
+      "q": "Ella me ___ toda la verdad.",
+      "zh": "她跟我說了全部的實話。",
+      "opts": [
+        "dijo",
+        "decía",
+        "dice",
+        "dirá"
+      ],
+      "a": 0,
+      "exp": "decir 不規則簡單過去式，第三人稱單數為 dijo。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_10",
+      "topic": "簡單過去式 venir",
+      "q": "Ellos ___ a la fiesta muy tarde.",
+      "zh": "他們很晚才來派對。",
+      "opts": [
+        "vinieron",
+        "venían",
+        "vienen",
+        "vendrán"
+      ],
+      "a": 0,
+      "exp": "venir 不規則簡單過去式，第三人稱複數為 vinieron。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_11",
+      "topic": "簡單過去式 -ar 規則（第三人稱複數）",
+      "q": "Mis amigos ___ el museo el sábado.",
+      "zh": "我朋友星期六參觀了博物館。",
+      "opts": [
+        "visitaron",
+        "visitaban",
+        "visitan",
+        "visitarán"
+      ],
+      "a": 0,
+      "exp": "-ar 規則動詞 visitar 簡單過去式第三人稱複數為 visitaron。",
+      "level": "L4"
+    },
+    {
+      "id": "gx_L4_12",
+      "topic": "簡單過去式 dar",
+      "q": "Mi padre me ___ dinero para el viaje.",
+      "zh": "我爸爸給了我旅行的錢。",
+      "opts": [
+        "dio",
+        "daba",
+        "da",
+        "dará"
+      ],
+      "a": 0,
+      "exp": "dar 不規則簡單過去式，第三人稱單數為 dio。",
       "level": "L4"
     }
   ],
@@ -780,12 +1212,96 @@
       "es": "Tengo dos maletas.",
       "zh": "我有兩個行李箱。",
       "topic": "交通"
+    },
+    {
+      "id": "lx_L4_001",
+      "es": "¿Cuánto cuesta un billete a Madrid?",
+      "zh": "到馬德里的車票多少錢？",
+      "topic": "交通"
+    },
+    {
+      "id": "lx_L4_002",
+      "es": "Quiero reservar un asiento de ventanilla.",
+      "zh": "我想訂一個靠窗的座位。",
+      "topic": "交通"
+    },
+    {
+      "id": "lx_L4_003",
+      "es": "¿Dónde puedo facturar el equipaje?",
+      "zh": "我可以在哪裡託運行李？",
+      "topic": "機場"
+    },
+    {
+      "id": "lx_L4_004",
+      "es": "El próximo tren sale en diez minutos.",
+      "zh": "下一班火車十分鐘後出發。",
+      "topic": "交通"
+    },
+    {
+      "id": "lx_L4_005",
+      "es": "¿Este autobús va al centro?",
+      "zh": "這班公車有到市中心嗎？",
+      "topic": "交通"
+    },
+    {
+      "id": "lx_L4_006",
+      "es": "Perdí mi pasaporte en el aeropuerto.",
+      "zh": "我把護照掉在機場了。",
+      "topic": "旅行狀況"
+    },
+    {
+      "id": "lx_L4_007",
+      "es": "¿Puede parar aquí, por favor?",
+      "zh": "可以請你在這裡停車嗎？",
+      "topic": "計程車"
+    },
+    {
+      "id": "lx_L4_008",
+      "es": "Ayer visité un museo muy interesante.",
+      "zh": "我昨天參觀了一座很有趣的博物館。",
+      "topic": "觀光"
+    },
+    {
+      "id": "lx_L4_009",
+      "es": "El viaje en tren duró tres horas.",
+      "zh": "這趟火車旅程花了三個小時。",
+      "topic": "交通"
+    },
+    {
+      "id": "lx_L4_010",
+      "es": "¿Hay conexión wifi en el hotel?",
+      "zh": "飯店有無線網路嗎？",
+      "topic": "住宿"
+    },
+    {
+      "id": "lx_L4_011",
+      "es": "Tomamos un taxi hasta la estación.",
+      "zh": "我們搭計程車到車站。",
+      "topic": "交通"
+    },
+    {
+      "id": "lx_L4_012",
+      "es": "¿A qué hora tenemos que estar en el aeropuerto?",
+      "zh": "我們幾點要到機場？",
+      "topic": "機場"
+    },
+    {
+      "id": "lx_L4_013",
+      "es": "Llegué tarde porque había mucho tráfico.",
+      "zh": "我遲到了，因為塞車很嚴重。",
+      "topic": "旅行狀況"
+    },
+    {
+      "id": "lx_L4_014",
+      "es": "El verano pasado fuimos de vacaciones a la montaña.",
+      "zh": "去年夏天我們去山上度假。",
+      "topic": "觀光"
     }
   ],
   "gaps": {
-    "vocab": 42,
-    "grammar": 12,
-    "listening": 14
+    "vocab": 0,
+    "grammar": 0,
+    "listening": 0
   },
   "targets": {
     "vocab": 150,
