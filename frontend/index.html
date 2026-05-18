@@ -533,7 +533,8 @@ const App = (() => {
   // ─── 狀態 ───
   let levels = [];        // [{id, name, cefr, vocab[], grammar[], listening[]}, ...]
   let customBanks = [];   // 從本地資料夾 banks/*.md 載入
-  let stats = { totalAnswered: 0, totalCorrect: 0, sessions: 0 };
+  // progress.global = 聚合；progress.banks[key] = 各題庫 { name, answered, correct, sessions, lastPracticed, history:[{date,mode,score,total}] }
+  let progress = { global: { totalAnswered: 0, totalCorrect: 0, sessions: 0 }, banks: {} };
   let activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
   let persistedActiveBank = null;  // localStorage 原始 activeBank，customBanks 載入後才能正確 resolve
   let dirHandle = null;       // FileSystemDirectoryHandle，存於 IndexedDB
@@ -548,13 +549,18 @@ const App = (() => {
   let browseFilter = 'all';
   let browseKeyHandler = null;
 
-  // ─── localStorage (僅儲存 stats / activeBank / dirName / legacyCustomBanks) ───
+  // ─── localStorage (備援：progress / activeBank / dirName) ───
   function loadState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const data = JSON.parse(raw);
-        stats = data.stats || stats;
+        if (data.progress && data.progress.global) {
+          progress = { global: data.progress.global, banks: data.progress.banks || {} };
+        } else if (data.stats) {
+          // 舊版 stats → 遷移為 progress.global
+          progress = { global: data.stats, banks: {} };
+        }
         dirName = data.dirName || '';
         // 舊版用戶可能仍在 localStorage 有 customBanks，保留供 Phase 2 遷移
         if (Array.isArray(data.customBanks)) {
@@ -567,7 +573,7 @@ const App = (() => {
   }
   function saveState() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ stats, activeBank, dirName }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ progress, activeBank, dirName }));
     } catch (e) { console.warn('儲存失敗', e); }
   }
 
@@ -809,6 +815,185 @@ const App = (() => {
     return legacy.length;
   }
 
+  // ─── 進度 MD（progress/_summary.md + progress/<key>.md）───
+  function progressKey() {
+    return activeBank.id;  // builtin → L1..L7；custom → bank_xxx
+  }
+
+  async function writeTextFile(dirH, name, text) {
+    const fh = await dirH.getFileHandle(name, { create: true });
+    const w = await fh.createWritable();
+    await w.write(text);
+    await w.close();
+  }
+
+  function pct(correct, answered) {
+    return answered ? Math.round(correct / answered * 100) : 0;
+  }
+
+  function formatSummaryMd() {
+    const g = progress.global;
+    const lines = [
+      '---',
+      `updated: ${new Date().toISOString()}`,
+      `totalAnswered: ${g.totalAnswered}`,
+      `totalCorrect: ${g.totalCorrect}`,
+      `sessions: ${g.sessions}`,
+      '---',
+      '',
+      '# 總計',
+      '',
+      `- 完成測驗：${g.sessions}`,
+      `- 總答題數：${g.totalAnswered}`,
+      `- 答對：${g.totalCorrect}`,
+      `- 正確率：${pct(g.totalCorrect, g.totalAnswered)}%`,
+      '',
+      '# 各題庫',
+      '',
+      '| 題庫 | 答題 | 正確率 | 完成次數 | 最後練習 |',
+      '|---|---|---|---|---|',
+    ];
+    for (const [key, b] of Object.entries(progress.banks)) {
+      const last = b.lastPracticed ? b.lastPracticed.slice(0, 10) : '-';
+      lines.push(`| ${key} ${b.name ? '· ' + b.name : ''} | ${b.answered} | ${pct(b.correct, b.answered)}% | ${b.sessions} | ${last} |`);
+    }
+    return lines.join('\n') + '\n';
+  }
+
+  function formatBankProgressMd(key, b) {
+    const lines = [
+      '---',
+      `bankId: ${key}`,
+      `name: ${b.name || ''}`,
+      `answered: ${b.answered}`,
+      `correct: ${b.correct}`,
+      `sessions: ${b.sessions}`,
+      `lastPracticed: ${b.lastPracticed || ''}`,
+      '---',
+      '',
+      '# 測驗歷史',
+      '',
+      '| 日期 | 模式 | 分數 |',
+      '|---|---|---|',
+    ];
+    (b.history || []).forEach(h => {
+      lines.push(`| ${h.date} | ${h.mode} | ${h.score}/${h.total} |`);
+    });
+    return lines.join('\n') + '\n';
+  }
+
+  function parseFrontmatter(text) {
+    const out = {};
+    const m = text.match(/^---\n([\s\S]*?)\n---\n?/);
+    if (m) {
+      m[1].split('\n').forEach(line => {
+        const mm = line.match(/^([\w-]+):\s*(.*)$/);
+        if (mm) out[mm[1]] = mm[2].trim();
+      });
+    }
+    return out;
+  }
+
+  function parseSummaryGlobal(text) {
+    const fm = parseFrontmatter(text);
+    if (!('totalAnswered' in fm)) return null;
+    return {
+      totalAnswered: parseInt(fm.totalAnswered) || 0,
+      totalCorrect: parseInt(fm.totalCorrect) || 0,
+      sessions: parseInt(fm.sessions) || 0,
+    };
+  }
+
+  function parseBankProgress(text) {
+    const fm = parseFrontmatter(text);
+    const entry = {
+      name: fm.name || '',
+      answered: parseInt(fm.answered) || 0,
+      correct: parseInt(fm.correct) || 0,
+      sessions: parseInt(fm.sessions) || 0,
+      lastPracticed: fm.lastPracticed || '',
+      history: [],
+    };
+    text.split('\n').forEach(raw => {
+      const line = raw.trim();
+      if (!line.startsWith('|')) return;
+      const cells = line.split('|').map(s => s.trim()).filter((_, i, a) => i > 0 && i < a.length - 1);
+      if (cells.length !== 3) return;
+      if (cells[0] === '日期' || /^-+$/.test(cells[0])) return;
+      const sc = (cells[2] || '').split('/');
+      entry.history.push({
+        date: cells[0], mode: cells[1],
+        score: parseInt(sc[0]) || 0, total: parseInt(sc[1]) || 0,
+      });
+    });
+    return entry;
+  }
+
+  async function writeProgressFiles() {
+    if (folderState !== 'ready' || !dirHandle) return;
+    const dir = await ensureSubdir(PROGRESS_SUBDIR);
+    await writeTextFile(dir, '_summary.md', formatSummaryMd());
+    for (const [key, b] of Object.entries(progress.banks)) {
+      await writeTextFile(dir, key + '.md', formatBankProgressMd(key, b));
+    }
+  }
+
+  async function loadProgressFromFolder() {
+    if (folderState !== 'ready' || !dirHandle) return false;
+    const dir = await ensureSubdir(PROGRESS_SUBDIR);
+    let found = false;
+    const banks = {};
+    for await (const [name, fh] of dir.entries()) {
+      if (fh.kind !== 'file' || !name.toLowerCase().endsWith('.md')) continue;
+      try {
+        const text = await (await fh.getFile()).text();
+        if (name === '_summary.md') {
+          const g = parseSummaryGlobal(text);
+          if (g) { progress.global = g; found = true; }
+        } else {
+          banks[name.replace(/\.md$/i, '')] = parseBankProgress(text);
+          found = true;
+        }
+      } catch (e) { console.warn('讀取進度失敗', name, e); }
+    }
+    if (Object.keys(banks).length) progress.banks = banks;
+    return found;
+  }
+
+  // 進度持久化：localStorage 一律寫（備援）；資料夾 ready 時另寫 MD
+  async function persistProgress() {
+    saveState();
+    if (folderState === 'ready' && dirHandle) {
+      try { await writeProgressFiles(); } catch (e) { console.warn('寫入進度檔失敗', e); }
+    }
+  }
+
+  // 載入進度：資料夾有 MD → 以 MD 為準；資料夾空 → 把 localStorage 進度遷移寫入 MD
+  async function loadProgress() {
+    if (folderState !== 'ready' || !dirHandle) return;
+    try {
+      const found = await loadProgressFromFolder();
+      if (!found) { await writeProgressFiles(); }
+    } catch (e) { console.warn('載入進度失敗', e); }
+  }
+
+  function recordQuizResult(mode, score, total) {
+    const key = progressKey();
+    const name = getActiveBank().name;
+    progress.global.totalAnswered += total;
+    progress.global.totalCorrect += score;
+    progress.global.sessions += 1;
+    const b = progress.banks[key] || (progress.banks[key] = { name, answered: 0, correct: 0, sessions: 0, lastPracticed: '', history: [] });
+    b.name = name;
+    b.answered += total;
+    b.correct += score;
+    b.sessions += 1;
+    b.lastPracticed = new Date().toISOString();
+    b.history.push({ date: b.lastPracticed, mode, score, total });
+    if (b.history.length > 200) b.history = b.history.slice(-200);
+    persistProgress();
+  }
+
   // ─── 從後端載入 7 階段題庫 ───
   async function loadBanks() {
     try {
@@ -854,10 +1039,11 @@ const App = (() => {
   }
 
   function renderStats() {
-    const acc = stats.totalAnswered ? Math.round(stats.totalCorrect / stats.totalAnswered * 100) : 0;
+    const g = progress.global;
+    const acc = g.totalAnswered ? Math.round(g.totalCorrect / g.totalAnswered * 100) : 0;
     $('stats-summary').innerHTML = `
-      <div class="stat-card"><div class="stat-num">${stats.sessions}</div><div class="stat-label">完成的測驗</div></div>
-      <div class="stat-card"><div class="stat-num">${stats.totalAnswered}</div><div class="stat-label">總答題數</div></div>
+      <div class="stat-card"><div class="stat-num">${g.sessions}</div><div class="stat-label">完成的測驗</div></div>
+      <div class="stat-card"><div class="stat-num">${g.totalAnswered}</div><div class="stat-label">總答題數</div></div>
       <div class="stat-card"><div class="stat-num">${acc}%</div><div class="stat-label">正確率</div></div>
     `;
   }
@@ -991,8 +1177,10 @@ const App = (() => {
   async function refreshBanks() {
     if (folderState !== 'ready') { renderBanks(); return; }
     await loadCustomBanksFromFolder();
+    await loadProgressFromFolder();
     activeBank = resolveActiveBank(persistedActiveBank);
     renderBanks();
+    renderStats();
     updateMenuForActiveBank();
   }
 
@@ -1037,8 +1225,10 @@ const App = (() => {
     const migrated = await migrateLegacyBanks();
     if (migrated > 0) { await loadCustomBanksFromFolder(); }
     activeBank = resolveActiveBank(persistedActiveBank);
+    await loadProgress();
     saveState();
     renderBanks();
+    renderStats();
     updateMenuForActiveBank();
   }
   async function requestFolderPermissionAndLoad() {
@@ -1047,8 +1237,10 @@ const App = (() => {
     folderState = 'ready';
     await loadCustomBanksFromFolder();
     activeBank = resolveActiveBank(persistedActiveBank);
+    await loadProgress();
     saveState();
     renderBanks();
+    renderStats();
     updateMenuForActiveBank();
   }
 
@@ -1541,10 +1733,7 @@ const App = (() => {
   }
 
   function showResult() {
-    stats.totalAnswered += currentQuiz.questions.length;
-    stats.totalCorrect += currentQuiz.score;
-    stats.sessions++;
-    saveState();
+    recordQuizResult(currentQuiz.mode, currentQuiz.score, currentQuiz.questions.length);
 
     show('result');
     const pct = Math.round((currentQuiz.score / currentQuiz.questions.length) * 100);
@@ -1693,7 +1882,10 @@ const App = (() => {
             dirHandle = stored;
             dirName = stored.name || dirName;
             folderState = await queryDirPermission();
-            if (folderState === 'ready') await loadCustomBanksFromFolder();
+            if (folderState === 'ready') {
+              await loadCustomBanksFromFolder();
+              await loadProgress();
+            }
           } else {
             folderState = 'unset';
           }
