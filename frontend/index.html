@@ -535,6 +535,7 @@ const App = (() => {
   let customBanks = [];   // 從本地資料夾 banks/*.md 載入
   let stats = { totalAnswered: 0, totalCorrect: 0, sessions: 0 };
   let activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
+  let persistedActiveBank = null;  // localStorage 原始 activeBank，customBanks 載入後才能正確 resolve
   let dirHandle = null;       // FileSystemDirectoryHandle，存於 IndexedDB
   let dirName = '';           // 資料夾顯示名稱（亦快取於 localStorage）
   let folderState = 'unset';  // 'unset' | 'needs-permission' | 'ready' | 'unsupported'
@@ -559,7 +560,8 @@ const App = (() => {
         if (Array.isArray(data.customBanks)) {
           window.__legacyCustomBanks = data.customBanks;
         }
-        activeBank = resolveActiveBank(data.activeBank);
+        persistedActiveBank = data.activeBank || null;
+        activeBank = resolveActiveBank(persistedActiveBank);
       }
     } catch (e) { console.warn('讀取本地資料失敗', e); }
   }
@@ -989,7 +991,7 @@ const App = (() => {
   async function refreshBanks() {
     if (folderState !== 'ready') { renderBanks(); return; }
     await loadCustomBanksFromFolder();
-    activeBank = resolveActiveBank(activeBank);
+    activeBank = resolveActiveBank(persistedActiveBank);
     renderBanks();
     updateMenuForActiveBank();
   }
@@ -1034,7 +1036,7 @@ const App = (() => {
     await loadCustomBanksFromFolder();
     const migrated = await migrateLegacyBanks();
     if (migrated > 0) { await loadCustomBanksFromFolder(); }
-    activeBank = resolveActiveBank(activeBank);
+    activeBank = resolveActiveBank(persistedActiveBank);
     saveState();
     renderBanks();
     updateMenuForActiveBank();
@@ -1044,7 +1046,7 @@ const App = (() => {
     if (!ok) { alert('未取得權限'); return; }
     folderState = 'ready';
     await loadCustomBanksFromFolder();
-    activeBank = resolveActiveBank(activeBank);
+    activeBank = resolveActiveBank(persistedActiveBank);
     saveState();
     renderBanks();
     updateMenuForActiveBank();
@@ -1152,6 +1154,7 @@ const App = (() => {
     activeBank = (kind === 'builtin')
       ? { kind: 'builtin', id: (LEVEL_IDS.includes(id) ? id : DEFAULT_LEVEL) }
       : { kind: 'custom', id };
+    persistedActiveBank = activeBank;  // 記錄使用者意圖，重新整理後仍可正確還原
     saveState();
     renderBanks();
     updateMenuForActiveBank();
@@ -1303,7 +1306,10 @@ const App = (() => {
     const wasActive = activeBank.kind === 'custom' && activeBank.id === id;
     try { await deleteBankFile(target); } catch (e) { console.warn('刪檔失敗', e); }
     customBanks = customBanks.filter(b => b.id !== id);
-    if (wasActive) activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
+    if (wasActive) {
+      activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
+      persistedActiveBank = activeBank;
+    }
     saveState();
     renderBanks();
     updateMenuForActiveBank();
@@ -1696,7 +1702,7 @@ const App = (() => {
           folderState = 'unset';
         }
       }
-      activeBank = resolveActiveBank(activeBank);
+      activeBank = resolveActiveBank(persistedActiveBank);
       renderStats();
       updateMenuForActiveBank();
     } catch (e) {
