@@ -25,7 +25,9 @@ pip install -q -r backend/requirements.txt
 # 檢查 API key
 if [ -z "$ANTHROPIC_API_KEY" ]; then
     if [ -f .env ]; then
-        export $(cat .env | xargs)
+        set -a
+        . ./.env
+        set +a
     fi
 fi
 
