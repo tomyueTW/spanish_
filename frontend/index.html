@@ -2140,8 +2140,13 @@ const App = (() => {
         }
       }
       activeBank = resolveActiveBank(persistedActiveBank);
+      // 主選單為預設可見頁，init 不走 show('menu')，故此處需與 show('menu')
+      // 一致地把整組選單元件渲染齊全（否則切換器/精熟條/到期提示首載空白）
       renderStats();
       updateMenuForActiveBank();
+      renderHub();
+      renderMenuMastery();
+      renderDueBanner();
     } catch (e) {
       console.error(e);
     }
