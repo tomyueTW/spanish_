@@ -4,900 +4,1050 @@
   "cefr": "A1.2",
   "vocab": [
     {
+      "id": "vx_L2_001",
       "es": "comida",
       "zh": "食物",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_002",
       "es": "desayuno",
       "zh": "早餐",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_003",
       "es": "almuerzo",
       "zh": "午餐",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_004",
       "es": "cena",
       "zh": "晚餐",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_005",
       "es": "agua",
       "zh": "水",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_006",
       "es": "leche",
       "zh": "牛奶",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_007",
       "es": "café",
       "zh": "咖啡",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_008",
       "es": "té",
       "zh": "茶",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_009",
       "es": "jugo",
       "zh": "果汁",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_010",
       "es": "zumo",
       "zh": "果汁（西班牙）",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_011",
       "es": "vino",
       "zh": "葡萄酒",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_012",
       "es": "cerveza",
       "zh": "啤酒",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_013",
       "es": "refresco",
       "zh": "汽水",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_014",
       "es": "pan",
       "zh": "麵包",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_015",
       "es": "arroz",
       "zh": "米飯",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_016",
       "es": "pasta",
       "zh": "義大利麵",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_017",
       "es": "carne",
       "zh": "肉",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_018",
       "es": "pollo",
       "zh": "雞肉",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_019",
       "es": "pescado",
       "zh": "魚",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_020",
       "es": "huevo",
       "zh": "蛋",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_021",
       "es": "queso",
       "zh": "起司",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_022",
       "es": "mantequilla",
       "zh": "奶油",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_023",
       "es": "azúcar",
       "zh": "糖",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_024",
       "es": "sal",
       "zh": "鹽",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_025",
       "es": "pimienta",
       "zh": "胡椒",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_026",
       "es": "aceite",
       "zh": "油",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_027",
       "es": "fruta",
       "zh": "水果",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_028",
       "es": "manzana",
       "zh": "蘋果",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_029",
       "es": "naranja",
       "zh": "柳橙",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_030",
       "es": "plátano",
       "zh": "香蕉",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_031",
       "es": "uva",
       "zh": "葡萄",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_032",
       "es": "fresa",
       "zh": "草莓",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_033",
       "es": "limón",
       "zh": "檸檬",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_034",
       "es": "sandía",
       "zh": "西瓜",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_035",
       "es": "verdura",
       "zh": "蔬菜",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_036",
       "es": "tomate",
       "zh": "番茄",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_037",
       "es": "papa",
       "zh": "馬鈴薯（拉美）",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_038",
       "es": "patata",
       "zh": "馬鈴薯（西班牙）",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_039",
       "es": "cebolla",
       "zh": "洋蔥",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_040",
       "es": "ajo",
       "zh": "蒜",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_041",
       "es": "lechuga",
       "zh": "萵苣",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_042",
       "es": "zanahoria",
       "zh": "胡蘿蔔",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_043",
       "es": "postre",
       "zh": "甜點",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_044",
       "es": "helado",
       "zh": "冰淇淋",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_045",
       "es": "chocolate",
       "zh": "巧克力",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_046",
       "es": "galleta",
       "zh": "餅乾",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_047",
       "es": "pastel",
       "zh": "蛋糕",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_048",
       "es": "sopa",
       "zh": "湯",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_049",
       "es": "ensalada",
       "zh": "沙拉",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_050",
       "es": "hamburguesa",
       "zh": "漢堡",
       "ipa": "",
       "cat": "食物與飲料"
     },
     {
+      "id": "vx_L2_051",
       "es": "cuerpo",
       "zh": "身體",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_052",
       "es": "cabeza",
       "zh": "頭",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_053",
       "es": "cara",
       "zh": "臉",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_054",
       "es": "ojo",
       "zh": "眼睛",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_055",
       "es": "nariz",
       "zh": "鼻子",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_056",
       "es": "boca",
       "zh": "嘴",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_057",
       "es": "oreja",
       "zh": "耳朵",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_058",
       "es": "diente",
       "zh": "牙齒",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_059",
       "es": "lengua",
       "zh": "舌頭/語言",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_060",
       "es": "pelo",
       "zh": "頭髮",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_061",
       "es": "cuello",
       "zh": "脖子",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_062",
       "es": "hombro",
       "zh": "肩膀",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_063",
       "es": "brazo",
       "zh": "手臂",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_064",
       "es": "mano",
       "zh": "手",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_065",
       "es": "dedo",
       "zh": "手指",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_066",
       "es": "pecho",
       "zh": "胸",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_067",
       "es": "espalda",
       "zh": "背",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_068",
       "es": "estómago",
       "zh": "胃",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_069",
       "es": "pierna",
       "zh": "腿",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_070",
       "es": "rodilla",
       "zh": "膝蓋",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_071",
       "es": "pie",
       "zh": "腳",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_072",
       "es": "corazón",
       "zh": "心臟",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_073",
       "es": "salud",
       "zh": "健康",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_074",
       "es": "enfermo",
       "zh": "生病的",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_075",
       "es": "dolor",
       "zh": "疼痛",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_076",
       "es": "medicina",
       "zh": "藥",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_077",
       "es": "médico",
       "zh": "醫生",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_078",
       "es": "hospital",
       "zh": "醫院",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_079",
       "es": "fiebre",
       "zh": "發燒",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_080",
       "es": "gripe",
       "zh": "感冒/流感",
       "ipa": "",
       "cat": "身體與健康"
     },
     {
+      "id": "vx_L2_081",
       "es": "ropa",
       "zh": "衣服",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_082",
       "es": "camisa",
       "zh": "襯衫",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_083",
       "es": "camiseta",
       "zh": "T 恤",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_084",
       "es": "pantalón",
       "zh": "褲子",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_085",
       "es": "falda",
       "zh": "裙子",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_086",
       "es": "vestido",
       "zh": "洋裝",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_087",
       "es": "chaqueta",
       "zh": "外套",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_088",
       "es": "abrigo",
       "zh": "大衣",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_089",
       "es": "zapatos",
       "zh": "鞋子",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_090",
       "es": "calcetines",
       "zh": "襪子",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_091",
       "es": "sombrero",
       "zh": "帽子",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_092",
       "es": "gorra",
       "zh": "鴨舌帽",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_093",
       "es": "gafas",
       "zh": "眼鏡",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_094",
       "es": "bolso",
       "zh": "包包",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_095",
       "es": "reloj",
       "zh": "手錶",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_096",
       "es": "cinturón",
       "zh": "皮帶",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_097",
       "es": "corbata",
       "zh": "領帶",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_098",
       "es": "bufanda",
       "zh": "圍巾",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_099",
       "es": "guantes",
       "zh": "手套",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_100",
       "es": "traje",
       "zh": "西裝",
       "ipa": "",
       "cat": "衣物"
     },
     {
+      "id": "vx_L2_101",
       "es": "levantarse",
       "zh": "起床",
       "ipa": "leβanˈtaɾse",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_102",
       "es": "despertarse",
       "zh": "醒來",
       "ipa": "despeɾˈtaɾse",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_103",
       "es": "ducharse",
       "zh": "淋浴",
       "ipa": "duˈtʃaɾse",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_104",
       "es": "bañarse",
       "zh": "洗澡",
       "ipa": "baˈɲaɾse",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_105",
       "es": "lavarse",
       "zh": "清洗（身體）",
       "ipa": "laˈβaɾse",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_106",
       "es": "vestirse",
       "zh": "穿衣",
       "ipa": "besˈtiɾse",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_107",
       "es": "peinarse",
       "zh": "梳頭",
       "ipa": "peiˈnaɾse",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_108",
       "es": "acostarse",
       "zh": "就寢",
       "ipa": "akosˈtaɾse",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_109",
       "es": "dormir",
       "zh": "睡覺",
       "ipa": "doɾˈmiɾ",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_110",
       "es": "desayunar",
       "zh": "吃早餐",
       "ipa": "desaʝuˈnaɾ",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_111",
       "es": "cenar",
       "zh": "吃晚餐",
       "ipa": "θeˈnaɾ",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_112",
       "es": "descansar",
       "zh": "休息",
       "ipa": "deskanˈsaɾ",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_113",
       "es": "limpiar",
       "zh": "打掃",
       "ipa": "limˈpjaɾ",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_114",
       "es": "cocinar",
       "zh": "做飯",
       "ipa": "kokiˈnaɾ",
       "cat": "日常作息"
     },
     {
+      "id": "vx_L2_115",
       "es": "ir",
       "zh": "去",
       "ipa": "iɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_116",
       "es": "tener",
       "zh": "有",
       "ipa": "teˈneɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_117",
       "es": "hacer",
       "zh": "做",
       "ipa": "aˈθeɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_118",
       "es": "poder",
       "zh": "能夠",
       "ipa": "poˈðeɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_119",
       "es": "querer",
       "zh": "想要；愛",
       "ipa": "keˈɾeɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_120",
       "es": "venir",
       "zh": "來",
       "ipa": "beˈniɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_121",
       "es": "salir",
       "zh": "出去",
       "ipa": "saˈliɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_122",
       "es": "poner",
       "zh": "放",
       "ipa": "poˈneɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_123",
       "es": "ver",
       "zh": "看",
       "ipa": "beɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_124",
       "es": "dar",
       "zh": "給",
       "ipa": "daɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_125",
       "es": "saber",
       "zh": "知道",
       "ipa": "saˈβeɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_126",
       "es": "decir",
       "zh": "說",
       "ipa": "deˈθiɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_127",
       "es": "empezar",
       "zh": "開始",
       "ipa": "empeˈθaɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_128",
       "es": "volver",
       "zh": "回來",
       "ipa": "bolˈβeɾ",
       "cat": "常見動詞"
     },
     {
+      "id": "vx_L2_129",
       "es": "casa",
       "zh": "房子；家",
       "ipa": "ˈkasa",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_130",
       "es": "piso",
       "zh": "公寓；樓層",
       "ipa": "ˈpiso",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_131",
       "es": "habitación",
       "zh": "房間",
       "ipa": "aβitaˈθjon",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_132",
       "es": "cocina",
       "zh": "廚房",
       "ipa": "koˈθina",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_133",
       "es": "baño",
       "zh": "浴室；廁所",
       "ipa": "ˈbaɲo",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_134",
       "es": "salón",
       "zh": "客廳",
       "ipa": "saˈlon",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_135",
       "es": "cama",
       "zh": "床",
       "ipa": "ˈkama",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_136",
       "es": "mesa",
       "zh": "桌子",
       "ipa": "ˈmesa",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_137",
       "es": "silla",
       "zh": "椅子",
       "ipa": "ˈsiʎa",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_138",
       "es": "puerta",
       "zh": "門",
       "ipa": "ˈpweɾta",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_139",
       "es": "ventana",
       "zh": "窗戶",
       "ipa": "benˈtana",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_140",
       "es": "llave",
       "zh": "鑰匙",
       "ipa": "ˈʎaβe",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_141",
       "es": "teléfono",
       "zh": "電話",
       "ipa": "teˈlefono",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_142",
       "es": "ordenador",
       "zh": "電腦",
       "ipa": "oɾðenaˈðoɾ",
       "cat": "家居"
     },
     {
+      "id": "vx_L2_143",
       "es": "hoy",
       "zh": "今天",
       "ipa": "oi",
       "cat": "時間與頻率"
     },
     {
+      "id": "vx_L2_144",
       "es": "mañana",
       "zh": "明天；早上",
       "ipa": "maˈɲana",
       "cat": "時間與頻率"
     },
     {
+      "id": "vx_L2_145",
       "es": "ayer",
       "zh": "昨天",
       "ipa": "aˈʝeɾ",
       "cat": "時間與頻率"
     },
     {
+      "id": "vx_L2_146",
       "es": "siempre",
       "zh": "總是",
       "ipa": "ˈsjempɾe",
       "cat": "時間與頻率"
     },
     {
+      "id": "vx_L2_147",
       "es": "nunca",
       "zh": "從不",
       "ipa": "ˈnunka",
       "cat": "時間與頻率"
     },
     {
+      "id": "vx_L2_148",
       "es": "a veces",
       "zh": "有時",
       "ipa": "a ˈβeθes",
       "cat": "時間與頻率"
     },
     {
+      "id": "vx_L2_149",
       "es": "temprano",
       "zh": "早",
       "ipa": "temˈpɾano",
       "cat": "時間與頻率"
     },
     {
+      "id": "vx_L2_150",
       "es": "tarde",
       "zh": "晚；下午",
       "ipa": "ˈtaɾðe",

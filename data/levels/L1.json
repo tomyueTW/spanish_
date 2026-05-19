@@ -4,900 +4,1050 @@
   "cefr": "A1.1",
   "vocab": [
     {
+      "id": "vx_L1_001",
       "es": "hola",
       "zh": "你好",
       "ipa": "ˈola",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_002",
       "es": "adiós",
       "zh": "再見",
       "ipa": "aˈðjos",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_003",
       "es": "buenos días",
       "zh": "早安",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_004",
       "es": "buenas tardes",
       "zh": "午安/下午好",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_005",
       "es": "buenas noches",
       "zh": "晚安",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_006",
       "es": "gracias",
       "zh": "謝謝",
       "ipa": "ˈɡɾaθjas",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_007",
       "es": "de nada",
       "zh": "不客氣",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_008",
       "es": "por favor",
       "zh": "請",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_009",
       "es": "perdón",
       "zh": "對不起/打擾一下",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_010",
       "es": "lo siento",
       "zh": "我很抱歉",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_011",
       "es": "disculpe",
       "zh": "不好意思（敬語）",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_012",
       "es": "bienvenido",
       "zh": "歡迎",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_013",
       "es": "encantado",
       "zh": "幸會（男）",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_014",
       "es": "encantada",
       "zh": "幸會（女）",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_015",
       "es": "mucho gusto",
       "zh": "很高興認識你",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_016",
       "es": "hasta luego",
       "zh": "回頭見",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_017",
       "es": "hasta mañana",
       "zh": "明天見",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_018",
       "es": "hasta pronto",
       "zh": "很快見",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_019",
       "es": "nos vemos",
       "zh": "再見/回見",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_020",
       "es": "chao",
       "zh": "再見（口語）",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_021",
       "es": "salud",
       "zh": "乾杯/保重",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_022",
       "es": "felicidades",
       "zh": "恭喜",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_023",
       "es": "enhorabuena",
       "zh": "恭喜",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_024",
       "es": "suerte",
       "zh": "祝好運",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_025",
       "es": "ánimo",
       "zh": "加油",
       "ipa": "",
       "cat": "問候與寒暄"
     },
     {
+      "id": "vx_L1_026",
       "es": "yo",
       "zh": "我",
       "ipa": "ʝo",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_027",
       "es": "tú",
       "zh": "你",
       "ipa": "tu",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_028",
       "es": "él",
       "zh": "他",
       "ipa": "el",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_029",
       "es": "ella",
       "zh": "她",
       "ipa": "ˈeʝa",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_030",
       "es": "usted",
       "zh": "您",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_031",
       "es": "nosotros",
       "zh": "我們",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_032",
       "es": "vosotros",
       "zh": "你們",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_033",
       "es": "ellos",
       "zh": "他們",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_034",
       "es": "ellas",
       "zh": "她們",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_035",
       "es": "ustedes",
       "zh": "您們",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_036",
       "es": "me",
       "zh": "我（受詞）",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_037",
       "es": "te",
       "zh": "你（受詞）",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_038",
       "es": "le",
       "zh": "他/她（間接受詞）",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_039",
       "es": "nos",
       "zh": "我們（受詞）",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_040",
       "es": "les",
       "zh": "他們（間接受詞）",
       "ipa": "",
       "cat": "代名詞與人稱"
     },
     {
+      "id": "vx_L1_041",
       "es": "familia",
       "zh": "家庭",
       "ipa": "faˈmilja",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_042",
       "es": "padre",
       "zh": "父親",
       "ipa": "ˈpaðɾe",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_043",
       "es": "madre",
       "zh": "母親",
       "ipa": "ˈmaðɾe",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_044",
       "es": "papá",
       "zh": "爸爸",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_045",
       "es": "mamá",
       "zh": "媽媽",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_046",
       "es": "hijo",
       "zh": "兒子",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_047",
       "es": "hija",
       "zh": "女兒",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_048",
       "es": "hermano",
       "zh": "兄弟",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_049",
       "es": "hermana",
       "zh": "姊妹",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_050",
       "es": "abuelo",
       "zh": "祖父",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_051",
       "es": "abuela",
       "zh": "祖母",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_052",
       "es": "tío",
       "zh": "叔叔/伯父",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_053",
       "es": "tía",
       "zh": "阿姨/姑姑",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_054",
       "es": "primo",
       "zh": "表兄弟",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_055",
       "es": "prima",
       "zh": "表姊妹",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_056",
       "es": "sobrino",
       "zh": "姪子",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_057",
       "es": "sobrina",
       "zh": "姪女",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_058",
       "es": "esposo",
       "zh": "丈夫",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_059",
       "es": "esposa",
       "zh": "妻子",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_060",
       "es": "marido",
       "zh": "丈夫",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_061",
       "es": "novio",
       "zh": "男朋友",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_062",
       "es": "novia",
       "zh": "女朋友",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_063",
       "es": "amigo",
       "zh": "朋友（男）",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_064",
       "es": "amiga",
       "zh": "朋友（女）",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_065",
       "es": "niño",
       "zh": "男孩/小孩",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_066",
       "es": "niña",
       "zh": "女孩",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_067",
       "es": "bebé",
       "zh": "嬰兒",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_068",
       "es": "hombre",
       "zh": "男人",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_069",
       "es": "mujer",
       "zh": "女人",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_070",
       "es": "persona",
       "zh": "人",
       "ipa": "",
       "cat": "家庭"
     },
     {
+      "id": "vx_L1_071",
       "es": "cero",
       "zh": "零",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_072",
       "es": "uno",
       "zh": "一",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_073",
       "es": "dos",
       "zh": "二",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_074",
       "es": "tres",
       "zh": "三",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_075",
       "es": "cuatro",
       "zh": "四",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_076",
       "es": "cinco",
       "zh": "五",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_077",
       "es": "seis",
       "zh": "六",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_078",
       "es": "siete",
       "zh": "七",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_079",
       "es": "ocho",
       "zh": "八",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_080",
       "es": "nueve",
       "zh": "九",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_081",
       "es": "diez",
       "zh": "十",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_082",
       "es": "once",
       "zh": "十一",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_083",
       "es": "doce",
       "zh": "十二",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_084",
       "es": "trece",
       "zh": "十三",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_085",
       "es": "catorce",
       "zh": "十四",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_086",
       "es": "quince",
       "zh": "十五",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_087",
       "es": "veinte",
       "zh": "二十",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_088",
       "es": "treinta",
       "zh": "三十",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_089",
       "es": "cuarenta",
       "zh": "四十",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_090",
       "es": "cincuenta",
       "zh": "五十",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_091",
       "es": "sesenta",
       "zh": "六十",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_092",
       "es": "setenta",
       "zh": "七十",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_093",
       "es": "ochenta",
       "zh": "八十",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_094",
       "es": "noventa",
       "zh": "九十",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_095",
       "es": "cien",
       "zh": "一百",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_096",
       "es": "mil",
       "zh": "一千",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_097",
       "es": "millón",
       "zh": "一百萬",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_098",
       "es": "primero",
       "zh": "第一",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_099",
       "es": "segundo",
       "zh": "第二",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_100",
       "es": "tercero",
       "zh": "第三",
       "ipa": "",
       "cat": "數字"
     },
     {
+      "id": "vx_L1_101",
       "es": "España",
       "zh": "西班牙",
       "ipa": "esˈpaɲa",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_102",
       "es": "español",
       "zh": "西班牙語；西班牙人（陽）",
       "ipa": "espaˈɲol",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_103",
       "es": "española",
       "zh": "西班牙人（陰）",
       "ipa": "espaˈɲola",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_104",
       "es": "México",
       "zh": "墨西哥",
       "ipa": "ˈmexiko",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_105",
       "es": "mexicano",
       "zh": "墨西哥人",
       "ipa": "mexiˈkano",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_106",
       "es": "China",
       "zh": "中國",
       "ipa": "ˈtʃina",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_107",
       "es": "chino",
       "zh": "中國人；中文",
       "ipa": "ˈtʃino",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_108",
       "es": "Taiwán",
       "zh": "台灣",
       "ipa": "taiˈwan",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_109",
       "es": "taiwanés",
       "zh": "台灣人",
       "ipa": "taiwaˈnes",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_110",
       "es": "Estados Unidos",
       "zh": "美國",
       "ipa": "esˈtaðos uˈniðos",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_111",
       "es": "inglés",
       "zh": "英語；英國人",
       "ipa": "inˈɡles",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_112",
       "es": "francés",
       "zh": "法語；法國人",
       "ipa": "franˈθes",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_113",
       "es": "país",
       "zh": "國家",
       "ipa": "paˈis",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_114",
       "es": "nacionalidad",
       "zh": "國籍",
       "ipa": "naθjonaliˈðað",
       "cat": "國家與國籍"
     },
     {
+      "id": "vx_L1_115",
       "es": "idioma",
       "zh": "語言",
       "ipa": "iˈðjoma",
       "cat": "語言與學習"
     },
     {
+      "id": "vx_L1_116",
       "es": "lengua",
       "zh": "語言；舌頭",
       "ipa": "ˈleŋɡwa",
       "cat": "語言與學習"
     },
     {
+      "id": "vx_L1_117",
       "es": "palabra",
       "zh": "字；詞",
       "ipa": "paˈlaβɾa",
       "cat": "語言與學習"
     },
     {
+      "id": "vx_L1_118",
       "es": "profesor",
       "zh": "老師（陽）",
       "ipa": "profeˈsor",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_119",
       "es": "profesora",
       "zh": "老師（陰）",
       "ipa": "profeˈsora",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_120",
       "es": "estudiante",
       "zh": "學生",
       "ipa": "estuˈðjante",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_121",
       "es": "médico",
       "zh": "醫生",
       "ipa": "ˈmeðiko",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_122",
       "es": "enfermero",
       "zh": "護理師",
       "ipa": "emferˈmeɾo",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_123",
       "es": "ingeniero",
       "zh": "工程師",
       "ipa": "inxeˈnjeɾo",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_124",
       "es": "abogado",
       "zh": "律師",
       "ipa": "aβoˈɣaðo",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_125",
       "es": "cocinero",
       "zh": "廚師",
       "ipa": "koθiˈneɾo",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_126",
       "es": "camarero",
       "zh": "服務生",
       "ipa": "kamaˈɾeɾo",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_127",
       "es": "policía",
       "zh": "警察",
       "ipa": "poliˈθia",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_128",
       "es": "trabajo",
       "zh": "工作",
       "ipa": "tɾaˈβaxo",
       "cat": "職業"
     },
     {
+      "id": "vx_L1_129",
       "es": "hablar",
       "zh": "說話",
       "ipa": "aˈβlaɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_130",
       "es": "estudiar",
       "zh": "學習；念書",
       "ipa": "estuˈðjaɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_131",
       "es": "trabajar",
       "zh": "工作",
       "ipa": "tɾaβaˈxaɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_132",
       "es": "vivir",
       "zh": "居住；生活",
       "ipa": "biˈβiɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_133",
       "es": "llamar",
       "zh": "叫；打電話",
       "ipa": "ʎaˈmaɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_134",
       "es": "aprender",
       "zh": "學會",
       "ipa": "apɾenˈdeɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_135",
       "es": "comprender",
       "zh": "理解",
       "ipa": "kompɾenˈdeɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_136",
       "es": "escribir",
       "zh": "寫",
       "ipa": "eskɾiˈβiɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_137",
       "es": "leer",
       "zh": "閱讀",
       "ipa": "leˈeɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_138",
       "es": "preguntar",
       "zh": "問",
       "ipa": "pɾeɣunˈtaɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_139",
       "es": "contestar",
       "zh": "回答",
       "ipa": "kontesˈtaɾ",
       "cat": "動詞"
     },
     {
+      "id": "vx_L1_140",
       "es": "qué",
       "zh": "什麼",
       "ipa": "ke",
       "cat": "疑問詞"
     },
     {
+      "id": "vx_L1_141",
       "es": "quién",
       "zh": "誰",
       "ipa": "kjen",
       "cat": "疑問詞"
     },
     {
+      "id": "vx_L1_142",
       "es": "dónde",
       "zh": "哪裡",
       "ipa": "ˈdonde",
       "cat": "疑問詞"
     },
     {
+      "id": "vx_L1_143",
       "es": "cómo",
       "zh": "如何；怎麼",
       "ipa": "ˈkomo",
       "cat": "疑問詞"
     },
     {
+      "id": "vx_L1_144",
       "es": "cuándo",
       "zh": "何時",
       "ipa": "ˈkwando",
       "cat": "疑問詞"
     },
     {
+      "id": "vx_L1_145",
       "es": "cuánto",
       "zh": "多少",
       "ipa": "ˈkwanto",
       "cat": "疑問詞"
     },
     {
+      "id": "vx_L1_146",
       "es": "por qué",
       "zh": "為什麼",
       "ipa": "poɾ ˈke",
       "cat": "疑問詞"
     },
     {
+      "id": "vx_L1_147",
       "es": "sí",
       "zh": "是的",
       "ipa": "si",
       "cat": "基本用語"
     },
     {
+      "id": "vx_L1_148",
       "es": "no",
       "zh": "不；沒有",
       "ipa": "no",
       "cat": "基本用語"
     },
     {
+      "id": "vx_L1_149",
       "es": "también",
       "zh": "也",
       "ipa": "tamˈbjen",
       "cat": "基本用語"
     },
     {
+      "id": "vx_L1_150",
       "es": "muy",
       "zh": "很；非常",
       "ipa": "mwi",

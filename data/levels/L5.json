@@ -4,900 +4,1050 @@
   "cefr": "B1.1",
   "vocab": [
     {
+      "id": "vx_L5_001",
       "es": "grande",
       "zh": "大的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_002",
       "es": "pequeño",
       "zh": "小的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_003",
       "es": "alto",
       "zh": "高的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_004",
       "es": "bajo",
       "zh": "矮/低的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_005",
       "es": "largo",
       "zh": "長的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_006",
       "es": "corto",
       "zh": "短的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_007",
       "es": "ancho",
       "zh": "寬的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_008",
       "es": "estrecho",
       "zh": "窄的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_009",
       "es": "gordo",
       "zh": "胖的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_010",
       "es": "delgado",
       "zh": "瘦的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_011",
       "es": "joven",
       "zh": "年輕的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_012",
       "es": "viejo",
       "zh": "老的/舊的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_013",
       "es": "nuevo",
       "zh": "新的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_014",
       "es": "bueno",
       "zh": "好的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_015",
       "es": "malo",
       "zh": "壞的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_016",
       "es": "mejor",
       "zh": "更好的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_017",
       "es": "peor",
       "zh": "更壞的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_018",
       "es": "bonito",
       "zh": "漂亮的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_019",
       "es": "guapo",
       "zh": "帥/美的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_020",
       "es": "feo",
       "zh": "醜的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_021",
       "es": "fácil",
       "zh": "簡單的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_022",
       "es": "difícil",
       "zh": "困難的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_023",
       "es": "rápido",
       "zh": "快的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_024",
       "es": "lento",
       "zh": "慢的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_025",
       "es": "caro",
       "zh": "貴的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_026",
       "es": "barato",
       "zh": "便宜的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_027",
       "es": "rico",
       "zh": "有錢的/好吃的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_028",
       "es": "pobre",
       "zh": "窮的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_029",
       "es": "feliz",
       "zh": "快樂的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_030",
       "es": "triste",
       "zh": "難過的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_031",
       "es": "cansado",
       "zh": "累的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_032",
       "es": "enfadado",
       "zh": "生氣的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_033",
       "es": "tranquilo",
       "zh": "平靜的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_034",
       "es": "nervioso",
       "zh": "緊張的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_035",
       "es": "ocupado",
       "zh": "忙的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_036",
       "es": "aburrido",
       "zh": "無聊的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_037",
       "es": "interesante",
       "zh": "有趣的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_038",
       "es": "importante",
       "zh": "重要的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_039",
       "es": "famoso",
       "zh": "有名的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_040",
       "es": "fuerte",
       "zh": "強壯的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_041",
       "es": "débil",
       "zh": "虛弱的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_042",
       "es": "limpio",
       "zh": "乾淨的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_043",
       "es": "sucio",
       "zh": "髒的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_044",
       "es": "caliente",
       "zh": "熱的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_045",
       "es": "frío",
       "zh": "冷的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_046",
       "es": "duro",
       "zh": "硬的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_047",
       "es": "blando",
       "zh": "軟的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_048",
       "es": "lleno",
       "zh": "滿的/飽的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_049",
       "es": "vacío",
       "zh": "空的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_050",
       "es": "abierto",
       "zh": "開著的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_051",
       "es": "cerrado",
       "zh": "關著的",
       "ipa": "",
       "cat": "形容詞"
     },
     {
+      "id": "vx_L5_052",
       "es": "qué",
       "zh": "什麼",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_053",
       "es": "quién",
       "zh": "誰",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_054",
       "es": "cuándo",
       "zh": "何時",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_055",
       "es": "dónde",
       "zh": "哪裡",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_056",
       "es": "cómo",
       "zh": "如何",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_057",
       "es": "por qué",
       "zh": "為什麼",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_058",
       "es": "cuánto",
       "zh": "多少",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_059",
       "es": "cuál",
       "zh": "哪一個",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_060",
       "es": "y",
       "zh": "和",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_061",
       "es": "o",
       "zh": "或",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_062",
       "es": "pero",
       "zh": "但是",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_063",
       "es": "porque",
       "zh": "因為",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_064",
       "es": "si",
       "zh": "如果",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_065",
       "es": "sí",
       "zh": "是",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_066",
       "es": "no",
       "zh": "不",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_067",
       "es": "muy",
       "zh": "很",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_068",
       "es": "mucho",
       "zh": "很多",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_069",
       "es": "poco",
       "zh": "少",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_070",
       "es": "también",
       "zh": "也",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_071",
       "es": "tampoco",
       "zh": "也不",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_072",
       "es": "ya",
       "zh": "已經",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_073",
       "es": "todavía",
       "zh": "還",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_074",
       "es": "aunque",
       "zh": "雖然",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_075",
       "es": "entonces",
       "zh": "那麼",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_076",
       "es": "luego",
       "zh": "然後",
       "ipa": "",
       "cat": "疑問詞與連接詞"
     },
     {
+      "id": "vx_L5_077",
       "es": "emoción",
       "zh": "情緒",
       "ipa": "emoˈθjon",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_078",
       "es": "sentimiento",
       "zh": "感受",
       "ipa": "sentiˈmjento",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_079",
       "es": "alegría",
       "zh": "喜悅",
       "ipa": "aleˈɣɾia",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_080",
       "es": "tristeza",
       "zh": "悲傷",
       "ipa": "tɾisˈteθa",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_081",
       "es": "miedo",
       "zh": "害怕",
       "ipa": "ˈmjeðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_082",
       "es": "enojo",
       "zh": "生氣",
       "ipa": "eˈnoxo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_083",
       "es": "sorpresa",
       "zh": "驚訝",
       "ipa": "soɾˈpɾesa",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_084",
       "es": "vergüenza",
       "zh": "羞愧；尷尬",
       "ipa": "beɾˈɣwenθa",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_085",
       "es": "orgullo",
       "zh": "驕傲",
       "ipa": "oɾˈɣuʎo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_086",
       "es": "amor",
       "zh": "愛",
       "ipa": "aˈmoɾ",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_087",
       "es": "odio",
       "zh": "恨",
       "ipa": "ˈoðjo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_088",
       "es": "esperanza",
       "zh": "希望",
       "ipa": "espeˈɾanθa",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_089",
       "es": "preocupación",
       "zh": "擔憂",
       "ipa": "pɾeokupaˈθjon",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_090",
       "es": "ilusión",
       "zh": "期待；憧憬",
       "ipa": "iluˈsjon",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_091",
       "es": "ánimo",
       "zh": "心情；鼓勵",
       "ipa": "ˈanimo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_092",
       "es": "emocionado",
       "zh": "激動的；興奮的",
       "ipa": "emoθjoˈnaðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_093",
       "es": "asustado",
       "zh": "受驚的",
       "ipa": "asusˈtaðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_094",
       "es": "preocupado",
       "zh": "擔心的",
       "ipa": "pɾeokuˈpaðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_095",
       "es": "sorprendido",
       "zh": "驚訝的",
       "ipa": "soɾpɾenˈdiðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_096",
       "es": "avergonzado",
       "zh": "尷尬的",
       "ipa": "aβeɾɣonˈθaðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_097",
       "es": "decepcionado",
       "zh": "失望的",
       "ipa": "deθepθjoˈnaðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_098",
       "es": "orgulloso",
       "zh": "驕傲的",
       "ipa": "oɾɣuˈʎoso",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_099",
       "es": "celoso",
       "zh": "嫉妒的",
       "ipa": "θeˈloso",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_100",
       "es": "confundido",
       "zh": "困惑的",
       "ipa": "komfunˈdiðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_101",
       "es": "agradecido",
       "zh": "感激的",
       "ipa": "aɣɾaðeˈθiðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_102",
       "es": "relajado",
       "zh": "放鬆的",
       "ipa": "relaˈxaðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_103",
       "es": "estresado",
       "zh": "有壓力的",
       "ipa": "estɾeˈsaðo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_104",
       "es": "solo",
       "zh": "孤單的；單獨",
       "ipa": "ˈsolo",
       "cat": "情緒與感受"
     },
     {
+      "id": "vx_L5_105",
       "es": "pensar",
       "zh": "想；認為",
       "ipa": "penˈsaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_106",
       "es": "creer",
       "zh": "相信；認為",
       "ipa": "kɾeˈeɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_107",
       "es": "opinar",
       "zh": "表達意見",
       "ipa": "opiˈnaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_108",
       "es": "parecer",
       "zh": "看起來；覺得",
       "ipa": "paɾeˈθeɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_109",
       "es": "sentir",
       "zh": "感覺",
       "ipa": "senˈtiɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_110",
       "es": "sentirse",
       "zh": "覺得（自身狀態）",
       "ipa": "senˈtiɾse",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_111",
       "es": "dudar",
       "zh": "懷疑",
       "ipa": "duˈðaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_112",
       "es": "estar de acuerdo",
       "zh": "同意",
       "ipa": "esˈtaɾ ðe aˈkweɾðo",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_113",
       "es": "imaginar",
       "zh": "想像",
       "ipa": "imaxiˈnaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_114",
       "es": "recordar",
       "zh": "記得",
       "ipa": "rekoɾˈðaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_115",
       "es": "olvidar",
       "zh": "忘記",
       "ipa": "olβiˈðaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_116",
       "es": "preferir",
       "zh": "偏好",
       "ipa": "pɾefeˈɾiɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_117",
       "es": "odiar",
       "zh": "討厭",
       "ipa": "oˈðjaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_118",
       "es": "amar",
       "zh": "愛",
       "ipa": "aˈmaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_119",
       "es": "disfrutar",
       "zh": "享受",
       "ipa": "disfɾuˈtaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_120",
       "es": "molestar",
       "zh": "使困擾",
       "ipa": "molesˈtaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_121",
       "es": "interesar",
       "zh": "使感興趣",
       "ipa": "inteɾeˈsaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_122",
       "es": "importar",
       "zh": "在乎；要緊",
       "ipa": "impoɾˈtaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_123",
       "es": "preocuparse",
       "zh": "擔心",
       "ipa": "pɾeokuˈpaɾse",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_124",
       "es": "alegrarse",
       "zh": "感到高興",
       "ipa": "aleˈɣɾaɾse",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_125",
       "es": "enfadarse",
       "zh": "生氣",
       "ipa": "emfaˈðaɾse",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_126",
       "es": "quejarse",
       "zh": "抱怨",
       "ipa": "keˈxaɾse",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_127",
       "es": "reír",
       "zh": "笑",
       "ipa": "reˈiɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_128",
       "es": "llorar",
       "zh": "哭",
       "ipa": "ʎoˈɾaɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_129",
       "es": "sonreír",
       "zh": "微笑",
       "ipa": "sonreˈiɾ",
       "cat": "想法與意見"
     },
     {
+      "id": "vx_L5_130",
       "es": "carácter",
       "zh": "個性",
       "ipa": "kaˈɾakteɾ",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_131",
       "es": "personalidad",
       "zh": "人格",
       "ipa": "peɾsonaliˈðað",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_132",
       "es": "amable",
       "zh": "友善的",
       "ipa": "aˈmaβle",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_133",
       "es": "simpático",
       "zh": "親切的",
       "ipa": "simˈpatiko",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_134",
       "es": "antipático",
       "zh": "不友善的",
       "ipa": "antiˈpatiko",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_135",
       "es": "tímido",
       "zh": "害羞的",
       "ipa": "ˈtimiðo",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_136",
       "es": "valiente",
       "zh": "勇敢的",
       "ipa": "baˈljente",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_137",
       "es": "honesto",
       "zh": "誠實的",
       "ipa": "oˈnesto",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_138",
       "es": "generoso",
       "zh": "慷慨的",
       "ipa": "xeneˈɾoso",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_139",
       "es": "egoísta",
       "zh": "自私的",
       "ipa": "eɣoˈista",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_140",
       "es": "perezoso",
       "zh": "懶惰的",
       "ipa": "peɾeˈθoso",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_141",
       "es": "inteligente",
       "zh": "聰明的",
       "ipa": "inteliˈxente",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_142",
       "es": "educado",
       "zh": "有禮貌的",
       "ipa": "eðuˈkaðo",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_143",
       "es": "paciente",
       "zh": "有耐心的",
       "ipa": "paˈθjente",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_144",
       "es": "serio",
       "zh": "嚴肅的",
       "ipa": "ˈseɾjo",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_145",
       "es": "divertido",
       "zh": "有趣的；好玩的",
       "ipa": "diβeɾˈtiðo",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_146",
       "es": "sincero",
       "zh": "真誠的",
       "ipa": "sinˈθeɾo",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_147",
       "es": "responsable",
       "zh": "負責任的",
       "ipa": "responˈsaβle",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_148",
       "es": "sociable",
       "zh": "善交際的",
       "ipa": "soˈθjaβle",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_149",
       "es": "cariñoso",
       "zh": "體貼的；親暱的",
       "ipa": "kaɾiˈɲoso",
       "cat": "個性特質"
     },
     {
+      "id": "vx_L5_150",
       "es": "opinión",
       "zh": "意見",
       "ipa": "opiˈnjon",

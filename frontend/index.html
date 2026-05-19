@@ -615,7 +615,11 @@
 
 </div>
 
-<script>
+<script type="module">
+// 原生 ES module（零 build、可離線）。後端把 frontend/ mount 在 /static，
+// 故模組以 /static/js/ 絕對路徑載入；app 一律經後端 http://localhost:8000 開啟。
+import * as ProgressMod from '/static/js/progress.js';
+
 // ─────────── 全域設定 ───────────
 const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:8000' : '';
 const STORAGE_KEY = 'spanish_app_v1';
@@ -632,8 +636,7 @@ const App = (() => {
   // ─── 狀態 ───
   let levels = [];        // [{id, name, cefr, vocab[], grammar[], listening[]}, ...]
   let customBanks = [];   // 從本地資料夾 banks/*.md 載入
-  // progress.global = 聚合；progress.banks[key] = 各題庫 { name, answered, correct, sessions, lastPracticed, history:[{date,mode,score,total}] }
-  let progress = { global: { totalAnswered: 0, totalCorrect: 0, sessions: 0 }, banks: {} };
+  // 進度狀態 + F0 題項精熟模型已收斂到 js/progress.js（ProgressMod）。
   let activeBank = { kind: 'builtin', id: DEFAULT_LEVEL };
   let persistedActiveBank = null;  // localStorage 原始 activeBank，customBanks 載入後才能正確 resolve
   let dirHandle = null;       // FileSystemDirectoryHandle，存於 IndexedDB
@@ -654,12 +657,7 @@ const App = (() => {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const data = JSON.parse(raw);
-        if (data.progress && data.progress.global) {
-          progress = { global: data.progress.global, banks: data.progress.banks || {} };
-        } else if (data.stats) {
-          // 舊版 stats → 遷移為 progress.global
-          progress = { global: data.stats, banks: {} };
-        }
+        ProgressMod.loadSnapshot(data);
         dirName = data.dirName || '';
         // 舊版用戶可能仍在 localStorage 有 customBanks，保留供 Phase 2 遷移
         if (Array.isArray(data.customBanks)) {
@@ -672,7 +670,7 @@ const App = (() => {
   }
   function saveState() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ progress, activeBank, dirName }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ progress: ProgressMod.snapshot(), activeBank, dirName }));
     } catch (e) { console.warn('儲存失敗', e); }
   }
 
@@ -926,114 +924,15 @@ const App = (() => {
     await w.close();
   }
 
-  function pct(correct, answered) {
-    return answered ? Math.round(correct / answered * 100) : 0;
-  }
-
-  function formatSummaryMd() {
-    const g = progress.global;
-    const lines = [
-      '---',
-      `updated: ${new Date().toISOString()}`,
-      `totalAnswered: ${g.totalAnswered}`,
-      `totalCorrect: ${g.totalCorrect}`,
-      `sessions: ${g.sessions}`,
-      '---',
-      '',
-      '# 總計',
-      '',
-      `- 完成測驗：${g.sessions}`,
-      `- 總答題數：${g.totalAnswered}`,
-      `- 答對：${g.totalCorrect}`,
-      `- 正確率：${pct(g.totalCorrect, g.totalAnswered)}%`,
-      '',
-      '# 各題庫',
-      '',
-      '| 題庫 | 答題 | 正確率 | 完成次數 | 最後練習 |',
-      '|---|---|---|---|---|',
-    ];
-    for (const [key, b] of Object.entries(progress.banks)) {
-      const last = b.lastPracticed ? b.lastPracticed.slice(0, 10) : '-';
-      lines.push(`| ${key} ${b.name ? '· ' + b.name : ''} | ${b.answered} | ${pct(b.correct, b.answered)}% | ${b.sessions} | ${last} |`);
-    }
-    return lines.join('\n') + '\n';
-  }
-
-  function formatBankProgressMd(key, b) {
-    const lines = [
-      '---',
-      `bankId: ${key}`,
-      `name: ${b.name || ''}`,
-      `answered: ${b.answered}`,
-      `correct: ${b.correct}`,
-      `sessions: ${b.sessions}`,
-      `lastPracticed: ${b.lastPracticed || ''}`,
-      '---',
-      '',
-      '# 測驗歷史',
-      '',
-      '| 日期 | 模式 | 分數 |',
-      '|---|---|---|',
-    ];
-    (b.history || []).forEach(h => {
-      lines.push(`| ${h.date} | ${h.mode} | ${h.score}/${h.total} |`);
-    });
-    return lines.join('\n') + '\n';
-  }
-
-  function parseFrontmatter(text) {
-    const out = {};
-    const m = text.match(/^---\n([\s\S]*?)\n---\n?/);
-    if (m) {
-      m[1].split('\n').forEach(line => {
-        const mm = line.match(/^([\w-]+):\s*(.*)$/);
-        if (mm) out[mm[1]] = mm[2].trim();
-      });
-    }
-    return out;
-  }
-
-  function parseSummaryGlobal(text) {
-    const fm = parseFrontmatter(text);
-    if (!('totalAnswered' in fm)) return null;
-    return {
-      totalAnswered: parseInt(fm.totalAnswered) || 0,
-      totalCorrect: parseInt(fm.totalCorrect) || 0,
-      sessions: parseInt(fm.sessions) || 0,
-    };
-  }
-
-  function parseBankProgress(text) {
-    const fm = parseFrontmatter(text);
-    const entry = {
-      name: fm.name || '',
-      answered: parseInt(fm.answered) || 0,
-      correct: parseInt(fm.correct) || 0,
-      sessions: parseInt(fm.sessions) || 0,
-      lastPracticed: fm.lastPracticed || '',
-      history: [],
-    };
-    text.split('\n').forEach(raw => {
-      const line = raw.trim();
-      if (!line.startsWith('|')) return;
-      const cells = line.split('|').map(s => s.trim()).filter((_, i, a) => i > 0 && i < a.length - 1);
-      if (cells.length !== 3) return;
-      if (cells[0] === '日期' || /^-+$/.test(cells[0])) return;
-      const sc = (cells[2] || '').split('/');
-      entry.history.push({
-        date: cells[0], mode: cells[1],
-        score: parseInt(sc[0]) || 0, total: parseInt(sc[1]) || 0,
-      });
-    });
-    return entry;
-  }
+  // pct / formatSummaryMd / formatBankProgressMd / parseFrontmatter /
+  // parseSummaryGlobal / parseBankProgress 已移入 js/progress.js（ProgressMod）。
 
   async function writeProgressFiles() {
     if (folderState !== 'ready' || !dirHandle) return;
     const dir = await ensureSubdir(PROGRESS_SUBDIR);
-    await writeTextFile(dir, '_summary.md', formatSummaryMd());
-    for (const [key, b] of Object.entries(progress.banks)) {
-      await writeTextFile(dir, key + '.md', formatBankProgressMd(key, b));
+    await writeTextFile(dir, '_summary.md', ProgressMod.formatSummaryMd(new Date().toISOString()));
+    for (const key of Object.keys(ProgressMod.getBanks())) {
+      await writeTextFile(dir, key + '.md', ProgressMod.formatBankProgressMd(key));
     }
   }
 
@@ -1047,15 +946,15 @@ const App = (() => {
       try {
         const text = await (await fh.getFile()).text();
         if (name === '_summary.md') {
-          const g = parseSummaryGlobal(text);
-          if (g) { progress.global = g; found = true; }
+          const g = ProgressMod.parseSummaryGlobal(text);
+          if (g) { ProgressMod.setGlobal(g); found = true; }
         } else {
-          banks[name.replace(/\.md$/i, '')] = parseBankProgress(text);
+          banks[name.replace(/\.md$/i, '')] = ProgressMod.parseBankProgress(text);
           found = true;
         }
       } catch (e) { console.warn('讀取進度失敗', name, e); }
     }
-    if (Object.keys(banks).length) progress.banks = banks;
+    if (Object.keys(banks).length) ProgressMod.setBanks(banks);
     return found;
   }
 
@@ -1077,19 +976,9 @@ const App = (() => {
   }
 
   function recordQuizResult(mode, score, total) {
-    const key = progressKey();
-    const name = getActiveBank().name;
-    progress.global.totalAnswered += total;
-    progress.global.totalCorrect += score;
-    progress.global.sessions += 1;
-    const b = progress.banks[key] || (progress.banks[key] = { name, answered: 0, correct: 0, sessions: 0, lastPracticed: '', history: [] });
-    b.name = name;
-    b.answered += total;
-    b.correct += score;
-    b.sessions += 1;
-    b.lastPracticed = new Date().toISOString();
-    b.history.push({ date: b.lastPracticed, mode, score, total });
-    if (b.history.length > 200) b.history = b.history.slice(-200);
+    const key = (currentQuiz && currentQuiz.bankKey) || progressKey();
+    const name = (currentQuiz && currentQuiz.bankName) || getActiveBank().name;
+    ProgressMod.recordQuiz(key, name, mode, score, total, new Date().toISOString());
     persistProgress();
   }
 
@@ -1138,7 +1027,7 @@ const App = (() => {
   }
 
   function renderStats() {
-    const g = progress.global;
+    const g = ProgressMod.getGlobal();
     const acc = g.totalAnswered ? Math.round(g.totalCorrect / g.totalAnswered * 100) : 0;
     $('stats-summary').innerHTML = `
       <div class="stat-card"><div class="stat-num">${g.sessions}</div><div class="stat-label">完成的測驗</div></div>
@@ -1638,12 +1527,22 @@ const App = (() => {
       alert('目前題庫沒有可用的題目，請切換題庫或先匯入內容');
       return;
     }
-    currentQuiz = { mode: currentMode, questions, current: 0, score: 0, wrong: [], answered: false };
+    currentQuiz = {
+      mode: currentMode, questions, current: 0, score: 0, wrong: [], answered: false,
+      // F0：整場鎖定當前題庫鍵/名，作答中即使切換也不影響本場記錄
+      bankKey: progressKey(),
+      bankName: getActiveBank().name,
+    };
     show('quiz');
     renderQ();
   }
 
   // ─── 出題 ───
+  // F0 題項穩定鍵：交給 ProgressMod（builtin 用 vx_/lx_/gx_ id，custom 退回 es）
+  function qItemKey(typ, item) {
+    return ProgressMod.itemKey(progressKey(), typ, item, isBuiltinActive());
+  }
+
   function makeVocabQ(pool) {
     if (pool.length < 4) return null;
     const shuf = shuffle(pool);
@@ -1660,6 +1559,7 @@ const App = (() => {
       speakText: correct.es,
       source: correct.source,
       sourceName: correct.bankName,
+      itemKey: qItemKey('vocab', correct),
     };
   }
 
@@ -1684,6 +1584,7 @@ const App = (() => {
         source: correct.source,
         sourceName: correct.bankName,
         topic: correct.topic,
+        itemKey: qItemKey('listen', correct),
       };
     }
     return makeListenQFromVocab(vocabPool);
@@ -1704,6 +1605,8 @@ const App = (() => {
       explanation: `<strong>${correct.es}</strong> = ${correct.zh}`,
       speakText: correct.es,
       source: correct.source,
+      // 底層仍是 vocab 詞，鍵為 vocab → 與單字模式共享該字精熟度
+      itemKey: qItemKey('vocab', correct),
     };
   }
 
@@ -1717,6 +1620,7 @@ const App = (() => {
       answer: item.a,
       explanation: item.exp,
       source: 'default',
+      itemKey: qItemKey('grammar', item),
     };
   }
 
@@ -1808,6 +1712,12 @@ const App = (() => {
     const correct = idx === q.answer;
     if (correct) currentQuiz.score++;
     else currentQuiz.wrong.push({ ...q, chosen: q.options[idx] });
+
+    // F0：記錄該題項精熟（記憶體；整場結束於 showResult→persistProgress 一次寫檔）
+    if (q.itemKey) {
+      ProgressMod.recordItem(currentQuiz.bankKey, currentQuiz.bankName,
+        q.itemKey, correct, new Date().toISOString());
+    }
 
     document.querySelectorAll('.opt-btn').forEach((b, i) => {
       b.disabled = true;
@@ -2014,6 +1924,8 @@ const App = (() => {
   };
 })();
 
+// module scope 非全域；HTML 的 inline onclick="App.*" 需要全域 App
+window.App = App;
 window.addEventListener('DOMContentLoaded', App.init);
 </script>
 </body>

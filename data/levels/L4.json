@@ -4,900 +4,1050 @@
   "cefr": "A2.2",
   "vocab": [
     {
+      "id": "vx_L4_001",
       "es": "coche",
       "zh": "汽車（西班牙）",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_002",
       "es": "carro",
       "zh": "汽車（拉美）",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_003",
       "es": "autobús",
       "zh": "公車",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_004",
       "es": "tren",
       "zh": "火車",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_005",
       "es": "avión",
       "zh": "飛機",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_006",
       "es": "barco",
       "zh": "船",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_007",
       "es": "bicicleta",
       "zh": "腳踏車",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_008",
       "es": "motocicleta",
       "zh": "摩托車",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_009",
       "es": "taxi",
       "zh": "計程車",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_010",
       "es": "metro",
       "zh": "捷運/地鐵",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_011",
       "es": "estación",
       "zh": "車站",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_012",
       "es": "aeropuerto",
       "zh": "機場",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_013",
       "es": "puerto",
       "zh": "港口",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_014",
       "es": "parada",
       "zh": "站牌",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_015",
       "es": "billete",
       "zh": "票（西班牙）",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_016",
       "es": "boleto",
       "zh": "票（拉美）",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_017",
       "es": "maleta",
       "zh": "行李箱",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_018",
       "es": "pasaporte",
       "zh": "護照",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_019",
       "es": "viaje",
       "zh": "旅行",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_020",
       "es": "vacaciones",
       "zh": "假期",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_021",
       "es": "hotel",
       "zh": "飯店",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_022",
       "es": "habitación",
       "zh": "房間",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_023",
       "es": "calle",
       "zh": "街道",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_024",
       "es": "avenida",
       "zh": "大道",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_025",
       "es": "plaza",
       "zh": "廣場",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_026",
       "es": "puente",
       "zh": "橋",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_027",
       "es": "carretera",
       "zh": "公路",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_028",
       "es": "mapa",
       "zh": "地圖",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_029",
       "es": "playa",
       "zh": "海灘",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_030",
       "es": "montaña",
       "zh": "山",
       "ipa": "",
       "cat": "交通與旅行"
     },
     {
+      "id": "vx_L4_031",
       "es": "ciudad",
       "zh": "城市",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_032",
       "es": "pueblo",
       "zh": "小鎮",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_033",
       "es": "país",
       "zh": "國家",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_034",
       "es": "mundo",
       "zh": "世界",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_035",
       "es": "lugar",
       "zh": "地方",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_036",
       "es": "escuela",
       "zh": "學校",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_037",
       "es": "universidad",
       "zh": "大學",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_038",
       "es": "oficina",
       "zh": "辦公室",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_039",
       "es": "tienda",
       "zh": "商店",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_040",
       "es": "supermercado",
       "zh": "超市",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_041",
       "es": "mercado",
       "zh": "市場",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_042",
       "es": "restaurante",
       "zh": "餐廳",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_043",
       "es": "cafetería",
       "zh": "咖啡廳",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_044",
       "es": "bar",
       "zh": "酒吧",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_045",
       "es": "banco",
       "zh": "銀行/長椅",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_046",
       "es": "iglesia",
       "zh": "教堂",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_047",
       "es": "museo",
       "zh": "博物館",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_048",
       "es": "biblioteca",
       "zh": "圖書館",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_049",
       "es": "parque",
       "zh": "公園",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_050",
       "es": "cine",
       "zh": "電影院",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_051",
       "es": "teatro",
       "zh": "劇院",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_052",
       "es": "farmacia",
       "zh": "藥局",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_053",
       "es": "panadería",
       "zh": "麵包店",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_054",
       "es": "gimnasio",
       "zh": "健身房",
       "ipa": "",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L4_055",
       "es": "trabajo",
       "zh": "工作",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_056",
       "es": "profesión",
       "zh": "職業",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_057",
       "es": "profesor",
       "zh": "老師（男）",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_058",
       "es": "profesora",
       "zh": "老師（女）",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_059",
       "es": "estudiante",
       "zh": "學生",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_060",
       "es": "médico",
       "zh": "醫生",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_061",
       "es": "enfermero",
       "zh": "護理師",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_062",
       "es": "abogado",
       "zh": "律師",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_063",
       "es": "ingeniero",
       "zh": "工程師",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_064",
       "es": "arquitecto",
       "zh": "建築師",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_065",
       "es": "cocinero",
       "zh": "廚師",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_066",
       "es": "camarero",
       "zh": "服務生",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_067",
       "es": "policía",
       "zh": "警察",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_068",
       "es": "bombero",
       "zh": "消防員",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_069",
       "es": "artista",
       "zh": "藝術家",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_070",
       "es": "actor",
       "zh": "演員",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_071",
       "es": "cantante",
       "zh": "歌手",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_072",
       "es": "escritor",
       "zh": "作家",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_073",
       "es": "periodista",
       "zh": "記者",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_074",
       "es": "conductor",
       "zh": "司機",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_075",
       "es": "vendedor",
       "zh": "業務員",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_076",
       "es": "secretario",
       "zh": "秘書",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_077",
       "es": "jefe",
       "zh": "老闆/主管",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_078",
       "es": "empresario",
       "zh": "企業家",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_079",
       "es": "trabajador",
       "zh": "工人/員工",
       "ipa": "",
       "cat": "職業"
     },
     {
+      "id": "vx_L4_080",
       "es": "tiempo",
       "zh": "天氣/時間",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_081",
       "es": "clima",
       "zh": "氣候",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_082",
       "es": "sol",
       "zh": "太陽",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_083",
       "es": "luna",
       "zh": "月亮",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_084",
       "es": "estrella",
       "zh": "星星",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_085",
       "es": "cielo",
       "zh": "天空",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_086",
       "es": "nube",
       "zh": "雲",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_087",
       "es": "lluvia",
       "zh": "雨",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_088",
       "es": "nieve",
       "zh": "雪",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_089",
       "es": "viento",
       "zh": "風",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_090",
       "es": "tormenta",
       "zh": "暴風雨",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_091",
       "es": "calor",
       "zh": "熱",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_092",
       "es": "frío",
       "zh": "冷",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_093",
       "es": "primavera",
       "zh": "春天",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_094",
       "es": "verano",
       "zh": "夏天",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_095",
       "es": "otoño",
       "zh": "秋天",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_096",
       "es": "invierno",
       "zh": "冬天",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_097",
       "es": "árbol",
       "zh": "樹",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_098",
       "es": "flor",
       "zh": "花",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_099",
       "es": "hoja",
       "zh": "葉子",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_100",
       "es": "río",
       "zh": "河",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_101",
       "es": "lago",
       "zh": "湖",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_102",
       "es": "mar",
       "zh": "海",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_103",
       "es": "isla",
       "zh": "島",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_104",
       "es": "bosque",
       "zh": "森林",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_105",
       "es": "tierra",
       "zh": "土地/地球",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_106",
       "es": "fuego",
       "zh": "火",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_107",
       "es": "naturaleza",
       "zh": "自然",
       "ipa": "",
       "cat": "天氣與自然"
     },
     {
+      "id": "vx_L4_108",
       "es": "viajar",
       "zh": "旅行",
       "ipa": "bjaˈxaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_109",
       "es": "volar",
       "zh": "飛",
       "ipa": "boˈlaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_110",
       "es": "conducir",
       "zh": "開車",
       "ipa": "konduˈθiɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_111",
       "es": "caminar",
       "zh": "走路",
       "ipa": "kamiˈnaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_112",
       "es": "andar",
       "zh": "行走",
       "ipa": "anˈdaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_113",
       "es": "correr",
       "zh": "跑",
       "ipa": "koˈreɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_114",
       "es": "llegar",
       "zh": "抵達",
       "ipa": "ʎeˈɣaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_115",
       "es": "partir",
       "zh": "出發",
       "ipa": "paɾˈtiɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_116",
       "es": "regresar",
       "zh": "返回",
       "ipa": "reɣɾeˈsaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_117",
       "es": "esperar",
       "zh": "等待",
       "ipa": "espeˈɾaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_118",
       "es": "reservar",
       "zh": "預訂",
       "ipa": "reseɾˈβaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_119",
       "es": "visitar",
       "zh": "參觀；拜訪",
       "ipa": "bisiˈtaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_120",
       "es": "perder",
       "zh": "錯過；遺失",
       "ipa": "peɾˈðeɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_121",
       "es": "parar",
       "zh": "停",
       "ipa": "paˈɾaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_122",
       "es": "cruzar",
       "zh": "穿越",
       "ipa": "kɾuˈθaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_123",
       "es": "seguir",
       "zh": "繼續；跟隨",
       "ipa": "seˈɣiɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_124",
       "es": "doblar",
       "zh": "轉彎",
       "ipa": "doˈβlaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_125",
       "es": "subir",
       "zh": "上（車）；上升",
       "ipa": "suˈβiɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_126",
       "es": "bajar",
       "zh": "下（車）；下降",
       "ipa": "baˈxaɾ",
       "cat": "旅行動作"
     },
     {
+      "id": "vx_L4_127",
       "es": "equipaje",
       "zh": "行李",
       "ipa": "ekiˈpaxe",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_128",
       "es": "mochila",
       "zh": "背包",
       "ipa": "moˈtʃila",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_129",
       "es": "asiento",
       "zh": "座位",
       "ipa": "aˈsjento",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_130",
       "es": "ventanilla",
       "zh": "窗口；靠窗座位",
       "ipa": "bentaˈniʎa",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_131",
       "es": "vuelo",
       "zh": "航班",
       "ipa": "ˈbwelo",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_132",
       "es": "retraso",
       "zh": "延誤",
       "ipa": "reˈtɾaso",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_133",
       "es": "horario",
       "zh": "時刻表",
       "ipa": "oˈɾaɾjo",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_134",
       "es": "destino",
       "zh": "目的地",
       "ipa": "desˈtino",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_135",
       "es": "frontera",
       "zh": "邊境",
       "ipa": "fɾonˈteɾa",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_136",
       "es": "aduana",
       "zh": "海關",
       "ipa": "aˈðwana",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_137",
       "es": "turista",
       "zh": "遊客",
       "ipa": "tuˈɾista",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_138",
       "es": "guía",
       "zh": "導遊；指南",
       "ipa": "ˈɡia",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_139",
       "es": "ruta",
       "zh": "路線",
       "ipa": "ˈruta",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_140",
       "es": "gasolina",
       "zh": "汽油",
       "ipa": "ɣasoˈlina",
       "cat": "旅行用品"
     },
     {
+      "id": "vx_L4_141",
       "es": "norte",
       "zh": "北",
       "ipa": "ˈnoɾte",
       "cat": "方向"
     },
     {
+      "id": "vx_L4_142",
       "es": "sur",
       "zh": "南",
       "ipa": "suɾ",
       "cat": "方向"
     },
     {
+      "id": "vx_L4_143",
       "es": "este",
       "zh": "東",
       "ipa": "ˈeste",
       "cat": "方向"
     },
     {
+      "id": "vx_L4_144",
       "es": "oeste",
       "zh": "西",
       "ipa": "oˈeste",
       "cat": "方向"
     },
     {
+      "id": "vx_L4_145",
       "es": "recto",
       "zh": "直",
       "ipa": "ˈrekto",
       "cat": "方向"
     },
     {
+      "id": "vx_L4_146",
       "es": "esquina",
       "zh": "街角",
       "ipa": "esˈkina",
       "cat": "方向"
     },
     {
+      "id": "vx_L4_147",
       "es": "semáforo",
       "zh": "紅綠燈",
       "ipa": "seˈmafoɾo",
       "cat": "方向"
     },
     {
+      "id": "vx_L4_148",
       "es": "cruce",
       "zh": "十字路口",
       "ipa": "ˈkɾuθe",
       "cat": "方向"
     },
     {
+      "id": "vx_L4_149",
       "es": "enfrente de",
       "zh": "在……對面",
       "ipa": "emˈfɾente ðe",
       "cat": "方向"
     },
     {
+      "id": "vx_L4_150",
       "es": "catedral",
       "zh": "大教堂",
       "ipa": "kateˈðɾal",

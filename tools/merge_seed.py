@@ -3,7 +3,8 @@
 與 tools/fill_gaps.py 同一套合併規則，差別只在資料來源是「人工種子檔」而非
 Claude API：
 - norm() 正規化去重（vocab/listening 比 es，grammar 比 q）
-- listening 給 lx_<LID>_<NNN>、grammar 給 gx_<LID>_<NN> 流水號，grammar 補 level
+- vocab 給 vx_<LID>_<NNN>、listening 給 lx_<LID>_<NNN>、grammar 給 gx_<LID>_<NN>
+  流水號，grammar 補 level
 - 達 targets 即停（多餘緩衝忽略）
 - 重算 gaps，逐 Level 寫回
 - 冪等：重跑只會補不足、不會重複寫入
@@ -65,7 +66,10 @@ def merge_one(lid: str) -> dict:
                         skipped_dup += 1
                         continue
                     seen.add(norm(es))
+                    idx = len([1 for x in arr
+                               if str(x.get("id", "")).startswith(f"vx_{lid}_")]) + 1
                     arr.append({
+                        "id": f"vx_{lid}_{idx:03d}",
                         "es": es,
                         "zh": str(it["zh"]).strip(),
                         "ipa": str(it.get("ipa", "")).strip(),

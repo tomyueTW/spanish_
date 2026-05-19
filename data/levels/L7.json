@@ -4,900 +4,1050 @@
   "cefr": "B2",
   "vocab": [
     {
+      "id": "vx_L7_001",
       "es": "sin embargo",
       "zh": "然而",
       "ipa": "sin emˈbaɾɣo",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_002",
       "es": "no obstante",
       "zh": "儘管如此",
       "ipa": "no oβsˈtante",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_003",
       "es": "por lo tanto",
       "zh": "因此",
       "ipa": "poɾ lo ˈtanto",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_004",
       "es": "en cambio",
       "zh": "相反地",
       "ipa": "en ˈkambjo",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_005",
       "es": "además",
       "zh": "此外",
       "ipa": "aðeˈmas",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_006",
       "es": "asimismo",
       "zh": "同樣地",
       "ipa": "asiˈmizmo",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_007",
       "es": "por consiguiente",
       "zh": "因而",
       "ipa": "poɾ konsiˈɣjente",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_008",
       "es": "a pesar de",
       "zh": "儘管",
       "ipa": "a peˈsaɾ ðe",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_009",
       "es": "aun así",
       "zh": "即便如此",
       "ipa": "aun aˈsi",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_010",
       "es": "en resumen",
       "zh": "總而言之",
       "ipa": "en reˈsumen",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_011",
       "es": "por un lado",
       "zh": "一方面",
       "ipa": "poɾ un ˈlaðo",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_012",
       "es": "por otro lado",
       "zh": "另一方面",
       "ipa": "poɾ ˈotɾo ˈlaðo",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_013",
       "es": "es decir",
       "zh": "也就是說",
       "ipa": "ez ðeˈθiɾ",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_014",
       "es": "de hecho",
       "zh": "事實上",
       "ipa": "de ˈetʃo",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_015",
       "es": "en cuanto a",
       "zh": "至於",
       "ipa": "en ˈkwanto a",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_016",
       "es": "mientras tanto",
       "zh": "與此同時",
       "ipa": "ˈmjentɾas ˈtanto",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_017",
       "es": "a fin de",
       "zh": "為了",
       "ipa": "a fin de",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_018",
       "es": "dado que",
       "zh": "鑑於",
       "ipa": "ˈðaðo ke",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_019",
       "es": "siempre que",
       "zh": "只要",
       "ipa": "ˈsjempɾe ke",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_020",
       "es": "en definitiva",
       "zh": "總之",
       "ipa": "en definiˈtiβa",
       "cat": "連接與論述"
     },
     {
+      "id": "vx_L7_021",
       "es": "libertad",
       "zh": "自由",
       "ipa": "liβeɾˈtað",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_022",
       "es": "justicia",
       "zh": "正義",
       "ipa": "xusˈtiθja",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_023",
       "es": "igualdad",
       "zh": "平等",
       "ipa": "iɣwalˈdað",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_024",
       "es": "derecho",
       "zh": "權利",
       "ipa": "deˈɾetʃo",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_025",
       "es": "deber",
       "zh": "義務；責任",
       "ipa": "deˈβeɾ",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_026",
       "es": "valor",
       "zh": "價值；勇氣",
       "ipa": "baˈloɾ",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_027",
       "es": "respeto",
       "zh": "尊重",
       "ipa": "resˈpeto",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_028",
       "es": "confianza",
       "zh": "信任",
       "ipa": "komˈfjanθa",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_029",
       "es": "responsabilidad",
       "zh": "責任",
       "ipa": "responsaβiliˈðað",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_030",
       "es": "consecuencia",
       "zh": "後果",
       "ipa": "konseˈkwenθja",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_031",
       "es": "ventaja",
       "zh": "優點",
       "ipa": "benˈtaxa",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_032",
       "es": "desventaja",
       "zh": "缺點",
       "ipa": "dezβenˈtaxa",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_033",
       "es": "propósito",
       "zh": "目的",
       "ipa": "pɾoˈposito",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_034",
       "es": "esfuerzo",
       "zh": "努力",
       "ipa": "esˈfweɾθo",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_035",
       "es": "éxito",
       "zh": "成功",
       "ipa": "ˈeksito",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_036",
       "es": "fracaso",
       "zh": "失敗",
       "ipa": "fɾaˈkaso",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_037",
       "es": "desafío",
       "zh": "挑戰",
       "ipa": "desaˈfio",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_038",
       "es": "oportunidad",
       "zh": "機會",
       "ipa": "opoɾtuniˈðað",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_039",
       "es": "realidad",
       "zh": "現實",
       "ipa": "realiˈðað",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_040",
       "es": "conciencia",
       "zh": "意識；良知",
       "ipa": "konˈθjenθja",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_041",
       "es": "punto de vista",
       "zh": "觀點",
       "ipa": "ˈpunto ðe ˈβista",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_042",
       "es": "enfoque",
       "zh": "取向；著眼點",
       "ipa": "emˈfoke",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_043",
       "es": "tendencia",
       "zh": "趨勢",
       "ipa": "tenˈdenθja",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_044",
       "es": "impacto",
       "zh": "影響；衝擊",
       "ipa": "imˈpakto",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_045",
       "es": "equilibrio",
       "zh": "平衡",
       "ipa": "ekiˈliβɾjo",
       "cat": "抽象概念"
     },
     {
+      "id": "vx_L7_046",
       "es": "suponer",
       "zh": "假設；意味著",
       "ipa": "supoˈneɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_047",
       "es": "plantear",
       "zh": "提出（問題）",
       "ipa": "planteˈaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_048",
       "es": "desarrollar",
       "zh": "發展",
       "ipa": "desaroˈʎaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_049",
       "es": "lograr",
       "zh": "設法達成",
       "ipa": "loˈɣɾaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_050",
       "es": "fomentar",
       "zh": "促進",
       "ipa": "fomenˈtaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_051",
       "es": "promover",
       "zh": "推動",
       "ipa": "pɾomoˈβeɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_052",
       "es": "fortalecer",
       "zh": "強化",
       "ipa": "foɾtaleˈθeɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_053",
       "es": "perjudicar",
       "zh": "損害",
       "ipa": "peɾxuðiˈkaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_054",
       "es": "afectar",
       "zh": "影響",
       "ipa": "afekˈtaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_055",
       "es": "influir",
       "zh": "影響",
       "ipa": "imˈflwiɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_056",
       "es": "destacar",
       "zh": "強調；突出",
       "ipa": "destaˈkaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_057",
       "es": "señalar",
       "zh": "指出",
       "ipa": "seɲaˈlaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_058",
       "es": "sostener",
       "zh": "主張；支撐",
       "ipa": "sosteˈneɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_059",
       "es": "cuestionar",
       "zh": "質疑",
       "ipa": "kwestjoˈnaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_060",
       "es": "asumir",
       "zh": "承擔；假定",
       "ipa": "asuˈmiɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_061",
       "es": "enfrentar",
       "zh": "面對",
       "ipa": "emfɾenˈtaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_062",
       "es": "resolver",
       "zh": "解決",
       "ipa": "resolˈβeɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_063",
       "es": "evitar",
       "zh": "避免",
       "ipa": "eβiˈtaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_064",
       "es": "impedir",
       "zh": "阻止",
       "ipa": "impeˈðiɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_065",
       "es": "permitir",
       "zh": "允許",
       "ipa": "peɾmiˈtiɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_066",
       "es": "exigir",
       "zh": "要求",
       "ipa": "eksiˈxiɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_067",
       "es": "proponer",
       "zh": "提議",
       "ipa": "pɾopoˈneɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_068",
       "es": "rechazar",
       "zh": "拒絕",
       "ipa": "retʃaˈθaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_069",
       "es": "aceptar",
       "zh": "接受",
       "ipa": "aθepˈtaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_070",
       "es": "negar",
       "zh": "否認",
       "ipa": "neˈɣaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_071",
       "es": "admitir",
       "zh": "承認",
       "ipa": "aðmiˈtiɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_072",
       "es": "justificar",
       "zh": "辯解；證明合理",
       "ipa": "xustifiˈkaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_073",
       "es": "demostrar",
       "zh": "證明",
       "ipa": "demosˈtɾaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_074",
       "es": "concluir",
       "zh": "得出結論",
       "ipa": "konˈklwiɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_075",
       "es": "reflexionar",
       "zh": "反思",
       "ipa": "refleksjoˈnaɾ",
       "cat": "進階動詞"
     },
     {
+      "id": "vx_L7_076",
       "es": "sociedad",
       "zh": "社會",
       "ipa": "soθjeˈðað",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_077",
       "es": "gobierno",
       "zh": "政府",
       "ipa": "ɡoˈβjeɾno",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_078",
       "es": "política",
       "zh": "政治；政策",
       "ipa": "poˈlitika",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_079",
       "es": "economía",
       "zh": "經濟",
       "ipa": "ekonoˈmia",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_080",
       "es": "crisis",
       "zh": "危機",
       "ipa": "ˈkɾisis",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_081",
       "es": "desempleo",
       "zh": "失業",
       "ipa": "desemˈpleo",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_082",
       "es": "pobreza",
       "zh": "貧窮",
       "ipa": "poˈβɾeθa",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_083",
       "es": "desigualdad",
       "zh": "不平等",
       "ipa": "desiɣwalˈdað",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_084",
       "es": "población",
       "zh": "人口",
       "ipa": "poβlaˈθjon",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_085",
       "es": "inmigración",
       "zh": "移民",
       "ipa": "immiɣɾaˈθjon",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_086",
       "es": "ciudadano",
       "zh": "公民",
       "ipa": "θjuðaˈðano",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_087",
       "es": "ley",
       "zh": "法律",
       "ipa": "lei",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_088",
       "es": "delito",
       "zh": "罪行",
       "ipa": "deˈlito",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_089",
       "es": "seguridad",
       "zh": "安全",
       "ipa": "seɣuɾiˈðað",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_090",
       "es": "educación",
       "zh": "教育",
       "ipa": "eðukaˈθjon",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_091",
       "es": "sanidad",
       "zh": "醫療衛生",
       "ipa": "saniˈðað",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_092",
       "es": "medios de comunicación",
       "zh": "媒體",
       "ipa": "ˈmeðjos ðe komunikaˈθjon",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_093",
       "es": "opinión pública",
       "zh": "輿論",
       "ipa": "opiˈnjon ˈpuβlika",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_094",
       "es": "manifestación",
       "zh": "示威",
       "ipa": "manifestaˈθjon",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_095",
       "es": "desarrollo",
       "zh": "發展",
       "ipa": "desaˈroʎo",
       "cat": "社會與時事"
     },
     {
+      "id": "vx_L7_096",
       "es": "empresa",
       "zh": "公司",
       "ipa": "emˈpɾesa",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_097",
       "es": "empleo",
       "zh": "就業；工作",
       "ipa": "emˈpleo",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_098",
       "es": "contrato",
       "zh": "合約",
       "ipa": "konˈtɾato",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_099",
       "es": "sueldo",
       "zh": "薪水",
       "ipa": "ˈsweldo",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_100",
       "es": "salario",
       "zh": "薪資",
       "ipa": "saˈlaɾjo",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_101",
       "es": "jefe",
       "zh": "上司",
       "ipa": "ˈxefe",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_102",
       "es": "empleado",
       "zh": "員工",
       "ipa": "empleˈaðo",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_103",
       "es": "entrevista",
       "zh": "面試；訪談",
       "ipa": "entɾeˈβista",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_104",
       "es": "currículum",
       "zh": "履歷",
       "ipa": "kuˈrikulum",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_105",
       "es": "ascenso",
       "zh": "升遷",
       "ipa": "asˈθenso",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_106",
       "es": "despido",
       "zh": "解僱",
       "ipa": "desˈpiðo",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_107",
       "es": "horario laboral",
       "zh": "工時",
       "ipa": "oˈɾaɾjo laβoˈɾal",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_108",
       "es": "teletrabajo",
       "zh": "遠距工作",
       "ipa": "teletɾaˈβaxo",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_109",
       "es": "plazo",
       "zh": "期限",
       "ipa": "ˈplaθo",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_110",
       "es": "rendimiento",
       "zh": "績效",
       "ipa": "rendiˈmjento",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_111",
       "es": "negocio",
       "zh": "生意",
       "ipa": "neˈɣoθjo",
       "cat": "工作與職場"
     },
     {
+      "id": "vx_L7_112",
       "es": "medio ambiente",
       "zh": "環境",
       "ipa": "ˈmeðjo amˈbjente",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_113",
       "es": "contaminación",
       "zh": "污染",
       "ipa": "kontaminaˈθjon",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_114",
       "es": "cambio climático",
       "zh": "氣候變遷",
       "ipa": "ˈkambjo kliˈmatiko",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_115",
       "es": "calentamiento global",
       "zh": "全球暖化",
       "ipa": "kalentaˈmjento ɣloˈβal",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_116",
       "es": "reciclaje",
       "zh": "回收",
       "ipa": "reθiˈklaxe",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_117",
       "es": "energía renovable",
       "zh": "再生能源",
       "ipa": "eneɾˈxia renoˈβaβle",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_118",
       "es": "recurso",
       "zh": "資源",
       "ipa": "reˈkuɾso",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_119",
       "es": "tecnología",
       "zh": "科技",
       "ipa": "teknoloˈxia",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_120",
       "es": "inteligencia artificial",
       "zh": "人工智慧",
       "ipa": "inteliˈxenθja aɾtifiˈθjal",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_121",
       "es": "red social",
       "zh": "社群網路",
       "ipa": "red soˈθjal",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_122",
       "es": "dispositivo",
       "zh": "裝置",
       "ipa": "dispoziˈtiβo",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_123",
       "es": "pantalla",
       "zh": "螢幕",
       "ipa": "panˈtaʎa",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_124",
       "es": "dato",
       "zh": "資料",
       "ipa": "ˈðato",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_125",
       "es": "usuario",
       "zh": "使用者",
       "ipa": "uˈswaɾjo",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_126",
       "es": "avance",
       "zh": "進展",
       "ipa": "aˈβanθe",
       "cat": "環境與科技"
     },
     {
+      "id": "vx_L7_127",
       "es": "imprescindible",
       "zh": "不可或缺的",
       "ipa": "impɾesθinˈdiβle",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_128",
       "es": "eficaz",
       "zh": "有效的",
       "ipa": "efiˈkaθ",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_129",
       "es": "eficiente",
       "zh": "有效率的",
       "ipa": "efiˈθjente",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_130",
       "es": "adecuado",
       "zh": "適當的",
       "ipa": "aðeˈkwaðo",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_131",
       "es": "polémico",
       "zh": "有爭議的",
       "ipa": "poˈlemiko",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_132",
       "es": "evidente",
       "zh": "顯而易見的",
       "ipa": "eβiˈðente",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_133",
       "es": "complejo",
       "zh": "複雜的",
       "ipa": "komˈplexo",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_134",
       "es": "notable",
       "zh": "顯著的",
       "ipa": "noˈtaβle",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_135",
       "es": "fiable",
       "zh": "可靠的",
       "ipa": "ˈfjaβle",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_136",
       "es": "sostenible",
       "zh": "永續的",
       "ipa": "sosteˈniβle",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_137",
       "es": "inevitable",
       "zh": "不可避免的",
       "ipa": "ineβiˈtaβle",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_138",
       "es": "razonable",
       "zh": "合理的",
       "ipa": "raθoˈnaβle",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_139",
       "es": "profundo",
       "zh": "深刻的",
       "ipa": "pɾoˈfundo",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_140",
       "es": "ambiguo",
       "zh": "模糊的；歧義的",
       "ipa": "amˈbiɣwo",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_141",
       "es": "fundamental",
       "zh": "根本的",
       "ipa": "fundamenˈtal",
       "cat": "進階形容詞"
     },
     {
+      "id": "vx_L7_142",
       "es": "tener en cuenta",
       "zh": "考慮到",
       "ipa": "teˈneɾ en ˈkwenta",
       "cat": "慣用表達"
     },
     {
+      "id": "vx_L7_143",
       "es": "darse cuenta",
       "zh": "意識到",
       "ipa": "ˈdaɾse ˈkwenta",
       "cat": "慣用表達"
     },
     {
+      "id": "vx_L7_144",
       "es": "llevar a cabo",
       "zh": "實行；完成",
       "ipa": "ʎeˈβaɾ a ˈkaβo",
       "cat": "慣用表達"
     },
     {
+      "id": "vx_L7_145",
       "es": "hacer hincapié",
       "zh": "強調",
       "ipa": "aˈθeɾ inkaˈpje",
       "cat": "慣用表達"
     },
     {
+      "id": "vx_L7_146",
       "es": "poner en marcha",
       "zh": "啟動；推行",
       "ipa": "poˈneɾ en ˈmaɾtʃa",
       "cat": "慣用表達"
     },
     {
+      "id": "vx_L7_147",
       "es": "estar a favor de",
       "zh": "贊成",
       "ipa": "esˈtaɾ a faˈβoɾ ðe",
       "cat": "慣用表達"
     },
     {
+      "id": "vx_L7_148",
       "es": "estar en contra de",
       "zh": "反對",
       "ipa": "esˈtaɾ en ˈkontɾa ðe",
       "cat": "慣用表達"
     },
     {
+      "id": "vx_L7_149",
       "es": "valer la pena",
       "zh": "值得",
       "ipa": "baˈleɾ la ˈpena",
       "cat": "慣用表達"
     },
     {
+      "id": "vx_L7_150",
       "es": "dejar de",
       "zh": "停止（做某事）",
       "ipa": "deˈxaɾ ðe",

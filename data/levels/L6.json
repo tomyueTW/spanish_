@@ -4,900 +4,1050 @@
   "cefr": "B1.2",
   "vocab": [
     {
+      "id": "vx_L6_001",
       "es": "ser",
       "zh": "是（本質）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_002",
       "es": "estar",
       "zh": "是（狀態/位置）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_003",
       "es": "tener",
       "zh": "有",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_004",
       "es": "hay",
       "zh": "有（存在）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_005",
       "es": "haber",
       "zh": "有（助動詞）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_006",
       "es": "hacer",
       "zh": "做",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_007",
       "es": "ir",
       "zh": "去",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_008",
       "es": "venir",
       "zh": "來",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_009",
       "es": "ver",
       "zh": "看見",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_010",
       "es": "mirar",
       "zh": "看（注視）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_011",
       "es": "oír",
       "zh": "聽到",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_012",
       "es": "escuchar",
       "zh": "聽（專注）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_013",
       "es": "hablar",
       "zh": "說話",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_014",
       "es": "decir",
       "zh": "說（內容）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_015",
       "es": "preguntar",
       "zh": "問",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_016",
       "es": "responder",
       "zh": "回答",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_017",
       "es": "leer",
       "zh": "讀",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_018",
       "es": "escribir",
       "zh": "寫",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_019",
       "es": "estudiar",
       "zh": "學習/讀書",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_020",
       "es": "aprender",
       "zh": "學會",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_021",
       "es": "enseñar",
       "zh": "教",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_022",
       "es": "entender",
       "zh": "理解",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_023",
       "es": "saber",
       "zh": "知道（知識）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_024",
       "es": "conocer",
       "zh": "認識（人/地）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_025",
       "es": "pensar",
       "zh": "思考/認為",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_026",
       "es": "creer",
       "zh": "相信",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_027",
       "es": "querer",
       "zh": "想要/愛",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_028",
       "es": "amar",
       "zh": "愛",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_029",
       "es": "gustar",
       "zh": "喜歡",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_030",
       "es": "preferir",
       "zh": "偏好",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_031",
       "es": "necesitar",
       "zh": "需要",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_032",
       "es": "deber",
       "zh": "應當/欠",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_033",
       "es": "poder",
       "zh": "能夠",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_034",
       "es": "dar",
       "zh": "給",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_035",
       "es": "recibir",
       "zh": "接收",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_036",
       "es": "coger",
       "zh": "拿（西班牙）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_037",
       "es": "tomar",
       "zh": "拿/喝（拉美）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_038",
       "es": "llevar",
       "zh": "帶/穿",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_039",
       "es": "traer",
       "zh": "帶來",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_040",
       "es": "comer",
       "zh": "吃",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_041",
       "es": "beber",
       "zh": "喝",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_042",
       "es": "dormir",
       "zh": "睡",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_043",
       "es": "despertar",
       "zh": "醒來",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_044",
       "es": "vivir",
       "zh": "住/活",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_045",
       "es": "morir",
       "zh": "死",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_046",
       "es": "trabajar",
       "zh": "工作",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_047",
       "es": "comprar",
       "zh": "買",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_048",
       "es": "vender",
       "zh": "賣",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_049",
       "es": "pagar",
       "zh": "付錢",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_050",
       "es": "costar",
       "zh": "花費",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_051",
       "es": "abrir",
       "zh": "打開",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_052",
       "es": "cerrar",
       "zh": "關閉",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_053",
       "es": "empezar",
       "zh": "開始",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_054",
       "es": "comenzar",
       "zh": "開始",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_055",
       "es": "terminar",
       "zh": "結束",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_056",
       "es": "acabar",
       "zh": "結束",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_057",
       "es": "seguir",
       "zh": "繼續/跟隨",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_058",
       "es": "esperar",
       "zh": "等待/希望",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_059",
       "es": "buscar",
       "zh": "找",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_060",
       "es": "encontrar",
       "zh": "找到",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_061",
       "es": "perder",
       "zh": "失去/迷路",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_062",
       "es": "ganar",
       "zh": "贏/賺",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_063",
       "es": "jugar",
       "zh": "玩",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_064",
       "es": "cantar",
       "zh": "唱歌",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_065",
       "es": "bailar",
       "zh": "跳舞",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_066",
       "es": "correr",
       "zh": "跑",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_067",
       "es": "caminar",
       "zh": "走路",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_068",
       "es": "andar",
       "zh": "走/運轉",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_069",
       "es": "subir",
       "zh": "上升/上去",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_070",
       "es": "bajar",
       "zh": "下降/下去",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_071",
       "es": "salir",
       "zh": "出去/離開",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_072",
       "es": "entrar",
       "zh": "進入",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_073",
       "es": "llegar",
       "zh": "到達",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_074",
       "es": "volver",
       "zh": "回來",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_075",
       "es": "ayudar",
       "zh": "幫助",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_076",
       "es": "descansar",
       "zh": "休息",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_077",
       "es": "viajar",
       "zh": "旅行",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_078",
       "es": "visitar",
       "zh": "拜訪",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_079",
       "es": "llamar",
       "zh": "打電話/叫",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_080",
       "es": "llamarse",
       "zh": "名叫",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_081",
       "es": "recordar",
       "zh": "記得",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_082",
       "es": "olvidar",
       "zh": "忘記",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_083",
       "es": "sentir",
       "zh": "感覺",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_084",
       "es": "reír",
       "zh": "笑",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_085",
       "es": "llorar",
       "zh": "哭",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_086",
       "es": "ducharse",
       "zh": "洗澡",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_087",
       "es": "lavarse",
       "zh": "清洗（自己）",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_088",
       "es": "vestirse",
       "zh": "穿衣",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_089",
       "es": "levantarse",
       "zh": "起床",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_090",
       "es": "acostarse",
       "zh": "上床睡覺",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_091",
       "es": "sentarse",
       "zh": "坐下",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_092",
       "es": "casarse",
       "zh": "結婚",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_093",
       "es": "divertirse",
       "zh": "玩得開心",
       "ipa": "",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_094",
       "es": "cosa",
       "zh": "東西",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_095",
       "es": "dinero",
       "zh": "錢",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_096",
       "es": "vida",
       "zh": "生活/生命",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_097",
       "es": "muerte",
       "zh": "死亡",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_098",
       "es": "nombre",
       "zh": "名字",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_099",
       "es": "edad",
       "zh": "年齡",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_100",
       "es": "idea",
       "zh": "想法",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_101",
       "es": "problema",
       "zh": "問題",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_102",
       "es": "pregunta",
       "zh": "問題（疑問）",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_103",
       "es": "respuesta",
       "zh": "答案",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_104",
       "es": "razón",
       "zh": "理由",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_105",
       "es": "verdad",
       "zh": "真理/事實",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_106",
       "es": "mentira",
       "zh": "謊言",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_107",
       "es": "amor",
       "zh": "愛",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_108",
       "es": "amistad",
       "zh": "友誼",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_109",
       "es": "fiesta",
       "zh": "派對",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_110",
       "es": "regalo",
       "zh": "禮物",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_111",
       "es": "cumpleaños",
       "zh": "生日",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_112",
       "es": "boda",
       "zh": "婚禮",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_113",
       "es": "trabajo",
       "zh": "工作",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_114",
       "es": "música",
       "zh": "音樂",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_115",
       "es": "canción",
       "zh": "歌曲",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_116",
       "es": "película",
       "zh": "電影",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_117",
       "es": "libro",
       "zh": "書",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_118",
       "es": "periódico",
       "zh": "報紙",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_119",
       "es": "revista",
       "zh": "雜誌",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_120",
       "es": "carta",
       "zh": "信",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_121",
       "es": "papel",
       "zh": "紙",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_122",
       "es": "número",
       "zh": "數字/號碼",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_123",
       "es": "deporte",
       "zh": "運動",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_124",
       "es": "fútbol",
       "zh": "足球",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_125",
       "es": "juego",
       "zh": "遊戲",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_126",
       "es": "lengua",
       "zh": "語言/舌頭",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_127",
       "es": "idioma",
       "zh": "語言",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_128",
       "es": "palabra",
       "zh": "詞",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_129",
       "es": "historia",
       "zh": "歷史/故事",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_130",
       "es": "ejemplo",
       "zh": "例子",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_131",
       "es": "información",
       "zh": "資訊",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_132",
       "es": "noticia",
       "zh": "新聞",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_133",
       "es": "foto",
       "zh": "照片",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_134",
       "es": "imagen",
       "zh": "圖像",
       "ipa": "",
       "cat": "其他常用名詞"
     },
     {
+      "id": "vx_L6_135",
       "es": "futuro",
       "zh": "未來",
       "ipa": "fuˈtuɾo",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_136",
       "es": "plan",
       "zh": "計畫",
       "ipa": "plan",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_137",
       "es": "proyecto",
       "zh": "專案；計畫",
       "ipa": "pɾoˈʝekto",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_138",
       "es": "objetivo",
       "zh": "目標",
       "ipa": "oβxeˈtiβo",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_139",
       "es": "meta",
       "zh": "目標；終點",
       "ipa": "ˈmeta",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_140",
       "es": "sueño",
       "zh": "夢想；睡意",
       "ipa": "ˈsweɲo",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_141",
       "es": "cita",
       "zh": "約會；預約",
       "ipa": "ˈθita",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_142",
       "es": "reunión",
       "zh": "會議",
       "ipa": "reuˈnjon",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_143",
       "es": "carrera",
       "zh": "職業生涯；大學科系",
       "ipa": "kaˈrera",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_144",
       "es": "ahorrar",
       "zh": "儲蓄",
       "ipa": "aoˈraɾ",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_145",
       "es": "planear",
       "zh": "規劃",
       "ipa": "planeˈaɾ",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_146",
       "es": "lograr",
       "zh": "達成",
       "ipa": "loˈɣɾaɾ",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_147",
       "es": "intentar",
       "zh": "嘗試",
       "ipa": "intenˈtaɾ",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_148",
       "es": "conseguir",
       "zh": "取得；達成",
       "ipa": "konseˈɣiɾ",
       "cat": "計畫與未來"
     },
     {
+      "id": "vx_L6_149",
       "es": "agradecer",
       "zh": "感謝",
       "ipa": "aɣɾaðeˈθeɾ",
       "cat": "常用動詞"
     },
     {
+      "id": "vx_L6_150",
       "es": "descubrir",
       "zh": "發現",
       "ipa": "deskuˈβɾiɾ",

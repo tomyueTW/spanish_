@@ -4,900 +4,1050 @@
   "cefr": "A2.1",
   "vocab": [
     {
+      "id": "vx_L3_001",
       "es": "color",
       "zh": "顏色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_002",
       "es": "rojo",
       "zh": "紅色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_003",
       "es": "azul",
       "zh": "藍色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_004",
       "es": "verde",
       "zh": "綠色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_005",
       "es": "amarillo",
       "zh": "黃色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_006",
       "es": "blanco",
       "zh": "白色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_007",
       "es": "negro",
       "zh": "黑色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_008",
       "es": "gris",
       "zh": "灰色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_009",
       "es": "rosa",
       "zh": "粉紅色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_010",
       "es": "morado",
       "zh": "紫色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_011",
       "es": "naranja",
       "zh": "橘色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_012",
       "es": "marrón",
       "zh": "棕色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_013",
       "es": "café",
       "zh": "咖啡色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_014",
       "es": "dorado",
       "zh": "金色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_015",
       "es": "plateado",
       "zh": "銀色",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_016",
       "es": "claro",
       "zh": "淺色的",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_017",
       "es": "oscuro",
       "zh": "深色的",
       "ipa": "",
       "cat": "顏色"
     },
     {
+      "id": "vx_L3_018",
       "es": "tiempo",
       "zh": "時間",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_019",
       "es": "hora",
       "zh": "小時",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_020",
       "es": "minuto",
       "zh": "分鐘",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_021",
       "es": "segundo",
       "zh": "秒",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_022",
       "es": "día",
       "zh": "日子/天",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_023",
       "es": "semana",
       "zh": "星期",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_024",
       "es": "mes",
       "zh": "月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_025",
       "es": "año",
       "zh": "年",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_026",
       "es": "hoy",
       "zh": "今天",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_027",
       "es": "ayer",
       "zh": "昨天",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_028",
       "es": "mañana",
       "zh": "明天/早上",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_029",
       "es": "ahora",
       "zh": "現在",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_030",
       "es": "después",
       "zh": "之後",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_031",
       "es": "antes",
       "zh": "之前",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_032",
       "es": "siempre",
       "zh": "總是",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_033",
       "es": "nunca",
       "zh": "從不",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_034",
       "es": "a veces",
       "zh": "有時",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_035",
       "es": "temprano",
       "zh": "早",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_036",
       "es": "tarde",
       "zh": "晚/下午",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_037",
       "es": "noche",
       "zh": "夜晚",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_038",
       "es": "madrugada",
       "zh": "凌晨",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_039",
       "es": "mediodía",
       "zh": "中午",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_040",
       "es": "medianoche",
       "zh": "午夜",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_041",
       "es": "lunes",
       "zh": "星期一",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_042",
       "es": "martes",
       "zh": "星期二",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_043",
       "es": "miércoles",
       "zh": "星期三",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_044",
       "es": "jueves",
       "zh": "星期四",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_045",
       "es": "viernes",
       "zh": "星期五",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_046",
       "es": "sábado",
       "zh": "星期六",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_047",
       "es": "domingo",
       "zh": "星期日",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_048",
       "es": "enero",
       "zh": "一月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_049",
       "es": "febrero",
       "zh": "二月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_050",
       "es": "marzo",
       "zh": "三月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_051",
       "es": "abril",
       "zh": "四月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_052",
       "es": "mayo",
       "zh": "五月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_053",
       "es": "junio",
       "zh": "六月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_054",
       "es": "julio",
       "zh": "七月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_055",
       "es": "agosto",
       "zh": "八月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_056",
       "es": "septiembre",
       "zh": "九月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_057",
       "es": "octubre",
       "zh": "十月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_058",
       "es": "noviembre",
       "zh": "十一月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_059",
       "es": "diciembre",
       "zh": "十二月",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_060",
       "es": "fin de semana",
       "zh": "週末",
       "ipa": "",
       "cat": "時間與日期"
     },
     {
+      "id": "vx_L3_061",
       "es": "casa",
       "zh": "家/房子",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_062",
       "es": "piso",
       "zh": "公寓/樓層",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_063",
       "es": "apartamento",
       "zh": "公寓",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_064",
       "es": "habitación",
       "zh": "房間",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_065",
       "es": "dormitorio",
       "zh": "臥室",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_066",
       "es": "sala",
       "zh": "客廳",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_067",
       "es": "cocina",
       "zh": "廚房",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_068",
       "es": "baño",
       "zh": "浴室",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_069",
       "es": "comedor",
       "zh": "飯廳",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_070",
       "es": "balcón",
       "zh": "陽台",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_071",
       "es": "jardín",
       "zh": "花園",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_072",
       "es": "garaje",
       "zh": "車庫",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_073",
       "es": "puerta",
       "zh": "門",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_074",
       "es": "ventana",
       "zh": "窗戶",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_075",
       "es": "pared",
       "zh": "牆",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_076",
       "es": "techo",
       "zh": "天花板/屋頂",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_077",
       "es": "suelo",
       "zh": "地板",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_078",
       "es": "escalera",
       "zh": "樓梯",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_079",
       "es": "mesa",
       "zh": "桌子",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_080",
       "es": "silla",
       "zh": "椅子",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_081",
       "es": "cama",
       "zh": "床",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_082",
       "es": "sofá",
       "zh": "沙發",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_083",
       "es": "lámpara",
       "zh": "燈",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_084",
       "es": "espejo",
       "zh": "鏡子",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_085",
       "es": "armario",
       "zh": "衣櫥",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_086",
       "es": "nevera",
       "zh": "冰箱",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_087",
       "es": "horno",
       "zh": "烤箱",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_088",
       "es": "televisión",
       "zh": "電視",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_089",
       "es": "teléfono",
       "zh": "電話",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_090",
       "es": "ordenador",
       "zh": "電腦（西班牙）",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_091",
       "es": "computadora",
       "zh": "電腦（拉美）",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_092",
       "es": "llave",
       "zh": "鑰匙",
       "ipa": "",
       "cat": "家與住所"
     },
     {
+      "id": "vx_L3_093",
       "es": "animal",
       "zh": "動物",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_094",
       "es": "perro",
       "zh": "狗",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_095",
       "es": "gato",
       "zh": "貓",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_096",
       "es": "pájaro",
       "zh": "鳥",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_097",
       "es": "pez",
       "zh": "魚（活的）",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_098",
       "es": "caballo",
       "zh": "馬",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_099",
       "es": "vaca",
       "zh": "牛",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_100",
       "es": "cerdo",
       "zh": "豬",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_101",
       "es": "oveja",
       "zh": "羊",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_102",
       "es": "gallina",
       "zh": "母雞",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_103",
       "es": "ratón",
       "zh": "老鼠",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_104",
       "es": "conejo",
       "zh": "兔子",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_105",
       "es": "elefante",
       "zh": "大象",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_106",
       "es": "león",
       "zh": "獅子",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_107",
       "es": "tigre",
       "zh": "老虎",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_108",
       "es": "oso",
       "zh": "熊",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_109",
       "es": "mono",
       "zh": "猴子",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_110",
       "es": "serpiente",
       "zh": "蛇",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_111",
       "es": "araña",
       "zh": "蜘蛛",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_112",
       "es": "mariposa",
       "zh": "蝴蝶",
       "ipa": "",
       "cat": "動物"
     },
     {
+      "id": "vx_L3_113",
       "es": "tienda",
       "zh": "商店",
       "ipa": "ˈtjenda",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_114",
       "es": "mercado",
       "zh": "市場",
       "ipa": "meɾˈkaðo",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_115",
       "es": "supermercado",
       "zh": "超級市場",
       "ipa": "supeɾmeɾˈkaðo",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_116",
       "es": "centro comercial",
       "zh": "購物中心",
       "ipa": "ˈθentɾo komeɾˈθjal",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_117",
       "es": "precio",
       "zh": "價格",
       "ipa": "ˈpɾeθjo",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_118",
       "es": "dinero",
       "zh": "錢",
       "ipa": "diˈneɾo",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_119",
       "es": "caro",
       "zh": "貴的",
       "ipa": "ˈkaɾo",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_120",
       "es": "barato",
       "zh": "便宜的",
       "ipa": "baˈɾato",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_121",
       "es": "tarjeta",
       "zh": "卡片；信用卡",
       "ipa": "taɾˈxeta",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_122",
       "es": "efectivo",
       "zh": "現金",
       "ipa": "efekˈtiβo",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_123",
       "es": "rebaja",
       "zh": "折扣；特價",
       "ipa": "reˈβaxa",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_124",
       "es": "talla",
       "zh": "尺寸（衣物）",
       "ipa": "ˈtaʎa",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_125",
       "es": "número",
       "zh": "號碼；鞋碼",
       "ipa": "ˈnumeɾo",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_126",
       "es": "comprar",
       "zh": "買",
       "ipa": "komˈpɾaɾ",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_127",
       "es": "vender",
       "zh": "賣",
       "ipa": "benˈdeɾ",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_128",
       "es": "pagar",
       "zh": "付款",
       "ipa": "paˈɣaɾ",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_129",
       "es": "costar",
       "zh": "花費",
       "ipa": "kosˈtaɾ",
       "cat": "購物"
     },
     {
+      "id": "vx_L3_130",
       "es": "grande",
       "zh": "大的",
       "ipa": "ˈɡɾande",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_131",
       "es": "pequeño",
       "zh": "小的",
       "ipa": "peˈkeɲo",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_132",
       "es": "nuevo",
       "zh": "新的",
       "ipa": "ˈnweβo",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_133",
       "es": "viejo",
       "zh": "舊的；老的",
       "ipa": "ˈbjexo",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_134",
       "es": "bonito",
       "zh": "漂亮的",
       "ipa": "boˈnito",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_135",
       "es": "feo",
       "zh": "醜的",
       "ipa": "ˈfeo",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_136",
       "es": "largo",
       "zh": "長的",
       "ipa": "ˈlaɾɣo",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_137",
       "es": "corto",
       "zh": "短的",
       "ipa": "ˈkoɾto",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_138",
       "es": "limpio",
       "zh": "乾淨的",
       "ipa": "ˈlimpjo",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_139",
       "es": "sucio",
       "zh": "髒的",
       "ipa": "ˈsuθjo",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_140",
       "es": "cómodo",
       "zh": "舒適的",
       "ipa": "ˈkomoðo",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_141",
       "es": "difícil",
       "zh": "困難的",
       "ipa": "diˈfiθil",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_142",
       "es": "fácil",
       "zh": "容易的",
       "ipa": "ˈfaθil",
       "cat": "描述形容詞"
     },
     {
+      "id": "vx_L3_143",
       "es": "calle",
       "zh": "街道",
       "ipa": "ˈkaʎe",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L3_144",
       "es": "ciudad",
       "zh": "城市",
       "ipa": "θjuˈðað",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L3_145",
       "es": "pueblo",
       "zh": "村莊；小鎮",
       "ipa": "ˈpweβlo",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L3_146",
       "es": "plaza",
       "zh": "廣場",
       "ipa": "ˈplaθa",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L3_147",
       "es": "parque",
       "zh": "公園",
       "ipa": "ˈpaɾke",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L3_148",
       "es": "banco",
       "zh": "銀行；長椅",
       "ipa": "ˈbaŋko",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L3_149",
       "es": "farmacia",
       "zh": "藥局",
       "ipa": "faɾˈmaθja",
       "cat": "城市與場所"
     },
     {
+      "id": "vx_L3_150",
       "es": "restaurante",
       "zh": "餐廳",
       "ipa": "restauˈɾante",
