@@ -387,6 +387,20 @@
   .mastery-legend i { font-style: normal; color: var(--ink-3); }
   .mastery-mini { font-size: 12px; color: var(--ink-2); margin-top: 3px; }
 
+  /* F5 進度趨勢 */
+  .spark-wrap {
+    background: var(--surface-2); border: 1px solid var(--line);
+    border-radius: var(--r-md); padding: 16px; margin: 16px 0 22px;
+  }
+  .spark-wrap h4 { font-size: 13px; color: var(--ink-2); font-weight: 600; margin-bottom: 4px; }
+  .spark-sub { font-size: 12px; color: var(--ink-3); margin-bottom: 12px; }
+  .spark { width: 100%; height: 64px; display: block; }
+  .spark-empty { color: var(--ink-3); font-size: 13px; padding: 8px 0; }
+  .streak-line { font-size: 14px; color: var(--ink); margin: 0 0 18px; }
+  .streak-line b { color: var(--accent-strong); }
+  .prog-bank { margin-bottom: 14px; }
+  .prog-bank .nm { font-size: 13px; color: var(--ink); margin-bottom: 6px; font-weight: 600; }
+
   /* F6 學習中樞 */
   .hub { margin: 4px 0 20px; }
   .hub-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
@@ -475,6 +489,10 @@
   <button class="mode-btn m-browse" id="btn-browse" onclick="App.openBrowse()">
     <div class="t">🃏 瀏覽學習</div>
     <div class="d">以閃卡逐張複習目前題庫（非測驗）</div>
+  </button>
+  <button class="mode-btn m-progress" onclick="App.show('progress-page')">
+    <div class="t">📈 學習進度</div>
+    <div class="d">正確率走勢、連續天數、各題庫精熟度</div>
   </button>
   <button class="mode-btn m-bank" onclick="App.show('bank')">
     <div class="t">📦 題庫管理</div>
@@ -673,6 +691,16 @@
     <button id="browse-flip" onclick="App.flipCard()">翻面</button>
     <button id="browse-next" onclick="App.browseNext()">下一張 →</button>
   </div>
+</div>
+
+<!-- ───────── 學習進度（F5）───────── -->
+<div id="progress-page" class="hidden">
+  <div class="top-bar">
+    <button class="back-btn" onclick="App.backToMenu()">← 返回</button>
+    <h3 style="margin:0;font-size:18px;">📈 學習進度</h3>
+    <div></div>
+  </div>
+  <div id="progress-body"></div>
 </div>
 
 </div>
@@ -1085,7 +1113,7 @@ const App = (() => {
   }
 
   // ─── 切換畫面 ───
-  const PAGES = ['menu', 'quiz', 'result', 'settings', 'import', 'bank', 'bank-detail', 'browse'];
+  const PAGES = ['menu', 'quiz', 'result', 'settings', 'import', 'bank', 'bank-detail', 'browse', 'progress-page'];
   function show(name) {
     PAGES.forEach(p => $(p).classList.add('hidden'));
     $(name).classList.remove('hidden');
@@ -1094,6 +1122,7 @@ const App = (() => {
     if (name !== 'quiz') unbindQuizKeys(); else bindQuizKeys();
     if (name === 'menu') { renderStats(); updateMenuForActiveBank(); renderHub(); renderMenuMastery(); renderDueBanner(); }
     if (name === 'bank') renderBanks();
+    if (name === 'progress-page') renderProgress();
     if (name === 'settings') {
       const ab = getActiveBank();
       $('settings-active-bank').textContent = ab.name;
@@ -1155,6 +1184,91 @@ const App = (() => {
       ${m.bar}
       <div class="mastery-legend">精熟 <b style="color:var(--ink);">${c.mastered}</b> · 學習中 ${c.learning} · <i>未開始 ${c.unseen}</i>　共 ${c.total} 題項</div>
     </div>`;
+  }
+
+  // ─── F5：學習進度（趨勢 / 連續天數 / 各題庫精熟）───
+  function allSessions() {
+    const out = [];
+    const banks = ProgressMod.getBanks();
+    for (const [key, b] of Object.entries(banks)) {
+      (b.history || []).forEach(h => out.push({ ...h, bank: b.name || key }));
+    }
+    out.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+    return out;
+  }
+
+  function studyStreak(sessions) {
+    const days = [...new Set(sessions.map(s => String(s.date).slice(0, 10)))]
+      .filter(Boolean).sort();
+    if (!days.length) return 0;
+    const dayMs = 86400000;
+    const toUTC = d => { const [y, m, dd] = d.split('-').map(Number); return Date.UTC(y, m - 1, dd); };
+    const today = new Date().toISOString().slice(0, 10);
+    let cursor = toUTC(today);
+    // 最近一次練習若非今天，容許從昨天起算（今天還沒練不歸零）
+    if (toUTC(days[days.length - 1]) < cursor) cursor -= dayMs;
+    let streak = 0;
+    const set = new Set(days.map(toUTC));
+    while (set.has(cursor)) { streak++; cursor -= dayMs; }
+    return streak;
+  }
+
+  function sparklineSvg(vals) {
+    if (vals.length < 2) return '<div class="spark-empty">資料不足 — 先做幾輪測驗就會出現趨勢。</div>';
+    const W = 240, H = 56, pad = 4;
+    const n = vals.length;
+    const x = i => pad + (W - 2 * pad) * (i / (n - 1));
+    const y = v => pad + (H - 2 * pad) * (1 - v / 100);
+    const pts = vals.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+    const lx = x(n - 1).toFixed(1), ly = y(vals[n - 1]).toFixed(1);
+    return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="近 ${n} 場正確率走勢">
+      <polyline fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke" points="${pts}" />
+      <circle cx="${lx}" cy="${ly}" r="3" fill="var(--accent)" />
+    </svg>`;
+  }
+
+  function renderProgress() {
+    const el = $('progress-body');
+    if (!el) return;
+    const g = ProgressMod.getGlobal();
+    const acc = g.totalAnswered ? Math.round(g.totalCorrect / g.totalAnswered * 100) : 0;
+    const sessions = allSessions();
+    const recent = sessions.slice(-16);
+    const accVals = recent.map(s => s.total ? Math.round(s.score / s.total * 100) : 0);
+    const streak = studyStreak(sessions);
+
+    let banksHtml = '';
+    levels.forEach(lv => {
+      const m = masteryBarHtml('builtin', lv.id);
+      if (m && (m.counts.mastered || m.counts.learning)) {
+        banksHtml += `<div class="prog-bank"><div class="nm">${escapeHtml(levelDisplayName(lv))}</div>${m.bar}
+          <div class="mastery-mini">精熟 ${m.counts.mastered} · 學習中 ${m.counts.learning} · 未開始 ${m.counts.unseen}</div></div>`;
+      }
+    });
+    customBanks.forEach(b => {
+      const m = masteryBarHtml('custom', b.id);
+      if (m && (m.counts.mastered || m.counts.learning)) {
+        banksHtml += `<div class="prog-bank"><div class="nm">${escapeHtml(b.name)}</div>${m.bar}
+          <div class="mastery-mini">精熟 ${m.counts.mastered} · 學習中 ${m.counts.learning} · 未開始 ${m.counts.unseen}</div></div>`;
+      }
+    });
+    if (!banksHtml) banksHtml = '<div class="spark-empty">尚無精熟資料 — 練習後這裡會列出各題庫進度。</div>';
+
+    el.innerHTML = `
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-num">${g.sessions}</div><div class="stat-label">完成的測驗</div></div>
+        <div class="stat-card"><div class="stat-num">${g.totalAnswered}</div><div class="stat-label">總答題數</div></div>
+        <div class="stat-card"><div class="stat-num">${acc}%</div><div class="stat-label">總正確率</div></div>
+      </div>
+      <p class="streak-line">🔥 連續學習 <b>${streak}</b> 天</p>
+      <div class="spark-wrap">
+        <h4>近 ${recent.length} 場正確率走勢</h4>
+        <div class="spark-sub">每點為一場測驗的正確率（0–100%）</div>
+        ${sparklineSvg(accVals)}
+      </div>
+      <h4 style="font-size:14px;color:var(--ink-2);margin-bottom:10px;font-weight:600;">各題庫精熟度</h4>
+      ${banksHtml}
+    `;
   }
 
   // ─── F6：學習中樞（題庫切換器）───
