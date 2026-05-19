@@ -1092,7 +1092,7 @@ const App = (() => {
     window.speechSynthesis && window.speechSynthesis.cancel();
     if (name !== 'browse') unbindBrowseKeys();
     if (name !== 'quiz') unbindQuizKeys(); else bindQuizKeys();
-    if (name === 'menu') { renderStats(); updateMenuForActiveBank(); renderHub(); renderMenuMastery(); }
+    if (name === 'menu') { renderStats(); updateMenuForActiveBank(); renderHub(); renderMenuMastery(); renderDueBanner(); }
     if (name === 'bank') renderBanks();
     if (name === 'settings') {
       const ab = getActiveBank();
@@ -1182,8 +1182,26 @@ const App = (() => {
     if (i < 0) return;
     setActiveBank(val.slice(0, i), val.slice(i + 1));
     renderMenuMastery();
+    renderDueBanner();
     const sel = $('bank-switcher');
     if (sel) sel.value = activeBank.kind + ':' + activeBank.id;
+  }
+
+  // ─── F4：到期複習提示 ───
+  function renderDueBanner() {
+    const el = $('due-banner');
+    if (!el) return;
+    const n = currentDueKeys().length;
+    if (n === 0) { el.classList.add('hidden'); el.innerHTML = ''; return; }
+    el.classList.remove('hidden');
+    el.innerHTML = `<span>📅 今天有 <b>${n}</b> 題該複習了</span>
+      <button onclick="App.startDuePractice()">開始複習</button>`;
+  }
+
+  function startDuePractice() {
+    if (currentDueKeys().length === 0) { alert('目前沒有到期的複習，做得很好！'); return; }
+    currentMode = 'due';
+    beginQuiz();
   }
 
   // ─── 題庫管理 ───
@@ -1879,27 +1897,35 @@ const App = (() => {
       .filter(k => idx.has(k));
   }
 
-  // F3：只就錯題出題
-  function generateReview(n) {
+  // F4：目前使用中題庫今天到期的題項鍵
+  function currentDueKeys() {
+    const idx = bankItemIndex();
+    return [...ProgressMod.dueKeySet(progressKey(), new Date().toISOString())]
+      .filter(k => idx.has(k));
+  }
+
+  // F3/F4：就一組題項鍵出題（複習錯題 / 到期複習共用）
+  function buildQuestionsFromKeys(keys, n) {
     const bank = getActiveBank();
     const vocabPool = bank.vocab || [];
     const sentencePool = bank.listening || [];
     const idx = bankItemIndex(bank);
-    const chosen = shuffle(currentMistakeKeys()).slice(0, n);
     const qs = [];
-    for (const k of chosen) {
-      const { typ, item } = idx.get(k);
+    for (const k of shuffle(keys).slice(0, n)) {
+      const e = idx.get(k);
+      if (!e) continue;
       let q = null;
-      if (typ === 'vocab') q = buildVocabQ(item, vocabPool);
-      else if (typ === 'listen') q = buildListenSentenceQ(item, sentencePool) || buildListenVocabQ(item, vocabPool);
-      else if (typ === 'grammar') q = buildGrammarQ(item);
+      if (e.typ === 'vocab') q = buildVocabQ(e.item, vocabPool);
+      else if (e.typ === 'listen') q = buildListenSentenceQ(e.item, sentencePool) || buildListenVocabQ(e.item, vocabPool);
+      else if (e.typ === 'grammar') q = buildGrammarQ(e.item);
       if (q) qs.push(q);
     }
     return qs;
   }
 
   function generateQuestions(mode, n) {
-    if (mode === 'review') return generateReview(n);
+    if (mode === 'review') return buildQuestionsFromKeys(currentMistakeKeys(), n);
+    if (mode === 'due') return buildQuestionsFromKeys(currentDueKeys(), n);
     const bank = getActiveBank();
     const vocabPool = bank.vocab || [];
     const sentencePool = bank.listening || [];
@@ -2191,7 +2217,7 @@ const App = (() => {
 
   return {
     init, show, startQuiz, beginQuiz, backToMenu, next, retry,
-    reviewMistakes, switchActiveBank,
+    reviewMistakes, switchActiveBank, startDuePractice,
     importYouTube, importSubtitle, importText, switchImportTab,
     deleteBank,
     setActiveBank, renameBank, openBankDetail,

@@ -12,6 +12,22 @@ import { createStore } from './store.js';
 // ── 精熟門檻（owner 已拍板：預設連續答對 3 次；設定頁可調）──
 export const DEFAULT_MASTERY_STREAK = 3;
 
+// ── F4 Leitner 盒（owner 已拍板）：box 1..5，答對升盒、答錯回盒 1。
+// 間隔（天）以 box 為索引（box0 不用）；預設 1/3/7/16/35，可調。
+export const LEITNER_INTERVALS = [0, 1, 3, 7, 16, 35];
+const MAX_BOX = 5;
+
+function dayStr(iso) {
+  return String(iso || '').slice(0, 10);
+}
+// nowIso + box 間隔天數 → 'YYYY-MM-DD'；nowIso 非法則回傳 ''（不破壞既有測試）
+function dueFrom(nowIso, box) {
+  const d = new Date(nowIso);
+  if (isNaN(d.getTime())) return '';
+  d.setDate(d.getDate() + (LEITNER_INTERVALS[box] || 1));
+  return d.toISOString().slice(0, 10);
+}
+
 // 單一狀態來源（progress 切片）
 const store = createStore({
   global: { totalAnswered: 0, totalCorrect: 0, sessions: 0 },
@@ -110,13 +126,17 @@ export function recordItem(key, name, ik, correct, nowIso) {
     if (!it) {
       it = b.items[ik] = {
         seen: 0, correct: 0, wrong: 0, streak: 0,
-        lastSeen: '', ease: 2.5, due: '',
+        lastSeen: '', box: 1, ease: 2.5, due: '',
       };
     }
     it.seen += 1;
     it.lastSeen = nowIso;
     if (correct) { it.correct += 1; it.streak += 1; }
     else { it.wrong += 1; it.streak = 0; }
+    // F4 Leitner：答對升盒（上限 5），答錯回盒 1；重算下次到期日
+    const box = it.box || 1;
+    it.box = correct ? Math.min(box + 1, MAX_BOX) : 1;
+    it.due = dueFrom(nowIso, it.box);
     return s;
   });
 }
@@ -156,6 +176,17 @@ export function mistakeKeySet(key, threshold = DEFAULT_MASTERY_STREAK) {
   const set = new Set();
   for (const [ik, it] of Object.entries(items)) {
     if (it.wrong > 0 && it.streak < threshold) set.add(ik);
+  }
+  return set;
+}
+
+// F4 到期：已作答且 due 日期 <= 今天（YYYY-MM-DD 字典序可比）。
+export function dueKeySet(key, nowIso) {
+  const today = dayStr(nowIso || new Date().toISOString());
+  const items = (store.get().banks[key] || {}).items || {};
+  const set = new Set();
+  for (const [ik, it] of Object.entries(items)) {
+    if (it.seen > 0 && it.due && dayStr(it.due) <= today) set.add(ik);
   }
   return set;
 }
@@ -231,13 +262,13 @@ export function formatBankProgressMd(key) {
   });
   // F0：題項精熟區塊（向下相容——舊檔無此區塊，讀回時 items 為空）
   lines.push('', '# 題項精熟', '');
-  lines.push('| 題項 | 次數 | 對 | 錯 | 連對 | 最後 |');
-  lines.push('|---|---|---|---|---|---|');
+  lines.push('| 題項 | 次數 | 對 | 錯 | 連對 | 盒 | 到期 | 最後 |');
+  lines.push('|---|---|---|---|---|---|---|---|');
   const items = b.items || {};
   for (const ik of Object.keys(items).sort()) {
     const it = items[ik];
     const last = it.lastSeen ? it.lastSeen.slice(0, 10) : '-';
-    lines.push(`| ${ik} | ${it.seen} | ${it.correct} | ${it.wrong} | ${it.streak} | ${last} |`);
+    lines.push(`| ${ik} | ${it.seen} | ${it.correct} | ${it.wrong} | ${it.streak} | ${it.box || 1} | ${it.due || '-'} | ${last} |`);
   }
   return lines.join('\n') + '\n';
 }
@@ -287,16 +318,32 @@ export function parseBankProgress(text) {
         score: parseInt(sc[0]) || 0, total: parseInt(sc[1]) || 0,
       });
     } else if (section === 'items') {
-      if (cells.length !== 6) return;
       if (cells[0] === '題項' || /^-+$/.test(cells[0])) return;
-      entry.items[cells[0]] = {
-        seen: parseInt(cells[1]) || 0,
-        correct: parseInt(cells[2]) || 0,
-        wrong: parseInt(cells[3]) || 0,
-        streak: parseInt(cells[4]) || 0,
-        lastSeen: cells[5] && cells[5] !== '-' ? cells[5] : '',
-        ease: 2.5, due: '',
-      };
+      const norm = (v) => (v && v !== '-' ? v : '');
+      if (cells.length === 8) {
+        // 新格式：題項|次數|對|錯|連對|盒|到期|最後
+        entry.items[cells[0]] = {
+          seen: parseInt(cells[1]) || 0,
+          correct: parseInt(cells[2]) || 0,
+          wrong: parseInt(cells[3]) || 0,
+          streak: parseInt(cells[4]) || 0,
+          box: parseInt(cells[5]) || 1,
+          due: norm(cells[6]),
+          lastSeen: norm(cells[7]),
+          ease: 2.5,
+        };
+      } else if (cells.length === 6) {
+        // 舊格式（無 盒/到期）：向下相容，box=1、due 空
+        entry.items[cells[0]] = {
+          seen: parseInt(cells[1]) || 0,
+          correct: parseInt(cells[2]) || 0,
+          wrong: parseInt(cells[3]) || 0,
+          streak: parseInt(cells[4]) || 0,
+          box: 1, due: '',
+          lastSeen: norm(cells[5]),
+          ease: 2.5,
+        };
+      }
     }
   });
   return entry;

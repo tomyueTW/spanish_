@@ -97,6 +97,50 @@ test('MD round-trip：formatBankProgressMd ⇄ parseBankProgress（含題項）'
   assert.equal(parsed.items['vocab:vx_Lrt_001'].streak, 1);
   assert.equal(parsed.items['listen:lx_Lrt_003'].wrong, 1);
   assert.equal(parsed.items['listen:lx_Lrt_003'].streak, 0);
+  // F4：box/due 也要 round-trip
+  assert.equal(parsed.items['vocab:vx_Lrt_001'].box, 2, '首次答對 → box 2');
+  assert.match(parsed.items['vocab:vx_Lrt_001'].due, /^\d{4}-\d{2}-\d{2}$/);
+  assert.equal(parsed.items['listen:lx_Lrt_003'].box, 1, '答錯 → 回 box 1');
+});
+
+test('F4 Leitner：答對升盒(上限5)、答錯回盒1、due 依間隔', () => {
+  const k = 'Llt', now = '2026-01-10T00:00:00Z';
+  M.recordItem(k, 'Llt', 'vocab:x', true, now);   // box1→2，間隔3天
+  let it = M.getItem(k, 'vocab:x');
+  assert.equal(it.box, 2);
+  assert.equal(it.due, '2026-01-13');
+  for (let i = 0; i < 6; i++) M.recordItem(k, 'Llt', 'vocab:x', true, now); // 升到上限
+  assert.equal(M.getItem(k, 'vocab:x').box, 5, 'box 上限 5');
+  M.recordItem(k, 'Llt', 'vocab:x', false, now);  // 答錯回盒1，間隔1天
+  it = M.getItem(k, 'vocab:x');
+  assert.equal(it.box, 1);
+  assert.equal(it.due, '2026-01-11');
+});
+
+test('F4 dueKeySet：到期(<=今天)才入列', () => {
+  const k = 'Ldue';
+  M.recordItem(k, 'Ldue', 'vocab:past', true, '2026-01-01T00:00:00Z'); // due 2026-01-04
+  M.recordItem(k, 'Ldue', 'vocab:future', true, '2026-03-01T00:00:00Z'); // due 2026-03-04
+  const due = M.dueKeySet(k, '2026-02-01T00:00:00Z');
+  assert.ok(due.has('vocab:past'), '過期應到期');
+  assert.ok(!due.has('vocab:future'), '未來不算到期');
+});
+
+test('F4 向下相容：6 欄舊題項表 → box=1、due 空', () => {
+  const legacy6 = [
+    '---', 'bankId: L9', 'name: 六欄', 'answered: 2', 'correct: 1',
+    'sessions: 1', 'lastPracticed: 2026-01-01T00:00:00Z', '---', '',
+    '# 測驗歷史', '', '| 日期 | 模式 | 分數 |', '|---|---|---|',
+    '| 2026-01-01T00:00:00Z | vocab | 1/2 |', '',
+    '# 題項精熟', '', '| 題項 | 次數 | 對 | 錯 | 連對 | 最後 |',
+    '|---|---|---|---|---|---|', '| vocab:vx_L9_001 | 3 | 2 | 1 | 0 | 2026-01-01 |', '',
+  ].join('\n');
+  const p = M.parseBankProgress(legacy6);
+  const it = p.items['vocab:vx_L9_001'];
+  assert.equal(it.seen, 3);
+  assert.equal(it.box, 1, '舊 6 欄 → box 預設 1');
+  assert.equal(it.due, '', '舊 6 欄 → due 空');
+  assert.equal(it.lastSeen, '2026-01-01');
 });
 
 test('向下相容：舊格式（無題項精熟區塊）解析為 items={}', () => {
