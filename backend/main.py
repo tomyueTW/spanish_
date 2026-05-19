@@ -45,7 +45,14 @@ def load_json(path: Path) -> dict:
 
 LEVELS_DIR = DATA_DIR / "levels"
 LEVEL_IDS = ["L1", "L2", "L3", "L4", "L5", "L6", "L7"]
-LEVELS = [load_json(LEVELS_DIR / f"{lid}.json") for lid in LEVEL_IDS]
+
+
+def load_levels() -> list:
+    """讀取 7 階段題庫（可重複呼叫，供 /api/reload 用）。"""
+    return [load_json(LEVELS_DIR / f"{lid}.json") for lid in LEVEL_IDS]
+
+
+LEVELS = load_levels()
 
 
 # ─────────── API 路由 ───────────
@@ -71,6 +78,21 @@ def health():
             }
             for lv in LEVELS
         ],
+        "totals": {
+            "vocab": sum(len(lv.get("vocab", [])) for lv in LEVELS),
+            "grammar": sum(len(lv.get("grammar", [])) for lv in LEVELS),
+            "listening": sum(len(lv.get("listening", [])) for lv in LEVELS),
+        },
+    }
+
+
+@app.post("/api/reload")
+def reload_levels():
+    """重新載入 data/levels/*.json，免改題庫就重啟後端。"""
+    global LEVELS
+    LEVELS = load_levels()
+    return {
+        "status": "reloaded",
         "totals": {
             "vocab": sum(len(lv.get("vocab", [])) for lv in LEVELS),
             "grammar": sum(len(lv.get("grammar", [])) for lv in LEVELS),

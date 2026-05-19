@@ -51,6 +51,33 @@ test('masteryCounts：依 streak 門檻分類', () => {
   assert.deepEqual(r, { mastered: 1, learning: 1, unseen: 1, total: 3 });
 });
 
+test('itemWeight：未學>答錯>學習中>>已精熟', () => {
+  const k = 'Lw';
+  // unseen（無紀錄）
+  assert.equal(M.itemWeight(k, 'vocab:none', 3), 6);
+  // 答錯過、未精熟
+  M.recordItem(k, 'Lw', 'vocab:wrong', false, 't');
+  assert.equal(M.itemWeight(k, 'vocab:wrong', 3), 4);
+  // 學習中（答對 1 次，未達門檻、無錯）
+  M.recordItem(k, 'Lw', 'vocab:learn', true, 't');
+  assert.equal(M.itemWeight(k, 'vocab:learn', 3), 2);
+  // 已精熟（連對 3）→ 低權重但非 0
+  for (let i = 0; i < 3; i++) M.recordItem(k, 'Lw', 'vocab:done', true, 't');
+  assert.equal(M.itemWeight(k, 'vocab:done', 3), 0.5);
+});
+
+test('mistakeKeySet：答錯且未重新精熟才算錯題', () => {
+  const k = 'Lms';
+  M.recordItem(k, 'Lms', 'vocab:bad', false, 't');          // 錯 → 入列
+  M.recordItem(k, 'Lms', 'vocab:fixed', false, 't');        // 先錯
+  for (let i = 0; i < 3; i++) M.recordItem(k, 'Lms', 'vocab:fixed', true, 't'); // 再連對 3 → 出列
+  M.recordItem(k, 'Lms', 'vocab:ok', true, 't');            // 從未錯 → 不入列
+  const set = M.mistakeKeySet(k, 3);
+  assert.ok(set.has('vocab:bad'));
+  assert.ok(!set.has('vocab:fixed'), '重新精熟後應移出錯題');
+  assert.ok(!set.has('vocab:ok'));
+});
+
 test('MD round-trip：formatBankProgressMd ⇄ parseBankProgress（含題項）', () => {
   const k = 'Lrt';
   M.recordQuiz(k, '回測庫', 'vocab', 8, 10, '2026-05-19T12:00:00Z');

@@ -372,6 +372,21 @@
   .stat-num { font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
   .stat-label { font-size: 12px; color: var(--ink-2); margin-top: 3px; }
 
+  /* 精熟總覽（F1）：accent + 中性灰，無彩色 */
+  .mastery { margin: 14px 0 22px; }
+  .mastery-head { font-size: 13px; color: var(--ink-2); margin-bottom: 7px; }
+  .mastery-head b { color: var(--ink); font-weight: 600; }
+  .mastery-bar {
+    display: flex; height: 6px; background: var(--line);
+    border-radius: var(--r-pill); overflow: hidden;
+  }
+  .mastery-bar span { display: block; height: 100%; }
+  .ms-mastered { background: var(--accent); }
+  .ms-learning { background: var(--ink-3); }
+  .mastery-legend { font-size: 12px; color: var(--ink-2); margin-top: 6px; }
+  .mastery-legend i { font-style: normal; color: var(--ink-3); }
+  .mastery-mini { font-size: 12px; color: var(--ink-2); margin-top: 3px; }
+
   /* 設定 */
   .settings-row {
     display: flex; justify-content: space-between; align-items: center;
@@ -405,6 +420,7 @@
   <div class="subtitle">Aprende Español · 初級到中級</div>
 
   <div id="stats-summary" class="stats-grid"></div>
+  <div id="menu-mastery"></div>
 
   <button class="mode-btn m-vocab" onclick="App.startQuiz('vocab')">
     <div class="t">📚 單字測驗</div>
@@ -421,6 +437,10 @@
   <button class="mode-btn m-mixed" onclick="App.startQuiz('mixed')">
     <div class="t">🎯 綜合挑戰</div>
     <div class="d">三種題型隨機混合</div>
+  </button>
+  <button class="mode-btn m-review" id="btn-review" onclick="App.startQuiz('review')">
+    <div class="t">🔁 複習錯題</div>
+    <div class="d">只練答錯過、還沒學會的題目</div>
   </button>
   <button class="mode-btn m-import" onclick="App.show('import')">
     <div class="t">🎬 從 YouTube 匯入</div>
@@ -473,6 +493,22 @@
       <option value="10" selected>10 題</option>
       <option value="15">15 題</option>
       <option value="20">20 題</option>
+    </select>
+  </div>
+  <div class="settings-row">
+    <span>精熟門檻<span style="color:var(--ink-3);font-size:12px;"> · 連續答對幾次算精熟</span></span>
+    <select class="num-select" id="set-mastery">
+      <option value="2">2 次</option>
+      <option value="3" selected>3 次</option>
+      <option value="4">4 次</option>
+      <option value="5">5 次</option>
+    </select>
+  </div>
+  <div class="settings-row">
+    <span>弱項優先出題<span style="color:var(--ink-3);font-size:12px;"> · 多考沒學會的</span></span>
+    <select class="num-select" id="set-weighted">
+      <option value="on" selected>開啟</option>
+      <option value="off">關閉</option>
     </select>
   </div>
   <div class="settings-row">
@@ -650,8 +686,14 @@ const App = (() => {
   let browseIdx = 0;
   let browseFilter = 'all';
   let browseKeyHandler = null;
+  let quizKeyHandler = null;
+  // 使用者偏好（持久化於 localStorage settings 鍵）
+  let settings = {
+    masteryStreak: ProgressMod.DEFAULT_MASTERY_STREAK,  // 精熟門檻（連續答對）
+    weightedSelection: true,                            // 弱項優先出題
+  };
 
-  // ─── localStorage (備援：progress / activeBank / dirName) ───
+  // ─── localStorage (備援：progress / activeBank / dirName / settings) ───
   function loadState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -665,12 +707,17 @@ const App = (() => {
         }
         persistedActiveBank = data.activeBank || null;
         activeBank = resolveActiveBank(persistedActiveBank);
+        if (data.settings && typeof data.settings === 'object') {
+          const ms = parseInt(data.settings.masteryStreak);
+          if (ms >= 2 && ms <= 5) settings.masteryStreak = ms;
+          settings.weightedSelection = data.settings.weightedSelection !== false;
+        }
       }
     } catch (e) { console.warn('讀取本地資料失敗', e); }
   }
   function saveState() {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ progress: ProgressMod.snapshot(), activeBank, dirName }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ progress: ProgressMod.snapshot(), activeBank, dirName, settings }));
     } catch (e) { console.warn('儲存失敗', e); }
   }
 
@@ -1018,11 +1065,14 @@ const App = (() => {
     $(name).classList.remove('hidden');
     window.speechSynthesis && window.speechSynthesis.cancel();
     if (name !== 'browse') unbindBrowseKeys();
-    if (name === 'menu') { renderStats(); updateMenuForActiveBank(); }
+    if (name !== 'quiz') unbindQuizKeys(); else bindQuizKeys();
+    if (name === 'menu') { renderStats(); updateMenuForActiveBank(); renderMenuMastery(); }
     if (name === 'bank') renderBanks();
     if (name === 'settings') {
       const ab = getActiveBank();
       $('settings-active-bank').textContent = ab.name;
+      $('set-mastery').value = String(settings.masteryStreak);
+      $('set-weighted').value = settings.weightedSelection ? 'on' : 'off';
     }
   }
 
@@ -1036,7 +1086,59 @@ const App = (() => {
     `;
   }
 
+  // ─── F1：題庫精熟總覽 ───
+  // 某題庫所有題項的 itemKey 宇集（與作答時 qItemKey 規則一致）
+  function bankAllItemKeys(kind, id) {
+    if (kind === 'builtin') {
+      const lv = getLevelById(id);
+      if (!lv) return [];
+      return [
+        ...(lv.vocab || []).map(w => ProgressMod.itemKey(id, 'vocab', w, true)),
+        ...(lv.listening || []).map(s => ProgressMod.itemKey(id, 'listen', s, true)),
+        ...(lv.grammar || []).map(g => ProgressMod.itemKey(id, 'grammar', g, true)),
+      ];
+    }
+    const b = customBanks.find(x => x.id === id);
+    if (!b) return [];
+    return [
+      ...(b.vocab || []).map(w => ProgressMod.itemKey(id, 'vocab', w, false)),
+      ...(b.listening || []).map(s => ProgressMod.itemKey(id, 'listen', s, false)),
+    ];
+  }
+
+  function masteryBarHtml(kind, id) {
+    const keys = bankAllItemKeys(kind, id);
+    if (keys.length === 0) return null;
+    const c = ProgressMod.masteryCounts(id, keys, settings.masteryStreak);
+    const mp = c.total ? (c.mastered / c.total * 100) : 0;
+    const lp = c.total ? (c.learning / c.total * 100) : 0;
+    return {
+      counts: c,
+      bar: `<div class="mastery-bar"><span class="ms-mastered" style="width:${mp}%"></span><span class="ms-learning" style="width:${lp}%"></span></div>`,
+    };
+  }
+
+  function renderMenuMastery() {
+    const el = $('menu-mastery');
+    if (!el) return;
+    const m = masteryBarHtml(activeBank.kind, activeBank.id);
+    if (!m) { el.innerHTML = ''; return; }
+    const c = m.counts;
+    el.innerHTML = `<div class="mastery">
+      <div class="mastery-head">目前題庫　<b>${escapeHtml(getActiveBank().name)}</b></div>
+      ${m.bar}
+      <div class="mastery-legend">精熟 ${c.mastered} · 學習中 ${c.learning} · <i>未開始 ${c.unseen}</i>　共 ${c.total} 題項</div>
+    </div>`;
+  }
+
   // ─── 題庫管理 ───
+  function bankCardMastery(kind, id) {
+    const m = masteryBarHtml(kind, id);
+    if (!m) return '';
+    const c = m.counts;
+    return `<div class="mastery" style="margin:8px 0 0;max-width:260px;">${m.bar}<div class="mastery-mini">精熟 ${c.mastered} · 學習中 ${c.learning} · 未開始 ${c.unseen}</div></div>`;
+  }
+
   function renderBanks() {
     const isActiveBuiltin = isBuiltinActive();
     $('default-bank-list').innerHTML = levels.map(lv => {
@@ -1049,6 +1151,7 @@ const App = (() => {
           <div>
             <div class="bank-name">${escapeHtml(lv.id)} <span style="color:#6b7280;font-weight:400;font-size:12px;">· ${escapeHtml(lv.cefr)}</span> ${escapeHtml(lv.name)}</div>
             <div class="bank-meta">${v} 單字 · ${g} 文法 · ${l} 句型</div>
+            ${bankCardMastery('builtin', lv.id)}
           </div>
           <div class="bank-actions">
             ${isActive
@@ -1077,6 +1180,7 @@ const App = (() => {
           <div>
             <div class="bank-name">${escapeHtml(b.name)}</div>
             <div class="bank-meta">${(b.vocab || []).length} 單字 · ${(b.listening || []).length} 句子 · ${escapeHtml(b.source || '自製')}</div>
+            ${bankCardMastery('custom', b.id)}
           </div>
           <div class="bank-actions">
             ${isActive
@@ -1479,6 +1583,32 @@ const App = (() => {
     }
   }
 
+  // F7：測驗鍵盤作答（1–4 選答；Enter/Space 下一題）
+  function bindQuizKeys() {
+    unbindQuizKeys();
+    quizKeyHandler = (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (!currentQuiz) return;
+      if (e.key >= '1' && e.key <= '4') {
+        if (currentQuiz.answered) return;
+        const btn = document.querySelector(`.opt-btn[data-i="${+e.key - 1}"]`);
+        if (btn) { e.preventDefault(); answer(+e.key - 1); }
+      } else if (e.key === 'Enter' || e.key === ' ') {
+        const nb = $('next-btn');
+        if (currentQuiz.answered && nb && !nb.classList.contains('hidden')) {
+          e.preventDefault(); next();
+        }
+      }
+    };
+    document.addEventListener('keydown', quizKeyHandler);
+  }
+  function unbindQuizKeys() {
+    if (quizKeyHandler) {
+      document.removeEventListener('keydown', quizKeyHandler);
+      quizKeyHandler = null;
+    }
+  }
+
   async function deleteBank(id) {
     if (!confirm('確定刪除這個題庫？同時會刪除本地 .md 檔。')) return;
     const target = customBanks.find(b => b.id === id);
@@ -1511,16 +1641,35 @@ const App = (() => {
       alert('目前題庫不含文法題，請至「題庫管理」切換到含文法的階段（L1~L7）。');
       return;
     }
+    if (mode === 'review' && currentMistakeKeys().length === 0) {
+      alert('目前沒有錯題 — 先做幾輪測驗，答錯的題目會自動收進這裡。');
+      return;
+    }
     currentMode = mode;
     const titleMap = {
       vocab: '📚 單字測驗', listen: '👂 聽力測驗',
-      grammar: '📝 句型文法', mixed: '🎯 綜合挑戰'
+      grammar: '📝 句型文法', mixed: '🎯 綜合挑戰', review: '🔁 複習錯題'
     };
     $('settings-title').textContent = titleMap[mode];
     show('settings');
   }
 
+  // 結果頁「立即複習這些」：直接以目前錯題開練（沿用上次題數設定）
+  function reviewMistakes() {
+    if (currentMistakeKeys().length === 0) {
+      alert('沒有可複習的錯題了，很棒！');
+      return;
+    }
+    currentMode = 'review';
+    beginQuiz();
+  }
+
   function beginQuiz() {
+    // 套用並持久化偏好（精熟門檻 / 弱項優先）
+    const ms = parseInt($('set-mastery').value);
+    if (ms >= 2 && ms <= 5) settings.masteryStreak = ms;
+    settings.weightedSelection = $('set-weighted').value === 'on';
+    saveState();
     const n = parseInt($('num-questions').value);
     const questions = generateQuestions(currentMode, n);
     if (questions.length === 0) {
@@ -1543,11 +1692,29 @@ const App = (() => {
     return ProgressMod.itemKey(progressKey(), typ, item, isBuiltinActive());
   }
 
-  function makeVocabQ(pool) {
+  // F2：依精熟度加權挑出本題的焦點題項；設定關閉時退回均勻隨機。
+  function pickTarget(pool, typ) {
+    if (!settings.weightedSelection || pool.length < 2) {
+      return pool[Math.floor(Math.random() * pool.length)];
+    }
+    const key = progressKey();
+    const ms = settings.masteryStreak;
+    const weights = pool.map(it =>
+      ProgressMod.itemWeight(key, qItemKey(typ, it), ms));
+    let total = 0;
+    for (const w of weights) total += w;
+    let r = Math.random() * total;
+    for (let i = 0; i < pool.length; i++) {
+      r -= weights[i];
+      if (r <= 0) return pool[i];
+    }
+    return pool[pool.length - 1];
+  }
+
+  // 由指定 correct 題項建構題目（出題挑選與題目建構分離，供 F2 加權與 F3 複習共用）
+  function buildVocabQ(correct, pool) {
     if (pool.length < 4) return null;
-    const shuf = shuffle(pool);
-    const correct = shuf[0];
-    const distractors = shuf.slice(1, 4);
+    const distractors = shuffle(pool.filter(o => o !== correct)).slice(0, 3);
     const opts = shuffle([correct, ...distractors]);
     return {
       type: 'vocab',
@@ -1563,38 +1730,28 @@ const App = (() => {
     };
   }
 
-  function makeListenQ(vocabPool, sentencePool) {
-    // 70% 用句子，30% 用單字（依比例調整）
-    const useSentence = sentencePool.length > 0 && Math.random() < 0.7;
-    if (useSentence) {
-      const shuf = shuffle(sentencePool);
-      const correct = shuf[0];
-      // 干擾項從其他句子的中文翻譯找
-      const others = shuf.slice(1).filter(s => s.zh !== correct.zh).slice(0, 3);
-      if (others.length < 3) return makeListenQFromVocab(vocabPool);
-      const opts = shuffle([correct, ...others]);
-      return {
-        type: 'listen',
-        prompt: correct.es,
-        promptLabel: '聽聽看，這句話的意思是？',
-        options: opts.map(o => o.zh),
-        answer: opts.findIndex(o => o.zh === correct.zh),
-        explanation: `<strong>${correct.es}</strong><br>${correct.zh}${correct.topic ? '（' + correct.topic + '）' : ''}`,
-        speakText: correct.es,
-        source: correct.source,
-        sourceName: correct.bankName,
-        topic: correct.topic,
-        itemKey: qItemKey('listen', correct),
-      };
-    }
-    return makeListenQFromVocab(vocabPool);
+  function buildListenSentenceQ(correct, sentencePool) {
+    const others = shuffle(sentencePool.filter(s => s !== correct && s.zh !== correct.zh)).slice(0, 3);
+    if (others.length < 3) return null;
+    const opts = shuffle([correct, ...others]);
+    return {
+      type: 'listen',
+      prompt: correct.es,
+      promptLabel: '聽聽看，這句話的意思是？',
+      options: opts.map(o => o.zh),
+      answer: opts.findIndex(o => o.zh === correct.zh),
+      explanation: `<strong>${correct.es}</strong><br>${correct.zh}${correct.topic ? '（' + correct.topic + '）' : ''}`,
+      speakText: correct.es,
+      source: correct.source,
+      sourceName: correct.bankName,
+      topic: correct.topic,
+      itemKey: qItemKey('listen', correct),
+    };
   }
 
-  function makeListenQFromVocab(pool) {
+  function buildListenVocabQ(correct, pool) {
     if (pool.length < 4) return null;
-    const shuf = shuffle(pool);
-    const correct = shuf[0];
-    const distractors = shuf.slice(1, 4);
+    const distractors = shuffle(pool.filter(o => o !== correct)).slice(0, 3);
     const opts = shuffle([correct, ...distractors]);
     return {
       type: 'listen',
@@ -1610,9 +1767,8 @@ const App = (() => {
     };
   }
 
-  function makeGrammarQ(grammarPool) {
-    if (!grammarPool || grammarPool.length === 0) return null;
-    const item = shuffle(grammarPool)[0];
+  function buildGrammarQ(item) {
+    if (!item) return null;
     return {
       type: 'grammar',
       promptLabel: `<div class="topic-tag">${escapeHtml(item.topic || '')}</div>${item.q} <span style="color:#6b7280;font-size:14px;">(${escapeHtml(item.zh || '')})</span>`,
@@ -1624,7 +1780,71 @@ const App = (() => {
     };
   }
 
+  function makeVocabQ(pool) {
+    if (pool.length < 4) return null;
+    return buildVocabQ(pickTarget(pool, 'vocab'), pool);
+  }
+
+  function makeListenQ(vocabPool, sentencePool) {
+    // 70% 用句子，30% 用單字（依比例調整）
+    const useSentence = sentencePool.length > 0 && Math.random() < 0.7;
+    if (useSentence) {
+      const q = buildListenSentenceQ(pickTarget(sentencePool, 'listen'), sentencePool);
+      if (q) return q;
+    }
+    return makeListenQFromVocab(vocabPool);
+  }
+
+  function makeListenQFromVocab(pool) {
+    if (pool.length < 4) return null;
+    return buildListenVocabQ(pickTarget(pool, 'vocab'), pool);
+  }
+
+  function makeGrammarQ(grammarPool) {
+    if (!grammarPool || grammarPool.length === 0) return null;
+    return buildGrammarQ(pickTarget(grammarPool, 'grammar'));
+  }
+
+  // F3：itemKey → {typ,item} 索引（與作答時的 qItemKey 規則一致）
+  // 接受 bank 參數：index 與出題 pool 必須來自同一個 getActiveBank() 物件，
+  // 否則 buildXFrom 以 identity 排除 correct 會失效（出現重複選項）。
+  function bankItemIndex(bank) {
+    bank = bank || getActiveBank();
+    const idx = new Map();
+    (bank.vocab || []).forEach(w => idx.set(qItemKey('vocab', w), { typ: 'vocab', item: w }));
+    (bank.listening || []).forEach(s => idx.set(qItemKey('listen', s), { typ: 'listen', item: s }));
+    (bank.grammar || []).forEach(g => idx.set(qItemKey('grammar', g), { typ: 'grammar', item: g }));
+    return idx;
+  }
+
+  // 目前使用中題庫的錯題鍵（存在於本庫且尚未重新精熟）
+  function currentMistakeKeys() {
+    const idx = bankItemIndex();
+    return [...ProgressMod.mistakeKeySet(progressKey(), settings.masteryStreak)]
+      .filter(k => idx.has(k));
+  }
+
+  // F3：只就錯題出題
+  function generateReview(n) {
+    const bank = getActiveBank();
+    const vocabPool = bank.vocab || [];
+    const sentencePool = bank.listening || [];
+    const idx = bankItemIndex(bank);
+    const chosen = shuffle(currentMistakeKeys()).slice(0, n);
+    const qs = [];
+    for (const k of chosen) {
+      const { typ, item } = idx.get(k);
+      let q = null;
+      if (typ === 'vocab') q = buildVocabQ(item, vocabPool);
+      else if (typ === 'listen') q = buildListenSentenceQ(item, sentencePool) || buildListenVocabQ(item, vocabPool);
+      else if (typ === 'grammar') q = buildGrammarQ(item);
+      if (q) qs.push(q);
+    }
+    return qs;
+  }
+
   function generateQuestions(mode, n) {
+    if (mode === 'review') return generateReview(n);
     const bank = getActiveBank();
     const vocabPool = bank.vocab || [];
     const sentencePool = bank.listening || [];
@@ -1658,7 +1878,7 @@ const App = (() => {
     currentQuiz.answered = false;
     const q = currentQuiz.questions[currentQuiz.current];
     const total = currentQuiz.questions.length;
-    $('progress').textContent = `第 ${currentQuiz.current + 1} / ${total} 題 · 答對 ${currentQuiz.score}`;
+    $('progress').textContent = `第 ${currentQuiz.current + 1} / ${total} 題 · 答對 ${currentQuiz.score} · 鍵盤 1–4 作答`;
     $('score-fill').style.width = `${(currentQuiz.current / total) * 100}%`;
     $('feedback').innerHTML = '';
     $('next-btn').classList.add('hidden');
@@ -1769,6 +1989,9 @@ const App = (() => {
           <div class="wrong-a">✓ ${w.explanation}</div>
         </div>`;
       });
+      wh += `<div class="center" style="margin-top:16px;">
+        <button class="secondary-btn" onclick="App.reviewMistakes()">🔁 立即複習這些</button>
+      </div>`;
       $('wrong-list').innerHTML = wh;
     } else $('wrong-list').innerHTML = '';
   }
@@ -1913,6 +2136,7 @@ const App = (() => {
 
   return {
     init, show, startQuiz, beginQuiz, backToMenu, next, retry,
+    reviewMistakes,
     importYouTube, importSubtitle, importText, switchImportTab,
     deleteBank,
     setActiveBank, renameBank, openBankDetail,

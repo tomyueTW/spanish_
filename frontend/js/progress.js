@@ -137,6 +137,29 @@ export function masteryCounts(key, allKeys, threshold = DEFAULT_MASTERY_STREAK) 
   return { mastered, learning, unseen: Math.max(0, total - mastered - learning), total };
 }
 
+export function getItem(key, ik) {
+  return ((store.get().banks[key] || {}).items || {})[ik] || null;
+}
+
+// F2 出題權重：未學最高 > 答錯過 > 學習中 >> 已精熟（低但非 0，仍會複習）。
+export function itemWeight(key, ik, threshold = DEFAULT_MASTERY_STREAK) {
+  const it = getItem(key, ik);
+  if (!it || it.seen === 0) return 6;
+  if (it.streak >= threshold) return 0.5;
+  if (it.wrong > 0) return 4;
+  return 2;
+}
+
+// F3 錯題：答錯過且尚未重新精熟（streak < 門檻）。回傳 itemKey 集合。
+export function mistakeKeySet(key, threshold = DEFAULT_MASTERY_STREAK) {
+  const items = (store.get().banks[key] || {}).items || {};
+  const set = new Set();
+  for (const [ik, it] of Object.entries(items)) {
+    if (it.wrong > 0 && it.streak < threshold) set.add(ik);
+  }
+  return set;
+}
+
 // ── Markdown codec ───────────────────────────────────────────────
 function frontmatterLines(obj) {
   return Object.entries(obj).map(([k, v]) => `${k}: ${v}`);
