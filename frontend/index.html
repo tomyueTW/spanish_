@@ -709,6 +709,7 @@
 // 原生 ES module（零 build、可離線）。後端把 frontend/ mount 在 /static，
 // 故模組以 /static/js/ 絕對路徑載入；app 一律經後端 http://localhost:8000 開啟。
 import * as ProgressMod from '/static/js/progress.js';
+import * as QuizMod from '/static/js/quiz.js';
 
 // ─────────── 全域設定 ───────────
 const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:8000' : '';
@@ -1305,7 +1306,7 @@ const App = (() => {
   function renderDueBanner() {
     const el = $('due-banner');
     if (!el) return;
-    const n = currentDueKeys().length;
+    const n = QuizMod.currentDueKeys().length;
     if (n === 0) { el.classList.add('hidden'); el.innerHTML = ''; return; }
     el.classList.remove('hidden');
     el.innerHTML = `<span>📅 今天有 <b>${n}</b> 題該複習了</span>
@@ -1313,7 +1314,7 @@ const App = (() => {
   }
 
   function startDuePractice() {
-    if (currentDueKeys().length === 0) { alert('目前沒有到期的複習，做得很好！'); return; }
+    if (QuizMod.currentDueKeys().length === 0) { alert('目前沒有到期的複習，做得很好！'); return; }
     currentMode = 'due';
     beginQuiz();
   }
@@ -1828,7 +1829,7 @@ const App = (() => {
       alert('目前題庫不含文法題，請至「題庫管理」切換到含文法的階段（L1~L7）。');
       return;
     }
-    if (mode === 'review' && currentMistakeKeys().length === 0) {
+    if (mode === 'review' && QuizMod.currentMistakeKeys().length === 0) {
       alert('目前沒有錯題 — 先做幾輪測驗，答錯的題目會自動收進這裡。');
       return;
     }
@@ -1843,7 +1844,7 @@ const App = (() => {
 
   // 結果頁「立即複習這些」：直接以目前錯題開練（沿用上次題數設定）
   function reviewMistakes() {
-    if (currentMistakeKeys().length === 0) {
+    if (QuizMod.currentMistakeKeys().length === 0) {
       alert('沒有可複習的錯題了，很棒！');
       return;
     }
@@ -1858,7 +1859,7 @@ const App = (() => {
     settings.weightedSelection = $('set-weighted').value === 'on';
     saveState();
     const n = parseInt($('num-questions').value);
-    const questions = generateQuestions(currentMode, n);
+    const questions = QuizMod.generateQuestions(currentMode, n);
     if (questions.length === 0) {
       alert('目前題庫沒有可用的題目，請切換題庫或先匯入內容');
       return;
@@ -1874,199 +1875,9 @@ const App = (() => {
   }
 
   // ─── 出題 ───
-  // F0 題項穩定鍵：交給 ProgressMod（builtin 用 vx_/lx_/gx_ id，custom 退回 es）
-  function qItemKey(typ, item) {
-    return ProgressMod.itemKey(progressKey(), typ, item, isBuiltinActive());
-  }
-
-  // F2：依精熟度加權挑出本題的焦點題項；設定關閉時退回均勻隨機。
-  function pickTarget(pool, typ) {
-    if (!settings.weightedSelection || pool.length < 2) {
-      return pool[Math.floor(Math.random() * pool.length)];
-    }
-    const key = progressKey();
-    const ms = settings.masteryStreak;
-    const weights = pool.map(it =>
-      ProgressMod.itemWeight(key, qItemKey(typ, it), ms));
-    let total = 0;
-    for (const w of weights) total += w;
-    let r = Math.random() * total;
-    for (let i = 0; i < pool.length; i++) {
-      r -= weights[i];
-      if (r <= 0) return pool[i];
-    }
-    return pool[pool.length - 1];
-  }
-
-  // 由指定 correct 題項建構題目（出題挑選與題目建構分離，供 F2 加權與 F3 複習共用）
-  function buildVocabQ(correct, pool) {
-    if (pool.length < 4) return null;
-    const distractors = shuffle(pool.filter(o => o !== correct)).slice(0, 3);
-    const opts = shuffle([correct, ...distractors]);
-    return {
-      type: 'vocab',
-      prompt: correct.zh,
-      promptLabel: `「${correct.zh}」的西班牙語是？`,
-      options: opts.map(o => o.es),
-      answer: opts.findIndex(o => o.es === correct.es),
-      explanation: `<strong>${correct.es}</strong> = ${correct.zh}${correct.cat ? '（' + correct.cat + '）' : ''}`,
-      speakText: correct.es,
-      source: correct.source,
-      sourceName: correct.bankName,
-      itemKey: qItemKey('vocab', correct),
-    };
-  }
-
-  function buildListenSentenceQ(correct, sentencePool) {
-    const others = shuffle(sentencePool.filter(s => s !== correct && s.zh !== correct.zh)).slice(0, 3);
-    if (others.length < 3) return null;
-    const opts = shuffle([correct, ...others]);
-    return {
-      type: 'listen',
-      prompt: correct.es,
-      promptLabel: '聽聽看，這句話的意思是？',
-      options: opts.map(o => o.zh),
-      answer: opts.findIndex(o => o.zh === correct.zh),
-      explanation: `<strong>${correct.es}</strong><br>${correct.zh}${correct.topic ? '（' + correct.topic + '）' : ''}`,
-      speakText: correct.es,
-      source: correct.source,
-      sourceName: correct.bankName,
-      topic: correct.topic,
-      itemKey: qItemKey('listen', correct),
-    };
-  }
-
-  function buildListenVocabQ(correct, pool) {
-    if (pool.length < 4) return null;
-    const distractors = shuffle(pool.filter(o => o !== correct)).slice(0, 3);
-    const opts = shuffle([correct, ...distractors]);
-    return {
-      type: 'listen',
-      prompt: correct.es,
-      promptLabel: '聽聽看，這個西班牙語的意思是？',
-      options: opts.map(o => o.zh),
-      answer: opts.findIndex(o => o.zh === correct.zh),
-      explanation: `<strong>${correct.es}</strong> = ${correct.zh}`,
-      speakText: correct.es,
-      source: correct.source,
-      // 底層仍是 vocab 詞，鍵為 vocab → 與單字模式共享該字精熟度
-      itemKey: qItemKey('vocab', correct),
-    };
-  }
-
-  function buildGrammarQ(item) {
-    if (!item) return null;
-    return {
-      type: 'grammar',
-      promptLabel: `<div class="topic-tag">${escapeHtml(item.topic || '')}</div>${item.q} <span style="color:#6b7280;font-size:14px;">(${escapeHtml(item.zh || '')})</span>`,
-      options: item.opts,
-      answer: item.a,
-      explanation: item.exp,
-      source: 'default',
-      itemKey: qItemKey('grammar', item),
-    };
-  }
-
-  function makeVocabQ(pool) {
-    if (pool.length < 4) return null;
-    return buildVocabQ(pickTarget(pool, 'vocab'), pool);
-  }
-
-  function makeListenQ(vocabPool, sentencePool) {
-    // 70% 用句子，30% 用單字（依比例調整）
-    const useSentence = sentencePool.length > 0 && Math.random() < 0.7;
-    if (useSentence) {
-      const q = buildListenSentenceQ(pickTarget(sentencePool, 'listen'), sentencePool);
-      if (q) return q;
-    }
-    return makeListenQFromVocab(vocabPool);
-  }
-
-  function makeListenQFromVocab(pool) {
-    if (pool.length < 4) return null;
-    return buildListenVocabQ(pickTarget(pool, 'vocab'), pool);
-  }
-
-  function makeGrammarQ(grammarPool) {
-    if (!grammarPool || grammarPool.length === 0) return null;
-    return buildGrammarQ(pickTarget(grammarPool, 'grammar'));
-  }
-
-  // F3：itemKey → {typ,item} 索引（與作答時的 qItemKey 規則一致）
-  // 接受 bank 參數：index 與出題 pool 必須來自同一個 getActiveBank() 物件，
-  // 否則 buildXFrom 以 identity 排除 correct 會失效（出現重複選項）。
-  function bankItemIndex(bank) {
-    bank = bank || getActiveBank();
-    const idx = new Map();
-    (bank.vocab || []).forEach(w => idx.set(qItemKey('vocab', w), { typ: 'vocab', item: w }));
-    (bank.listening || []).forEach(s => idx.set(qItemKey('listen', s), { typ: 'listen', item: s }));
-    (bank.grammar || []).forEach(g => idx.set(qItemKey('grammar', g), { typ: 'grammar', item: g }));
-    return idx;
-  }
-
-  // 目前使用中題庫的錯題鍵（存在於本庫且尚未重新精熟）
-  function currentMistakeKeys() {
-    const idx = bankItemIndex();
-    return [...ProgressMod.mistakeKeySet(progressKey(), settings.masteryStreak)]
-      .filter(k => idx.has(k));
-  }
-
-  // F4：目前使用中題庫今天到期的題項鍵
-  function currentDueKeys() {
-    const idx = bankItemIndex();
-    return [...ProgressMod.dueKeySet(progressKey(), new Date().toISOString())]
-      .filter(k => idx.has(k));
-  }
-
-  // F3/F4：就一組題項鍵出題（複習錯題 / 到期複習共用）
-  function buildQuestionsFromKeys(keys, n) {
-    const bank = getActiveBank();
-    const vocabPool = bank.vocab || [];
-    const sentencePool = bank.listening || [];
-    const idx = bankItemIndex(bank);
-    const qs = [];
-    for (const k of shuffle(keys).slice(0, n)) {
-      const e = idx.get(k);
-      if (!e) continue;
-      let q = null;
-      if (e.typ === 'vocab') q = buildVocabQ(e.item, vocabPool);
-      else if (e.typ === 'listen') q = buildListenSentenceQ(e.item, sentencePool) || buildListenVocabQ(e.item, vocabPool);
-      else if (e.typ === 'grammar') q = buildGrammarQ(e.item);
-      if (q) qs.push(q);
-    }
-    return qs;
-  }
-
-  function generateQuestions(mode, n) {
-    if (mode === 'review') return buildQuestionsFromKeys(currentMistakeKeys(), n);
-    if (mode === 'due') return buildQuestionsFromKeys(currentDueKeys(), n);
-    const bank = getActiveBank();
-    const vocabPool = bank.vocab || [];
-    const sentencePool = bank.listening || [];
-    const grammarPool = bank.grammar || [];
-    const hasGrammar = grammarPool.length > 0;
-
-    const qs = [];
-    for (let i = 0; i < n; i++) {
-      let q = null;
-      if (mode === 'vocab') q = makeVocabQ(vocabPool);
-      else if (mode === 'listen') q = makeListenQ(vocabPool, sentencePool);
-      else if (mode === 'grammar') q = makeGrammarQ(grammarPool);
-      else if (mode === 'mixed') {
-        const r = Math.random();
-        if (hasGrammar) {
-          if (r < 0.34) q = makeVocabQ(vocabPool);
-          else if (r < 0.67) q = makeListenQ(vocabPool, sentencePool);
-          else q = makeGrammarQ(grammarPool);
-        } else {
-          if (r < 0.5) q = makeVocabQ(vocabPool);
-          else q = makeListenQ(vocabPool, sentencePool);
-        }
-      }
-      if (q) qs.push(q);
-    }
-    return qs;
-  }
+  // 出題引擎已抽出至 js/quiz.js（QuizMod）。init() 以 configure() 注入
+  // App 相依（getActiveBank / progressKey / isBuiltinActive / getSettings）。
+  // 對外：QuizMod.generateQuestions / currentMistakeKeys / currentDueKeys。
 
   // ─── 渲染題目 ───
   function renderQ() {
@@ -2297,6 +2108,13 @@ const App = (() => {
   // ─── 初始化 ───
   async function init() {
     loadState();
+    // 出題引擎注入 App 相依（在任何出題前完成）
+    QuizMod.configure({
+      getActiveBank,
+      progressKey,
+      isBuiltinActive,
+      getSettings: () => settings,
+    });
     try {
       await loadBanks();
       // FS Access：嘗試還原資料夾 handle 並讀題庫
