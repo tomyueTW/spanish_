@@ -201,10 +201,12 @@
   .full-btn { width: 100%; margin-top: 20px; }
 
   /* 結果頁 */
-  .result-emoji { font-size: 64px; margin-bottom: 12px; }
-  .result-title { margin: 0 0 8px; font-size: 26px; }
-  .result-score { font-size: 19px; color: var(--ink); margin-bottom: 8px; }
-  .result-comment { color: var(--ink-2); margin-bottom: 28px; }
+  /* 結果頁（F8）：保留 emoji 與西語短語當學習元素，但尺寸/層級收斂，
+     與極簡定位一致——不做 Duolingo 式大色塊慶祝 */
+  .result-emoji { font-size: 32px; margin-bottom: 6px; opacity: 0.9; }
+  .result-title { margin: 0 0 6px; font-size: 19px; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+  .result-score { font-size: 15px; color: var(--ink); margin-bottom: 6px; }
+  .result-comment { color: var(--ink-2); font-size: 14px; margin-bottom: 26px; }
   .wrong-item {
     padding: 12px 16px; background: var(--surface-2);
     border: 1px solid var(--line); border-left: 3px solid var(--bad); border-radius: var(--r-sm);
@@ -1367,7 +1369,7 @@ const App = (() => {
         <div class="bank-card">
           <div>
             <div class="bank-name">${escapeHtml(b.name)}</div>
-            <div class="bank-meta">${(b.vocab || []).length} 單字 · ${(b.listening || []).length} 句子 · ${escapeHtml(b.source || '自製')}</div>
+            <div class="bank-meta">${(b.vocab || []).length} 單字 · ${(b.listening || []).length} 句子 · 無文法題 · ${escapeHtml(b.source || '自製')}</div>
             ${bankCardMastery('custom', b.id)}
           </div>
           <div class="bank-actions">
@@ -1648,12 +1650,16 @@ const App = (() => {
     const grammarBtn = document.querySelector('.m-grammar');
     if (!grammarBtn) return;
     const hasGrammar = (getActiveBank().grammar || []).length > 0;
+    const desc = grammarBtn.querySelector('.d');
     if (hasGrammar) {
       grammarBtn.classList.remove('is-disabled');
       grammarBtn.title = '';
+      if (desc) desc.textContent = '動詞變位、冠詞、形容詞配合等';
     } else {
+      // F9：誠實告知（不假裝有文法題，也不擴充自製題庫支援手寫文法）
       grammarBtn.classList.add('is-disabled');
-      grammarBtn.title = '目前題庫不含文法題';
+      grammarBtn.title = '自製題庫不含文法題（僅單字／聽力）';
+      if (desc) desc.textContent = '自製題庫不含文法題（僅單字／聽力）';
     }
   }
 
