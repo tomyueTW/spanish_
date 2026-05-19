@@ -387,6 +387,24 @@
   .mastery-legend i { font-style: normal; color: var(--ink-3); }
   .mastery-mini { font-size: 12px; color: var(--ink-2); margin-top: 3px; }
 
+  /* F6 學習中樞 */
+  .hub { margin: 4px 0 20px; }
+  .hub-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .hub-row label { margin: 0; flex: none; color: var(--ink-2); font-size: 13px; font-weight: 500; }
+  .hub-select { margin: 0; flex: 1; }
+  .due-banner {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 12px 14px; margin-top: 12px; border-radius: var(--r-md);
+    background: var(--accent-tint); border: 1px solid transparent;
+    border-left: 3px solid var(--accent); color: var(--accent-strong); font-size: 13px;
+  }
+  .due-banner button {
+    flex: none; padding: 7px 13px; border-radius: var(--r-sm);
+    border: 1px solid var(--accent); background: var(--accent); color: #fff;
+    font-size: 13px; font-weight: 600;
+  }
+  .due-banner button:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+
   /* 設定 */
   .settings-row {
     display: flex; justify-content: space-between; align-items: center;
@@ -419,9 +437,21 @@
   <h1>西班牙語學習工具</h1>
   <div class="subtitle">Aprende Español · 初級到中級</div>
 
-  <div id="stats-summary" class="stats-grid"></div>
-  <div id="menu-mastery"></div>
+  <div id="hub" class="hub">
+    <div class="hub-row">
+      <label for="bank-switcher">練習題庫</label>
+      <select id="bank-switcher" class="hub-select" onchange="App.switchActiveBank(this.value)"></select>
+    </div>
+    <div id="menu-mastery"></div>
+    <div id="due-banner" class="hidden"></div>
+  </div>
 
+  <div id="stats-summary" class="stats-grid"></div>
+
+  <button class="mode-btn m-review" id="btn-review" onclick="App.startQuiz('review')">
+    <div class="t">🔁 複習錯題</div>
+    <div class="d">只練答錯過、還沒學會的題目（弱項優先）</div>
+  </button>
   <button class="mode-btn m-vocab" onclick="App.startQuiz('vocab')">
     <div class="t">📚 單字測驗</div>
     <div class="d">中文 → 西班牙語選擇題（含發音）</div>
@@ -437,10 +467,6 @@
   <button class="mode-btn m-mixed" onclick="App.startQuiz('mixed')">
     <div class="t">🎯 綜合挑戰</div>
     <div class="d">三種題型隨機混合</div>
-  </button>
-  <button class="mode-btn m-review" id="btn-review" onclick="App.startQuiz('review')">
-    <div class="t">🔁 複習錯題</div>
-    <div class="d">只練答錯過、還沒學會的題目</div>
   </button>
   <button class="mode-btn m-import" onclick="App.show('import')">
     <div class="t">🎬 從 YouTube 匯入</div>
@@ -1066,7 +1092,7 @@ const App = (() => {
     window.speechSynthesis && window.speechSynthesis.cancel();
     if (name !== 'browse') unbindBrowseKeys();
     if (name !== 'quiz') unbindQuizKeys(); else bindQuizKeys();
-    if (name === 'menu') { renderStats(); updateMenuForActiveBank(); renderMenuMastery(); }
+    if (name === 'menu') { renderStats(); updateMenuForActiveBank(); renderHub(); renderMenuMastery(); }
     if (name === 'bank') renderBanks();
     if (name === 'settings') {
       const ab = getActiveBank();
@@ -1124,11 +1150,40 @@ const App = (() => {
     const m = masteryBarHtml(activeBank.kind, activeBank.id);
     if (!m) { el.innerHTML = ''; return; }
     const c = m.counts;
-    el.innerHTML = `<div class="mastery">
-      <div class="mastery-head">目前題庫　<b>${escapeHtml(getActiveBank().name)}</b></div>
+    // 題庫名已在切換器顯示，這裡只留精熟條 + 數字（避免重複）
+    el.innerHTML = `<div class="mastery" style="margin:0;">
       ${m.bar}
-      <div class="mastery-legend">精熟 ${c.mastered} · 學習中 ${c.learning} · <i>未開始 ${c.unseen}</i>　共 ${c.total} 題項</div>
+      <div class="mastery-legend">精熟 <b style="color:var(--ink);">${c.mastered}</b> · 學習中 ${c.learning} · <i>未開始 ${c.unseen}</i>　共 ${c.total} 題項</div>
     </div>`;
+  }
+
+  // ─── F6：學習中樞（題庫切換器）───
+  function renderHub() {
+    const sel = $('bank-switcher');
+    if (!sel) return;
+    let html = '<optgroup label="內建題庫（CEFR）">';
+    levels.forEach(lv => {
+      html += `<option value="builtin:${escapeHtml(lv.id)}">${escapeHtml(levelDisplayName(lv))}</option>`;
+    });
+    html += '</optgroup>';
+    if (customBanks.length) {
+      html += '<optgroup label="自製題庫">';
+      customBanks.forEach(b => {
+        html += `<option value="custom:${escapeHtml(b.id)}">${escapeHtml(b.name)}</option>`;
+      });
+      html += '</optgroup>';
+    }
+    sel.innerHTML = html;
+    sel.value = activeBank.kind + ':' + activeBank.id;
+  }
+
+  function switchActiveBank(val) {
+    const i = String(val).indexOf(':');
+    if (i < 0) return;
+    setActiveBank(val.slice(0, i), val.slice(i + 1));
+    renderMenuMastery();
+    const sel = $('bank-switcher');
+    if (sel) sel.value = activeBank.kind + ':' + activeBank.id;
   }
 
   // ─── 題庫管理 ───
@@ -2136,7 +2191,7 @@ const App = (() => {
 
   return {
     init, show, startQuiz, beginQuiz, backToMenu, next, retry,
-    reviewMistakes,
+    reviewMistakes, switchActiveBank,
     importYouTube, importSubtitle, importText, switchImportTab,
     deleteBank,
     setActiveBank, renameBank, openBankDetail,
